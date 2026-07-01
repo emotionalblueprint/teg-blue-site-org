@@ -207,8 +207,7 @@ const nextConfig = {
       },
 
       // Consolidated overview route: keep the old explanatory route out of
-      // public architecture. Until /foundations is live, the redirect guard
-      // below safely falls back to the homepage.
+      // public architecture by sending it to the current overview page.
       {
         source: '/how-it-works',
         destination: '/foundations',
@@ -498,15 +497,10 @@ const nextConfig = {
       },
     ]
 
-    return redirects.map((redirect) => {
-      const destinationIsLive = isLive(redirect.destination)
-
-      return {
-        ...redirect,
-        destination: destinationIsLive ? redirect.destination : '/',
-        permanent: destinationIsLive ? redirect.permanent : false,
-      }
-    })
+    // Keep redirects only when they resolve to the approved live surface. Old
+    // URLs without a current equivalent fall through to middleware, which
+    // returns 410 Gone + noindex so crawlers can drop them.
+    return redirects.filter((redirect) => isLive(redirect.destination))
   },
   async headers() {
     return [

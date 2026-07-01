@@ -1,6 +1,6 @@
 # TEG-Blue - Extended AI-Readable Documentation
 # https://teg-blue.org
-# Last updated: 2026-06-28
+# Last updated: 2026-06-30
 # Format: llms-full.txt
 
 ---
@@ -8,7 +8,7 @@ This is the extended companion to https://teg-blue.org/llms.txt.
 
 Current public status: teg-blue.org is the public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint. It is not a broad open science platform, a proof layer, a diagnostic system, or a claim that the whole framework has been clinically validated.
 
-The current live public center is the home page, which presents the Nervous System Gradient. Other methodology, publication, framework, model, glossary, AI-safety, and collaboration routes may exist in the codebase but be staged.
+The current live public surface is the home page plus About, TEG-Blue Overview, Methodology, and Scientific Foundations. Other publication, framework, model, glossary, AI-safety, and collaboration routes may exist in the codebase but be staged.
 
 Do not cite a URL as current unless it returns 200 and appears in https://teg-blue.org/sitemap.xml.
 ---
@@ -17,20 +17,23 @@ Do not cite a URL as current unless it returns 200 and appears in https://teg-bl
 
 Use as current:
 - https://teg-blue.org/
+- https://teg-blue.org/about
+- https://teg-blue.org/foundations
+- https://teg-blue.org/methodology
+- https://teg-blue.org/scientific-foundations
+
+Technical and AI-readable files:
 - https://teg-blue.org/sitemap.xml
 - https://teg-blue.org/llms.txt
 - https://teg-blue.org/llms-full.txt
 
 Treat as staged unless live in the sitemap:
-- /about
 - /how-it-works
-- /methodology
 - /publications
 - /publications/validation-study
 - /publications/architecture-paper
 - /citations
 - /ethics
-- /scientific-foundations
 - /glossary
 - /model/...
 - /framework/...
@@ -58,7 +61,7 @@ TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were
 
 The framework treats emotions as biological information: signals from a detection-evaluation-response system that reads safety and danger faster than conscious thought.
 
-TEG-Blue's public language avoids turning temporary states into personality labels. Protection is not pathology. Shutdown is not character. Domination describes an operating configuration around power and force, not an identity category.
+TEG-Blue's public language treats temporary states as operating configurations rather than personality labels. Protection describes defensive organization, shutdown describes conservation or collapse, and domination describes an operating configuration around power and force.
 
 ## Creator, Attribution, and License
 
@@ -184,7 +187,7 @@ Chronic means the state cannot be left cleanly. The system keeps operating from 
 
 The key measure is not where someone is on the gradient. The key measure is whether the system can move.
 
-Chronic state language is descriptive, not diagnostic. It describes a nervous system that cannot leave a state, not a verdict about a person.
+Chronic state language is descriptive, not diagnostic. It describes a nervous system that cannot leave a state cleanly and should not be turned into a fixed identity label.
 
 ## State Flexibility
 

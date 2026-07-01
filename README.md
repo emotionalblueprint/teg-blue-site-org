@@ -124,13 +124,10 @@ This site is deployed on [Vercel](https://vercel.com) as a standalone site.
 | Page | Path | Purpose |
 |------|------|---------|
 | Nervous System Gradient | `/` | Public read-first framework homepage with the interactive gradient component |
-| How It Works | `/how-it-works` | Short explanatory entry into the gradient |
-| Scientific Foundations | `/scientific-foundations` | Research grounding and source traces |
-| Foundations | `/foundations` | Foundational concepts and context |
-| Methodology | `/methodology` | Research method and evidence orientation |
-| Publications | `/publications` | Publications, working papers, and research materials |
-| Glossary | `/glossary` | Key terms and definitions |
-| Collaborate | `/collaborate` | Collaboration and research opportunities |
+| About | `/about` | Project identity, founder, research stance, contact routes, and site distinction |
+| TEG-Blue Overview | `/foundations` | Nervous System Gradient overview, responsible pattern reading, scope, and research status |
+| Methodology | `/methodology` | Observation, claim calibration, responsible use, and limits |
+| Scientific Foundations | `/scientific-foundations` | Research areas that illuminate the Gradient and wider synthesis |
 
 ---
 

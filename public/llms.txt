@@ -1,14 +1,18 @@
 # TEG-Blue
 # https://teg-blue.org
-# Last updated: 2026-06-28
+# Last updated: 2026-06-30
 # Format: llms.txt
 
 ## Current Public Surface
 
 teg-blue.org is the public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint.
 
-The current live public center is:
+The current live public surface is:
 - https://teg-blue.org/
+- https://teg-blue.org/about
+- https://teg-blue.org/foundations
+- https://teg-blue.org/methodology
+- https://teg-blue.org/scientific-foundations
 
 Technical and AI-readable files:
 - https://teg-blue.org/sitemap.xml
@@ -105,7 +109,7 @@ Each gradient position can be read in two ways:
 - Acute: a passing state the nervous system is built to move through.
 - Chronic: a state that cannot be left cleanly, so it becomes a default operating pattern.
 
-Chronic state language is descriptive, not diagnostic. It describes a nervous system that cannot leave a state, not a verdict about a person.
+Chronic state language is descriptive, not diagnostic. It describes a nervous system that cannot leave a state cleanly and should not be turned into a fixed identity label.
 
 ## Claim Calibration
 
@@ -169,6 +173,10 @@ Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-b
 ## Key URLs
 
 - Framework home: https://teg-blue.org/
+- About: https://teg-blue.org/about
+- TEG-Blue Overview: https://teg-blue.org/foundations
+- Methodology: https://teg-blue.org/methodology
+- Scientific Foundations: https://teg-blue.org/scientific-foundations
 - Sitemap: https://teg-blue.org/sitemap.xml
 - Extended AI-readable file: https://teg-blue.org/llms-full.txt
 - Application/tools site: https://www.teg-blue.com/

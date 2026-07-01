@@ -6,17 +6,19 @@
  *
  * Usage:
  *   POST /api/indexnow
- *   Body: { "urls": ["/publications/new-paper", "/glossary"] }
+ *   Body: { "urls": ["/about", "/methodology"] }
  *
  *   Or for single URL:
  *   POST /api/indexnow
- *   Body: { "url": "/publications/new-paper" }
+ *   Body: { "url": "/scientific-foundations" }
  *
  * Can be called from:
  *   - Vercel deployment hooks
  *   - Content management workflows
  *   - Manual curl requests
  */
+
+import { isLive } from "@/src/lib/live-paths";
 
 const INDEXNOW_KEY = 'tegblue8a4f2c9d7e6b5a3f'
 const BASE_URL = 'https://teg-blue.org'
@@ -30,26 +32,53 @@ const INDEXNOW_ENDPOINTS = [
   'https://api.indexnow.org/indexnow',
 ]
 
+function normalizeLiveUrl(value) {
+  if (typeof value !== 'string') return null
+
+  const raw = value.trim()
+  if (!raw) return null
+
+  try {
+    const absolute = raw.startsWith('http')
+      ? raw
+      : raw.startsWith('/')
+        ? `${BASE_URL}${raw}`
+        : `${BASE_URL}/${raw}`
+    const parsed = new URL(absolute)
+
+    if (parsed.origin !== BASE_URL) return null
+
+    const path = parsed.pathname === '/' ? '/' : parsed.pathname.replace(/\/$/, '')
+    if (!isLive(path)) return null
+
+    return path === '/' ? BASE_URL : `${BASE_URL}${path}`
+  } catch {
+    return null
+  }
+}
+
 export async function POST(request) {
   try {
     const body = await request.json()
 
     // Accept either single url or array of urls
-    let urls = body.urls || (body.url ? [body.url] : [])
+    const requestedUrls = Array.isArray(body.urls) ? body.urls : (body.url ? [body.url] : [])
 
-    if (!urls.length) {
+    if (!requestedUrls.length) {
       return Response.json(
         { error: 'No URLs provided. Send { "urls": [...] } or { "url": "..." }' },
         { status: 400 }
       )
     }
 
-    // Normalize URLs to absolute
-    urls = urls.map(url => {
-      if (url.startsWith('http')) return url
-      if (url.startsWith('/')) return `${BASE_URL}${url}`
-      return `${BASE_URL}/${url}`
-    })
+    const urls = [...new Set(requestedUrls.map(normalizeLiveUrl).filter(Boolean))]
+
+    if (!urls.length) {
+      return Response.json(
+        { error: 'No submitted URLs are part of the current public surface.' },
+        { status: 400 }
+      )
+    }
 
     // Prepare IndexNow payload
     const payload = {

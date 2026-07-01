@@ -8,9 +8,9 @@ function getRequestLanguage(path) {
 // Single-page gate (allowlist model): serve only the live routes defined in
 // src/lib/live-paths.js. Everything else returns 410 Gone with
 // X-Robots-Tag: noindex so search engines DROP these URLs from their index —
-// the site is intentionally home-only while the rest of the platform is staged
-// / pending review. When a route is relisted in live-paths.js it returns 200
-// and is re-indexed normally. (Previously these 307-redirected to the home,
+// the site is intentionally limited to the approved public surface while the
+// rest of the platform is staged / pending review. When a route is relisted in
+// live-paths.js it returns 200 and is re-indexed normally. (Previously these 307-redirected to the home,
 // which is the wrong signal for de-indexing: a temporary redirect tells engines
 // to KEEP the URL.)
 const GONE_HTML = `<!doctype html>
@@ -37,9 +37,13 @@ export function middleware(request) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-teg-blue-language", getRequestLanguage(path));
 
-  // Localhost is the review surface for staged pages. Public domains still use
-  // the allowlist below so unpublished routes stay unavailable to crawlers.
-  if (["localhost", "127.0.0.1", "::1"].includes(request.nextUrl.hostname)) {
+  // Localhost in next dev is the review surface for staged pages. Production
+  // builds, including local `next start`, still use the allowlist below so
+  // unpublished routes stay unavailable to crawlers.
+  if (
+    process.env.NODE_ENV === "development" &&
+    ["localhost", "127.0.0.1", "::1"].includes(request.nextUrl.hostname)
+  ) {
     return NextResponse.next({
       request: {
         headers: requestHeaders,

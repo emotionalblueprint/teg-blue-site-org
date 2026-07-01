@@ -106,11 +106,11 @@ const breadcrumbJsonLd = generateBreadcrumbJsonLd([
 const HOME_CSS = `
   .home-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, min(30vw, 380px));
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
     grid-template-areas:
       "head card"
       "intro card";
-    column-gap: clamp(24px, 3vw, 48px);
+    column-gap: clamp(22px, 3vw, 32px);
     row-gap: clamp(24px, 4vw, 38px);
     align-items: start;
   }
@@ -126,7 +126,7 @@ const HOME_CSS = `
   }
 
   .home-hero-title {
-    max-width: min(100%, 920px);
+    max-width: min(100%, 680px);
   }
 
   .home-title-line {
@@ -656,14 +656,14 @@ export default function Home() {
 
       <main id="main-content" style={{ position: "relative", zIndex: 1, background: "transparent", fontFamily: FONT.display, paddingBottom: 64 }}>
         {/* Hero — static, crawlable */}
-        <section className="home-hero" style={{ ...sectionStyle, maxWidth: 1480, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
+        <section className="home-hero" style={{ ...sectionStyle, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
           <div className="home-hero-head">
             <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · Public framework</p>
             <h1
               className="home-hero-title"
               style={{
                 margin: 0,
-                fontSize: "clamp(42px, 8vw, 86px)",
+                fontSize: "clamp(42px, 5.5vw, 64px)",
                 lineHeight: 0.96,
                 letterSpacing: 0,
                 color: TEXT.primary,

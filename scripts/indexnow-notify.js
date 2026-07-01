@@ -22,60 +22,7 @@ const INDEXNOW_ENDPOINTS = [
 ]
 
 // The gate's allowlist (live-paths.js) is the single source of truth for what's public.
-const { isLive } = require('../src/lib/live-paths.js')
-
-// Universe of known routes. Only those currently live (per the gate) are actually
-// submitted below — staged routes stay out of IndexNow until they unlock. Keep this
-// roughly in sync with sitemap.js's route list.
-const ALL_PAGES = [
-  // Core pages
-  '/',
-  '/es',
-  '/publications',
-  '/publications/validation-study',
-  '/publications/architecture-paper',
-  '/frameworks-map',
-  '/research-entry',
-  '/foundations',
-  '/epistemological-foundations',
-  '/ai-safety',
-  '/emotional-somatic-cycle',
-  '/glossary',
-  '/methodology',
-  '/citations',
-  '/collaborate',
-  '/ethics',
-  '/about',
-  '/scientific-foundations',
-  '/emotional-technology',
-  '/reframes',
-  // Explore
-  '/explore/labels',
-  // Models
-  '/model/m1-emotions-as-signals',
-  '/model/m2-nervous-system-states',
-  '/model/m3-regulation-capacities',
-  '/model/m4-awareness-capacities',
-  // Frameworks (F1-F12)
-  '/framework/f1-emotional-gradient',
-  '/framework/f2-awareness-calibration',
-  '/framework/f3-false-coherence',
-  '/framework/f4-rules-regulate',
-  '/framework/f5-worth-hierarchies',
-  '/framework/f6-bias-regulates',
-  '/framework/f7-domination-regulates',
-  '/framework/f8-repairing-awareness',
-  '/framework/f9-neurodivergence-variation',
-  '/framework/f10-generational-bridges',
-  '/framework/f11-emotional-paradoxes',
-  '/framework/f12-two-information-systems',
-  // Mechanics of Phenomena
-  '/mechanics-of-phenomena',
-  '/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-humans-are-so-frustrating',
-  '/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails',
-  '/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context',
-  '/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores',
-]
+const { LIVE_PATHS } = require('../src/lib/live-paths.js')
 
 const dryRun = process.argv.includes('--dry-run')
 const force = process.argv.includes('--force')
@@ -89,6 +36,10 @@ function failSoft(message) {
   if (strict) process.exitCode = 1
 }
 
+function toAbsoluteUrl(path) {
+  return path === '/' ? BASE_URL : `${BASE_URL}${path}`
+}
+
 async function notifyIndexNow() {
   if (!dryRun && !force && !isProductionDeploy && !isManualNpmRun) {
     console.log('\n📢 IndexNow Notification')
@@ -97,8 +48,7 @@ async function notifyIndexNow() {
     return
   }
 
-  // Only ping search engines about routes that are actually live (single-page gate).
-  const urls = ALL_PAGES.filter(isLive).map(path => `${BASE_URL}${path}`)
+  const urls = Array.from(LIVE_PATHS).map(toAbsoluteUrl)
 
   console.log(`\n📢 IndexNow Notification`)
   console.log(`   URLs to submit: ${urls.length}`)
