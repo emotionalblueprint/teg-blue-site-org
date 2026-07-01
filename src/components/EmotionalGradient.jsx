@@ -263,13 +263,11 @@ export default function EmotionalGradient() {
   const barBg = isFourMode ? scaleGradient : barGradient
   const fourModeAtmosphere = `linear-gradient(135deg, ${hexToRgba(GRADIENT_SCALE.teal, panelLight ? 0.06 : 0.045)} 0%, ${BG.diagram} 48%, ${hexToRgba(GRADIENT_SCALE.pink, panelLight ? 0.045 : 0.035)} 100%)`
   const modeCaption = isFourMode
-    ? 'Condensed view: connection, defence, control, domination.'
+    ? 'This 4-mode Gradient is the one used in the practical tools on teg-blue.com.'
     : chronic
     ? '7-mode view with chronic pattern readouts.'
     : '7-mode view with fluid, acute state readouts.'
-  const gradientBadgeLabel = isFourMode
-    ? `Current readout · ${selectedItem.mode}`
-    : `Current readout · ${chronic ? 'Chronic' : 'Acute'} ${position.code}`
+  const gradientBadgeLabel = `${readingChronic ? 'Rigid Gradient · Chronic' : 'Fluid Gradient · Acute'} ${selectedItem.code}`
 
   function setTrackIndex(index) {
     if (isFourMode) setFourModeIndex(index)

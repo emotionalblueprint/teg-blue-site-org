@@ -92,7 +92,18 @@ export const cards = [
   { id: 'perception', label: 'Perception', description: 'Perception starts with field width: in safety, the field is wide enough to include body, context, and others; under threat, it narrows toward risk, control, force, or shutdown.', descriptions: perceptionDescriptions, science: 'Cognitive Science — state-shaped perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
   { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load and state-shaped cognition (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
   { id: 'selfAwareness', label: 'Awareness', description: 'The state changes how much awareness is available: in safety, body signals and context can be felt and named; under threat, awareness narrows, backgrounds cost, or goes numb.', science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
-  { id: 'empathy', label: 'Empathy', description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
+  {
+    id: 'empathy',
+    label: 'Empathy',
+    description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.",
+    descriptions: {
+      connection: {
+        a: 'Empathy is available in this pattern: another person can stay real and separate, so resonance, care, and impact can register without becoming threat.',
+      },
+    },
+    science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement',
+    source: 'M2-C16 · AEC',
+  },
   { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
   {
     id: 'time',
@@ -174,6 +185,9 @@ export const cards = [
     label: 'Repair',
     description: 'The state determines whether activation can complete: safety lets the system settle and reconnect; threat keeps protection first, so repair has to wait until enough safety returns.',
     descriptions: {
+      connection: {
+        a: 'Repair is open in this pattern: impact can be named, empathy can stay present, and reconnection can happen without protection taking over.',
+      },
       protection: {
         a: 'Repair is difficult in this pattern because self-protection takes priority over connection. Enough safety has to return before impact, empathy, or reconnection can land.',
       },
