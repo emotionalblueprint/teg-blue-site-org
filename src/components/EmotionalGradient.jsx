@@ -8,6 +8,7 @@ import {
   BORDER,
   FONT,
   ACCENT,
+  BLUE,
   RADIUS,
   GRADIENT_SCALE,
   GRADIENT_SCALE_MODE,
@@ -363,6 +364,8 @@ export default function EmotionalGradient() {
         '--gradient-line': panel.line,
         '--gradient-accent': panel.cDot,
         '--gradient-accent-text': panel.cText,
+        '--gradient-control-bg': hexToRgba(panel.cDot, panelLight ? 0.07 : 0.06),
+        '--gradient-control-border': hexToRgba(panel.cDot, panelLight ? 0.32 : 0.28),
         '--readout-ink': tile.ink,
         '--readout-soft': tile.soft,
         '--readout-accent': tile.cText,
@@ -380,10 +383,10 @@ export default function EmotionalGradient() {
             <p className="mode-caption">{modeCaption}</p>
           </div>
           <div className="gradient-toolbar-controls">
-            <GradientViewControl version={gradientVersion} onChange={setGradientView} />
             <div className="chronic-toggle-slot" aria-hidden={isFourMode}>
               {!isFourMode && <ChronicToggle chronic={chronic} onChange={setChronic} />}
             </div>
+            <GradientViewControl version={gradientVersion} onChange={setGradientView} />
           </div>
         </div>
 
@@ -618,12 +621,11 @@ export default function EmotionalGradient() {
         }
 
         .gradient-toolbar-controls {
-          display: grid;
-          grid-template-columns: auto 150px;
+          display: inline-flex;
           flex: 0 0 auto;
-          align-items: flex-start;
+          align-items: center;
           justify-content: flex-end;
-          gap: 10px;
+          gap: 26px;
         }
 
         .chronic-toggle-slot {
@@ -634,41 +636,30 @@ export default function EmotionalGradient() {
         .gradient-view-control {
           display: inline-flex;
           align-items: center;
-          flex-wrap: wrap;
-          gap: 8px;
-        }
-
-        .gradient-control-label {
-          color: var(--readout-soft);
-          font-family: var(--font-diagram), monospace;
-          font-size: 10px;
-          font-weight: 650;
-          line-height: 1.2;
-          text-transform: uppercase;
         }
 
         .gradient-segmented-control {
           display: inline-flex;
-          gap: 3px;
-          padding: 3px;
-          border: 1px solid color-mix(in srgb, var(--gradient-accent) 18%, var(--gradient-line));
+          gap: 5px;
+          padding: 5px;
+          border: 1px solid var(--gradient-control-border);
           border-radius: 999px;
-          background: color-mix(in srgb, var(--gradient-accent) 6%, transparent);
+          background: var(--gradient-control-bg);
         }
 
         .gradient-segment {
           appearance: none;
-          min-height: 28px;
+          min-height: 34px;
           border: 0;
           border-radius: 999px;
           background: transparent;
           color: var(--readout-soft);
           cursor: pointer;
           font: inherit;
-          font-size: 11px;
+          font-size: 13px;
           font-weight: 650;
           line-height: 1.2;
-          padding: 5px 10px;
+          padding: 7px 18px;
           transition:
             background-color 160ms ease,
             color 160ms ease;
@@ -957,8 +948,9 @@ export default function EmotionalGradient() {
           }
 
           .gradient-toolbar-controls {
-            grid-template-columns: minmax(0, 1fr);
             justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
           }
 
           .chronic-toggle-slot {
@@ -967,9 +959,7 @@ export default function EmotionalGradient() {
           }
 
           .gradient-view-control {
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 6px;
+            min-width: 0;
           }
 
           .sticky-state-title {
@@ -1134,13 +1124,12 @@ export default function EmotionalGradient() {
 
 function GradientViewControl({ version, onChange }) {
   const options = [
-    { value: VERSION_FOUR, label: '4-mode summary' },
     { value: VERSION_EXTENDED, label: '7-mode full' },
+    { value: VERSION_FOUR, label: '4-mode summary' },
   ]
 
   return (
     <div className="gradient-view-control" role="group" aria-label="Gradient view">
-      <span className="gradient-control-label">View</span>
       <div className="gradient-segmented-control">
         {options.map((option) => {
           const active = version === option.value
@@ -1173,20 +1162,21 @@ function ChronicToggle({ chronic, onChange }) {
       style={{
         display: 'flex',
         alignItems: 'center',
-        gap: 10,
+        gap: 12,
+        minHeight: 46,
         borderRadius: 999,
-        border: `1px solid ${BORDER.default}`,
-        background: BG.surface,
-        padding: '6px 12px',
-        fontSize: 12,
+        border: '1px solid var(--gradient-control-border)',
+        background: 'var(--gradient-control-bg)',
+        padding: '8px 12px 8px 18px',
+        fontSize: 14,
         fontFamily: FONT.display,
         cursor: 'pointer',
         color: chronic ? WARM : TEXT.secondary,
       }}
     >
       <span style={{ fontWeight: chronic ? 600 : 400 }}>Chronic view</span>
-      <span style={{ position: 'relative', height: 16, width: 28, borderRadius: 999, background: chronic ? WARM : hexToRgba('#94a3b8', 0.35), transition: 'background 200ms' }}>
-        <span style={{ position: 'absolute', top: 2, left: chronic ? 14 : 2, height: 12, width: 12, borderRadius: '50%', background: '#fff', boxShadow: '0 1px 2px rgba(0,0,0,0.2)', transition: 'left 200ms' }} />
+      <span style={{ position: 'relative', height: 24, width: 42, borderRadius: 999, background: chronic ? WARM : hexToRgba(BLUE[100], 0.35), transition: 'background 200ms' }}>
+        <span style={{ position: 'absolute', top: 4, left: chronic ? 22 : 4, height: 16, width: 16, borderRadius: '50%', background: BG.primary, boxShadow: `0 1px 2px ${hexToRgba(BLUE[950], 0.2)}`, transition: 'left 200ms' }} />
       </span>
     </button>
   )

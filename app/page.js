@@ -1,7 +1,8 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, PATTERN_GRADIENT, ACTIVE_REALITY_CHECK_STATES, FORMATION_META } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACCENT, FORMATION, MAIN_ORG, PATTERN_GRADIENT } from "@/src/styles/tokens";
 import SiteFooter from "@/src/components/SiteFooter";
 import SiteHeader from "@/src/components/SiteHeader";
 import EmotionalGradient from "@/src/components/EmotionalGradient";
+import PatternRecognitionPrimer from "@/src/components/PatternRecognitionPrimer";
 import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
@@ -105,12 +106,22 @@ const breadcrumbJsonLd = generateBreadcrumbJsonLd([
 const HOME_CSS = `
   .home-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-    gap: clamp(28px, 6vw, 68px);
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, min(30vw, 380px));
+    grid-template-areas:
+      "head head"
+      "intro card";
+    column-gap: clamp(24px, 3vw, 48px);
+    row-gap: clamp(24px, 4vw, 38px);
+    align-items: start;
   }
 
-  .home-hero-copy {
+  .home-hero-head {
+    grid-area: head;
+    min-width: 0;
+  }
+
+  .home-hero-intro {
+    grid-area: intro;
     min-width: 0;
   }
 
@@ -123,23 +134,26 @@ const HOME_CSS = `
   }
 
   .home-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
     margin-top: 24px;
   }
 
   .home-action {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: 40px;
-    padding: 9px 13px;
+    padding: 8px;
     border-radius: 6px;
     border: 1px solid var(--border-default);
     color: var(--text-secondary);
     background: var(--bg-primary);
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 650;
     text-decoration: none;
   }
@@ -162,32 +176,63 @@ const HOME_CSS = `
     background: color-mix(in srgb, var(--blue-500) 14%, var(--bg-primary));
   }
 
-  .home-calibration-plate {
+  .home-safety-question-card {
+    grid-area: card;
     position: relative;
     overflow: hidden;
   }
 
-  .home-formation-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 6px;
+  @media (min-width: 1180px) {
+    .home-hero-actions {
+      gap: 10px;
+    }
+
+    .home-action {
+      padding: 9px 13px;
+      font-size: 12px;
+    }
   }
 
-  .home-formation-system {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
+  @media (min-width: 1440px) {
+    .home-hero {
+      grid-template-areas:
+        "head card"
+        "intro card";
+    }
+
+    .home-safety-question-card {
+      margin-top: clamp(92px, 6.3vw, 112px) !important;
+    }
   }
 
-  .home-shutdown-cell {
-    min-height: 44px;
+  @media (max-width: 990px) {
+    .home-hero {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "head"
+        "intro"
+        "card";
+    }
+
+    .home-safety-question-card {
+      justify-self: start;
+      max-width: 760px;
+      margin-top: clamp(8px, 2vw, 18px) !important;
+    }
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 760px) {
     .home-hero {
       grid-template-columns: 1fr;
     }
 
+    .home-hero-actions {
+      grid-template-columns: repeat(2, minmax(0, max-content));
+    }
+
+    .home-safety-question-card {
+      margin-top: 0 !important;
+    }
   }
 
   @media (max-width: 620px) {
@@ -195,11 +240,13 @@ const HOME_CSS = `
       white-space: normal;
     }
 
-    .home-formation-system {
+    .home-hero-actions {
       grid-template-columns: 1fr;
+      align-items: stretch;
     }
-    .home-shutdown-cell {
-      min-height: 44px;
+
+    .home-question-answers {
+      grid-template-columns: 1fr !important;
     }
   }
 `;
@@ -222,10 +269,41 @@ const patternRecognitionMoves = [
     color: SPECTRUM.indigo,
   },
   {
-    label: "Tracks",
+    label: "Chronic",
     title: "What repeats over time",
-    body: "When threat or pressure lasts, a passing response can become a recurring pattern that shapes relationships and choices.",
-    color: "var(--accent-amber, #e9a23b)",
+    body: "When threat or pressure lasts, a passing response can become a recurring pattern. Sustained threat can become the filter through which the system reads the world, shaping perception, relationships, and choices.",
+    color: ACCENT.orange,
+  },
+];
+
+const heroSafetyQuestions = [
+  {
+    label: "Safety read",
+    question: "Is this safe, or is there danger?",
+    left: {
+      label: "Safe",
+      body: "Rest, orientation, and choice can stay available.",
+      color: SPECTRUM.azure,
+    },
+    right: {
+      label: "Danger",
+      body: "Energy moves toward mobilisation, scanning, or shutdown if capacity drops.",
+      color: ACCENT.orange,
+    },
+  },
+  {
+    label: "Relational read",
+    question: "Am I safe around others, or should I protect myself?",
+    left: {
+      label: "Safe with others",
+      body: "Connection and co-regulation can stay available.",
+      color: FORMATION.A,
+    },
+    right: {
+      label: "Protect myself",
+      body: "Boundary, distance, defence, or appeasement takes priority.",
+      color: FORMATION.B,
+    },
   },
 ];
 
@@ -269,117 +347,140 @@ const cardStyle = {
   border: `1px solid ${BORDER.default}`,
   borderRadius: RADIUS.lg,
   padding: "clamp(20px, 3vw, 28px)",
-  boxShadow: "0 18px 50px rgba(0, 41, 102, 0.06)",
+  boxShadow: `0 18px 50px ${hexToRgba(BLUE[800], 0.06)}`,
 };
 
-const formationCells = ACTIVE_REALITY_CHECK_STATES;
-const shutdownCell = FORMATION_META.Z;
 const gradientLinePositions = positions.filter((p) => p.id !== "shutdown");
 const shutdownPosition = positions.find((p) => p.id === "shutdown");
-const formationDescriptionStyle = {
-  fontFamily: FONT.mono,
-  fontSize: 13,
-  fontWeight: 750,
-  lineHeight: 1.12,
-  letterSpacing: 0,
-  overflowWrap: "normal",
-  wordBreak: "normal",
-  hyphens: "none",
-};
-const formationCodeStyle = {
-  alignSelf: "center",
-  flex: "0 0 auto",
-  fontFamily: FONT.mono,
-  fontSize: 10.5,
-  fontWeight: 800,
-  lineHeight: 1,
-  letterSpacing: 0,
-  opacity: 0.68,
-};
 
-function HomeCalibrationPlate() {
+function HomeSafetyQuestionCard() {
   return (
     <aside
-      className="home-calibration-plate"
-      aria-label="Nervous System Gradient formation plate"
+      className="home-safety-question-card"
+      aria-label="Two safety questions the nervous system keeps asking"
       style={{
+        alignSelf: "start",
+        marginTop: 0,
         background: BG.diagram,
         border: `1px solid ${BORDER.default}`,
         borderRadius: RADIUS.lg,
-        padding: "clamp(14px, 2.5vw, 18px)",
-        boxShadow: "0 24px 70px rgba(0, 41, 102, 0.10)",
+        padding: "clamp(16px, 2.6vw, 20px)",
+        boxShadow: `0 24px 70px ${hexToRgba(BLUE[800], 0.1)}`,
       }}
     >
-      <div style={{ marginBottom: 12 }}>
-        <p style={{ margin: 0, fontFamily: FONT.mono, fontSize: 12, fontWeight: 800, color: TEXT.primary }}>
-          The Safety → threat Gradient
-        </p>
-      </div>
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: "0 0 auto",
+          height: 2,
+          background: PATTERN_GRADIENT,
+        }}
+      />
 
-      <div className="home-formation-system">
-        <div className="home-formation-grid" role="list" aria-label="Gradient formations">
-          {formationCells.map((cell) => (
-            <div
-              key={cell.code}
-              role="listitem"
-              aria-label={`${cell.code}: ${cell.label}`}
-              style={{
-                minHeight: 44,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: 12,
-                padding: "8px 12px",
-                borderRadius: 7,
-                background: cell.color,
-                color: cell.ink,
-                border: `1px solid ${hexToRgba(BLUE[900], 0.12)}`,
-              }}
-            >
-              <span style={formationDescriptionStyle}>
-                {cell.label}
-              </span>
-              <span style={formationCodeStyle}>{cell.code}</span>
-            </div>
-          ))}
-        </div>
-        <div
-          className="home-shutdown-cell"
-          aria-label="Shutdown off-gradient"
+      <div style={{ marginBottom: 16 }}>
+        <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Live safety read</p>
+        <h2
           style={{
-            minHeight: 44,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 12,
-            padding: "8px 12px",
-            borderRadius: 8,
-            background: shutdownCell.color,
-            color: shutdownCell.ink,
-            border: `1px dashed ${hexToRgba(BLUE[100], 0.42)}`,
+            margin: 0,
+            maxWidth: 420,
+            color: TEXT.primary,
+            fontSize: "clamp(21px, 2.7vw, 26px)",
+            fontWeight: 760,
+            letterSpacing: 0,
+            lineHeight: 1.1,
           }}
         >
-          <span style={formationDescriptionStyle}>
-            {shutdownCell.label}
-          </span>
-          <span style={formationCodeStyle}>{shutdownCell.code}</span>
-        </div>
+          The nervous system keeps asking two questions.
+        </h2>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: 12,
-          marginTop: 12,
-          color: TEXT.muted,
-          fontFamily: FONT.diagram,
-          fontSize: 11,
-          lineHeight: 1.4,
-        }}
-      >
-        <span>Safe & at rest</span>
-        <span>Life threat · overwhelm shutdown</span>
+      <div style={{ display: "grid", gap: 10 }}>
+        {heroSafetyQuestions.map((item, index) => (
+          <article
+            key={item.label}
+            style={{
+              border: `1px solid ${hexToRgba(index === 0 ? SPECTRUM.azure : FORMATION.A, 0.18)}`,
+              borderRadius: RADIUS.md,
+              background: BG.primary,
+              overflow: "hidden",
+            }}
+          >
+            <div style={{ padding: "12px 12px 10px" }}>
+              <p
+                style={{
+                  margin: "0 0 8px",
+                  color: index === 0 ? SPECTRUM.azure : FORMATION.A,
+                  fontFamily: FONT.diagram,
+                  fontSize: 10,
+                  fontWeight: 720,
+                  letterSpacing: 0,
+                  lineHeight: 1.2,
+                  textTransform: "uppercase",
+                }}
+              >
+                {item.label}
+              </p>
+              <p style={{ margin: 0, color: TEXT.primary, fontSize: "clamp(15px, 1.8vw, 17px)", fontWeight: 720, lineHeight: 1.25 }}>
+                {item.question}
+              </p>
+            </div>
+
+            <div
+              aria-hidden="true"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "0 12px 10px",
+              }}
+            >
+              <span style={{ width: 9, height: 9, borderRadius: "50%", background: item.left.color, flex: "0 0 auto" }} />
+              <span
+                style={{
+                  height: 3,
+                  flex: "1 1 0",
+                  borderRadius: 999,
+                  background: `linear-gradient(90deg, ${item.left.color}, ${item.right.color})`,
+                }}
+              />
+              <span style={{ width: 9, height: 9, borderRadius: "50%", background: item.right.color, flex: "0 0 auto" }} />
+            </div>
+
+            <div
+              className="home-question-answers"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
+                gap: 1,
+                background: BORDER.default,
+                borderTop: `1px solid ${BORDER.default}`,
+              }}
+            >
+              {[item.left, item.right].map((answer) => (
+                <div key={answer.label} style={{ minWidth: 0, background: BG.diagram, padding: "10px 11px" }}>
+                  <p
+                    style={{
+                      margin: 0,
+                      color: answer.color,
+                      fontFamily: FONT.mono,
+                      fontSize: 12,
+                      fontWeight: 820,
+                      letterSpacing: 0,
+                      lineHeight: 1.2,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {answer.label}
+                  </p>
+                  <p style={{ margin: "5px 0 0", color: TEXT.secondary, fontSize: 12, lineHeight: 1.4 }}>
+                    {answer.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </aside>
   );
@@ -413,7 +514,7 @@ function WhatGradientIsCard() {
           }}
         >
           <div>
-            <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure, #76e2ff)", margin: "0 0 10px" }}>Pattern recognition</p>
+            <p style={{ ...sectionEyebrowStyle, color: SPECTRUM.azure, margin: "0 0 10px" }}>Pattern recognition</p>
             <h2
               id="what-gradient-is-heading"
               style={{
@@ -553,86 +654,6 @@ function WhatGradientIsCard() {
   );
 }
 
-function HomeEcosystemBridge() {
-  return (
-    <section style={{ ...sectionStyle, paddingBottom: "clamp(24px, 4vw, 40px)" }} aria-labelledby="ecosystem-heading">
-      <div
-        style={{
-          maxWidth: 760,
-          margin: "0 auto",
-          position: "relative",
-          overflow: "hidden",
-          background: BG.primary,
-          border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.18)}`,
-          borderColor: hexToRgba(SPECTRUM.azure, 0.18),
-          borderRadius: RADIUS.md,
-          padding: "clamp(14px, 2.2vw, 18px)",
-          boxShadow: "0 14px 34px rgba(0, 41, 102, 0.05)",
-        }}
-      >
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: "0 0 auto",
-            height: 2,
-            background: PATTERN_GRADIENT,
-          }}
-        />
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-          }}
-        >
-          <div style={{ flex: "1 1 360px", minWidth: 0 }}>
-            <p style={{ ...sectionEyebrowStyle, margin: "0 0 6px" }}>TEG-Blue ecosystem</p>
-            <h2
-              id="ecosystem-heading"
-              style={{
-                margin: 0,
-                color: TEXT.primary,
-                fontSize: "clamp(17px, 2.4vw, 20px)",
-                lineHeight: 1.22,
-                letterSpacing: 0,
-              }}
-            >
-              Same blueprint, two public surfaces.
-            </h2>
-            <p style={{ margin: "7px 0 0", color: TEXT.secondary, fontSize: 13, lineHeight: 1.55 }}>
-              Use this site for the framework. Use teg-blue.com for practical pattern-reading tools.
-            </p>
-          </div>
-          <div style={{ display: "flex", flex: "0 1 auto", flexWrap: "wrap", gap: 8 }}>
-            <a
-              href="https://teg-blue.com/"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                minHeight: 34,
-                padding: "8px 11px",
-                borderRadius: RADIUS.sm,
-                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.24)}`,
-                background: hexToRgba(SPECTRUM.indigo, 0.08),
-                color: SPECTRUM.indigo,
-                fontFamily: FONT.mono,
-                fontSize: 11,
-                fontWeight: 700,
-                textDecoration: "none",
-              }}
-            >
-              Tools ↗
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
   return (
     <>
@@ -646,8 +667,8 @@ export default function Home() {
 
       <main id="main-content" style={{ position: "relative", zIndex: 1, background: "transparent", fontFamily: FONT.display, paddingBottom: 64 }}>
         {/* Hero — static, crawlable */}
-        <section className="home-hero" style={{ ...sectionStyle, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
-          <div className="home-hero-copy">
+        <section className="home-hero" style={{ ...sectionStyle, maxWidth: 1480, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
+          <div className="home-hero-head">
             <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · Public framework</p>
             <h1
               className="home-hero-title"
@@ -673,14 +694,18 @@ export default function Home() {
                 Nervous-System Patterns
               </span>
             </h1>
+          </div>
+
+          <div className="home-hero-intro">
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
               We do not stay the same in every situation: open and trusting one moment, guarded or controlling
               the next. These shifts are not random. They are state changes in the nervous system.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              The body keeps reading one question:{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
-              lands the whole system on the active gradient, from{" "}
+              The body keeps reading for safety:{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is this safe, or is there danger?</strong>{" "}
+              Around others, it keeps asking whether connection can stay open or protection has to come first. Those
+              answers land the whole system on the active gradient, from{" "}
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
@@ -702,7 +727,7 @@ export default function Home() {
               <a className="home-action" href="#rights-heading">Use and attribution</a>
             </div>
           </div>
-          <HomeCalibrationPlate />
+          <HomeSafetyQuestionCard />
         </section>
 
         {/* What the gradient is — definitional note with its own convergent-science trace */}
@@ -710,10 +735,31 @@ export default function Home() {
           <WhatGradientIsCard />
         </section>
 
-        <HomeEcosystemBridge />
+        <section style={{ ...sectionStyle, paddingBottom: "clamp(24px, 4vw, 40px)" }}>
+          <PatternRecognitionPrimer />
+        </section>
 
         {/* Interactive instrument */}
-        <section id="gradient-map" style={{ ...sectionStyle, paddingBottom: 56 }}>
+        <section id="gradient-map" style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="gradient-map-heading">
+          <div style={{ margin: "0 0 clamp(16px, 3vw, 24px)", maxWidth: 840 }}>
+            <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Gradient Map</p>
+            <h2
+              id="gradient-map-heading"
+              style={{
+                margin: 0,
+                color: TEXT.primary,
+                fontSize: "clamp(24px, 4vw, 34px)",
+                lineHeight: 1.12,
+                letterSpacing: 0,
+              }}
+            >
+              Move through the nervous-system Gradient.
+            </h2>
+            <p style={{ margin: "10px 0 0", maxWidth: 760, color: TEXT.secondary, fontSize: 15.5, lineHeight: 1.7 }}>
+              Use the map to see how safety, threat, chronic pressure, and shutdown change what becomes available:
+              perception, emotion, empathy, repair, and the capacity to stay connected.
+            </p>
+          </div>
           <EmotionalGradient />
         </section>
 

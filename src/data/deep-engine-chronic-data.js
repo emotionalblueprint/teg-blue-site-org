@@ -267,7 +267,7 @@ export const PUBLIC_CHRONIC_ROWS = {
     protection: "Defence as the resting state.",
     strategic: "Control as the only way to feel safe.",
     domination: "Power becomes the default route to safety.",
-    shutdown: "Collapse as the default refuge.",
+    shutdown: "Any pattern can drop into shutdown when capacity can no longer hold.",
   },
   perception: {
     baseline: "The field cannot fully widen; background activation stays in the read.",
