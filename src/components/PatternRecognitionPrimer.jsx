@@ -44,8 +44,8 @@ const ROWS = [
   {
     id: 'shutdown',
     label: 'Collapse Shutdown',
-    acute: 'Conservation when mobilizing is too much',
-    chronic: 'Any pattern can drop into shutdown when capacity can no longer hold.',
+    acute: 'The system conserves energy when mobilisation can no longer hold.',
+    chronic: 'Shutdown repeats when demand keeps exceeding capacity.',
   },
 ]
 
@@ -53,15 +53,15 @@ const byId = Object.fromEntries(positions.map((position) => [position.id, positi
 
 function colorFor(item, chronic) {
   const position = byId[item.id]
+  if (item.id === 'shutdown') return position.acuteColor
   return chronic ? position.chronicColor : position.acuteColor
 }
 
-function inkFor(item, chronic) {
-  if (item.id === 'shutdown' && chronic) return BLUE[50]
+function inkFor(item) {
   return byId[item.id]?.ink || BLUE[900]
 }
 
-export default function PatternRecognitionPrimer() {
+export default function PatternRecognitionPrimer({ embedded = false }) {
   const [chronic, setChronic] = useState(false)
   const modeLabel = chronic ? 'Chronic pattern' : 'Acute state'
   const switchTone = chronic ? byId.protection.chronicColor : BLUE[100]
@@ -70,11 +70,11 @@ export default function PatternRecognitionPrimer() {
     <section
       aria-labelledby="pattern-primer-heading"
       style={{
-        background: BG.diagram,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.lg,
-        overflow: 'hidden',
-        boxShadow: `0 18px 50px ${hexToRgba(BLUE[800], 0.06)}`,
+        background: embedded ? 'transparent' : BG.diagram,
+        border: embedded ? 0 : `1px solid ${BORDER.default}`,
+        borderRadius: embedded ? 0 : RADIUS.lg,
+        overflow: embedded ? 'visible' : 'hidden',
+        boxShadow: embedded ? 'none' : `0 18px 50px ${hexToRgba(BLUE[800], 0.06)}`,
       }}
     >
       <div
@@ -154,11 +154,11 @@ export default function PatternRecognitionPrimer() {
 
       <div
         role="list"
-        aria-label={`${modeLabel} factual reality and nervous-system response`}
+        aria-label={`${modeLabel} actual conditions and nervous-system response`}
         style={{
           display: 'grid',
-          gap: 8,
-          padding: '0 clamp(18px, 3vw, 28px) clamp(20px, 3vw, 28px)',
+          gap: 6,
+          padding: '0 clamp(16px, 2.6vw, 24px) clamp(16px, 2.6vw, 24px)',
         }}
       >
         <div
@@ -168,9 +168,9 @@ export default function PatternRecognitionPrimer() {
             display: 'grid',
             gridTemplateColumns: 'minmax(240px, 0.32fr) auto minmax(0, 1fr) auto',
             alignItems: 'center',
-            gap: '10px 18px',
-            minHeight: 40,
-            padding: '9px clamp(14px, 2.3vw, 22px)',
+            gap: '8px 14px',
+            minHeight: 34,
+            padding: '7px clamp(12px, 2vw, 18px)',
             border: `1px solid ${hexToRgba(BLUE[100], 0.18)}`,
             borderRadius: 8,
             background: BLUE[800],
@@ -182,14 +182,14 @@ export default function PatternRecognitionPrimer() {
             style={{
               minWidth: 0,
               fontFamily: FONT.mono,
-              fontSize: 12,
+              fontSize: 11,
               fontWeight: 820,
               letterSpacing: 0,
               lineHeight: 1.2,
               textTransform: 'uppercase',
             }}
           >
-            Factual Reality
+            Actual Conditions
           </span>
           <span aria-hidden="true" style={{ fontFamily: FONT.mono, fontWeight: 800, opacity: 0.58 }}>
             |
@@ -200,7 +200,7 @@ export default function PatternRecognitionPrimer() {
               gridColumn: '3 / 5',
               minWidth: 0,
               fontFamily: FONT.mono,
-              fontSize: 12,
+              fontSize: 11,
               fontWeight: 820,
               letterSpacing: 0,
               lineHeight: 1.2,
@@ -213,7 +213,7 @@ export default function PatternRecognitionPrimer() {
 
         {ROWS.map((item) => {
           const tone = colorFor(item, chronic)
-          const ink = inkFor(item, chronic)
+          const ink = inkFor(item)
           const position = byId[item.id]
           const phrase = chronic ? item.chronic : item.acute
           const isShutdown = item.id === 'shutdown'
@@ -227,10 +227,10 @@ export default function PatternRecognitionPrimer() {
                 display: 'grid',
                 gridTemplateColumns: 'minmax(240px, 0.32fr) auto minmax(0, 1fr) auto',
                 alignItems: 'center',
-                gap: '10px 18px',
-                minHeight: 58,
-                padding: '12px clamp(14px, 2.3vw, 22px)',
-                border: `${isShutdown ? '1px dashed' : '1px solid'} ${hexToRgba(isShutdown && chronic ? BLUE[100] : BLUE[950], isShutdown && chronic ? 0.28 : 0.16)}`,
+                gap: '8px 14px',
+                minHeight: 46,
+                padding: '8px clamp(12px, 2vw, 18px)',
+                border: `${isShutdown ? '1px dashed' : '1px solid'} ${hexToRgba(BLUE[950], 0.16)}`,
                 borderRadius: 8,
                 background: tone,
                 color: ink,
@@ -242,7 +242,7 @@ export default function PatternRecognitionPrimer() {
                 style={{
                   minWidth: 0,
                   fontFamily: FONT.mono,
-                  fontSize: 'clamp(13px, 1.5vw, 17px)',
+                  fontSize: 'clamp(12px, 1.35vw, 15px)',
                   fontWeight: 850,
                   letterSpacing: 0,
                   lineHeight: 1.1,
@@ -259,10 +259,10 @@ export default function PatternRecognitionPrimer() {
                 style={{
                   minWidth: 0,
                   fontFamily: FONT.mono,
-                  fontSize: 'clamp(13px, 1.45vw, 16px)',
+                  fontSize: 'clamp(12px, 1.3vw, 14.5px)',
                   fontWeight: 520,
                   letterSpacing: 0,
-                  lineHeight: 1.35,
+                  lineHeight: 1.28,
                 }}
               >
                 {phrase}
@@ -271,11 +271,11 @@ export default function PatternRecognitionPrimer() {
                 style={{
                   justifySelf: 'end',
                   fontFamily: FONT.mono,
-                  fontSize: 12,
+                  fontSize: 11,
                   fontWeight: 850,
                   letterSpacing: 0,
                   lineHeight: 1,
-                  opacity: isShutdown && chronic ? 0.82 : 0.7,
+                  opacity: 0.7,
                 }}
               >
                 {position.code}
@@ -294,12 +294,16 @@ export default function PatternRecognitionPrimer() {
 
           .pattern-primer-row {
             grid-template-columns: minmax(0, 1fr) auto !important;
-            gap: 7px 10px !important;
+            gap: 5px 8px !important;
+            min-height: 0 !important;
+            padding: 7px 10px !important;
           }
 
           .pattern-primer-column-header {
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-            gap: 10px !important;
+            gap: 8px !important;
+            min-height: 0 !important;
+            padding: 7px 10px !important;
           }
 
           .pattern-primer-column-header > span[aria-hidden='true'] {

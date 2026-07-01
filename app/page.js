@@ -534,26 +534,29 @@ function WhatGradientIsCard() {
             </div>
           </div>
 
-          <div>
-            <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: 10, alignItems: "center" }} aria-hidden="true">
-              <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
-                {gradientLinePositions.map((p) => (
-                  <span
-                    key={p.id}
-                    style={{
-                      flex: "1 1 0",
-                      height: 5,
-                      borderRadius: 999,
-                      background: p.acuteColor,
-                      opacity: 0.9,
-                    }}
-                  />
-                ))}
-              </div>
+          <div aria-hidden="true">
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${gradientLinePositions.length}, minmax(0, 1fr)) 22px`,
+                gap: 5,
+                alignItems: "center",
+              }}
+            >
+              {gradientLinePositions.map((p) => (
+                <span
+                  key={p.id}
+                  style={{
+                    height: 5,
+                    borderRadius: 999,
+                    background: p.acuteColor,
+                    opacity: 0.9,
+                  }}
+                />
+              ))}
               {shutdownPosition && (
                 <span
                   style={{
-                    width: 22,
                     height: 5,
                     borderRadius: 999,
                     background: shutdownPosition.acuteColor,
@@ -565,20 +568,43 @@ function WhatGradientIsCard() {
             </div>
             <div
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: 12,
+                display: "grid",
+                gridTemplateColumns: `repeat(${gradientLinePositions.length}, minmax(0, 1fr)) 22px`,
+                gap: 5,
                 marginTop: 8,
                 color: homeSurface.muted,
                 fontFamily: FONT.diagram,
                 fontSize: 10,
-                lineHeight: 1.4,
+                lineHeight: 1.25,
                 letterSpacing: 0,
                 textTransform: "uppercase",
               }}
             >
-              <span>Rest + connection</span>
-              <span>Defence + power · shutdown off-gradient</span>
+              <span
+                style={{
+                  position: "relative",
+                  gridColumn: `1 / ${gradientLinePositions.length + 1}`,
+                  minHeight: 24,
+                }}
+              >
+                <span
+                  style={{
+                    position: "absolute",
+                    left: "41.666%",
+                    display: "inline-grid",
+                    gridTemplateColumns: "auto auto auto",
+                    gap: 6,
+                    alignItems: "center",
+                    transform: "translateX(-50%)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <span>Safety</span>
+                  <span style={{ color: homeSurface.secondary }}>|</span>
+                  <span>Threat</span>
+                </span>
+              </span>
+              <span style={{ justifySelf: "center" }}>Off</span>
             </div>
           </div>
         </div>
@@ -639,6 +665,15 @@ function WhatGradientIsCard() {
           ))}
         </div>
       </div>
+
+      <div
+        aria-hidden="true"
+        style={{
+          borderTop: `1px solid ${homeSurface.border}`,
+        }}
+      />
+
+      <PatternRecognitionPrimer embedded />
     </div>
   );
 }
@@ -719,13 +754,9 @@ export default function Home() {
           <HomeSafetyQuestionCard />
         </section>
 
-        {/* What the gradient is — definitional note with its own convergent-science trace */}
+        {/* What the gradient is — definitional note and Safety → threat Gradient in one instrument */}
         <section style={{ ...sectionStyle, paddingBottom: "clamp(28px, 4vw, 44px)" }} aria-labelledby="what-gradient-is-heading">
           <WhatGradientIsCard />
-        </section>
-
-        <section style={{ ...sectionStyle, paddingBottom: "clamp(24px, 4vw, 40px)" }}>
-          <PatternRecognitionPrimer />
         </section>
 
         {/* Interactive instrument */}
