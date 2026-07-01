@@ -108,7 +108,7 @@ const HOME_CSS = `
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(300px, min(30vw, 380px));
     grid-template-areas:
-      "head head"
+      "head card"
       "intro card";
     column-gap: clamp(24px, 3vw, 48px);
     row-gap: clamp(24px, 4vw, 38px);
@@ -180,6 +180,7 @@ const HOME_CSS = `
     grid-area: card;
     position: relative;
     overflow: hidden;
+    margin-top: clamp(28px, 3vw, 40px) !important;
   }
 
   @media (min-width: 1180px) {
@@ -193,19 +194,7 @@ const HOME_CSS = `
     }
   }
 
-  @media (min-width: 1440px) {
-    .home-hero {
-      grid-template-areas:
-        "head card"
-        "intro card";
-    }
-
-    .home-safety-question-card {
-      margin-top: clamp(92px, 6.3vw, 112px) !important;
-    }
-  }
-
-  @media (max-width: 990px) {
+  @media (max-width: 1180px) {
     .home-hero {
       grid-template-columns: 1fr;
       grid-template-areas:
