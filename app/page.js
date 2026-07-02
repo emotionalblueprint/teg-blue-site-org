@@ -8,8 +8,22 @@ import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const TITLE = "TEG-Blue — The Nervous System Gradient";
+const HOME_HEADING = "TEG-Blue: The Nervous System Gradient";
 const DESCRIPTION =
-  "Understand how nervous-system state changes perception, time and tempo, emotions, empathy, and repair across safety, threat, control, and shutdown.";
+  "TEG-Blue is The Emotional Gradient Blueprint, created by Anna Paretas-Artacho. Its current public center is the Nervous System Gradient: a research-grounded visual map of how nervous-system state changes reshape perception, emotion, body activation, behaviour, empathy, accountability, and repair.";
+const BASE_URL = "https://teg-blue.org";
+const DATE_MODIFIED = "2026-07-01";
+const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-blue.org/";
+const LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
+const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";
+const SCHEMA_IDS = {
+  organization: `${BASE_URL}/#organization`,
+  website: `${BASE_URL}/#website`,
+  homepage: `${BASE_URL}/#homepage`,
+  person: `${BASE_URL}/#anna-paretas-artacho`,
+  gradient: `${BASE_URL}/#nervous-system-gradient`,
+  states: `${BASE_URL}/#nervous-system-gradient-states`,
+};
 
 export const metadata = {
   title: TITLE,
@@ -42,6 +56,7 @@ export const metadata = {
 
 const positionsItemList = {
   "@type": "ItemList",
+  "@id": `${BASE_URL}/#nervous-system-gradient-state-order`,
   name: "Nervous-system states on the Nervous System Gradient",
   itemListOrder: "https://schema.org/ItemListOrderAscending",
   numberOfItems: positions.length,
@@ -49,40 +64,56 @@ const positionsItemList = {
     "@type": "ListItem",
     position: i + 1,
     item: {
-      "@type": "DefinedTerm",
-      name: p.mode,
-      description: p.mechanism,
-      ...(p.familiar ? { alternateName: p.familiar } : {}),
-      inDefinedTermSet: {
-        "@type": "DefinedTermSet",
-        name: "The Nervous System Gradient",
-        url: "https://teg-blue.org",
-      },
+      "@id": `${BASE_URL}/#nervous-system-gradient-state-${p.id}`,
     },
   })),
+};
+
+const homePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": SCHEMA_IDS.homepage,
+  url: BASE_URL,
+  name: HOME_HEADING,
+  headline: HOME_HEADING,
+  description: DESCRIPTION,
+  inLanguage: "en",
+  dateModified: DATE_MODIFIED,
+  isPartOf: { "@id": SCHEMA_IDS.website },
+  author: { "@id": SCHEMA_IDS.person },
+  creator: { "@id": SCHEMA_IDS.person },
+  publisher: { "@id": SCHEMA_IDS.organization },
+  mainEntity: { "@id": SCHEMA_IDS.gradient },
 };
 
 const gradientJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
+  "@id": SCHEMA_IDS.gradient,
   name: "The Nervous System Gradient",
   alternateName: "TEG-Blue: The Emotional Gradient Blueprint",
-  url: "https://teg-blue.org",
+  url: BASE_URL,
   inLanguage: "en",
   description: DESCRIPTION,
-  author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://orcid.org/0009-0005-2394-7162" },
-  creator: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://orcid.org/0009-0005-2394-7162" },
-  copyrightHolder: { "@type": "Person", name: "Anna Paretas-Artacho" },
+  dateModified: DATE_MODIFIED,
+  mainEntityOfPage: { "@id": SCHEMA_IDS.homepage },
+  author: { "@id": SCHEMA_IDS.person },
+  creator: { "@id": SCHEMA_IDS.person },
+  copyrightHolder: { "@id": SCHEMA_IDS.person },
   copyrightNotice: "TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Public framework content is licensed CC BY-NC-SA 4.0; commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
-  license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-  publisher: { "@type": "Organization", name: "TEG-Blue", url: "https://teg-blue.org" },
+  license: LICENSE_URL,
+  publisher: { "@id": SCHEMA_IDS.organization },
   isPartOf: {
     "@type": "ResearchProject",
+    "@id": `${BASE_URL}/#research-project`,
     name: "TEG-Blue: The Emotional Gradient Blueprint",
     description: "A visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, accountability, and repair.",
-    url: "https://teg-blue.org",
+    url: BASE_URL,
+    creator: { "@id": SCHEMA_IDS.person },
+    publisher: { "@id": SCHEMA_IDS.organization },
   },
-  about: positionsItemList,
+  about: { "@id": SCHEMA_IDS.states },
+  hasPart: positionsItemList,
   // Established research the architecture converges with — grounding, not derivation.
   citation: scienceGrounding.map((s) => ({
     "@type": "CreativeWork",
@@ -92,15 +123,36 @@ const gradientJsonLd = {
   keywords: metadata.keywords,
 };
 
+const gradientStatesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": SCHEMA_IDS.states,
+  name: "Nervous-system states on the Nervous System Gradient",
+  url: BASE_URL,
+  inLanguage: "en",
+  description: "The ordered public state terms used by TEG-Blue to describe the Nervous System Gradient.",
+  creator: { "@id": SCHEMA_IDS.person },
+  publisher: { "@id": SCHEMA_IDS.organization },
+  hasDefinedTerm: positions.map((p) => ({
+    "@type": "DefinedTerm",
+    "@id": `${BASE_URL}/#nervous-system-gradient-state-${p.id}`,
+    name: p.mode,
+    termCode: p.code,
+    description: p.mechanism,
+    ...(p.familiar ? { alternateName: p.familiar } : {}),
+    inDefinedTermSet: { "@id": SCHEMA_IDS.states },
+  })),
+};
+
 const faqJsonLd = generateFAQJsonLd(faq);
 const speakableJsonLd = generateSpeakableJsonLd({
-  name: "The Nervous System Gradient",
-  url: "https://teg-blue.org",
-  cssSelectors: ["#gradient-intro", "h1", ".faq-question"],
+  name: HOME_HEADING,
+  url: BASE_URL,
+  cssSelectors: ["h1", "#entity-definition", "#gradient-intro", ".faq-question"],
 });
 const breadcrumbJsonLd = generateBreadcrumbJsonLd([
   { name: "TEG-Blue", url: "/" },
-  { name: "The Nervous System Gradient", url: "/" },
+  { name: HOME_HEADING, url: "/" },
 ]);
 
 const HOME_CSS = `
@@ -682,6 +734,8 @@ export default function Home() {
   return (
     <>
       <Ld data={gradientJsonLd} />
+      <Ld data={homePageJsonLd} />
+      <Ld data={gradientStatesJsonLd} />
       <Ld data={faqJsonLd} />
       <Ld data={speakableJsonLd} />
       <Ld data={breadcrumbJsonLd} />
@@ -704,10 +758,10 @@ export default function Home() {
                 color: TEXT.primary,
               }}
             >
-              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>A Visual Map of</span>{" "}
+              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>TEG-Blue:</span>{" "}
               <span
                 style={{
-                  display: "inline-block",
+                  display: "block",
                   color: MAIN_ORG.accent,
                   background: PATTERN_GRADIENT,
                   backgroundClip: "text",
@@ -715,15 +769,21 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Nervous-System Patterns
+                The Nervous System Gradient
               </span>
             </h1>
           </div>
 
           <div className="home-hero-intro">
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
-              We do not stay the same in every situation: open and trusting one moment, guarded or controlling
-              the next. These shifts are not random. They are state changes in the nervous system.
+              A visual map of nervous-system patterns. We do not stay the same in every situation: open and trusting
+              one moment, guarded or controlling the next. These shifts are not random. They are state changes in the
+              nervous system.
+            </p>
+            <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
+              TEG-Blue is The Emotional Gradient Blueprint, created by Anna Paretas-Artacho. Its current public center
+              is the Nervous System Gradient: a research-grounded visual map of how nervous-system state changes
+              reshape perception, emotion, body activation, behaviour, empathy, accountability, and repair.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
               The body keeps reading for safety:{" "}
@@ -887,6 +947,30 @@ export default function Home() {
             <p style={{ margin: 0, maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
               {attributionNotice.restriction}
             </p>
+            <div
+              style={{
+                marginTop: 18,
+                paddingTop: 16,
+                borderTop: `1px solid ${BORDER.default}`,
+                display: "grid",
+                gap: 8,
+              }}
+            >
+              <p style={{ margin: 0, fontFamily: FONT.mono, fontSize: 11, fontWeight: 650, letterSpacing: 0, textTransform: "uppercase", color: TEXT.muted }}>
+                Recommended citation
+              </p>
+              <p style={{ margin: 0, maxWidth: 820, fontSize: 14.5, lineHeight: 1.65, color: TEXT.secondary }}>
+                {RECOMMENDED_CITATION}
+              </p>
+              <p style={{ margin: 0, display: "flex", flexWrap: "wrap", gap: "8px 14px", fontFamily: FONT.mono, fontSize: 11.5, lineHeight: 1.6, color: TEXT.muted }}>
+                <a href={ORCID_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--spectrum-indigo)", textDecoration: "none", fontWeight: 650 }}>
+                  ORCID
+                </a>
+                <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--spectrum-indigo)", textDecoration: "none", fontWeight: 650 }}>
+                  CC BY-NC-SA 4.0
+                </a>
+              </p>
+            </div>
           </div>
         </section>
 

@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
 import { isLive } from "./src/lib/live-paths";
 
-function getRequestLanguage(path) {
-  return path === "/es" || path.startsWith("/es/") ? "es" : "en";
-}
-
 // Single-page gate (allowlist model): serve only the live routes defined in
 // src/lib/live-paths.js. Everything else returns 410 Gone with
 // X-Robots-Tag: noindex so search engines DROP these URLs from their index —
@@ -34,8 +30,6 @@ const GONE_HTML = `<!doctype html>
 
 export function middleware(request) {
   const path = request.nextUrl.pathname;
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-teg-blue-language", getRequestLanguage(path));
 
   // Localhost in next dev is the review surface for staged pages. Production
   // builds, including local `next start`, still use the allowlist below so
@@ -44,19 +38,11 @@ export function middleware(request) {
     process.env.NODE_ENV === "development" &&
     ["localhost", "127.0.0.1", "::1"].includes(request.nextUrl.hostname)
   ) {
-    return NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
+    return NextResponse.next();
   }
 
   if (isLive(path)) {
-    return NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
+    return NextResponse.next();
   }
 
   return new NextResponse(GONE_HTML, {

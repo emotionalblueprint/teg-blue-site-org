@@ -1,6 +1,5 @@
 import './globals.css'
 import { Inter, JetBrains_Mono, IBM_Plex_Mono } from 'next/font/google'
-import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/src/components/theme/ThemeScript'
 import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
@@ -33,7 +32,7 @@ export const metadata = {
     default: 'TEG-Blue — A Visual Map of Nervous-System Patterns',
     template: '%s | TEG-Blue',
   },
-  description: 'TEG-Blue is a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.',
+  description: 'TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'emotional patterns', 'nervous system gradient', 'visual map', 'research grounding', 'state-shaped capacity', 'repair', 'protective patterns', 'relationship patterns', 'impact'],
   authors: [{ name: 'Anna Paretas-Artacho', url: 'https://orcid.org/0009-0005-2394-7162' }],
   creator: 'Anna Paretas-Artacho',
@@ -48,12 +47,12 @@ export const metadata = {
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue',
     title: 'TEG-Blue — A Visual Map of Nervous-System Patterns',
-    description: 'A visual map for patterns we can already see across safety, threat, control, shutdown, accountability, and repair.',
+    description: 'TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across safety, threat, control, shutdown, accountability, and repair.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TEG-Blue — A Visual Map of Nervous-System Patterns',
-    description: 'A visual map for patterns we can already see across safety, threat, control, shutdown, accountability, and repair.',
+    description: 'TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across safety, threat, control, shutdown, accountability, and repair.',
   },
   robots: {
     index: true,
@@ -108,14 +107,45 @@ const skipLinkFocusStyles = `
   }
 `
 
+const BASE_URL = "https://teg-blue.org"
+const ORGANIZATION_ID = `${BASE_URL}/#organization`
+const WEBSITE_ID = `${BASE_URL}/#website`
+const PERSON_ID = `${BASE_URL}/#anna-paretas-artacho`
+
+const annaParetasJsonLd = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Anna Paretas-Artacho",
+  url: "https://orcid.org/0009-0005-2394-7162",
+  sameAs: [
+    "https://orcid.org/0009-0005-2394-7162",
+    "https://www.linkedin.com/in/annaparetas/",
+    "https://annaparetas.substack.com",
+  ],
+  jobTitle: "Founder & Lead Researcher",
+  affiliation: {
+    "@id": ORGANIZATION_ID,
+    "@type": "Organization",
+    name: "TEG-Blue",
+  },
+  knowsAbout: [
+    "The Emotional Gradient Blueprint",
+    "Pattern recognition",
+    "Visual communication",
+    "Integrative frameworks",
+    "Nervous system regulation",
+  ],
+}
+
 // Research Organization structured data
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ResearchOrganization",
+  "@id": ORGANIZATION_ID,
   name: "TEG-Blue",
-  url: "https://teg-blue.org",
+  url: BASE_URL,
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue is a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
+  description: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -130,32 +160,10 @@ const organizationJsonLd = {
   inLanguage: "en",
   license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   copyrightHolder: {
-    "@type": "Person",
-    name: "Anna Paretas-Artacho",
+    "@id": PERSON_ID,
   },
   copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0.",
-  founder: {
-    "@type": "Person",
-    name: "Anna Paretas-Artacho",
-    url: "https://orcid.org/0009-0005-2394-7162",
-    sameAs: [
-      "https://orcid.org/0009-0005-2394-7162",
-      "https://www.linkedin.com/in/annaparetas/",
-      "https://annaparetas.substack.com",
-    ],
-    jobTitle: "Founder & Lead Researcher",
-    affiliation: {
-      "@type": "Organization",
-      name: "TEG-Blue",
-    },
-    knowsAbout: [
-      "The Emotional Gradient Blueprint",
-      "Pattern recognition",
-      "Visual communication",
-      "Integrative frameworks",
-      "Nervous system regulation",
-    ],
-  },
+  founder: annaParetasJsonLd,
   knowsAbout: [
     "Emotional regulation",
     "Polyvagal theory",
@@ -173,32 +181,27 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": WEBSITE_ID,
   name: "TEG-Blue.org",
-  url: "https://teg-blue.org",
+  url: BASE_URL,
   inLanguage: "en",
-  description: "Public framework home for TEG-Blue: a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
+  description: "Public framework home for TEG-Blue: The Emotional Gradient Blueprint and the Nervous System Gradient.",
   publisher: {
-    "@type": "Organization",
-    name: "TEG-Blue",
+    "@id": ORGANIZATION_ID,
   },
   creator: {
-    "@type": "Person",
-    name: "Anna Paretas-Artacho",
-    url: "https://orcid.org/0009-0005-2394-7162",
+    "@id": PERSON_ID,
   },
   license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   copyrightHolder: {
-    "@type": "Person",
-    name: "Anna Paretas-Artacho",
+    "@id": PERSON_ID,
   },
   copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Attribution required under CC BY-NC-SA 4.0.",
 }
 
 export default function RootLayout({ children }) {
-  const documentLanguage = headers().get('x-teg-blue-language') === 'es' ? 'es' : 'en'
-
   return (
-    <html lang={documentLanguage} className={`${inter.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
       <head>
         <ThemeScript />
 
@@ -206,6 +209,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/teg-blue_logo_blue.png" />
         <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable TEG-Blue site guide" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Extended AI-readable TEG-Blue site guide" />
+        <link rel="author" href="https://orcid.org/0009-0005-2394-7162" />
 
         {/* Cross-site alternate for application platform */}
         <link rel="alternate" href="https://teg-blue.com" hrefLang="en" title="TEG-Blue Interactive Tools" />
@@ -213,7 +219,7 @@ export default function RootLayout({ children }) {
         {/* Dublin Core metadata for academic crawlers */}
         <meta name="DC.creator" content="Anna Paretas-Artacho" />
         <meta name="DC.publisher" content="TEG-Blue Research" />
-        <meta name="DC.language" content={documentLanguage} />
+        <meta name="DC.language" content="en" />
         <meta name="DC.rights" content="Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0; attribution required; commercial use requires permission." />
         <meta name="DC.type" content="Collection" />
 

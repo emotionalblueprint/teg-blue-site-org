@@ -5,31 +5,31 @@ const BASE_URL = "https://teg-blue.org";
 const STATIC_PAGES = [
   {
     path: "/",
-    lastModified: "2026-06-30",
+    lastModified: "2026-07-01",
     changeFrequency: "weekly",
     priority: 1,
   },
   {
     path: "/about",
-    lastModified: "2026-06-30",
+    lastModified: "2026-07-01",
     changeFrequency: "monthly",
     priority: 0.7,
   },
   {
     path: "/foundations",
-    lastModified: "2026-06-30",
+    lastModified: "2026-07-01",
     changeFrequency: "monthly",
     priority: 0.9,
   },
   {
     path: "/methodology",
-    lastModified: "2026-06-30",
+    lastModified: "2026-07-01",
     changeFrequency: "monthly",
     priority: 0.8,
   },
   {
     path: "/scientific-foundations",
-    lastModified: "2026-06-30",
+    lastModified: "2026-07-01",
     changeFrequency: "monthly",
     priority: 0.8,
   },
