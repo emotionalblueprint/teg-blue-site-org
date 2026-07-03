@@ -88,10 +88,10 @@ export const autonomic = {
 // ─── DIMENSION CARDS ─────────────────────────────────────────────────────────
 
 export const cards = [
-  { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Polyvagal Theory (Porges) + Stress Physiology (Sapolsky, McEwen)', source: 'M2 + GC' },
-  { id: 'perception', label: 'Perception', description: 'Perception starts with field width: in safety, the field is wide enough to include body, context, and others; under threat, it narrows toward risk, control, force, or shutdown.', descriptions: perceptionDescriptions, science: 'Cognitive Science — state-shaped perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
-  { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load and state-shaped cognition (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
-  { id: 'selfAwareness', label: 'Awareness', description: 'The state changes how much awareness is available: in safety, body signals and context can be felt and named; under threat, awareness narrows, backgrounds cost, or goes numb.', science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
+  { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Biology, physiology, autonomic neuroscience, and stress physiology', source: 'M2 + GC' },
+  { id: 'perception', label: 'Perception', description: 'Perception starts with field width: in safety, the field is wide enough to include body, context, and others; under threat, it narrows toward risk, control, force, or shutdown.', descriptions: perceptionDescriptions, science: 'Cognitive science, appraisal research, prediction, and state-shaped perception', source: 'M2-C13' },
+  { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive science, attention, cognitive load, and state-shaped reasoning', source: 'M2-C14 · CLS' },
+  { id: 'selfAwareness', label: 'Awareness', description: 'The state changes how much awareness is available: in safety, body signals and context can be felt and named; under threat, awareness narrows, backgrounds cost, or goes numb.', science: 'Interoception, body awareness, attention, and contemplative research', source: 'M2-C15' },
   {
     id: 'empathy',
     label: 'Empathy',
@@ -101,10 +101,10 @@ export const cards = [
         a: 'Empathy is available in this pattern: another person can stay real and separate, so resonance, care, and impact can register without becoming threat.',
       },
     },
-    science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement',
+    science: 'Relational neuroscience, attachment research, social perception, and care capacity',
     source: 'M2-C16 · AEC',
   },
-  { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
+  { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress physiology, energy mobilisation, chronic load, regulation, and return', source: 'M2-C17 · ESS' },
   {
     id: 'time',
     label: 'Time / tempo',
@@ -139,7 +139,7 @@ export const cards = [
         c: 'Time stays frozen or collapsed. The system may feel timeless, absent, or unable to move forward until protected re-engagement becomes possible.',
       },
     },
-    science: 'Cognitive Science + Stress Physiology + tachypsychia / hyperarousal',
+    science: 'Cognitive science, stress physiology, time perception, urgency, and hyperarousal',
     source: 'M2-C18 + derived rush',
   },
   {
@@ -176,10 +176,10 @@ export const cards = [
         c: 'Numbness becomes the familiar state. Signals may still exist underneath, but they are difficult to feel, name, or use for repair.',
       },
     },
-    science: 'Affective Neuroscience (Panksepp, Damasio, Barrett, LeDoux) + Emotion Science',
+    science: 'Affective neuroscience and emotion science',
     source: 'M1',
   },
-  { id: 'behaviour', label: 'Behaviour / response', description: 'The state narrows or opens the action menu: in safety, the system can approach, cooperate, and repair; under threat, it moves toward defending, managing, overpowering, or withdrawing.', science: 'Polyvagal (mobilise / immobilise) + Trauma Research (defence)', source: 'M3' },
+  { id: 'behaviour', label: 'Behaviour / response', description: 'The state narrows or opens the action menu: in safety, the system can approach, cooperate, and repair; under threat, it moves toward defending, managing, overpowering, or withdrawing.', science: 'Action readiness, defensive response, trauma research, and behavioural adaptation', source: 'M3' },
   {
     id: 'repair',
     label: 'Repair',
@@ -192,10 +192,10 @@ export const cards = [
         a: 'Repair is difficult in this pattern because self-protection takes priority over connection. Enough safety has to return before impact, empathy, or reconnection can land.',
       },
     },
-    science: 'Trauma Research — completion (Levine, van der Kolk) + Attachment (Bowlby)',
+    science: 'Trauma research, attachment research, completion, reconnection, and repair',
     source: 'M3 · ESC',
   },
-  { id: 'rush', label: 'Rush (tempo)', description: "The state sets the system's pace: safety can move at the speed of the situation; threat accelerates into urgency or pressured management; shutdown slows time toward freeze.", science: 'Tachypsychia + hurry sickness / hyperarousal — Stress Physiology + Cognitive Science', source: 'derived · M2 + C18' },
+  { id: 'rush', label: 'Rush (tempo)', description: "The state sets the system's pace: safety can move at the speed of the situation; threat accelerates into urgency or pressured management; shutdown slows time toward freeze.", science: 'Stress physiology, cognitive science, time perception, urgency, and hyperarousal', source: 'derived · M2 + C18' },
 ]
 
 // ─── READINGS (acute `a` / chronic `c`) ──────────────────────────────────────

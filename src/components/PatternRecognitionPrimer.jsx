@@ -93,7 +93,7 @@ export default function PatternRecognitionPrimer({ embedded = false }) {
             margin: 0,
             color: TEXT.primary,
             fontFamily: FONT.mono,
-            fontSize: 'clamp(14px, 1.6vw, 17px)',
+            fontSize: 17,
             fontWeight: 820,
             letterSpacing: 0,
             lineHeight: 1.2,
@@ -242,7 +242,7 @@ export default function PatternRecognitionPrimer({ embedded = false }) {
                 style={{
                   minWidth: 0,
                   fontFamily: FONT.mono,
-                  fontSize: 'clamp(12px, 1.35vw, 15px)',
+                  fontSize: 15,
                   fontWeight: 850,
                   letterSpacing: 0,
                   lineHeight: 1.1,
@@ -259,7 +259,7 @@ export default function PatternRecognitionPrimer({ embedded = false }) {
                 style={{
                   minWidth: 0,
                   fontFamily: FONT.mono,
-                  fontSize: 'clamp(12px, 1.3vw, 14.5px)',
+                  fontSize: 14.5,
                   fontWeight: 520,
                   letterSpacing: 0,
                   lineHeight: 1.28,

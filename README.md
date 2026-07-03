@@ -4,7 +4,7 @@ Public framework and research-grounding home for **TEG-Blue: The Emotional Gradi
 
 The central public map inside the framework is **The Nervous System Gradient**: a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 
-This repo keeps the framework and its research context close together: scientific grounding, responsible pattern-reading guidance, working questions, publication and citation guidance, glossary, and collaboration/research materials.
+This repo keeps the framework and its research context close together: scientific grounding, responsible pattern-reading guidance, working questions, publication records, citation guidance inside `/publications`, glossary, and collaboration/research materials.
 
 > **New here?** See the [TEG-Blue Overview](https://github.com/emotionalblueprint/teg-blue-overview) for a complete project map.
 
@@ -25,7 +25,7 @@ TEG-Blue uses two complementary sites:
 | **teg-blue.org** | This repo | Public framework and research-grounding home for The Emotional Gradient Blueprint |
 | **teg-blue.com** | [teg-blue-site-com](https://github.com/emotionalblueprint/teg-blue-site-com) | Practical public tools and application surfaces |
 
-**.org** is the public framework and research-grounding home. It can describe responsible pattern reading, publications, citation guidance, scientific grounding, working questions, and research grounding.
+**.org** is the public framework and research-grounding home. It can describe responsible pattern reading, publications, citation guidance inside `/publications`, scientific grounding, working questions, and research grounding.
 
 **.com** remains the practical public tools surface. The **TEG-Blue Engine** is separate applied/licensable tool-building logic for turning the architecture into specific tools and institutional implementations.
 
@@ -33,7 +33,7 @@ Both sites link to each other, with .org carrying the framework and research con
 
 ## Architecture Overview
 
-This is a Next.js App Router site. The homepage (`app/page.js`) leads with TEG-Blue: The Emotional Gradient Blueprint and mounts the interactive `EmotionalGradient` component for The Nervous System Gradient. Supporting routes preserve the research grounding, responsible pattern-reading guidance, ethics, publications, citation guidance, glossary, and collaboration material.
+This is a Next.js App Router site. The homepage (`app/page.js`) leads with TEG-Blue: The Emotional Gradient Blueprint and mounts the interactive `EmotionalGradient` component for The Nervous System Gradient. Supporting routes preserve the research grounding, responsible pattern-reading guidance, ethics, publications and citation guidance, glossary, and collaboration material.
 
 ```
 teg-blue-site-org/
@@ -43,11 +43,13 @@ teg-blue-site-org/
 │   ├── foundations/
 │   ├── scientific-foundations/
 │   ├── methodology/
+│   ├── ethics/
 │   ├── publications/
 │   ├── glossary/
 │   ├── collaborate/
-│   ├── model/                        <- supporting model/source-trace pages
-│   └── framework/                    <- supporting framework/source-trace pages
+│   ├── citations/                    <- staged; redirects to /publications for now
+│   ├── model/                        <- staged older model placeholders
+│   └── framework/                    <- staged older framework placeholders
 │
 ├── content/                          <- JSON content files (git-versioned)
 │   ├── TEMPLATES.md                  <- Blank templates for content types

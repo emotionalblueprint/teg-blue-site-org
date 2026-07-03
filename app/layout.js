@@ -130,10 +130,11 @@ const annaParetasJsonLd = {
   },
   knowsAbout: [
     "The Emotional Gradient Blueprint",
-    "Pattern recognition",
+    "Emotional-pattern legibility",
+    "Responsible pattern reading",
     "Visual communication",
     "Integrative frameworks",
-  "Nervous system regulation",
+    "Nervous-system regulation",
   ],
 }
 
@@ -165,16 +166,19 @@ const organizationJsonLd = {
   copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0.",
   founder: annaParetasJsonLd,
   knowsAbout: [
-    "Emotional regulation",
-    "Polyvagal theory",
-    "Attachment theory",
-    "Nervous system",
+    "The Emotional Gradient Blueprint",
+    "The Nervous System Gradient",
+    "Emotional-pattern legibility",
+    "Nervous-system regulation",
+    "Biology and physiology",
+    "Autonomic neuroscience and stress physiology",
+    "Affective neuroscience and emotion science",
+    "Attachment and developmental research",
     "Trauma research",
-    "Emotional patterns",
-    "Nervous system state classification",
-    "Structured emotional patterns",
+    "State-shaped perception",
+    "Repair capacity",
     "Cross-disciplinary research",
-    "Integrative frameworks"
+    "Integrative frameworks",
   ],
 }
 

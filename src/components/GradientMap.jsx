@@ -59,7 +59,7 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
     <section style={sectionStyle} aria-labelledby="positions-heading">
       <div style={cardStyle}>
         <p style={eyebrowStyle}>The map</p>
-        <h2 id="positions-heading" style={{ margin: '0 0 8px', fontSize: 'clamp(22px, 3.4vw, 30px)', letterSpacing: 0, color: TEXT.primary }}>
+        <h2 id="positions-heading" style={{ margin: '0 0 8px', fontSize: 30, letterSpacing: 0, color: TEXT.primary }}>
           Gradient states and shutdown fallback
         </h2>
         <p style={{ margin: '0 0 20px', maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>

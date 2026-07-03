@@ -38,11 +38,24 @@ export const metadata = {
     },
   },
   keywords: [
-    "emotional gradient", "nervous system states", "neuroception", "polyvagal theory",
-    "parasympathetic", "sympathetic", "autonomic nervous system", "fight or flight",
-    "rest and digest", "fawn", "freeze response", "ventral vagal", "dorsal vagal",
-    "stress physiology", "allostatic load", "interoception", "trauma research",
-    "co-regulation", "emotional regulation", "window of tolerance", "chronic stress",
+    "TEG-Blue",
+    "The Emotional Gradient Blueprint",
+    "Nervous System Gradient",
+    "emotional-pattern legibility",
+    "nervous-system patterns",
+    "state-shaped perception",
+    "emotional regulation",
+    "repair capacity",
+    "responsible pattern reading",
+    "scientific grounding",
+    "biology and physiology",
+    "autonomic neuroscience",
+    "stress physiology",
+    "affective neuroscience",
+    "emotion science",
+    "attachment research",
+    "trauma research",
+    "relational patterns",
   ],
   openGraph: {
     title: TITLE,
@@ -181,10 +194,36 @@ const HOME_CSS = `
 
   .home-hero-title {
     max-width: min(100%, 680px);
+    font-size: 64px;
+    line-height: 0.96;
   }
 
   .home-title-line {
     white-space: nowrap;
+  }
+
+  .home-hero-lead {
+    font-size: 20px;
+  }
+
+  .home-card-title {
+    font-size: 26px;
+  }
+
+  .home-card-question {
+    font-size: 17px;
+  }
+
+  .home-definition-title {
+    font-size: 28px;
+  }
+
+  .home-gradient-heading {
+    font-size: 34px;
+  }
+
+  .home-section-heading {
+    font-size: 30px;
   }
 
   .home-hero-actions {
@@ -276,6 +315,24 @@ const HOME_CSS = `
     .home-safety-question-card {
       margin-top: 0 !important;
     }
+
+    .home-hero-title {
+      font-size: 52px;
+    }
+
+    .home-hero-lead {
+      font-size: 18px;
+    }
+
+    .home-card-title,
+    .home-definition-title,
+    .home-section-heading {
+      font-size: 26px;
+    }
+
+    .home-gradient-heading {
+      font-size: 30px;
+    }
   }
 
   @media (max-width: 620px) {
@@ -290,6 +347,29 @@ const HOME_CSS = `
 
     .home-question-answers {
       grid-template-columns: 1fr !important;
+    }
+
+    .home-hero-title {
+      font-size: 40px;
+      line-height: 1.02;
+    }
+
+    .home-hero-lead {
+      font-size: 17px;
+    }
+
+    .home-card-title,
+    .home-definition-title,
+    .home-section-heading {
+      font-size: 24px;
+    }
+
+    .home-card-question {
+      font-size: 15px;
+    }
+
+    .home-gradient-heading {
+      font-size: 27px;
     }
   }
 `;
@@ -424,11 +504,11 @@ function HomeSafetyQuestionCard() {
       <div style={{ marginBottom: 16 }}>
         <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Live safety read</p>
         <h2
+          className="home-card-title"
           style={{
             margin: 0,
             maxWidth: 420,
             color: TEXT.primary,
-            fontSize: "clamp(21px, 2.7vw, 26px)",
             fontWeight: 760,
             letterSpacing: 0,
             lineHeight: 1.1,
@@ -464,7 +544,7 @@ function HomeSafetyQuestionCard() {
               >
                 {item.label}
               </p>
-              <p style={{ margin: 0, color: TEXT.primary, fontSize: "clamp(15px, 1.8vw, 17px)", fontWeight: 720, lineHeight: 1.25 }}>
+              <p className="home-card-question" style={{ margin: 0, color: TEXT.primary, fontWeight: 720, lineHeight: 1.25 }}>
                 {item.question}
               </p>
             </div>
@@ -559,12 +639,12 @@ function WhatGradientIsCard() {
           <div>
             <p style={{ ...sectionEyebrowStyle, color: SPECTRUM.azure, margin: "0 0 10px" }}>Pattern recognition</p>
             <h2
+              className="home-definition-title"
               id="what-gradient-is-heading"
               style={{
                 margin: 0,
                 maxWidth: 620,
                 color: homeSurface.text,
-                fontSize: "clamp(21px, 3vw, 28px)",
                 fontWeight: 700,
                 letterSpacing: 0,
                 lineHeight: 1.16,
@@ -754,8 +834,6 @@ export default function Home() {
               className="home-hero-title"
               style={{
                 margin: 0,
-                fontSize: "clamp(42px, 5.5vw, 64px)",
-                lineHeight: 0.96,
                 letterSpacing: 0,
                 color: TEXT.primary,
               }}
@@ -777,7 +855,7 @@ export default function Home() {
           </div>
 
           <div className="home-hero-intro">
-            <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
+            <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
               A layered visual framework for reading emotional, nervous-system, relational, and social patterns. We do
               not stay the same in every situation: open and trusting one moment, guarded or controlling the next.
             </p>
@@ -821,11 +899,11 @@ export default function Home() {
           <div style={{ margin: "0 0 clamp(16px, 3vw, 24px)", maxWidth: 840 }}>
             <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Gradient Map</p>
             <h2
+              className="home-gradient-heading"
               id="gradient-map-heading"
               style={{
                 margin: 0,
                 color: TEXT.primary,
-                fontSize: "clamp(24px, 4vw, 34px)",
                 lineHeight: 1.12,
                 letterSpacing: 0,
               }}
@@ -844,7 +922,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="explains-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>What the gradient explains</p>
-            <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
+            <h2 id="explains-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
               From state shifts to relationship patterns
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
@@ -902,7 +980,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="science-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Research</p>
-            <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
+            <h2 id="science-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
               Scientific grounding
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
@@ -926,7 +1004,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="rights-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Use and attribution</p>
-            <h2 id="rights-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
+            <h2 id="rights-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
               {attributionNotice.title}
             </h2>
             <p style={{ margin: "0 0 14px", maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
@@ -975,7 +1053,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 40 }} aria-labelledby="faq-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Questions</p>
-            <h2 id="faq-heading" style={{ margin: "0 0 24px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
+            <h2 id="faq-heading" className="home-section-heading" style={{ margin: "0 0 24px", letterSpacing: 0, color: TEXT.primary }}>
               Common questions
             </h2>
             <div style={{ display: "grid", gap: 10 }}>

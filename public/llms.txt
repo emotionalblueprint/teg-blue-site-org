@@ -41,7 +41,7 @@ Technical and AI-readable files:
 - https://teg-blue.org/llms.txt
 - https://teg-blue.org/llms-full.txt
 
-Other model, framework, AI, emotional-technology, prototype, Spanish, and research-entry routes may exist in the codebase, but they are not current public authority unless they return 200 and appear in the sitemap.
+Other model, framework, AI, emotional-technology, prototype, Spanish, citations, and research-entry routes may exist in the codebase, but they are not current public authority unless they return 200 and appear in the sitemap. The `/citations` URL currently redirects to `/publications`.
 
 ## What To Extract
 

@@ -495,7 +495,7 @@ export function diagramContainer() {
     padding: 'clamp(16px, 3vw, 24px)',
     background: `linear-gradient(135deg, ${hexToRgba(PATTERN.A.primary, 0.04)}, ${hexToRgba(PATTERN.D.primary, 0.03)})`,
     border: `1px solid ${hexToRgba(PATTERN.B.primary, 0.10)}`,
-    borderRadius: 12,
+    borderRadius: RADIUS.lg,
   };
 }
 

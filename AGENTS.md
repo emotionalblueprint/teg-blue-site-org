@@ -114,18 +114,22 @@ Preferred pattern:
 
 | Page | Path | Purpose |
 |------|------|---------|
-| Home | `/` | Current Nervous System Gradient surface. |
+| Home | `/` | Public doorway for TEG-Blue: The Emotional Gradient Blueprint and the central Nervous System Gradient map. |
 | About | `/about` | Project identity, founder, research stance, contact routes, and site distinction. |
-| TEG-Blue Overview | `/foundations` | The Nervous System Gradient, responsible pattern reading, scope, and research status. |
-| Methodology | `/methodology` | Review status, claim calibration, testing roadmap, and limitations. |
-| Scientific Foundations | `/scientific-foundations` | Research areas that illuminate the Gradient and wider synthesis. |
+| TEG-Blue Overview | `/foundations` | Blueprint overview, Nervous System Gradient map, responsible pattern reading, scope, and research status. |
+| Pattern Reading | `/methodology` | Observation, interpretation, impact, claim status, responsible use, and limits. |
+| Scientific Grounding | `/scientific-foundations` | Research areas, field boundaries, and claim discipline behind the Gradient. |
+| Ethics | `/ethics` | Dignity, agency, source honesty, attribution, permission, impact, and repair. |
+| Publications | `/publications` | Public records, release pointers, citation guidance, public description notes, and reuse posture. |
+| Glossary | `/glossary` | Current public terms for the Blueprint and the central map. |
+| Collaborate | `/collaborate` | Research review, applied builds, and licensing conversations. |
 
-All other `app/**/page.js` routes are staged placeholders that re-export `src/lib/staged-route.js`. Keep them empty until Anna explicitly repopulates a route. Do not use non-live routes as source context for current `.org` work.
+All other `app/**/page.js` routes are staged placeholders that re-export `src/lib/staged-route.js` or are redirected by `next.config.js`. Keep them empty until Anna explicitly repopulates a route. `/citations` currently redirects to `/publications`; only rebuild it later if the claim audit supports a detailed claim/source trace system. Do not use non-live routes as source context for current `.org` work.
 
 ### Navigation
 
 ```text
-Home | Explore: About, TEG-Blue overview, Methodology, Scientific foundations | Tools
+Home | Explore: About, TEG-Blue overview, Pattern reading, Scientific grounding, Ethics, Publications, Glossary, Collaborate | Practical tools
 ```
 
 ## Tech Stack
@@ -165,6 +169,10 @@ When repopulating a route later, rebuild the page from current source-of-truth l
 | `app/foundations/page.js` | TEG-Blue Overview |
 | `app/methodology/page.js` | Methodology |
 | `app/scientific-foundations/page.js` | Scientific Foundations |
+| `app/ethics/page.js` | Ethics |
+| `app/publications/page.js` | Publications and citation guidance |
+| `app/glossary/page.js` | Glossary |
+| `app/collaborate/page.js` | Collaboration |
 | `src/lib/live-paths.js` | Public route allowlist |
 | `src/lib/staged-route.js` | Shared placeholder for cleared routes |
 | `src/components/SiteHeader.jsx` | Main navigation |

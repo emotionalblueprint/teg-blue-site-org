@@ -4,16 +4,52 @@ const px = SPACING.pagePadding;
 const sidebarWidth = 244;
 const sidebarGap = 32;
 
-const RESPONSIVE_CSS = `
+const LAYOUT_CSS = `
+  .page-layout-main {
+    position: relative;
+  }
+
+  .page-layout-content {
+    min-width: 0;
+  }
+
+  .page-layout-content > section {
+    position: relative;
+  }
+
+  .page-layout-content > section::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 11px;
+    width: 10px;
+    height: 1px;
+    background: color-mix(in srgb, var(--blue-300) 42%, transparent);
+  }
+
+  .page-layout-content > section::after {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 11px;
+    bottom: -28px;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--blue-300) 18%, transparent),
+      color-mix(in srgb, var(--blue-200) 4%, transparent)
+    );
+  }
+
+  .page-layout-content > section:last-child::after {
+    display: none;
+  }
+
   .page-layout-with-sidebar {
     display: grid;
     grid-template-columns: ${sidebarWidth}px minmax(0, 1fr);
     gap: clamp(24px, 3vw, ${sidebarGap}px);
     align-items: start;
-  }
-
-  .page-layout-content {
-    min-width: 0;
   }
 
   .page-layout-hover-nav {
@@ -124,6 +160,13 @@ const RESPONSIVE_CSS = `
       display: none;
     }
   }
+
+  @media (max-width: 760px) {
+    .page-layout-content > section::before,
+    .page-layout-content > section::after {
+      display: none;
+    }
+  }
 `;
 
 /**
@@ -144,10 +187,11 @@ export default function PageLayout({ header, children, sidebarSections }) {
 
   return (
     <>
-      {hasSidebar && <style dangerouslySetInnerHTML={{ __html: RESPONSIVE_CSS }} />}
+      <style dangerouslySetInnerHTML={{ __html: LAYOUT_CSS }} />
 
       <main
         id="main-content"
+        className="page-layout-main"
         style={{
           position: "relative",
           zIndex: 1,
@@ -188,7 +232,7 @@ export default function PageLayout({ header, children, sidebarSections }) {
             </aside>
           )}
 
-          <div className={hasSidebar ? "page-layout-content" : undefined}>
+          <div className="page-layout-content">
             {header}
 
             {children}

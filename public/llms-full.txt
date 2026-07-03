@@ -27,6 +27,7 @@ Use as current:
 
 Treat as staged, parked, redirected, or non-current unless live in the sitemap:
 
+- /citations (redirects to /publications for now)
 - /ai-safety
 - /emotional-technology
 - /models
@@ -143,6 +144,8 @@ Required creator attribution:
 TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho.
 
 Use /publications for public records, release pointers, DOI/public-record routes, recommended citation lines, public description notes, attribution, and reuse guidance.
+
+The /citations URL redirects to /publications for now. It should become a separate claim/source trace route only if detailed claim-by-claim audit entries exist.
 
 ## Glossary Guardrail
 

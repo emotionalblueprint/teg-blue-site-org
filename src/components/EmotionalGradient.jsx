@@ -746,7 +746,7 @@ export default function EmotionalGradient() {
           margin: 0;
           min-width: 0;
           color: var(--gradient-accent-text);
-          font-size: clamp(20px, 2.5vw, 28px);
+          font-size: 28px;
           font-weight: 760;
           letter-spacing: 0;
           line-height: 1.12;
@@ -796,7 +796,7 @@ export default function EmotionalGradient() {
           padding-bottom: 24px;
           border-bottom: 1px solid var(--readout-line);
           color: var(--readout-ink);
-          font-size: clamp(17px, 2vw, 22px);
+          font-size: 22px;
           font-weight: 620;
           line-height: 1.3;
           letter-spacing: 0;
@@ -1049,7 +1049,7 @@ export default function EmotionalGradient() {
           }
 
           .state-configuration-name {
-            font-size: clamp(22px, 7vw, 28px);
+            font-size: 24px;
             overflow-wrap: anywhere;
           }
 

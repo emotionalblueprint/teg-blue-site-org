@@ -1,9 +1,9 @@
 // Single source of truth for which teg-blue.org routes are publicly live.
 //
-// Current public surface: home plus the four Explore-menu pages. Other route
-// paths may be reused later, but their page files are intentionally cleared for
-// now. To repopulate a page, rebuild its content and then add its exact path
-// here when it is approved for the public surface.
+// Current public surface: home plus the approved Explore-menu pages below.
+// Other route paths may be reused later, but their page files are intentionally
+// cleared or redirected for now. To repopulate a page, rebuild its content and
+// then add its exact path here when it is approved for the public surface.
 //
 // The gate (middleware.js), sitemap (app/sitemap.js), legacy redirect guard
 // (next.config.js), and IndexNow script all read from here.

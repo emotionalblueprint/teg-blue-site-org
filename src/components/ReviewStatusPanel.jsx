@@ -1,4 +1,5 @@
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS } from "@/src/styles/tokens";
+import { StateBand } from "./StateBand";
 
 const DEFAULT_POINTS = [
   {
@@ -42,6 +43,9 @@ export default function ReviewStatusPanel({
         }}
       >
         <div>
+          <div style={{ maxWidth: 420, marginBottom: 14 }}>
+            <StateBand compact />
+          </div>
           <div
             style={{
               display: "inline-flex",
@@ -73,7 +77,7 @@ export default function ReviewStatusPanel({
             style={{
               margin: 0,
               maxWidth: 720,
-              fontSize: "clamp(18px, 2.4vw, 22px)",
+              fontSize: 22,
               fontWeight: 700,
               lineHeight: 1.18,
               color: TEXT.primary,

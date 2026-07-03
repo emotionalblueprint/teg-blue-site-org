@@ -57,7 +57,7 @@ export default function NotFound() {
           <h1
             style={{
               margin: "0 0 14px",
-              fontSize: "clamp(30px, 5vw, 46px)",
+              fontSize: 40,
               fontWeight: 700,
               color: TEXT.primary,
               letterSpacing: 0,
