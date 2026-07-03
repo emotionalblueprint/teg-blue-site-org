@@ -1,10 +1,10 @@
 # TEG-Blue .org
 
-Public framework and research-grounding home for **TEG-Blue: The Emotional Gradient Blueprint** — a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.
+Public framework and research-grounding home for **TEG-Blue: The Emotional Gradient Blueprint** — a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve.
 
-The current public center of the site is **The Nervous System Gradient**: a research-grounded, read-first map of how nervous-system state changes reshape perception, emotion, body activation, behavior, and repair.
+The central public map inside the framework is **The Nervous System Gradient**: a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 
-This repo keeps the framework and its research context close together: scientific foundations, source traces, methodology, working questions, citations, publication pages, glossary, and collaboration/research materials.
+This repo keeps the framework and its research context close together: scientific grounding, responsible pattern-reading guidance, working questions, publication and citation guidance, glossary, and collaboration/research materials.
 
 > **New here?** See the [TEG-Blue Overview](https://github.com/emotionalblueprint/teg-blue-overview) for a complete project map.
 
@@ -22,10 +22,10 @@ TEG-Blue uses two complementary sites:
 
 | Site | URL | Purpose |
 |------|-----|---------|
-| **teg-blue.org** | This repo | Public framework and research-grounding home, currently centered on The Nervous System Gradient |
+| **teg-blue.org** | This repo | Public framework and research-grounding home for The Emotional Gradient Blueprint |
 | **teg-blue.com** | [teg-blue-site-com](https://github.com/emotionalblueprint/teg-blue-site-com) | Practical public tools and application surfaces |
 
-**.org** is the public framework and research-grounding home. It can describe methodology, source traces, publications, scientific foundations, working questions, and research grounding.
+**.org** is the public framework and research-grounding home. It can describe responsible pattern reading, publications, citation guidance, scientific grounding, working questions, and research grounding.
 
 **.com** remains the practical public tools surface. The **TEG-Blue Engine** is separate applied/licensable tool-building logic for turning the architecture into specific tools and institutional implementations.
 
@@ -33,12 +33,12 @@ Both sites link to each other, with .org carrying the framework and research con
 
 ## Architecture Overview
 
-This is a Next.js App Router site. The homepage (`app/page.js`) leads with The Nervous System Gradient and mounts the interactive `EmotionalGradient` component. Supporting routes preserve the research grounding, foundations, methodology, publications, glossary, collaboration, working questions, and source-trace material.
+This is a Next.js App Router site. The homepage (`app/page.js`) leads with TEG-Blue: The Emotional Gradient Blueprint and mounts the interactive `EmotionalGradient` component for The Nervous System Gradient. Supporting routes preserve the research grounding, responsible pattern-reading guidance, ethics, publications, citation guidance, glossary, and collaboration material.
 
 ```
 teg-blue-site-org/
 ├── app/
-│   ├── page.js                       <- Nervous System Gradient homepage
+│   ├── page.js                       <- Emotional Gradient Blueprint homepage
 │   ├── about/
 │   ├── foundations/
 │   ├── scientific-foundations/
@@ -76,7 +76,7 @@ teg-blue-site-org/
 | Blue | `#00b1ff` | Publications |
 | Cobalt | `#0590e5` | Frameworks |
 | Indigo | `#7b7bff` | Foundations |
-| Slate | `#808493` | Methodology |
+| Slate | `#808493` | Responsible pattern reading |
 
 **Rules:**
 - Use flat color surfaces for research content; use gradients intentionally where they communicate the gradient/instrument itself
@@ -123,12 +123,16 @@ This site is deployed on [Vercel](https://vercel.com) as a standalone site.
 
 | Page | Path | Purpose |
 |------|------|---------|
-| Nervous System Gradient | `/` | Public read-first framework homepage with the interactive gradient component |
+| Home | `/` | Public doorway for TEG-Blue: The Emotional Gradient Blueprint |
 | About | `/about` | Project identity, founder, research stance, contact routes, and site distinction |
-| TEG-Blue Overview | `/foundations` | Nervous System Gradient overview, responsible pattern reading, scope, and research status |
-| Methodology | `/methodology` | Observation, claim calibration, responsible use, and limits |
-| Scientific Foundations | `/scientific-foundations` | Research areas that illuminate the Gradient and wider synthesis |
+| TEG-Blue Overview | `/foundations` | Blueprint overview, Nervous System Gradient map, responsible pattern reading, scope, and research status |
+| Pattern reading | `/methodology` | Observation, interpretation, impact, claim status, responsible use, and limits |
+| Scientific Grounding | `/scientific-foundations` | Research areas, field boundaries, and claim discipline behind the Gradient |
+| Ethics | `/ethics` | Dignity, agency, source honesty, attribution, permission, impact, and repair |
+| Publications | `/publications` | Public records, release pointers, citation guidance, public description notes, and reuse posture |
+| Glossary | `/glossary` | Current public terms for the Blueprint and the central map |
+| Collaborate | `/collaborate` | Research review, applied builds, and licensing conversations |
 
 ---
 
-*TEG-Blue .org · The Nervous System Gradient · Anna Paretas-Artacho*
+*TEG-Blue .org · The Emotional Gradient Blueprint · Anna Paretas-Artacho*

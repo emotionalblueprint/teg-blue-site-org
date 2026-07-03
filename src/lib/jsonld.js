@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "A visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
+  description: "A layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
   inLanguage: LANGUAGE,
 };
 
@@ -239,7 +239,7 @@ export function generateModelsJsonLd() {
     "@type": "WebPage",
     name: "The Emotional Somatic System — TEG-Blue",
     url: `${BASE_URL}/emotional-somatic-cycle`,
-    description: "The four foundational models of TEG-Blue: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (biological restoration), and Awareness Capacities (ESS awareness of CLS).",
+    description: "The four foundational models of TEG-Blue: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (body-level return), and Awareness Capacities (ESS awareness of CLS).",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
@@ -256,7 +256,7 @@ export function generateModelsJsonLd() {
       {
         "@type": "DefinedTerm",
         name: "Regulation Capacities (M3)",
-        description: "Biological restoration — the nervous system's designed process for completing the activation cycle and restoring physiological baseline."
+        description: "Body-level return — the nervous system's designed process for completing the activation cycle and returning toward physiological baseline."
       },
       {
         "@type": "DefinedTerm",
@@ -289,24 +289,24 @@ export function generateSystemOverviewJsonLd() {
     "@type": "WebPage",
     name: "TEG-Blue Overview",
     url: `${BASE_URL}/foundations`,
-    description: "Public overview of TEG-Blue: a visual map of nervous-system patterns across safety, threat, control, shutdown, impact, accountability, and repair.",
+    description: "Public overview of TEG-Blue: The Emotional Gradient Blueprint and its central public map, The Nervous System Gradient.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "Thing",
       name: "The Nervous System Gradient",
-      description: "A visual map of how nervous-system state shapes emotion, behaviour, relational patterns, accountability, and repair."
+      description: "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair."
     },
     mainEntity: {
       "@type": "ItemList",
       name: "TEG-Blue Overview",
-      description: "The overview introduces the visual map, responsible pattern reading, research foundations, and applied tools.",
+      description: "The overview introduces The Emotional Gradient Blueprint, responsible pattern reading, research foundations, and applied tools.",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "Visual map of nervous-system patterns",
-          description: "The central map of state-shaped capacity: how nervous-system state changes perception, emotion, body activation, behaviour, empathy, accountability, repair, and tempo.",
+          name: "The Emotional Gradient Blueprint",
+          description: "A layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
           url: BASE_URL
         },
         {
@@ -326,15 +326,15 @@ export function generateSystemOverviewJsonLd() {
         {
           "@type": "ListItem",
           position: 4,
-          name: "Research Foundations",
-          description: "Research areas connected to the framework, including neuroscience, attachment research, trauma research, stress physiology, interoception, emotion science, and related literatures.",
+          name: "Scientific Grounding",
+          description: "Research areas, field boundaries, and claim discipline behind the map.",
           url: `${BASE_URL}/scientific-foundations`
         },
         {
           "@type": "ListItem",
           position: 5,
-          name: "Methodology",
-          description: "Methodology explains claim status, limits, responsible use, review needs, and future research routes.",
+          name: "Pattern Reading",
+          description: "Pattern reading explains observation, interpretation, impact, claim status, limits, responsible use, and review needs.",
           url: `${BASE_URL}/methodology`
         },
         {
@@ -354,49 +354,47 @@ export function generateSystemOverviewJsonLd() {
       "practical tools",
       "nervous system regulation",
       "integrative architecture",
-      "trauma-informed"
+      "responsible pattern reading"
     ]
   };
 }
 
-// ─── SCIENTIFIC FOUNDATIONS PAGE JSON-LD ─────────────
+// ─── SCIENTIFIC GROUNDING PAGE JSON-LD ───────────────
 
 export function generateScientificFoundationsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Scientific Foundations — TEG-Blue",
+    name: "Scientific Grounding - TEG-Blue",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "Research areas that help make parts of the TEG-Blue map visible: emotion, Polyvagal Theory, state, attachment, trauma, cognition, communication, relationship patterns, context, and repair.",
+    description: "Research areas that support specific parts of the TEG-Blue map while each field remains itself.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
       name: "Research Areas Connected to the TEG-Blue Map",
-      description: "Research areas that help make emotional, nervous-system, and relational patterns visible without claiming that any one field contains the whole framework.",
+      description: "Research areas that ground emotional, bodily, nervous-system, and relational pattern reading without claiming that any one field contains the whole framework.",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Emotion and Affective Neuroscience", description: "Emotion as biological and relational information" },
-        { "@type": "ListItem", position: 2, name: "Polyvagal Theory and Neuroception", description: "Autonomic hierarchy, neuroception, social engagement, mobilisation, shutdown, and state-shaped capacity" },
-        { "@type": "ListItem", position: 3, name: "Autonomic Physiology and Stress Research", description: "State shifts, activation, shutdown, chronic load, and return" },
-        { "@type": "ListItem", position: 4, name: "Attachment and Developmental Research", description: "Relational safety, rupture, expectation, regulation, and repair" },
-        { "@type": "ListItem", position: 5, name: "Trauma and Dissociation Research", description: "Chronic threat adaptation, defensive organisation, collapse, and fragmented capacity" },
-        { "@type": "ListItem", position: 6, name: "Cognitive Science and Emotion Regulation", description: "Attention, prediction, cognitive load, meaning-making, and state-shaped capacity" },
-        { "@type": "ListItem", position: 7, name: "Communication and Repair Frameworks", description: "Conditions for naming impact, restoring clarity, supporting accountability, or failing to repair" },
-        { "@type": "ListItem", position: 8, name: "Social Psychology, Sociology, and Power Research", description: "How roles, norms, power, and context shape repeated interaction patterns and available repair" },
-        { "@type": "ListItem", position: 9, name: "Biology, Evolution, and Social Survival Research", description: "Belonging, hierarchy, status, care, threat detection, and organism-environment adaptation" }
+        { "@type": "ListItem", position: 1, name: "Biology and Physiology", description: "Survival, adaptation, arousal, shutdown, regulation, and repair capacity" },
+        { "@type": "ListItem", position: 2, name: "Autonomic Neuroscience and Stress Physiology", description: "State organization, mobilisation, inhibition, chronic load, and return" },
+        { "@type": "ListItem", position: 3, name: "Affective Neuroscience and Emotion Science", description: "Emotional salience, body signals, and action readiness" },
+        { "@type": "ListItem", position: 4, name: "Psychology", description: "Attention, appraisal, interpretation, learning, behaviour, and relational dynamics" },
+        { "@type": "ListItem", position: 5, name: "Attachment, Trauma, and Developmental Research", description: "Relational safety, rupture, protection, repair, expectation, and repeated patterns" },
+        { "@type": "ListItem", position: 6, name: "Social, Cultural, and Contemplative Fields", description: "Context, social patterning, attention, awareness, and later-scale questions" }
       ]
     },
     keywords: [
       "TEG-Blue scientific foundations",
+      "TEG-Blue scientific grounding",
       "Nervous System Gradient",
       "affective neuroscience",
-      "Polyvagal Theory",
-      "neuroception",
       "autonomic physiology",
-      "attachment theory",
+      "biology and physiology",
+      "attachment research",
       "trauma research",
       "emotion science",
       "cognitive science",
+      "psychology",
       "social psychology",
       "sociology",
       "state-shaped capacity",
@@ -411,24 +409,24 @@ export function generateMethodologyJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Methodology - TEG-Blue",
+    name: "How TEG-Blue Reads Patterns",
     url: `${BASE_URL}/methodology`,
     description: "How to read visible patterns responsibly: observation, pattern, impact, claim status, use, limits, and review.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
-      name: "TEG-Blue Methodology",
-      description: "The public method for reading nervous-system patterns while keeping observation, interpretation, impact, and claim status separate.",
+      name: "Responsible Pattern Reading",
+      description: "The public guide for reading nervous-system patterns while keeping observation, interpretation, impact, and claim status separate.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Observation", description: "Start with what can be seen: behaviour, context, repetition, and relational effect." },
-        { "@type": "ListItem", position: 2, name: "Pattern Reading", description: "Use the map to ask whether a pattern is moving toward safety, threat, control, shutdown, restoration, or repair." },
+        { "@type": "ListItem", position: 2, name: "Pattern Reading", description: "Use the map to ask whether a pattern is moving toward safety, threat, control, shutdown, regulation, or repair." },
         { "@type": "ListItem", position: 3, name: "Impact and Response", description: "Track effect on clarity, autonomy, safety, accountability, and repair before choosing support, boundary, protection, accountability, or further study." },
         { "@type": "ListItem", position: 4, name: "Claim Status", description: "Keep research support, TEG-Blue integration, applied tools, and review as separate layers." }
       ]
     },
     keywords: [
-      "TEG-Blue methodology",
+      "TEG-Blue pattern reading",
       "Nervous System Gradient",
       "responsible pattern reading",
       "claim status",
@@ -494,7 +492,7 @@ export function generateTheoreticalFoundationsJsonLd() {
       "nervous system",
       "formation",
       "scaling",
-      "restoration",
+      "repair",
       "integration"
     ]
   };

@@ -16,17 +16,37 @@ const EXPLORE_LINKS = [
   {
     label: "TEG-Blue overview",
     href: "/foundations",
-    description: "The Nervous System Gradient, responsible pattern reading, scope, and research status.",
+    description: "The Emotional Gradient Blueprint and the central Nervous System Gradient map.",
   },
   {
-    label: "Methodology",
+    label: "Pattern reading",
     href: "/methodology",
-    description: "Observation, claim calibration, responsible use, and limits.",
+    description: "How TEG-Blue separates observation, interpretation, impact, and claim status.",
   },
   {
-    label: "Scientific foundations",
+    label: "Scientific grounding",
     href: "/scientific-foundations",
-    description: "Research areas that illuminate specific parts of the Gradient.",
+    description: "Research areas, field boundaries, and claim discipline behind the map.",
+  },
+  {
+    label: "Ethics",
+    href: "/ethics",
+    description: "Dignity, agency, source honesty, attribution, permission, impact, and repair.",
+  },
+  {
+    label: "Publications",
+    href: "/publications",
+    description: "Public records, release pointers, citation guidance, and source posture.",
+  },
+  {
+    label: "Glossary",
+    href: "/glossary",
+    description: "Current public terms for the Blueprint and the central map.",
+  },
+  {
+    label: "Collaborate",
+    href: "/collaborate",
+    description: "Research review, applied builds, and licensing conversations.",
   },
 ];
 

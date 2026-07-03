@@ -219,6 +219,31 @@ const nextConfig = {
         permanent: true,
       },
 
+      // Consolidated terminology route: labels now live in the public glossary.
+      {
+        source: '/explore/labels',
+        destination: '/glossary',
+        permanent: true,
+      },
+      {
+        source: '/explore/labels/:path*',
+        destination: '/glossary',
+        permanent: true,
+      },
+
+      // Consolidated citation route: source trace and citation posture live in
+      // Publications until a deeper citation system is ready.
+      {
+        source: '/citations',
+        destination: '/publications',
+        permanent: true,
+      },
+      {
+        source: '/citations/:path*',
+        destination: '/publications',
+        permanent: true,
+      },
+
       // ============================================================
       // SPECIFIC PAGE REDIRECTS (single old URLs → best match)
       // ============================================================

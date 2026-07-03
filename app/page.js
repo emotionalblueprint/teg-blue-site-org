@@ -7,13 +7,15 @@ import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "TEG-Blue — The Nervous System Gradient";
-const HOME_HEADING = "TEG-Blue: The Nervous System Gradient";
+const TITLE = "TEG-Blue — The Emotional Gradient Blueprint";
+const HOME_HEADING = "TEG-Blue: The Emotional Gradient Blueprint";
+const MAP_SUBTITLE =
+  "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
 const DESCRIPTION =
-  "TEG-Blue is The Emotional Gradient Blueprint, created by Anna Paretas-Artacho. Its current public center is the Nervous System Gradient: a research-grounded visual map of how nervous-system state changes reshape perception, emotion, body activation, behaviour, empathy, accountability, and repair.";
+  "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns. Its central public map is The Nervous System Gradient.";
 const BASE_URL = "https://teg-blue.org";
 const DATE_MODIFIED = "2026-07-01";
-const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-blue.org/";
+const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
 const LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
 const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";
 const SCHEMA_IDS = {
@@ -94,20 +96,20 @@ const gradientJsonLd = {
   alternateName: "TEG-Blue: The Emotional Gradient Blueprint",
   url: BASE_URL,
   inLanguage: "en",
-  description: DESCRIPTION,
+  description: MAP_SUBTITLE,
   dateModified: DATE_MODIFIED,
   mainEntityOfPage: { "@id": SCHEMA_IDS.homepage },
   author: { "@id": SCHEMA_IDS.person },
   creator: { "@id": SCHEMA_IDS.person },
   copyrightHolder: { "@id": SCHEMA_IDS.person },
-  copyrightNotice: "TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Public framework content is licensed CC BY-NC-SA 4.0; commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
+  copyrightNotice: "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Public framework content is licensed CC BY-NC-SA 4.0; commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
   license: LICENSE_URL,
   publisher: { "@id": SCHEMA_IDS.organization },
   isPartOf: {
     "@type": "ResearchProject",
     "@id": `${BASE_URL}/#research-project`,
     name: "TEG-Blue: The Emotional Gradient Blueprint",
-    description: "A visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, accountability, and repair.",
+    description: "A layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
     url: BASE_URL,
     creator: { "@id": SCHEMA_IDS.person },
     publisher: { "@id": SCHEMA_IDS.organization },
@@ -351,7 +353,7 @@ const heroSafetyQuestions = [
 const attributionNotice = {
   title: "Authorship and use",
   body:
-    "TEG-Blue and The Nervous System Gradient were created by Anna Paretas-Artacho. Public framework content is published under CC BY-NC-SA 4.0: attribution is required, use must be non-commercial, and adaptations must be shared under the same license.",
+    "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Public framework content is published under CC BY-NC-SA 4.0: attribution is required, use must be non-commercial, and adaptations must be shared under the same license.",
   restriction:
     "Commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
 };
@@ -769,30 +771,25 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                The Nervous System Gradient
+                The Emotional Gradient Blueprint
               </span>
             </h1>
           </div>
 
           <div className="home-hero-intro">
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
-              A visual map of nervous-system patterns. We do not stay the same in every situation: open and trusting
-              one moment, guarded or controlling the next. These shifts are not random. They are state changes in the
-              nervous system.
+              A layered visual framework for reading emotional, nervous-system, relational, and social patterns. We do
+              not stay the same in every situation: open and trusting one moment, guarded or controlling the next.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              TEG-Blue is The Emotional Gradient Blueprint, created by Anna Paretas-Artacho. Its current public center
-              is the Nervous System Gradient: a research-grounded visual map of how nervous-system state changes
-              reshape perception, emotion, body activation, behaviour, empathy, accountability, and repair.
+              Created by Anna Paretas-Artacho, TEG-Blue maps how emotions, nervous systems, survival strategies,
+              identity, social patterns, and repair capacity form and evolve. Its central public map is The Nervous
+              System Gradient.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              The body keeps reading for safety:{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is this safe, or is there danger?</strong>{" "}
-              Around others, it keeps asking whether connection can stay open or protection has to come first. Those
-              answers land the whole system on the active gradient, from{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
+              The Nervous System Gradient is{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.</strong>{" "}
+              It helps make pattern movement visible without turning a moment, behaviour, or state into a whole-person verdict.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
@@ -906,10 +903,10 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Research</p>
             <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
-              Research areas behind the map
+              Scientific grounding
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The public framework names the integration, then shows which research areas help illuminate
+              The public framework names the integration, then shows which research areas support
               specific parts of the map. Each field remains itself; TEG-Blue places the parts in relation.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>

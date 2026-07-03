@@ -9,92 +9,96 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
   },
   {
     question: "Who created TEG-Blue?",
-    answer: "TEG-Blue was created by Anna Paretas-Artacho, working independently from Barcelona with long professional experience in visual communication, systems thinking, and applied pattern design.",
+    answer: "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho.",
   },
   {
     question: "What is the difference between teg-blue.org and teg-blue.com?",
-    answer: "teg-blue.org holds the framework, methodology, and research foundations. teg-blue.com holds practical interactive tools for reading emotional and nervous-system patterns.",
+    answer: "teg-blue.org is the public framework and research-grounding home. teg-blue.com carries practical public tools for reading emotional and nervous-system patterns in everyday situations.",
   },
   {
     question: "Is TEG-Blue a clinical system?",
-    answer: "No. TEG-Blue is an educational and research-facing visual map. It does not diagnose, treat, or replace professional care.",
+    answer: "No. TEG-Blue is educational, reflective, and research-facing. It is not therapy, diagnosis, treatment, medical care, legal support, or crisis support.",
   },
 ];
 
 const PURPOSE_CARDS = [
   {
     label: "Legibility",
-    title: "Make patterns easier to see",
-    body: "The Gradient gives shared language for emotional and nervous-system patterns that are often felt before they are understood.",
+    title: "Make emotional patterns easier to see",
+    body: "TEG-Blue gives shared language for patterns that are often felt before they are clearly understood.",
     color: SPECTRUM.azure,
   },
   {
     label: "Relationship",
-    title: "Connect state and relationship",
-    body: "TEG-Blue tracks how state shifts can shape perception, distance, protection, empathy, and repair between people.",
+    title: "Hold body state and relationship together",
+    body: "The framework tracks how patterns that begin in the body can shape individual experience and relationships.",
     color: SPECTRUM.cobalt,
   },
   {
     label: "Response",
-    title: "Support clearer action",
-    body: "When a pattern is visible, support, interruption, boundary, protection, accountability, and repair can be chosen more carefully.",
+    title: "Keep response proportional to the pattern",
+    body: "Pattern reading stays connected to care, boundary, protection, accountability, support, and repair.",
     color: SPECTRUM.indigo,
   },
 ];
 
-const SITE_CARDS = [
+const ECOSYSTEM_LAYERS = [
   {
-    title: "teg-blue.org",
-    subtitle: "Framework and research",
-    body: "The .org site holds the public framework: overview, methodology, and scientific foundations.",
-    href: "/foundations",
-    linkText: "Start with the overview",
+    title: "Public framework",
+    body: "teg-blue.org carries The Emotional Gradient Blueprint, The Nervous System Gradient, responsible pattern-reading guidance, publication records, citation guidance, and collaboration materials.",
     color: SPECTRUM.azure,
   },
   {
-    title: "teg-blue.com",
-    subtitle: "Practical tools",
-    body: "The .com site holds interactive public tools for exploring emotional and nervous-system patterns in everyday situations.",
-    href: "https://teg-blue.com/",
-    linkText: "Open the tools site",
+    title: "TEG-Blue Engine",
+    body: "The Engine is the internal tool-building system that can turn the framework into structured, audience-specific tools.",
+    color: SPECTRUM.blue,
+  },
+  {
+    title: "Practical tools",
+    body: "teg-blue.com is the practical public tools surface for reading emotional and nervous-system patterns in real situations.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    title: "Applied builds",
+    body: "Applied or licensed builds may be created for a specific audience, institution, risk context, or public-interest need under clear boundaries.",
     color: SPECTRUM.indigo,
-    external: true,
   },
 ];
 
 const STANCE_ITEMS = [
   {
-    title: "A framework, not a diagnosis",
-    body: "The Gradient gives language for pattern reading. It does not identify a person's internal state from the outside or replace clinical judgement.",
+    title: "Framework, not diagnosis",
+    body: "TEG-Blue maps patterns of organization. It does not determine motive, assign clinical categories, or identify a person's true internal state from the outside.",
   },
   {
-    title: "Research supports parts",
-    body: "Established research helps illuminate specific mechanisms, conditions, capacities, and patterns. The full integration remains TEG-Blue's contribution.",
+    title: "Science with boundaries",
+    body: "Established research areas support specific parts of the map. Each field remains itself, and TEG-Blue places those parts in relation.",
   },
   {
-    title: "Impact remains visible",
-    body: "Mechanism does not erase effect. The framework keeps behaviour, impact, capacity, accountability, boundary, protection, and repair distinct.",
+    title: "Mechanism and impact stay separate",
+    body: "A pattern may have a protective origin and still cause harm. Explanation does not remove the need for boundary, accountability, or repair.",
   },
   {
-    title: "The work remains open",
-    body: "TEG-Blue is presented for study, application, critique, correction, and independent review.",
+    title: "Open to review",
+    body: "The public framework is presented for study, critique, correction, adaptation conversations, and future research.",
   },
 ];
 
 const CONTACT_LINKS = [
-  { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162", text: "0009-0005-2394-7162" },
-  { label: "Zenodo", href: "https://zenodo.org/records/19472342", text: "TEG-Blue publication record" },
-  { label: "GitHub", href: "https://github.com/emotionalblueprint", text: "github.com/emotionalblueprint" },
   { label: "Email", href: "mailto:research@teg-blue.org", text: "research@teg-blue.org" },
+  { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162", text: "0009-0005-2394-7162" },
+  { label: "Zenodo", href: "https://zenodo.org/communities/teg-blue", text: "TEG-Blue community" },
+  { label: "GitHub", href: "https://github.com/emotionalblueprint", text: "github.com/emotionalblueprint" },
+  { label: "Personal site", href: "https://www.annaparetas.cat", text: "annaparetas.cat" },
 ];
 
 export const metadata = {
   title: "About",
-  description: "About TEG-Blue, the project behind a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
+  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, ecosystem boundaries, and public research stance.",
   keywords: [
     "TEG-Blue",
     "The Emotional Gradient Blueprint",
@@ -102,16 +106,15 @@ export const metadata = {
     "Anna Paretas-Artacho",
     "emotional patterns",
     "nervous system patterns",
-    "state-shaped capacity",
+    "layered visual framework",
     "repair capacity",
-    "visual map",
   ],
   alternates: {
     canonical: "https://teg-blue.org/about",
   },
   openGraph: {
-    title: "About — TEG-Blue",
-    description: "The project behind a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
+    title: "About TEG-Blue",
+    description: "The project, creator, ecosystem boundaries, and research stance behind The Emotional Gradient Blueprint.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue",
     type: "profile",
@@ -119,20 +122,14 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About — TEG-Blue",
-    description: "The project behind a visual map of nervous-system patterns.",
+    title: "About TEG-Blue",
+    description: "The project and creator behind The Emotional Gradient Blueprint.",
   },
 };
 
 export default function AboutPage() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: BG.page,
-        fontFamily: FONT.display,
-      }}
-    >
+    <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/about" />
 
       <PageLayout
@@ -141,14 +138,14 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="The project behind a visual map for patterns we can already see across nervous-system state, relationships, impact, accountability, and repair."
+            description="The project, creator, ecosystem boundaries, and research stance behind a layered visual framework for emotional-pattern legibility."
           />
         }
       >
         <OverviewSection />
         <PurposeSection />
         <FounderSection />
-        <TwoSitesSection />
+        <EcosystemSection />
         <ResearchStanceSection />
         <ContactSection />
       </PageLayout>
@@ -166,7 +163,6 @@ export default function AboutPage() {
           ),
         }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -175,38 +171,33 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue, the project behind a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
+            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, ecosystem boundaries, and public research stance.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
               jobTitle: "Founder and creator of TEG-Blue",
-              description: "Founder and creator of TEG-Blue, The Emotional Gradient Blueprint.",
+              description: "Barcelona-based founder and creator of TEG-Blue, The Emotional Gradient Blueprint.",
               url: "https://teg-blue.org/about",
               sameAs: [
                 "https://orcid.org/0009-0005-2394-7162",
                 "https://github.com/emotionalblueprint",
-                "https://zenodo.org/records/19472342",
+                "https://zenodo.org/communities/teg-blue",
+                "https://www.annaparetas.cat",
               ],
               knowsAbout: [
                 "The Emotional Gradient Blueprint",
-                "Nervous System Gradient",
+                "The Nervous System Gradient",
                 "Visual frameworks",
                 "Systems thinking",
                 "Emotional patterns",
                 "Nervous-system patterns",
-                "Repair capacity",
+                "Public-interest tool building",
               ],
-              affiliation: {
-                "@type": "Organization",
-                name: "TEG-Blue",
-                url: "https://teg-blue.org",
-              },
             },
           }),
         }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
@@ -230,15 +221,16 @@ export default function AboutPage() {
 function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
-      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional and relational patterns legible.</h2>
+      <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
+      <h2 style={sectionHeadingStyle}>TEG-Blue is The Emotional Gradient Blueprint.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
-        emotion, nervous-system state, protection, relationship patterns, impact, and repair.
+        TEG-Blue is a layered visual framework that maps how emotions, nervous systems, survival strategies,
+        identity, social patterns, and repair capacity form and evolve.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        It shows how state shifts can change perception, emotion, tempo, empathy, boundaries, and repair across
-        safety, threat, control, shutdown, restoration, and repair.
+        It shows how patterns that begin in the body can shape individual experience and relationships across
+        safety, threat, control, shutdown, regulation, and repair. The Nervous System Gradient is the central
+        public map inside that wider framework.
       </p>
     </section>
   );
@@ -248,19 +240,12 @@ function PurposeSection() {
   return (
     <section id="purpose" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.cobalt)}>Purpose</div>
-      <h2 style={sectionHeadingStyle}>The work is built for clearer pattern reading.</h2>
+      <h2 style={sectionHeadingStyle}>The work is built for emotional-pattern legibility.</h2>
       <p style={leadStyle}>
-        TEG-Blue gives people a way to discuss emotional and nervous-system patterns without turning them into
-        fixed identities or vague feeling language.
+        The goal is not to label people. The goal is to make patterns visible enough to reduce ambiguity,
+        interrupt harm where needed, and support clearer care, boundary, accountability, and repair.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {PURPOSE_CARDS.map((card) => (
           <InfoCard key={card.title} item={card} />
         ))}
@@ -274,47 +259,34 @@ function FounderSection() {
     <section id="founder" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.indigo)}>Founder</div>
       <h2 style={sectionHeadingStyle}>Created by Anna Paretas-Artacho.</h2>
-      <div
-        style={{
-          padding: 18,
-          background: gradientCardBg(SPECTRUM.indigo, 0.055),
-          border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.18)}`,
-          borderLeft: `3px solid ${SPECTRUM.indigo}`,
-          borderRadius: RADIUS.md,
-        }}
-      >
+      <div style={calloutStyle(SPECTRUM.indigo)}>
         <p style={bodyStyle}>
-          Anna Paretas-Artacho is the founder and creator of TEG-Blue, working independently from Barcelona.
-          Her background is in visual communication, systems thinking, and applied pattern design.
+          Anna Paretas-Artacho is the Barcelona-based founder and creator of TEG-Blue, The Emotional Gradient
+          Blueprint. Working independently, she develops visual frameworks and practical tools for making
+          emotional, nervous-system, relational, and social patterns easier to see and work with.
         </p>
         <p style={{ ...bodyStyle, marginTop: 12 }}>
-          TEG-Blue developed as a visual architecture for making emotional, nervous-system, and relational
-          patterns easier to see, discuss, study, and work with.
+          Her work brings together visual communication, systems thinking, applied pattern design,
+          cross-disciplinary research, and public-interest tool building. It should not be read as a clinical,
+          medical, legal, or crisis-support service.
         </p>
       </div>
     </section>
   );
 }
 
-function TwoSitesSection() {
+function EcosystemSection() {
   return (
-    <section id="two-sites" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Two sites</div>
-      <h2 style={sectionHeadingStyle}>One framework, two public surfaces.</h2>
+    <section id="ecosystem" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Ecosystem</div>
+      <h2 style={sectionHeadingStyle}>The public framework, tools, Engine, and applied builds stay distinct.</h2>
       <p style={leadStyle}>
-        The .org and .com sites serve different readers. They should stay connected, but not collapsed into the
-        same job.
+        TEG-Blue has connected surfaces, but they do different jobs. Keeping those jobs distinct protects the
+        research posture, tool boundaries, and public claims.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
-        {SITE_CARDS.map((site) => (
-          <SiteCard key={site.title} site={site} />
+      <div style={gridStyle}>
+        {ECOSYSTEM_LAYERS.map((item) => (
+          <InfoCard key={item.title} item={{ label: item.title, ...item }} />
         ))}
       </div>
     </section>
@@ -325,22 +297,14 @@ function ResearchStanceSection() {
   return (
     <section id="research-stance" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.slate)}>Research stance</div>
-      <h2 style={sectionHeadingStyle}>The framework is public so it can be used, questioned, and refined.</h2>
+      <h2 style={sectionHeadingStyle}>The framework is public so it can be studied, questioned, and refined.</h2>
       <p style={leadStyle}>
-        TEG-Blue draws from established research areas while offering its own visual integration. Its claims
-        should be read with care: specific parts may be supported by existing research, while the full
-        integration needs its own review and testing.
+        TEG-Blue is grounded in science when that means established research areas support specific
+        parts of the map, each field remains itself, and TEG-Blue places those parts in relation.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {STANCE_ITEMS.map((item) => (
-          <StanceCard key={item.title} item={item} />
+          <PlainCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -350,18 +314,9 @@ function ResearchStanceSection() {
 function ContactSection() {
   return (
     <section id="contact" style={{ marginBottom: 32 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Contact</div>
+      <div style={labelStyle(SPECTRUM.azure)}>Contact and records</div>
       <h2 style={sectionHeadingStyle}>Routes into the work.</h2>
-      <div
-        style={{
-          background: BG.card,
-          borderRadius: RADIUS.md,
-          border: `1px solid ${BORDER.default}`,
-          overflow: "hidden",
-          marginTop: 16,
-          marginBottom: 18,
-        }}
-      >
+      <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>
             {CONTACT_LINKS.map((link) => (
@@ -371,9 +326,8 @@ function ContactSection() {
         </table>
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-        <NavLink href="/foundations" label="TEG-Blue Overview" />
-        <NavLink href="/methodology" label="Methodology" />
-        <NavLink href="/scientific-foundations" label="Scientific Foundations" />
+        <NavLink href="/collaborate" label="Collaboration" />
+        <NavLink href="/publications" label="Publications" />
       </div>
     </section>
   );
@@ -381,72 +335,19 @@ function ContactSection() {
 
 function InfoCard({ item }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        minHeight: 150,
-        background: gradientCardBg(item.color, 0.055),
-        border: `1px solid ${hexToRgba(item.color, 0.16)}`,
-        borderLeft: `3px solid ${item.color}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
+    <div style={infoCardStyle(item.color)}>
       <div style={labelStyle(item.color)}>{item.label}</div>
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
 
-function SiteCard({ site }) {
-  const LinkEl = site.external ? "a" : Link;
-  const extraProps = site.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-
+function PlainCard({ item }) {
   return (
-    <div
-      style={{
-        padding: 18,
-        minHeight: 220,
-        background: gradientCardBg(site.color, 0.055),
-        border: `1px solid ${hexToRgba(site.color, 0.16)}`,
-        borderTop: `3px solid ${site.color}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <div style={labelStyle(site.color)}>{site.subtitle}</div>
-      <h3 style={{ fontSize: 17, fontWeight: 700, color: TEXT.primary, margin: "0 0 8px" }}>
-        {site.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 14px" }}>
-        {site.body}
-      </p>
-      <LinkEl href={site.href} {...extraProps} style={{ color: site.color, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>
-        {site.linkText}
-      </LinkEl>
-    </div>
-  );
-}
-
-function StanceCard({ item }) {
-  return (
-    <div
-      style={{
-        padding: 16,
-        background: BG.card,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+    <div style={plainCardStyle}>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
@@ -471,21 +372,7 @@ function ContactRow({ item }) {
 
 function NavLink({ href, label }) {
   return (
-    <Link
-      href={href}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        padding: "10px 14px",
-        background: hexToRgba(SPECTRUM.azure, 0.08),
-        color: SPECTRUM.azure,
-        borderRadius: RADIUS.sm,
-        fontWeight: 500,
-        fontSize: 13,
-        textDecoration: "none",
-        border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.18)}`,
-      }}
-    >
+    <Link href={href} style={navLinkStyle}>
       {label}
     </Link>
   );
@@ -502,6 +389,34 @@ function labelStyle(color) {
     marginBottom: 4,
   };
 }
+
+function infoCardStyle(color) {
+  return {
+    padding: 16,
+    minHeight: 160,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+function calloutStyle(color) {
+  return {
+    padding: 18,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.18)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
 
 const sectionHeadingStyle = {
   fontSize: 21,
@@ -526,6 +441,37 @@ const bodyStyle = {
   margin: 0,
 };
 
+const cardTitleStyle = {
+  fontSize: 15,
+  fontWeight: 650,
+  color: TEXT.primary,
+  lineHeight: 1.35,
+  margin: "0 0 8px",
+};
+
+const cardBodyStyle = {
+  fontSize: 13,
+  color: TEXT.secondary,
+  lineHeight: 1.65,
+  margin: 0,
+};
+
+const plainCardStyle = {
+  padding: 16,
+  background: BG.card,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.md,
+};
+
+const tableWrapStyle = {
+  background: BG.card,
+  borderRadius: RADIUS.md,
+  border: `1px solid ${BORDER.default}`,
+  overflow: "hidden",
+  marginTop: 16,
+  marginBottom: 18,
+};
+
 const tableLabelStyle = {
   padding: "13px 16px",
   fontSize: 11,
@@ -540,4 +486,17 @@ const tableCellStyle = {
   padding: "13px 16px",
   fontSize: 13,
   lineHeight: 1.5,
+};
+
+const navLinkStyle = {
+  display: "inline-flex",
+  alignItems: "center",
+  padding: "10px 14px",
+  background: hexToRgba(SPECTRUM.azure, 0.08),
+  color: SPECTRUM.azure,
+  borderRadius: RADIUS.sm,
+  fontWeight: 500,
+  fontSize: 13,
+  textDecoration: "none",
+  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.18)}`,
 };

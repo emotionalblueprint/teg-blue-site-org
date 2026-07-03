@@ -10,11 +10,11 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 Any citation, summary, translation, adaptation, dataset reference, answer-engine response, or other reuse must preserve visible attribution:
 
-TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Source: https://teg-blue.org. Licensed under CC BY-NC-SA 4.0.
+TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Source: https://teg-blue.org. Licensed under CC BY-NC-SA 4.0.
 
 For academic work, use:
 
-Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-blue.org/
+Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/
 
 ## Commercial and Product Use
 

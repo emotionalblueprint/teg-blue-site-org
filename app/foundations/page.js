@@ -18,135 +18,124 @@ import PageLayout from "@/src/components/PageLayout";
 import ReviewStatusPanel from "@/src/components/ReviewStatusPanel";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
+const MAP_SUBTITLE =
+  "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
+
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
   },
   {
-    question: "What does the Nervous System Gradient show?",
-    answer: "It shows how safety, threat, control, shutdown, restoration, and repair shape perception, time and tempo, emotions, empathy, behaviour, and repair capacity.",
+    question: "What is The Nervous System Gradient?",
+    answer: `The Nervous System Gradient is the central public map inside TEG-Blue. ${MAP_SUBTITLE}`,
   },
   {
-    question: "Why does state-shaped capacity matter?",
-    answer: "Because visible behaviour often carries more than one layer. State, history, repetition, context, impact, and repair capacity all change how a pattern should be understood.",
+    question: "How should the framework be used?",
+    answer: "Use it as a map for reading patterns, impact, capacity, and possible response. It is educational and reflective, not diagnostic or clinical.",
   },
   {
-    question: "How should harm be read in TEG-Blue?",
-    answer: "Impact stays visible. TEG-Blue asks what happened, what effect it had, what capacity was available, and what response fits: support, repair, boundary, protection, accountability, further study, or a combination.",
-  },
-  {
-    question: "What kind of framework is it?",
-    answer: "TEG-Blue is an educational and research-facing visual map. It supports clearer pattern reading; clinical use, treatment claims, and formal validation require separate review.",
+    question: "How does TEG-Blue handle harm?",
+    answer: "Mechanism explains the pattern; it does not erase impact. TEG-Blue keeps behaviour, harm, capacity, accountability, boundary, protection, and repair distinct.",
   },
 ];
 
 const OVERVIEW_CARDS = [
   {
     label: "Body",
-    title: "Patterns begin in nervous-system state",
-    body: "The body organises around safety, threat, connection, protection, control, shutdown, restoration, and repair.",
+    title: "Patterns begin in organism state",
+    body: "The body organizes around safety, threat, connection, protection, control, shutdown, regulation, and repair.",
     color: SPECTRUM.azure,
+  },
+  {
+    label: "Experience",
+    title: "State changes what feels possible",
+    body: "Perception, emotion, tempo, empathy, body activation, and repair capacity can shift together.",
+    color: SPECTRUM.cobalt,
   },
   {
     label: "Relationship",
     title: "Patterns repeat between people",
-    body: "What begins as state-level organisation can shape habits, roles, expectations, boundaries, and repair patterns.",
+    body: "A state-level pattern can shape boundaries, distance, pressure, rupture, accountability, and repair.",
+    color: SPECTRUM.indigo,
+  },
+];
+
+const READING_POINTS = [
+  {
+    label: "Observe",
+    title: "What happened?",
+    body: "Begin with behaviour, context, repetition, and relational effect before assigning motive or diagnosis.",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Impact",
+    title: "What did it do?",
+    body: "Name the effect on clarity, autonomy, safety, options, trust, boundaries, and repair.",
+    color: SPECTRUM.blue,
+  },
+  {
+    label: "Capacity",
+    title: "What was available?",
+    body: "Track whether empathy, accountability, perspective, reality-testing, and repair can stay present.",
     color: SPECTRUM.cobalt,
   },
   {
-    label: "Repair",
-    title: "Legibility creates room for response",
-    body: "When a pattern becomes visible, support, interruption, protection, accountability, and repair can be chosen more clearly.",
+    label: "Response",
+    title: "What fits now?",
+    body: "Support, interruption, boundary, protection, accountability, care, repair, or further study may each fit different patterns.",
     color: SPECTRUM.indigo,
   },
 ];
 
 const STATE_COPY = {
-  X: "Resting availability. No active problem signal; settling and repair are available.",
+  X: "Resting availability. No active problem signal; regulation and repair can remain available.",
   A: "Safety with others. Engagement, reciprocity, perspective, and repair can stay online.",
   "A↔B": "Belonging is uncertain. The system checks whether it is safe to stay open.",
-  B: "Threat is detected. The system mobilises to defend, escape, appease, set distance, or protect.",
+  B: "Threat is detected. The system mobilizes to defend, escape, appease, set distance, or protect.",
   C: "Threat persists. Attention narrows toward anticipation, risk management, and control of variables.",
-  D: "Life-peril organisation. Power or force becomes the trusted route when other routes are unavailable.",
-  Z: "Mobilisation cannot form or has failed. The body conserves, withdraws, freezes, or collapses.",
+  D: "Life-peril organization. Power or force becomes the trusted route when other routes are unavailable.",
+  Z: "Mobilization cannot form or has failed. The body conserves, withdraws, freezes, or collapses.",
 };
-
-const READING_POINTS = [
-  {
-    label: "Impact",
-    title: "What happened, and what did it do?",
-    body: "Name the effect on clarity, autonomy, safety, options, trust, and repair.",
-    color: SPECTRUM.azure,
-  },
-  {
-    label: "Capacity",
-    title: "What capacity was available or unavailable?",
-    body: "Track whether empathy, accountability, perspective, and reality-testing can stay present.",
-    color: SPECTRUM.blue,
-  },
-  {
-    label: "Return",
-    title: "What returns as safety increases?",
-    body: "If repair capacity returns, the pattern may be protective. If absence persists, response moves toward boundary, protection, and accountability.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    label: "Response",
-    title: "What is needed now?",
-    body: "Support, repair, interruption, boundary, protection, accountability, further study, or a combination.",
-    color: SPECTRUM.indigo,
-  },
-];
-
-const DIMENSIONS = [
-  "Perception",
-  "Time / tempo",
-  "Emotions",
-  "Empathy",
-  "Repair",
-];
 
 const SCOPE_ITEMS = [
   {
-    title: "It is a shared map",
-    body: "The Gradient gives shared language for emotional and nervous-system patterns across safety, threat, control, shutdown, restoration, and repair.",
+    title: "A map, not a verdict",
+    body: "A Gradient position describes a possible organization of a pattern. It is not a fixed identity, moral category, or clinical label.",
   },
   {
-    title: "It supports pattern reading",
-    body: "The framework helps readers connect visible behaviour with state, repetition, impact, available capacity, and possible response.",
+    title: "A pattern read, not mind-reading",
+    body: "TEG-Blue can help interpret observable patterns and effects, but it cannot prove inner state, intention, or whole identity.",
   },
   {
-    title: "It requires context",
-    body: "A state label describes a pattern of organisation. Assessment, diagnosis, treatment, and clinical decisions require separate professional context.",
+    title: "A mechanism with impact",
+    body: "A protective origin can still cause harm when a pattern becomes rigid, repeated, controlling, or unrepaired.",
   },
   {
-    title: "It keeps impact visible",
-    body: "A protective origin can still cause harm. A composed pattern can still reduce another person's clarity, autonomy, safety, or repair.",
+    title: "A framework with research boundaries",
+    body: "Established research supports specific parts of the map. The integration is TEG-Blue's contribution.",
   },
 ];
 
 export const metadata = {
   title: "TEG-Blue Overview",
-  description: "A public overview of the visual map for nervous-system patterns: safety, threat, control, shutdown, impact, accountability, and repair.",
+  description: "A public overview of TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient as its central public map.",
   keywords: [
     "TEG-Blue overview",
     "The Emotional Gradient Blueprint",
     "Nervous System Gradient",
-    "state-shaped capacity",
-    "nervous system states",
-    "emotional regulation",
-    "repair capacity",
-    "accountability",
-    "visual map",
     "emotional patterns",
+    "nervous system patterns",
+    "state-shaped perception",
+    "repair capacity",
+    "responsible pattern reading",
   ],
   alternates: {
     canonical: "https://teg-blue.org/foundations",
   },
   openGraph: {
     title: "TEG-Blue Overview",
-    description: "A visual map for reading nervous-system patterns across impact, capacity, accountability, and repair.",
+    description: "The Emotional Gradient Blueprint and its central public map, The Nervous System Gradient.",
     url: "https://teg-blue.org/foundations",
     type: "article",
     siteName: "TEG-Blue",
@@ -154,19 +143,13 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TEG-Blue Overview",
-    description: "A visual map for reading nervous-system patterns across impact, capacity, accountability, and repair.",
+    description: "A public overview of The Emotional Gradient Blueprint.",
   },
 };
 
 export default function FoundationsPage() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: BG.page,
-        fontFamily: FONT.display,
-      }}
-    >
+    <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/foundations" />
 
       <PageLayout
@@ -174,20 +157,20 @@ export default function FoundationsPage() {
           <ResearcherHero
             badge="FRAMEWORK OVERVIEW"
             title="TEG-Blue Overview"
-            subtitle="The Nervous System Gradient"
-            description="A public overview of the visual map for patterns we can already see across safety, threat, control, shutdown, impact, accountability, and repair."
+            subtitle="The Emotional Gradient Blueprint"
+            description="A public overview of the layered visual framework, with The Nervous System Gradient as its central public map."
           />
         }
       >
         <WhatItIsSection />
         <GradientSection />
         <ReadingPatternsSection />
-        <WhatChangesSection />
+        <StateShiftsSection />
         <ScopeSection />
 
         <ReviewStatusPanel
-          title="Research position"
-          description="TEG-Blue draws from established research while offering its own visual integration. The framework is presented for study, discussion, application, and further review."
+          title="Grounded in science, with the parts kept distinct."
+          description="Research areas support specific parts of the map. Each field remains itself; TEG-Blue places the parts in relation. The integration is the contribution."
         />
 
         <WhereNextSection />
@@ -234,24 +217,17 @@ function WhatItIsSection() {
   return (
     <section id="what-it-is" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
-      <h2 style={sectionHeadingStyle}>TEG-Blue makes state-shaped capacity legible.</h2>
+      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional patterns legible as biological and relational information.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
-        emotion, nervous-system state, protection, relationship patterns, impact, and repair.
+        TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions,
+        nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve.
       </p>
-      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 760 }}>
-        It shows how state changes can shape perception, tempo, emotion, empathy, boundaries, and repair across
-        safety, threat, control, shutdown, restoration, and repair.
+      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
+        In the current public phase, that Blueprint is expressed most directly through The Nervous System
+        Gradient. The map makes visible how patterns that begin in the body can shape individual experience and
+        relationships across safety, threat, control, shutdown, regulation, and repair.
       </p>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
-          gap: 12,
-          marginTop: 20,
-        }}
-      >
+      <div style={gridStyle}>
         {OVERVIEW_CARDS.map((card) => (
           <InfoCard key={card.title} item={card} />
         ))}
@@ -263,75 +239,29 @@ function WhatItIsSection() {
 function GradientSection() {
   return (
     <section id="gradient" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.cobalt)}>The map</div>
-      <h2 style={sectionHeadingStyle}>The Gradient runs from availability into protection, with shutdown as a fallback.</h2>
-      <p style={leadStyle}>
-        The Nervous System Gradient is the central map of TEG-Blue. It shows how the body moves from rest and
-        connection into threat response, control, and shutdown, and where restoration or repair may become
-        possible again.
+      <div style={labelStyle(SPECTRUM.cobalt)}>Central public map</div>
+      <h2 style={sectionHeadingStyle}>The Nervous System Gradient sits inside the Blueprint.</h2>
+      <p style={leadStyle}>{MAP_SUBTITLE}</p>
+      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
+        The Gradient does not claim to reveal a person's hidden truth. It gives a shared way to ask what pattern
+        may be organizing perception, emotion, body activation, behaviour, relationship, and repair.
       </p>
 
-      <div
-        aria-hidden="true"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) 68px",
-          gap: 10,
-          alignItems: "center",
-          marginTop: 22,
-          marginBottom: 10,
-        }}
-      >
-        <span
-          style={{
-            height: 18,
-            borderRadius: 999,
-            background: REALITY_CHECK_GRADIENT,
-            boxShadow: `0 0 22px ${hexToRgba(SPECTRUM.azure, 0.22)}`,
-          }}
-        />
-        <span
-          style={{
-            height: 18,
-            borderRadius: 999,
-            background: hexToRgba(SPECTRUM.slate, 0.45),
-            border: `1px dashed ${hexToRgba(SPECTRUM.sky, 0.42)}`,
-          }}
-        />
+      <div aria-hidden="true" style={gradientBarWrapStyle}>
+        <span style={activeGradientStyle} />
+        <span style={shutdownGradientStyle} />
       </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) 68px",
-          gap: 10,
-          fontFamily: FONT.mono,
-          fontSize: 10,
-          color: TEXT.muted,
-          marginBottom: 18,
-        }}
-      >
+      <div style={gradientLabelStyle}>
         <span style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-          <span>Availability</span>
-          <span>Protection</span>
+          <span>Safety</span>
+          <span>Threat and control</span>
         </span>
         <span style={{ textAlign: "right" }}>Shutdown</span>
       </div>
 
-      <div
-        style={{
-          background: BG.card,
-          border: `1px solid ${BORDER.default}`,
-          borderRadius: RADIUS.lg,
-          overflow: "hidden",
-        }}
-      >
+      <div style={stateListStyle}>
         {REALITY_CHECK_STATES.map((state, index) => (
-          <StateRow
-            key={state.code}
-            state={state}
-            index={index}
-            isLast={index === REALITY_CHECK_STATES.length - 1}
-          />
+          <StateRow key={state.code} state={state} index={index} isLast={index === REALITY_CHECK_STATES.length - 1} />
         ))}
       </div>
     </section>
@@ -342,40 +272,23 @@ function ReadingPatternsSection() {
   return (
     <section id="reading-patterns" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.indigo)}>Pattern reading</div>
-      <h2 style={sectionHeadingStyle}>Read the pattern, the impact, and the available response.</h2>
+      <h2 style={sectionHeadingStyle}>Read observation, impact, capacity, and response separately.</h2>
       <p style={leadStyle}>
-        TEG-Blue helps separate the organisation of a pattern from its effect. A response may begin as protection,
-        and it still needs to be read through impact, repetition, accountability, and repair capacity.
+        Responsible pattern reading starts from what can be seen and what effect occurred. Interpretation should
+        stay close to context, repetition, available capacity, and the response that fits.
       </p>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {READING_POINTS.map((point) => (
           <InfoCard key={point.title} item={point} />
         ))}
       </div>
-
-      <div
-        style={{
-          marginTop: 18,
-          padding: 18,
-          background: gradientCardBg(SPECTRUM.cobalt, 0.055),
-          border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.18)}`,
-          borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-          borderRadius: RADIUS.md,
-        }}
-      >
+      <div style={calloutStyle(SPECTRUM.cobalt)}>
         <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
-          Patterns are read by their effects over time.
+          The base read is effect over time.
         </p>
         <p style={bodyStyle}>
-          If empathy, accountability, repair, and reality-testing return as safety increases, the pattern may be
+          Can impact be named, can empathy stay present, can accountability land, can repair change the pattern,
+          and can reality stay discussable? If those capacities return as safety increases, the pattern may be
           protective. If they remain absent and the pattern keeps reducing clarity, autonomy, or repair, the
           response moves toward boundary, protection, and accountability.
         </p>
@@ -384,37 +297,18 @@ function ReadingPatternsSection() {
   );
 }
 
-function WhatChangesSection() {
+function StateShiftsSection() {
   return (
-    <section id="what-changes" style={{ marginBottom: 42 }}>
+    <section id="state-shifts" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>What shifts</div>
-      <h2 style={sectionHeadingStyle}>State changes what is available.</h2>
+      <h2 style={sectionHeadingStyle}>State changes what becomes available.</h2>
       <p style={leadStyle}>
-        The Gradient is useful because several capacities can shift together: how wide perception is, how fast or
-        compressed time feels, which emotions dominate, how available empathy remains, and what kind of repair is
-        possible.
+        The Gradient is useful because several capacities can shift together: what the system notices, what feels
+        true, how much time and choice remain, whether empathy can stay present, and whether repair can begin.
       </p>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 8,
-          marginTop: 18,
-        }}
-      >
-        {DIMENSIONS.map((dimension) => (
-          <span
-            key={dimension}
-            style={{
-              padding: "7px 10px",
-              borderRadius: RADIUS.sm,
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.20)}`,
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              color: TEXT.secondary,
-              fontSize: 12,
-              lineHeight: 1.3,
-            }}
-          >
+      <div style={pillWrapStyle}>
+        {["Perception", "Emotion", "Body activation", "Tempo", "Empathy", "Accountability", "Repair"].map((dimension) => (
+          <span key={dimension} style={pillStyle}>
             {dimension}
           </span>
         ))}
@@ -426,22 +320,15 @@ function WhatChangesSection() {
 function ScopeSection() {
   return (
     <section id="scope" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.slate)}>Scope</div>
-      <h2 style={sectionHeadingStyle}>Use the framework as a map, not a verdict.</h2>
+      <div style={labelStyle(SPECTRUM.slate)}>Scope and limits</div>
+      <h2 style={sectionHeadingStyle}>Use the framework as a map, not as authority over a person.</h2>
       <p style={leadStyle}>
-        The Nervous System Gradient gives language for emotional and relational patterns. It works best when it is
-        held with context, observation, humility, and attention to impact.
+        TEG-Blue works best when it keeps humility, observation, and impact in the foreground. Calm is not the
+        same as safety; distress is not the same as danger.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {SCOPE_ITEMS.map((item) => (
-          <ScopeCard key={item.title} item={item} />
+          <PlainCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -452,16 +339,8 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
-      <h2 style={sectionHeadingStyle}>Explore the framework in more depth.</h2>
-      <div
-        style={{
-          background: BG.card,
-          borderRadius: RADIUS.md,
-          border: `1px solid ${BORDER.default}`,
-          overflow: "hidden",
-          marginTop: 16,
-        }}
-      >
+      <h2 style={sectionHeadingStyle}>Follow the part of the work you need.</h2>
+      <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: BG.surface }}>
@@ -470,9 +349,10 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
-            <NavRow label="Research foundations" href="/scientific-foundations" linkText="Scientific Foundations" />
-            <NavRow label="Method, claims, and limits" href="/methodology" linkText="Methodology" />
-            <NavRow label="Project background and research stance" href="/about" linkText="About" />
+            <NavRow label="Ethical commitments and use boundaries" href="/ethics" linkText="Ethics" />
+            <NavRow label="Research areas and claim boundaries" href="/scientific-foundations" linkText="Scientific Grounding" />
+            <NavRow label="How TEG-Blue reads patterns" href="/methodology" linkText="Pattern reading" />
+            <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>
@@ -483,102 +363,35 @@ function WhereNextSection() {
 
 function InfoCard({ item }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        minHeight: 148,
-        background: gradientCardBg(item.color, 0.055),
-        border: `1px solid ${hexToRgba(item.color, 0.16)}`,
-        borderLeft: `3px solid ${item.color}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
+    <div style={infoCardStyle(item.color)}>
       <div style={labelStyle(item.color)}>{item.label}</div>
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
 
 function StateRow({ state, index, isLast }) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "44px minmax(0, 1fr)",
-        gap: 12,
-        padding: "14px 16px",
-        borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
-        background: state.activeGradient ? "transparent" : hexToRgba(state.color, 0.08),
-      }}
-    >
-      <div
-        style={{
-          width: 30,
-          height: 30,
-          borderRadius: 999,
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: hexToRgba(state.color, state.activeGradient ? 0.18 : 0.12),
-          border: state.activeGradient ? `1px solid ${hexToRgba(state.color, 0.22)}` : `1px dashed ${hexToRgba(SPECTRUM.sky, 0.38)}`,
-          color: state.ink,
-          fontFamily: FONT.mono,
-          fontSize: 11,
-          fontWeight: 800,
-        }}
-      >
-        {index + 1}
-      </div>
+    <div style={stateRowStyle(state, isLast)}>
+      <div style={stateNumberStyle(state)}>{index + 1}</div>
       <div>
-        <h3 style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "baseline", fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 5px" }}>
+        <h3 style={stateTitleStyle}>
           <span>{state.mode}</span>
-          <span style={{ fontFamily: FONT.mono, fontSize: 10, color: TEXT.muted }}>
-            {state.code}
-          </span>
-          {!state.activeGradient && (
-            <span
-              style={{
-                fontFamily: FONT.mono,
-                fontSize: 9,
-                fontWeight: 650,
-                lineHeight: 1.2,
-                color: TEXT.hint,
-                textTransform: "uppercase",
-              }}
-            >
-              fallback
-            </span>
-          )}
+          <span style={stateCodeStyle}>{state.code}</span>
+          {!state.activeGradient && <span style={stateFallbackStyle}>fallback</span>}
         </h3>
-        <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.62, margin: 0 }}>
-          {STATE_COPY[state.code]}
-        </p>
+        <p style={cardBodyStyle}>{STATE_COPY[state.code]}</p>
       </div>
     </div>
   );
 }
 
-function ScopeCard({ item }) {
+function PlainCard({ item }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        background: BG.card,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+    <div style={plainCardStyle}>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
@@ -611,6 +424,103 @@ function labelStyle(color) {
   };
 }
 
+function infoCardStyle(color) {
+  return {
+    padding: 16,
+    minHeight: 156,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+function calloutStyle(color) {
+  return {
+    marginTop: 18,
+    padding: 18,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.18)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+function stateRowStyle(state, isLast) {
+  return {
+    display: "grid",
+    gridTemplateColumns: "44px minmax(0, 1fr)",
+    gap: 12,
+    padding: "14px 16px",
+    borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
+    background: state.activeGradient ? "transparent" : hexToRgba(state.color, 0.08),
+  };
+}
+
+function stateNumberStyle(state) {
+  return {
+    width: 30,
+    height: 30,
+    borderRadius: 999,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: hexToRgba(state.color, state.activeGradient ? 0.18 : 0.12),
+    border: state.activeGradient ? `1px solid ${hexToRgba(state.color, 0.22)}` : `1px dashed ${hexToRgba(SPECTRUM.sky, 0.38)}`,
+    color: state.ink,
+    fontFamily: FONT.mono,
+    fontSize: 11,
+    fontWeight: 800,
+  };
+}
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
+
+const gradientBarWrapStyle = {
+  display: "grid",
+  gridTemplateColumns: "minmax(0, 1fr) 68px",
+  gap: 10,
+  alignItems: "center",
+  marginTop: 22,
+  marginBottom: 10,
+};
+
+const activeGradientStyle = {
+  height: 18,
+  borderRadius: 999,
+  background: REALITY_CHECK_GRADIENT,
+  boxShadow: `0 0 22px ${hexToRgba(SPECTRUM.azure, 0.22)}`,
+};
+
+const shutdownGradientStyle = {
+  height: 18,
+  borderRadius: 999,
+  background: hexToRgba(SPECTRUM.slate, 0.45),
+  border: `1px dashed ${hexToRgba(SPECTRUM.sky, 0.42)}`,
+};
+
+const gradientLabelStyle = {
+  display: "grid",
+  gridTemplateColumns: "minmax(0, 1fr) 68px",
+  gap: 10,
+  fontFamily: FONT.mono,
+  fontSize: 10,
+  color: TEXT.muted,
+  marginBottom: 18,
+};
+
+const stateListStyle = {
+  background: BG.card,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.lg,
+  overflow: "hidden",
+};
+
 const sectionHeadingStyle = {
   fontSize: 21,
   fontWeight: 700,
@@ -634,6 +544,53 @@ const bodyStyle = {
   margin: 0,
 };
 
+const cardTitleStyle = {
+  fontSize: 15,
+  fontWeight: 650,
+  color: TEXT.primary,
+  lineHeight: 1.35,
+  margin: "0 0 8px",
+};
+
+const cardBodyStyle = {
+  fontSize: 13,
+  color: TEXT.secondary,
+  lineHeight: 1.65,
+  margin: 0,
+};
+
+const plainCardStyle = {
+  padding: 16,
+  background: BG.card,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.md,
+};
+
+const pillWrapStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: 8,
+  marginTop: 18,
+};
+
+const pillStyle = {
+  padding: "7px 10px",
+  borderRadius: RADIUS.sm,
+  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.20)}`,
+  background: hexToRgba(SPECTRUM.azure, 0.06),
+  color: TEXT.secondary,
+  fontSize: 12,
+  lineHeight: 1.3,
+};
+
+const tableWrapStyle = {
+  background: BG.card,
+  borderRadius: RADIUS.md,
+  border: `1px solid ${BORDER.default}`,
+  overflow: "hidden",
+  marginTop: 16,
+};
+
 const tableHeaderStyle = {
   padding: "12px 16px",
   textAlign: "left",
@@ -648,4 +605,30 @@ const tableHeaderStyle = {
 const tableCellStyle = {
   padding: "12px 16px",
   fontSize: 14,
+};
+
+const stateTitleStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: 8,
+  alignItems: "baseline",
+  fontSize: 14,
+  fontWeight: 650,
+  color: TEXT.primary,
+  margin: "0 0 5px",
+};
+
+const stateCodeStyle = {
+  fontFamily: FONT.mono,
+  fontSize: 10,
+  color: TEXT.muted,
+};
+
+const stateFallbackStyle = {
+  fontFamily: FONT.mono,
+  fontSize: 9,
+  fontWeight: 650,
+  lineHeight: 1.2,
+  color: TEXT.hint,
+  textTransform: "uppercase",
 };

@@ -29,11 +29,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata = {
   title: {
-    default: 'TEG-Blue — A Visual Map of Nervous-System Patterns',
+    default: 'TEG-Blue — The Emotional Gradient Blueprint',
     template: '%s | TEG-Blue',
   },
-  description: 'TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.',
-  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'emotional patterns', 'nervous system gradient', 'visual map', 'research grounding', 'state-shaped capacity', 'repair', 'protective patterns', 'relationship patterns', 'impact'],
+  description: 'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.',
+  keywords: ['emotional regulation', 'nervous system', 'attachment research', 'trauma research', 'emotional patterns', 'nervous system gradient', 'layered visual framework', 'research grounding', 'state-shaped capacity', 'repair', 'protective patterns', 'relationship patterns', 'impact'],
   authors: [{ name: 'Anna Paretas-Artacho', url: 'https://orcid.org/0009-0005-2394-7162' }],
   creator: 'Anna Paretas-Artacho',
   publisher: 'TEG-Blue Research',
@@ -46,13 +46,13 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue',
-    title: 'TEG-Blue — A Visual Map of Nervous-System Patterns',
-    description: 'TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across safety, threat, control, shutdown, accountability, and repair.',
+    title: 'TEG-Blue — The Emotional Gradient Blueprint',
+    description: 'A layered visual framework for reading emotional, bodily, nervous-system, and relational patterns across safety, threat, control, shutdown, regulation, and repair.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TEG-Blue — A Visual Map of Nervous-System Patterns',
-    description: 'TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across safety, threat, control, shutdown, accountability, and repair.',
+    title: 'TEG-Blue — The Emotional Gradient Blueprint',
+    description: 'A layered visual framework for reading emotional, bodily, nervous-system, and relational patterns.',
   },
   robots: {
     index: true,
@@ -71,7 +71,7 @@ export const metadata = {
   other: {
     'llms-txt': '/llms.txt',
     'citation_author': 'Paretas-Artacho, Anna',
-    'citation_title': 'TEG-Blue: The Nervous System Gradient',
+    'citation_title': 'TEG-Blue: The Emotional Gradient Blueprint',
     'citation_publication_date': '2026',
     'citation_online_date': '2026',
     'citation_public_url': 'https://teg-blue.org',
@@ -133,7 +133,7 @@ const annaParetasJsonLd = {
     "Pattern recognition",
     "Visual communication",
     "Integrative frameworks",
-    "Nervous system regulation",
+  "Nervous system regulation",
   ],
 }
 
@@ -145,7 +145,7 @@ const organizationJsonLd = {
   name: "TEG-Blue",
   url: BASE_URL,
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
+  description: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -185,7 +185,7 @@ const websiteJsonLd = {
   name: "TEG-Blue.org",
   url: BASE_URL,
   inLanguage: "en",
-  description: "Public framework home for TEG-Blue: The Emotional Gradient Blueprint and the Nervous System Gradient.",
+  description: "Public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint, with The Nervous System Gradient as its central public map.",
   publisher: {
     "@id": ORGANIZATION_ID,
   },

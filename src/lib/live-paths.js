@@ -14,6 +14,10 @@ const LIVE_PATHS = new Set([
   "/foundations",
   "/methodology",
   "/scientific-foundations",
+  "/ethics",
+  "/publications",
+  "/glossary",
+  "/collaborate",
 ]);
 
 // Whole sections opened at once. Frameworks + models are tightly cross-linked, so

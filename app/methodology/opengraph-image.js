@@ -3,7 +3,7 @@ import { BLUE, SPECTRUM } from '@/src/styles/tokens'
 
 export const runtime = 'edge'
 
-export const alt = 'Methodology - How to read visible patterns responsibly'
+export const alt = 'How TEG-Blue reads patterns responsibly'
 export const size = {
   width: 1200,
   height: 630,
@@ -12,7 +12,7 @@ export const contentType = 'image/png'
 
 const STEPS = [
   { number: '1', label: 'Observation', color: SPECTRUM.sky },
-  { number: '2', label: 'Pattern', color: SPECTRUM.azure },
+  { number: '2', label: 'Interpretation', color: SPECTRUM.azure },
   { number: '3', label: 'Impact', color: SPECTRUM.blue },
   { number: '4', label: 'Claim Status', color: SPECTRUM.indigo },
 ]
@@ -69,7 +69,7 @@ export default async function Image() {
               textTransform: 'uppercase',
             }}
           >
-            TEG-Blue Methodology
+            TEG-Blue Pattern Reading
           </div>
 
           <div
@@ -82,7 +82,7 @@ export default async function Image() {
               lineHeight: 1.1,
             }}
           >
-            How to read patterns responsibly
+            How TEG-Blue reads patterns
           </div>
 
           <div

@@ -3,7 +3,7 @@ import { BLUE, SPECTRUM } from '@/src/styles/tokens'
 
 export const runtime = 'edge'
 
-export const alt = 'Scientific Foundations - Research areas behind the TEG-Blue map'
+export const alt = 'Scientific Grounding - Research areas and claim boundaries behind the TEG-Blue map'
 export const size = {
   width: 1200,
   height: 630,
@@ -11,11 +11,11 @@ export const size = {
 export const contentType = 'image/png'
 
 const AREAS = [
-  { label: 'Emotion', color: SPECTRUM.sky },
-  { label: 'State', color: SPECTRUM.azure },
-  { label: 'Attachment', color: SPECTRUM.blue },
-  { label: 'Trauma', color: SPECTRUM.cobalt },
-  { label: 'Social Scale', color: SPECTRUM.indigo },
+  { label: 'Biology', color: SPECTRUM.sky },
+  { label: 'Physiology', color: SPECTRUM.azure },
+  { label: 'Emotion', color: SPECTRUM.blue },
+  { label: 'Psychology', color: SPECTRUM.cobalt },
+  { label: 'Relationship', color: SPECTRUM.indigo },
 ]
 
 export default async function Image() {
@@ -70,7 +70,7 @@ export default async function Image() {
               textTransform: 'uppercase',
             }}
           >
-            TEG-Blue Scientific Foundations
+            TEG-Blue Scientific Grounding
           </div>
 
           <div
@@ -83,7 +83,7 @@ export default async function Image() {
               lineHeight: 1.08,
             }}
           >
-            Research areas behind the map
+            Research areas and claim boundaries
           </div>
 
           <div
@@ -96,7 +96,7 @@ export default async function Image() {
               marginBottom: 34,
             }}
           >
-            Different fields illuminate different parts of body, relationship, scale, and repair.
+            Fields support specific parts; TEG-Blue places the parts in relation.
           </div>
 
           <div

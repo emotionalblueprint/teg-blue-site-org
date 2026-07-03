@@ -9,134 +9,91 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What research does TEG-Blue draw from?",
-    answer: "TEG-Blue draws from established research areas including affective neuroscience, Polyvagal Theory, autonomic and stress physiology, attachment research, trauma research, developmental science, emotion science, cognitive science, social psychology, sociology, and related fields.",
+    answer: "TEG-Blue draws from established research areas including biology, physiology, affective neuroscience, autonomic neuroscience, psychology, attachment research, trauma research, developmental science, anthropology, sociology, social psychology, and contemplative traditions.",
   },
   {
-    question: "Does this research validate TEG-Blue as a whole?",
-    answer: "No. Research can support specific mechanisms and relationships inside the framework. The full TEG-Blue integration, diagrams, labels, tools, and applications require their own review and testing.",
+    question: "Does any one field already say TEG-Blue?",
+    answer: "No. Each field remains itself. TEG-Blue places parts from different fields into relation, and that integration is its contribution.",
   },
   {
-    question: "What is TEG-Blue's contribution?",
-    answer: "TEG-Blue places body state, emotion, protection, relationship, impact, and repair into one visual gradient. The contribution is the integration and the usable map.",
+    question: "How should citations be used?",
+    answer: "A citation should connect field, finding, function, and position in the sequence. It should support a specific part of the architecture, not the whole system at once.",
   },
   {
-    question: "How should this page be used?",
-    answer: "Use it as a guide to which research areas help illuminate different parts of the Nervous System Gradient, not as a claim that any one field already contains the full framework.",
+    question: "Is TEG-Blue diagnostic?",
+    answer: "No. The Nervous System Gradient is educational and reflective. It should not be used to diagnose, treat, or claim certainty about another person's true internal state.",
   },
 ];
 
-const LENS_COLUMNS = [
-  { key: "body", label: "Body" },
-  { key: "relationship", label: "Relationship" },
-  { key: "repetition", label: "Repetition" },
-  { key: "repair", label: "Repair" },
-];
-
-const LENS_ROWS = [
+const RESEARCH_SEQUENCE = [
   {
-    area: "Affective neuroscience",
-    body: "Emotion as biological signal",
-    relationship: "Feeling as orientation",
-    repetition: "Signals can become familiar",
-    repair: "Signals become nameable",
+    label: "Field",
+    title: "Which research area is speaking?",
+    body: "Biology, physiology, psychology, attachment research, trauma research, social psychology, and other fields each keep their own methods and boundaries.",
     color: SPECTRUM.azure,
   },
   {
-    area: "Polyvagal Theory",
-    body: "Autonomic hierarchy, neuroception",
-    relationship: "Social engagement cues",
-    repetition: "Safety reads can pattern",
-    repair: "Enough safety supports return",
+    label: "Finding",
+    title: "What does that field help establish?",
+    body: "The source should support a mechanism, condition, capacity, or pattern, not be stretched into a claim about all of TEG-Blue.",
     color: SPECTRUM.blue,
   },
   {
-    area: "Autonomic and stress physiology",
-    body: "Activation, mobilisation, shutdown",
-    relationship: "Capacity changes with state",
-    repetition: "Chronic threat costs accumulate",
-    repair: "Return and restoration matter",
-    color: SPECTRUM.blue,
-  },
-  {
-    area: "Attachment and development",
-    body: "Regulation develops in context",
-    relationship: "Safety, proximity, rupture",
-    repetition: "Expectations can repeat",
-    repair: "Co-regulation supports return",
+    label: "Function",
+    title: "What does the finding help clarify?",
+    body: "A finding may clarify arousal, shutdown, attention, relational expectation, rupture, chronic load, or repair capacity.",
     color: SPECTRUM.cobalt,
   },
   {
-    area: "Trauma research",
-    body: "Threat can remain organised",
-    relationship: "Protection can repeat",
-    repetition: "Threat patterns can persist",
-    repair: "Safety precedes integration",
+    label: "Position",
+    title: "Where does it sit in the map?",
+    body: "TEG-Blue places supported parts into relation across safety, threat, control, shutdown, regulation, and repair.",
     color: SPECTRUM.indigo,
-  },
-  {
-    area: "Social psychology and sociology",
-    body: "State meets context",
-    relationship: "Roles, norms, power",
-    repetition: "Context shapes repetition",
-    repair: "Conditions shape what can change",
-    color: SPECTRUM.slate,
   },
 ];
 
 const RESEARCH_AREAS = [
   {
-    title: "Emotion and affective neuroscience",
-    body: "Helps explain emotion as a body-based signal system with information about safety, threat, need, boundary, value, and action readiness.",
-    contribution: "Supports the view that emotion carries information about safety, threat, need, boundary, value, and action readiness.",
+    title: "Biology and physiology",
+    role: "Load-bearing for the body-level organization of the map.",
+    body: "These fields ground survival, adaptation, organism-environment response, arousal, energy mobilization, shutdown, regulation, and repair capacity.",
+    boundary: "They do not make visible behaviour a biological measurement or prove someone's inner state from outside.",
     color: SPECTRUM.azure,
   },
   {
-    title: "Polyvagal Theory and neuroception",
-    body: "Helps explain autonomic hierarchy, neuroception, social engagement, mobilisation, shutdown, and why relational cues can change available capacity.",
-    contribution: "Supports the Gradient's attention to safety/threat reading, social engagement, mobilisation, immobilisation, and state-shaped repair capacity.",
+    title: "Autonomic neuroscience and stress physiology",
+    role: "Grounds state organization and chronic load.",
+    body: "These areas support careful discussion of mobilisation, inhibition, arousal flexibility, stress physiology, allostatic pressure, shutdown, and return.",
+    boundary: "Specific mechanisms, markers, or pathways need source trace before public use.",
     color: SPECTRUM.blue,
   },
   {
-    title: "Autonomic physiology and stress research",
-    body: "Helps explain why perception, cognition, body activation, tempo, and repair capacity change with state.",
-    contribution: "Supports the Gradient's attention to activation, mobilisation, shutdown, chronic load, and return.",
-    color: SPECTRUM.blue,
-  },
-  {
-    title: "Attachment and developmental research",
-    body: "Helps explain how relational safety, rupture, proximity, expectation, and regulation develop over time.",
-    contribution: "Supports the link between body organisation, relationship expectations, and repair.",
+    title: "Affective neuroscience and emotion science",
+    role: "Connects emotion to signal, salience, and action readiness.",
+    body: "These areas support the view that emotions can carry information about need, threat, boundary, value, action readiness, and relational meaning.",
+    boundary: "No single emotion theory should be treated as the source of the whole Blueprint.",
     color: SPECTRUM.cobalt,
   },
   {
-    title: "Trauma and dissociation research",
-    body: "Helps explain chronic threat adaptation, defensive organisation, collapse, hypervigilance, and fragmented capacity.",
-    contribution: "Supports the distinction between protection, shutdown, harmful pattern, boundary, accountability, and repair.",
+    title: "Psychology",
+    role: "One major research angle, not the owner of the pattern.",
+    body: "Psychology supports discussion of cognition, behaviour, appraisal, learning, development, social perception, personality organization, and relational dynamics.",
+    boundary: "TEG-Blue should not be presented as a psychology model, therapy model, diagnosis, or clinical assessment.",
     color: SPECTRUM.indigo,
   },
   {
-    title: "Cognitive science and emotion regulation",
-    body: "Helps explain attention, prediction, cognitive load, meaning-making, and why insight alone may not shift a state.",
-    contribution: "Supports the claim that state changes what can be perceived, considered, remembered, and revised.",
-    color: SPECTRUM.azure,
+    title: "Attachment, trauma, and developmental research",
+    role: "Supports relational safety, rupture, protection, and repeated patterns.",
+    body: "These fields help explain proximity, separation, expectation, chronic threat adaptation, dissociation, hypervigilance, defensive reorganization, and repair limits.",
+    boundary: "Do not use TEG-Blue to diagnose trauma or make deterministic claims about childhood and adult patterns.",
+    color: SPECTRUM.blue,
   },
   {
-    title: "Communication and repair frameworks",
-    body: "Help explain the conditions under which language can name impact, restore clarity, support accountability, or fail.",
-    contribution: "Supports the link between state, empathy, reality-testing, accountability, and repair capacity.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    title: "Social psychology, sociology, and power research",
-    body: "Help explain how roles, norms, power, and context shape repeated interaction patterns and available repair.",
-    contribution: "Supports TEG-Blue's attention to context without turning a state pattern into a whole-person verdict.",
+    title: "Social, cultural, and contemplative fields",
+    role: "Locate context, attention, awareness, norms, power, and later scale.",
+    body: "Social psychology, sociology, anthropology, evolutionary research, and contemplative traditions help clarify social patterning, belonging, status, care, attention, and awareness.",
+    boundary: "Groups, institutions, and culture are deeper scale language, not the current public lead.",
     color: SPECTRUM.slate,
-  },
-  {
-    title: "Biology, evolution, and belonging research",
-    body: "Help explain belonging, hierarchy, status, care, threat detection, and organism-environment adaptation.",
-    contribution: "Supports the Gradient's attention to belonging, status, care, and threat detection while keeping categories provisional.",
-    color: SPECTRUM.indigo,
   },
 ];
 
@@ -146,12 +103,12 @@ const CLAIM_CARE = [
     body: "A research area may help explain one mechanism, condition, capacity, or pattern. It should not be used to claim the whole framework is already established.",
   },
   {
-    title: "TEG-Blue places parts in relation",
-    body: "The framework's contribution is the integration: how body state, emotion, protection, relationship, impact, and repair are held together in one Gradient.",
+    title: "The integration is named honestly",
+    body: "TEG-Blue places source-supported parts into relation. That relational architecture is the contribution.",
   },
   {
-    title: "Tools need their own review",
-    body: "A practical tool can be useful as an educational map while still needing separate review for clinical, institutional, or research claims.",
+    title: "Named theories need calibration",
+    body: "When a page names a theory, construct, mechanism, or clinical field, the claim should say exactly what that source can and cannot support.",
   },
   {
     title: "Impact remains visible",
@@ -161,27 +118,21 @@ const CLAIM_CARE = [
 
 export default function ScientificFoundationsPage() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: BG.page,
-        fontFamily: FONT.display,
-      }}
-    >
+    <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/scientific-foundations" />
 
       <PageLayout
         header={
           <ResearcherHero
-            badge="RESEARCH FOUNDATIONS"
-            title="Scientific Foundations"
-            subtitle="Research areas behind the map"
-            description="A public map of the fields that help make emotional, nervous-system, and relational patterns visible."
+            badge="SCIENTIFIC GROUNDING"
+            title="Scientific Grounding"
+            subtitle="Research areas, source boundaries, and claim discipline"
+            description="A public guide to how established fields support specific parts of The Emotional Gradient Blueprint without being collapsed into one theory."
           />
         }
       >
         <OverviewSection />
-        <ResearchLensSection />
+        <ResearchSequenceSection />
         <ResearchAreasSection />
         <ClaimCareSection />
         <WhereNextSection />
@@ -195,23 +146,21 @@ export default function ScientificFoundationsPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "Scientific Foundations", url: "/scientific-foundations" },
+              { name: "Scientific Grounding", url: "/scientific-foundations" },
             ])
           ),
         }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Scientific Foundations | TEG-Blue",
+              name: "Scientific Grounding | TEG-Blue",
               url: "https://teg-blue.org/scientific-foundations",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -226,74 +175,41 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Research stance</div>
-      <h2 style={sectionHeadingStyle}>Research helps make parts of the Gradient visible.</h2>
+      <h2 style={sectionHeadingStyle}>Scientific grounding means each source supports a specific part.</h2>
       <p style={leadStyle}>
-        TEG-Blue does not treat research as a pile of citations or as a claim that one field already contains
-        the whole framework. Each field remains itself. Each contributes something specific.
+        TEG-Blue is grounded in science when that means established fields support specific parts of the map,
+        each field remains itself, and TEG-Blue places the parts in relation.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 800 }}>
-        Affective neuroscience helps explain emotion as signal. Polyvagal Theory helps explain neuroception,
-        autonomic hierarchy, social engagement, mobilisation, and shutdown. Autonomic and stress physiology helps
-        explain state, activation, load, and return. Attachment and development help explain relational safety.
-        Trauma research helps explain chronic adaptation. Social research helps explain context, roles, power, and
-        conditions for repair. TEG-Blue places those parts in relation.
+        No source already says TEG-Blue. A source may support a mechanism, condition, capacity, or pattern. The
+        Blueprint contributes the visual architecture that holds those parts together across safety, threat,
+        control, shutdown, regulation, and repair.
       </p>
-      <div
-        style={{
-          marginTop: 18,
-          padding: 18,
-          background: gradientCardBg(SPECTRUM.cobalt, 0.055),
-          border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.18)}`,
-          borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-          borderRadius: RADIUS.md,
-        }}
-      >
+      <div style={calloutStyle(SPECTRUM.cobalt)}>
         <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
-          The established research supports parts. The integration is TEG-Blue's contribution.
+          The established research underwrites specific parts. The integration is TEG-Blue's contribution.
         </p>
         <p style={bodyStyle}>
-          This page names the research areas that help illuminate the map. It does not claim that TEG-Blue as a
-          whole is clinically validated or that any source should be read as saying TEG-Blue in advance.
+          This page names research areas and claim boundaries. It does not turn the framework into a diagnostic,
+          clinical, treatment, or assessment system.
         </p>
       </div>
     </section>
   );
 }
 
-function ResearchLensSection() {
+function ResearchSequenceSection() {
   return (
-    <section id="research-lens" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.indigo)}>Research lens</div>
-      <h2 style={sectionHeadingStyle}>Different fields illuminate different parts of the same pattern.</h2>
+    <section id="research-sequence" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.indigo)}>Citation discipline</div>
+      <h2 style={sectionHeadingStyle}>Move from field to finding to function to position.</h2>
       <p style={leadStyle}>
-        The Gradient holds body, relationship, repetition, and repair together. Research areas become useful when
-        they clarify one of those parts without being stretched beyond what they can support.
+        A clear citation does more than name an authority. It shows what the source clarifies and where that
+        support stops.
       </p>
-      <div
-        style={{
-          marginTop: 18,
-          border: `1px solid ${BORDER.default}`,
-          borderRadius: RADIUS.lg,
-          overflowX: "auto",
-          background: BG.card,
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(150px, 1.1fr) repeat(4, minmax(120px, 1fr))",
-            background: BG.surface,
-          }}
-        >
-          <div style={matrixHeaderStyle}>Research area</div>
-          {LENS_COLUMNS.map((column) => (
-            <div key={column.key} style={matrixHeaderStyle}>
-              {column.label}
-            </div>
-          ))}
-        </div>
-        {LENS_ROWS.map((row, index) => (
-          <ResearchLensRow key={row.area} row={row} isLast={index === LENS_ROWS.length - 1} />
+      <div style={gridStyle}>
+        {RESEARCH_SEQUENCE.map((item) => (
+          <InfoCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -304,19 +220,12 @@ function ResearchAreasSection() {
   return (
     <section id="research-areas" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Research areas</div>
-      <h2 style={sectionHeadingStyle}>The framework draws from fields with different jobs.</h2>
+      <h2 style={sectionHeadingStyle}>Different fields have different jobs inside the architecture.</h2>
       <p style={leadStyle}>
-        These areas are not collapsed into one theory. They help explain different mechanisms, conditions,
-        capacities, patterns, and repair routes inside the Gradient.
+        These areas are not collapsed into one theory. They ground mechanisms, capacities, conditions, patterns,
+        and repair routes inside the Gradient.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={areaGridStyle}>
         {RESEARCH_AREAS.map((area) => (
           <ResearchAreaCard key={area.title} area={area} />
         ))}
@@ -334,16 +243,9 @@ function ClaimCareSection() {
         The clearest scientific page is not the page with the most names. It is the page where the reader can
         see what kind of support is being claimed and where the claim stops.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {CLAIM_CARE.map((item) => (
-          <ClaimCareCard key={item.title} item={item} />
+          <PlainCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -354,16 +256,8 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
-      <h2 style={sectionHeadingStyle}>Follow the question you are asking.</h2>
-      <div
-        style={{
-          background: BG.card,
-          borderRadius: RADIUS.md,
-          border: `1px solid ${BORDER.default}`,
-          overflow: "hidden",
-          marginTop: 16,
-        }}
-      >
+      <h2 style={sectionHeadingStyle}>Follow the source question you are asking.</h2>
+      <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: BG.surface }}>
@@ -372,10 +266,11 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
+            <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
+            <NavRow label="Public records and release pointers" href="/publications" linkText="Publications" />
+            <NavRow label="How to read claims responsibly" href="/methodology" linkText="Pattern reading" />
             <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
-            <NavRow label="How to read claims responsibly" href="/methodology" linkText="Methodology" />
-            <NavRow label="Project background and research stance" href="/about" linkText="About" />
-            <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
+            <NavRow label="Collaboration and review conversations" href="/collaborate" linkText="Collaborate" />
           </tbody>
         </table>
       </div>
@@ -383,77 +278,32 @@ function WhereNextSection() {
   );
 }
 
-function ResearchLensRow({ row, isLast }) {
+function InfoCard({ item }) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "minmax(150px, 1.1fr) repeat(4, minmax(120px, 1fr))",
-        borderTop: `1px solid ${BORDER.default}`,
-        borderBottom: isLast ? "none" : "none",
-      }}
-    >
-      <div
-        style={{
-          ...matrixCellStyle,
-          color: TEXT.primary,
-          fontWeight: 650,
-          borderLeft: `3px solid ${row.color}`,
-          background: gradientCardBg(row.color, 0.045),
-        }}
-      >
-        {row.area}
-      </div>
-      {LENS_COLUMNS.map((column) => (
-        <div key={column.key} style={matrixCellStyle}>
-          {row[column.key]}
-        </div>
-      ))}
+    <div style={infoCardStyle(item.color)}>
+      <div style={labelStyle(item.color)}>{item.label}</div>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
 
 function ResearchAreaCard({ area }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        minHeight: 214,
-        background: gradientCardBg(area.color, 0.055),
-        border: `1px solid ${hexToRgba(area.color, 0.16)}`,
-        borderTop: `3px solid ${area.color}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
-        {area.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 10px" }}>
-        {area.body}
-      </p>
-      <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.55, margin: 0 }}>
-        {area.contribution}
-      </p>
+    <div style={areaCardStyle(area.color)}>
+      <div style={labelStyle(area.color)}>{area.title}</div>
+      <h3 style={cardTitleStyle}>{area.role}</h3>
+      <p style={{ ...cardBodyStyle, marginBottom: 10 }}>{area.body}</p>
+      <p style={boundaryStyle}>{area.boundary}</p>
     </div>
   );
 }
 
-function ClaimCareCard({ item }) {
+function PlainCard({ item }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        background: BG.card,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+    <div style={plainCardStyle}>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
@@ -486,6 +336,53 @@ function labelStyle(color) {
   };
 }
 
+function infoCardStyle(color) {
+  return {
+    padding: 16,
+    minHeight: 164,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+function areaCardStyle(color) {
+  return {
+    padding: 16,
+    minHeight: 244,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderTop: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+function calloutStyle(color) {
+  return {
+    marginTop: 18,
+    padding: 18,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.18)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
+
+const areaGridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
+
 const sectionHeadingStyle = {
   fontSize: 21,
   fontWeight: 700,
@@ -509,23 +406,41 @@ const bodyStyle = {
   margin: 0,
 };
 
-const matrixHeaderStyle = {
-  padding: "12px 14px",
-  fontSize: 10,
-  fontFamily: FONT.mono,
-  fontWeight: 700,
-  textTransform: "uppercase",
-  letterSpacing: 0,
-  color: TEXT.muted,
-  borderRight: `1px solid ${BORDER.default}`,
+const cardTitleStyle = {
+  fontSize: 15,
+  fontWeight: 650,
+  color: TEXT.primary,
+  lineHeight: 1.35,
+  margin: "0 0 8px",
 };
 
-const matrixCellStyle = {
-  padding: "13px 14px",
-  fontSize: 12,
-  lineHeight: 1.5,
+const cardBodyStyle = {
+  fontSize: 13,
   color: TEXT.secondary,
-  borderRight: `1px solid ${BORDER.default}`,
+  lineHeight: 1.65,
+  margin: 0,
+};
+
+const boundaryStyle = {
+  fontSize: 12,
+  color: TEXT.muted,
+  lineHeight: 1.55,
+  margin: 0,
+};
+
+const plainCardStyle = {
+  padding: 16,
+  background: BG.card,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.md,
+};
+
+const tableWrapStyle = {
+  background: BG.card,
+  borderRadius: RADIUS.md,
+  border: `1px solid ${BORDER.default}`,
+  overflow: "hidden",
+  marginTop: 16,
 };
 
 const tableHeaderStyle = {

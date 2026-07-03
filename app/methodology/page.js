@@ -8,119 +8,134 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateMethodologyJsonLd,
 
 const FAQ_ITEMS = [
   {
-    question: "What is the TEG-Blue methodology?",
-    answer: "TEG-Blue methodology is a way of reading emotional and relational patterns through the Nervous System Gradient while keeping observation, interpretation, impact, and claim status separate.",
+    question: "Why does TEG-Blue explain pattern reading?",
+    answer: "This page explains how TEG-Blue reads emotional and relational patterns responsibly: observation, interpretation, impact, and claim status stay separate.",
   },
   {
     question: "What is TEG-Blue's contribution?",
-    answer: "TEG-Blue integrates established research into a visual map. The contribution is the placement of body state, emotion, protection, relationship, impact, and repair into one usable gradient.",
-  },
-  {
-    question: "Is TEG-Blue clinically validated?",
-    answer: "Not as a whole framework. Research can support specific parts of the architecture, while TEG-Blue's integration, tools, and applications require their own review and testing.",
+    answer: "Established research underwrites specific parts of the architecture. TEG-Blue's contribution is the integration: placing those parts into a visual, usable gradient.",
   },
   {
     question: "Can TEG-Blue diagnose people?",
-    answer: "No. The Gradient is an educational and research-facing map for pattern reading. It does not diagnose people or identify someone's internal state from the outside.",
+    answer: "No. TEG-Blue supports pattern reading. It does not diagnose people, determine motive, or identify someone's true internal state from the outside.",
+  },
+  {
+    question: "How does TEG-Blue handle harm?",
+    answer: "Mechanism explains the pattern; it does not erase impact. A response may need support, repair, boundary, protection, accountability, or further study.",
   },
 ];
 
 const METHOD_STEPS = [
   {
     label: "Observe",
-    title: "Start with what can be seen",
-    body: "Name the behaviour, context, pattern, or relational effect before assigning meaning.",
+    title: "Name what is visible",
+    body: "Start with behaviour, context, repetition, and relational effect before assigning motive or whole-person meaning.",
     color: SPECTRUM.azure,
   },
   {
-    label: "Pattern",
-    title: "Look for state-shaped organisation",
-    body: "Ask whether the pattern is moving toward safety, threat, control, shutdown, restoration, or repair.",
+    label: "Interpret",
+    title: "Treat interpretation as provisional",
+    body: "Ask what pattern may be organizing state, perception, emotion, protection, control, shutdown, regulation, or repair.",
     color: SPECTRUM.blue,
   },
   {
     label: "Impact",
-    title: "Keep effect visible",
-    body: "Track the effect on clarity, autonomy, safety, options, accountability, and repair.",
+    title: "Keep effect in view",
+    body: "Track what happened to clarity, autonomy, safety, options, empathy, accountability, and repair.",
     color: SPECTRUM.cobalt,
   },
   {
     label: "Response",
-    title: "Choose what fits",
-    body: "Support, interruption, boundary, protection, accountability, further study, or repair may each be appropriate in different patterns.",
+    title: "Choose the next response",
+    body: "Support, interruption, boundary, protection, accountability, care, repair, or further study may each be appropriate.",
     color: SPECTRUM.indigo,
   },
 ];
 
 const CLAIM_LAYERS = [
   {
-    label: "Research",
-    title: "Established fields support specific parts",
-    body: "Neuroscience, attachment research, trauma research, developmental science, emotion science, social psychology, and related fields help explain different parts of the map.",
-    status: "Use research for the part it can support, not as proof of the whole framework.",
+    label: "Identity",
+    title: "What TEG-Blue calls itself",
+    body: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+    status: "Identity claims need internal consistency and creator attribution.",
     color: SPECTRUM.azure,
   },
   {
-    label: "Integration",
-    title: "TEG-Blue places those parts in relation",
-    body: "The Gradient is the organising architecture: a way to see how body state, emotion, protection, relationship, impact, and repair connect.",
-    status: "The integration is TEG-Blue's contribution.",
+    label: "Architecture",
+    title: "How the framework organizes patterns",
+    body: "The Nervous System Gradient is the central public map inside the Blueprint, not the whole identity.",
+    status: "Architecture claims describe TEG-Blue's integration.",
+    color: SPECTRUM.blue,
+  },
+  {
+    label: "Source",
+    title: "What established research supports",
+    body: "Biology, physiology, psychology, attachment, trauma, developmental, social, and contemplative fields can each support specific parts.",
+    status: "Source-grounded claims should name the part, not claim support for the whole system.",
     color: SPECTRUM.cobalt,
   },
   {
-    label: "Tools",
-    title: "Applied tools make the map usable",
-    body: "Tools translate the Gradient into practical views for reflection, education, comparison, and clearer conversation.",
-    status: "A tool can be useful before it has validated every possible claim.",
+    label: "Application",
+    title: "What a tool helps someone do",
+    body: "Applied tools can support reflection, education, comparison, and clearer conversation.",
+    status: "Tool claims should not promise outcomes or replace professional judgment.",
     color: SPECTRUM.indigo,
-  },
-  {
-    label: "Review",
-    title: "Specific claims can be tested",
-    body: "Studies can evaluate reliability, usefulness, cross-context fit, user interpretation, and whether a tool improves a specific task.",
-    status: "Testing belongs to specific claims, tools, and contexts.",
-    color: SPECTRUM.slate,
   },
 ];
 
 const RESPONSIBLE_QUESTIONS = [
   "What happened?",
-  "What pattern is repeating?",
-  "What impact did it have?",
+  "What was observed, and what is being inferred?",
+  "What impact or harm occurred?",
   "What capacity was available or unavailable?",
   "What changed as safety increased or decreased?",
   "What response fits the pattern now?",
 ];
 
+const PERCEPTION_POINTS = [
+  {
+    title: "Feeling and fact stay distinct",
+    body: "A feeling is real as an experience. It may still need to be separated from what happened, what was assumed, and what evidence is available.",
+  },
+  {
+    title: "Calm is not safety",
+    body: "A composed pattern can still reduce another person's clarity, autonomy, or repair. Distress is not proof that someone is dangerous.",
+  },
+  {
+    title: "Repair needs flexible perception",
+    body: "Repair becomes more possible when a system can separate sensation, story, evidence, impact, and response.",
+  },
+];
+
 const LIMITS = [
   {
-    title: "It is not a diagnosis",
-    body: "A Gradient position describes organisation, not a clinical category or whole-person meaning.",
+    title: "Not diagnosis",
+    body: "A pattern read is not a clinical category, assessment, treatment plan, or whole-person label.",
   },
   {
-    title: "It is not mind-reading",
-    body: "The framework can help interpret patterns, but it cannot identify someone's true internal state from the outside.",
+    title: "Not motive certainty",
+    body: "Visible behaviour can support a pattern read, but it cannot prove a person's true internal state or intention.",
   },
   {
-    title: "It does not validate itself",
-    body: "Research can support specific mechanisms and relationships. It does not make the whole integration automatically validated.",
+    title: "Not a shortcut around context",
+    body: "History, power, repetition, support, safety, professional judgment, and lived evidence still matter.",
   },
   {
-    title: "Impact still needs response",
-    body: "A protective origin can still produce harmful impact. Boundary, protection, accountability, and repair remain part of the reading.",
+    title: "Not an excuse for harm",
+    body: "A protective origin can coexist with harmful impact. Responsibility increases with awareness, repetition, power, available choice, refusal to repair, and impact on others.",
   },
 ];
 
 export const metadata = {
-  title: "Methodology",
-  description: "How to read visible patterns responsibly: start from observation, locate the pattern, keep impact visible, and calibrate claims.",
+  title: "How TEG-Blue Reads Patterns",
+  description: "How TEG-Blue reads patterns responsibly: observation, interpretation, impact, claim status, and limits.",
   keywords: [
-    "TEG-Blue methodology",
+    "TEG-Blue pattern reading",
+    "The Emotional Gradient Blueprint",
     "Nervous System Gradient",
     "claim status",
-    "visual map",
     "responsible pattern reading",
-    "state-shaped capacity",
+    "state-shaped perception",
     "research integration",
     "repair capacity",
   ],
@@ -128,8 +143,8 @@ export const metadata = {
     canonical: "https://teg-blue.org/methodology",
   },
   openGraph: {
-    title: "Methodology - TEG-Blue",
-    description: "A public guide to reading visible patterns responsibly: observation, pattern, impact, claim status, and limits.",
+    title: "How TEG-Blue Reads Patterns - TEG-Blue",
+    description: "Observation, interpretation, impact, claim status, and limits for responsible pattern reading.",
     url: "https://teg-blue.org/methodology",
     siteName: "TEG-Blue",
     type: "article",
@@ -137,35 +152,30 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Methodology - TEG-Blue",
-    description: "How to read visible patterns responsibly: observation, pattern, impact, claim status, and limits.",
+    title: "How TEG-Blue Reads Patterns - TEG-Blue",
+    description: "How TEG-Blue reads patterns responsibly.",
   },
 };
 
 export default function MethodologyPage() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: BG.page,
-        fontFamily: FONT.display,
-      }}
-    >
+    <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/methodology" />
 
       <PageLayout
         header={
           <ResearcherHero
-            badge="METHODOLOGY"
-            title="Methodology"
-            subtitle="How to read TEG-Blue responsibly"
-            description="A guide to reading visible patterns while keeping observation, interpretation, impact, and claim status separate."
+            badge="PATTERN READING"
+            title="How TEG-Blue reads patterns"
+            subtitle="Responsible use, claim status, and limits"
+            description="A compact guide to reading visible patterns without turning the map into diagnosis, motive certainty, or authority over a person."
           />
         }
       >
         <OverviewSection />
         <MethodSection />
         <ClaimLayersSection />
+        <PerceptionSection />
         <ResponsibleUseSection />
         <LimitsSection />
         <WhereNextSection />
@@ -179,28 +189,25 @@ export default function MethodologyPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "Methodology", url: "/methodology" },
+              { name: "How TEG-Blue reads patterns", url: "/methodology" },
             ])
           ),
         }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateMethodologyJsonLd()) }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Methodology | TEG-Blue",
+              name: "How TEG-Blue Reads Patterns | TEG-Blue",
               url: "https://teg-blue.org/methodology",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -215,15 +222,15 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Reader guide</div>
-      <h2 style={sectionHeadingStyle}>Methodology means knowing what kind of claim is being made.</h2>
+      <h2 style={sectionHeadingStyle}>This is the operating discipline behind the map.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
-        emotion, nervous-system state, protection, relationship patterns, impact, and repair.
+        TEG-Blue reads emotional patterns as structured biological and relational information. The discipline is
+        simple: keep what was observed, what is being inferred, what effect occurred, and what kind of claim is
+        being made in separate view.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        Its method is to read patterns through the Nervous System Gradient while keeping four things separate:
-        what can be observed, how the pattern may be organised, what impact occurs, and what kind of claim is
-        being made.
+        That separation lets the Gradient remain useful without asking it to become diagnosis, motive certainty,
+        a fixed identity, a clinical assessment, or a shortcut around context.
       </p>
     </section>
   );
@@ -232,20 +239,13 @@ function OverviewSection() {
 function MethodSection() {
   return (
     <section id="method" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.cobalt)}>The method</div>
-      <h2 style={sectionHeadingStyle}>Read from observation toward response.</h2>
+      <div style={labelStyle(SPECTRUM.cobalt)}>How to read</div>
+      <h2 style={sectionHeadingStyle}>Move from what happened toward what response fits.</h2>
       <p style={leadStyle}>
-        The Gradient helps make emotional and relational patterns legible. It works best when interpretation stays
-        close to observable effect and does not jump straight to diagnosis, motive, or whole-person meaning.
+        A responsible reading starts with what can be seen and moves carefully toward what the pattern may mean.
+        It does not jump straight to diagnosis, intention, or whole-person verdict.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {METHOD_STEPS.map((step) => (
           <InfoCard key={step.title} item={step} />
         ))}
@@ -258,21 +258,33 @@ function ClaimLayersSection() {
   return (
     <section id="claim-layers" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.indigo)}>Claim layers</div>
-      <h2 style={sectionHeadingStyle}>Research support, TEG-Blue integration, applied tools, and review stay distinct.</h2>
+      <h2 style={sectionHeadingStyle}>Know what kind of sentence is being made.</h2>
       <p style={leadStyle}>
-        The method does not ask one layer to do the work of another. A research field may support one mechanism.
-        The Gradient places mechanisms in relation. A tool applies the map. Review tests specific claims.
+        TEG-Blue does not ask one layer to do the work of another. A field may support one part of the map.
+        The Blueprint places parts in relation. A tool applies the map to a specific task.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {CLAIM_LAYERS.map((layer) => (
           <LayerCard key={layer.title} layer={layer} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PerceptionSection() {
+  return (
+    <section id="perception" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>State-shaped perception</div>
+      <h2 style={sectionHeadingStyle}>Nervous-system states can change what feels true.</h2>
+      <p style={leadStyle}>
+        TEG-Blue treats perception as state-shaped. The question is not whether a feeling matters. The question
+        is what kind of information the feeling is carrying, what evidence is available, and what response is
+        needed.
+      </p>
+      <div style={gridStyle}>
+        {PERCEPTION_POINTS.map((item) => (
+          <PlainCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -283,19 +295,12 @@ function ResponsibleUseSection() {
   return (
     <section id="responsible-use" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Responsible use</div>
-      <h2 style={sectionHeadingStyle}>The useful question is not only where a pattern sits.</h2>
+      <h2 style={sectionHeadingStyle}>A Gradient position is a beginning, not a verdict.</h2>
       <p style={leadStyle}>
         A Gradient position is a starting point. Responsible use asks what the pattern is doing, what becomes
         possible or unavailable, and what response protects clarity, autonomy, safety, accountability, and repair.
       </p>
-      <div
-        style={{
-          marginTop: 18,
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
-          gap: 10,
-        }}
-      >
+      <div style={questionGridStyle}>
         {RESPONSIBLE_QUESTIONS.map((question, index) => (
           <QuestionCard key={question} question={question} number={index + 1} />
         ))}
@@ -308,21 +313,14 @@ function LimitsSection() {
   return (
     <section id="limits" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.slate)}>Use and limits</div>
-      <h2 style={sectionHeadingStyle}>Use the framework as a map, not as authority over a person.</h2>
+      <h2 style={sectionHeadingStyle}>Use the map to support judgment, not replace it.</h2>
       <p style={leadStyle}>
-        TEG-Blue can make patterns easier to discuss. It does not remove context, professional judgement,
+        TEG-Blue can make patterns easier to discuss. It does not remove context, support, professional judgment,
         lived evidence, or the need to keep impact visible.
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
-          gap: 12,
-          marginTop: 18,
-        }}
-      >
+      <div style={gridStyle}>
         {LIMITS.map((item) => (
-          <LimitCard key={item.title} item={item} />
+          <PlainCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -334,15 +332,7 @@ function WhereNextSection() {
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
       <h2 style={sectionHeadingStyle}>Follow the part of the work you need.</h2>
-      <div
-        style={{
-          background: BG.card,
-          borderRadius: RADIUS.md,
-          border: `1px solid ${BORDER.default}`,
-          overflow: "hidden",
-          marginTop: 16,
-        }}
-      >
+      <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: BG.surface }}>
@@ -351,9 +341,10 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
-            <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
-            <NavRow label="Research fields connected to the framework" href="/scientific-foundations" linkText="Scientific Foundations" />
-            <NavRow label="Project background and research stance" href="/about" linkText="About" />
+            <NavRow label="The framework overview" href="/foundations" linkText="TEG-Blue Overview" />
+            <NavRow label="Ethical commitments and use boundaries" href="/ethics" linkText="Ethics" />
+            <NavRow label="Research areas and claim boundaries" href="/scientific-foundations" linkText="Scientific Grounding" />
+            <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>
@@ -364,107 +355,39 @@ function WhereNextSection() {
 
 function InfoCard({ item }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        minHeight: 150,
-        background: gradientCardBg(item.color, 0.055),
-        border: `1px solid ${hexToRgba(item.color, 0.16)}`,
-        borderLeft: `3px solid ${item.color}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
+    <div style={infoCardStyle(item.color)}>
       <div style={labelStyle(item.color)}>{item.label}</div>
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
 
 function LayerCard({ layer }) {
   return (
-    <div
-      style={{
-        padding: 16,
-        minHeight: 216,
-        background: gradientCardBg(layer.color, 0.055),
-        border: `1px solid ${hexToRgba(layer.color, 0.16)}`,
-        borderTop: `3px solid ${layer.color}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
+    <div style={layerCardStyle(layer.color)}>
       <div style={labelStyle(layer.color)}>{layer.label}</div>
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
-        {layer.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 10px" }}>
-        {layer.body}
-      </p>
-      <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.55, margin: 0 }}>
-        {layer.status}
-      </p>
+      <h3 style={cardTitleStyle}>{layer.title}</h3>
+      <p style={{ ...cardBodyStyle, marginBottom: 10 }}>{layer.body}</p>
+      <p style={statusStyle}>{layer.status}</p>
+    </div>
+  );
+}
+
+function PlainCard({ item }) {
+  return (
+    <div style={plainCardStyle}>
+      <h3 style={cardTitleStyle}>{item.title}</h3>
+      <p style={cardBodyStyle}>{item.body}</p>
     </div>
   );
 }
 
 function QuestionCard({ question, number }) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "34px minmax(0, 1fr)",
-        gap: 10,
-        alignItems: "center",
-        padding: 13,
-        background: BG.card,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <span
-        style={{
-          width: 26,
-          height: 26,
-          borderRadius: 999,
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: hexToRgba(SPECTRUM.azure, 0.12),
-          color: SPECTRUM.azure,
-          fontFamily: FONT.mono,
-          fontSize: 11,
-          fontWeight: 700,
-        }}
-      >
-        {number}
-      </span>
-      <span style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.5 }}>
-        {question}
-      </span>
-    </div>
-  );
-}
-
-function LimitCard({ item }) {
-  return (
-    <div
-      style={{
-        padding: 16,
-        background: BG.card,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.md,
-      }}
-    >
-      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
-        {item.title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {item.body}
-      </p>
+    <div style={questionCardStyle}>
+      <span style={questionNumberStyle}>{number}</span>
+      <span style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.5 }}>{question}</span>
     </div>
   );
 }
@@ -497,6 +420,42 @@ function labelStyle(color) {
   };
 }
 
+function infoCardStyle(color) {
+  return {
+    padding: 16,
+    minHeight: 150,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderLeft: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+function layerCardStyle(color) {
+  return {
+    padding: 16,
+    minHeight: 220,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderTop: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
+
+const questionGridStyle = {
+  marginTop: 18,
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+  gap: 10,
+};
+
 const sectionHeadingStyle = {
   fontSize: 21,
   fontWeight: 700,
@@ -518,6 +477,68 @@ const bodyStyle = {
   color: TEXT.secondary,
   lineHeight: 1.75,
   margin: 0,
+};
+
+const cardTitleStyle = {
+  fontSize: 15,
+  fontWeight: 650,
+  color: TEXT.primary,
+  lineHeight: 1.35,
+  margin: "0 0 8px",
+};
+
+const cardBodyStyle = {
+  fontSize: 13,
+  color: TEXT.secondary,
+  lineHeight: 1.65,
+  margin: 0,
+};
+
+const statusStyle = {
+  fontSize: 12,
+  color: TEXT.muted,
+  lineHeight: 1.55,
+  margin: 0,
+};
+
+const plainCardStyle = {
+  padding: 16,
+  background: BG.card,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.md,
+};
+
+const questionCardStyle = {
+  display: "grid",
+  gridTemplateColumns: "34px minmax(0, 1fr)",
+  gap: 10,
+  alignItems: "center",
+  padding: 13,
+  background: BG.card,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.md,
+};
+
+const questionNumberStyle = {
+  width: 26,
+  height: 26,
+  borderRadius: 999,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: hexToRgba(SPECTRUM.azure, 0.12),
+  color: SPECTRUM.azure,
+  fontFamily: FONT.mono,
+  fontSize: 11,
+  fontWeight: 700,
+};
+
+const tableWrapStyle = {
+  background: BG.card,
+  borderRadius: RADIUS.md,
+  border: `1px solid ${BORDER.default}`,
+  overflow: "hidden",
+  marginTop: 16,
 };
 
 const tableHeaderStyle = {

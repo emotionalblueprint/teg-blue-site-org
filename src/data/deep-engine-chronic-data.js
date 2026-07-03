@@ -18,7 +18,7 @@ export const DEEP_ENGINE_CHRONIC_FORMATION_META = {
   baseline: {
     chronicConfig: "Chronic Elevated Physiological Baseline",
     chronicConfigDetail: "No resting availability",
-    plainChronic: "Elevated baseline — restoration does not fully complete",
+    plainChronic: "Elevated baseline — regulation does not fully complete",
     chronicColor: CHRONIC_FORMATION.X,
   },
   connection: {
@@ -85,7 +85,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
       connection: "Flexible-but-reduced, or bound to compensatory management.",
       calibration: "Held tilted to the unresolved boundary.",
       protection: "Locked to the defensive problem; reflective range narrowed.",
-      strategic: "Narrative as primary regulation (stands in for restoration).",
+      strategic: "Narrative as primary regulation (stands in for body-level return).",
       domination: "Reduced to survival-relevant; integrative range offline.",
       shutdown: "Foggy / offline as organisation.",
     },
@@ -117,7 +117,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
   stuckState: {
     label: "Stuck state",
     cells: {
-      baseline: "Chronic Elevated Baseline — rest never restored.",
+      baseline: "Chronic Elevated Baseline — rest never settles.",
       connection: "Chronic Pattern A — built-then-rigidified / No Safety Access (pretended bonding-belonging).",
       calibration: "A↔B Transition — collapses toward chronic B.",
       protection: "Chronic Pattern B — sympathetic mobilisation held, not discharged.",
@@ -162,16 +162,16 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
       shutdown: "— Collapsed.",
     },
   },
-  restoration: {
-    label: "Restoration",
+  repairReturn: {
+    label: "Repair / return",
     cells: {
-      baseline: cell("Restoration does not fully land", "the raised floor remains; somatic clearing is available-but-not-completing."),
-      connection: cell("Safety template never settles", "closeness may lower pressure without restoring internal safety access."),
+      baseline: cell("Regulation does not fully land", "the raised floor remains; somatic clearing is available-but-not-completing."),
+      connection: cell("Safety template never settles", "closeness may lower pressure without building internal safety access."),
       calibration: cell("Boundary loop does not reset", "the system stays held at the unresolved edge instead of returning to baseline."),
       protection: cell("Mobilisation stays held", "the brake cannot fully re-engage; discharge window remains suppressed."),
-      strategic: cell("Relief stands in for restoration", "management and narrative reduce pressure while unresolved load stays underneath."),
-      domination: cell("Relief escalates instead of restoring", "control can register as settling while it blocks mutual regulation and adds load."),
-      shutdown: cell("Collapse conserves rather than restores", "downshift becomes the organisation; re-engagement is not available yet."),
+      strategic: cell("Relief stands in for repair", "management and narrative reduce pressure while unresolved load stays underneath."),
+      domination: cell("Relief escalates instead of repair", "control can register as settling while it blocks mutual regulation and adds load."),
+      shutdown: cell("Collapse conserves rather than repairs", "downshift becomes the organisation; re-engagement is not available yet."),
     },
   },
   completion: {
@@ -251,7 +251,7 @@ export const DEEP_ENGINE_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((fo
     physiologicalCapacity: DEEP_ENGINE_CHRONIC_ROWS.physiologicalCapacity.cells[formation.id],
     actionReadiness: DEEP_ENGINE_CHRONIC_ROWS.actionReadiness.cells[formation.id],
     regulationNeeded: DEEP_ENGINE_CHRONIC_ROWS.regulationNeeded.cells[formation.id],
-    restoration: DEEP_ENGINE_CHRONIC_ROWS.restoration.cells[formation.id],
+    repairReturn: DEEP_ENGINE_CHRONIC_ROWS.repairReturn.cells[formation.id],
     completion: DEEP_ENGINE_CHRONIC_ROWS.completion.cells[formation.id],
     awarenessAccess: DEEP_ENGINE_CHRONIC_ROWS.awarenessAccess.cells[formation.id],
     empathyAccess: DEEP_ENGINE_CHRONIC_ROWS.empathyAccess.cells[formation.id],
@@ -298,7 +298,7 @@ export const PUBLIC_CHRONIC_ROWS = {
   },
   physiologicalCapacity: {
     baseline: "Recovery and repair are under-resourced.",
-    connection: "Engagement uses energy without full restoration.",
+    connection: "Engagement uses energy without full recovery.",
     calibration: "Readiness stays braced at the safety boundary.",
     protection: "Defence keeps resources diverted from maintenance and repair.",
     strategic: "Reserve is steadily spent by ongoing management.",
@@ -323,14 +323,14 @@ export const PUBLIC_CHRONIC_ROWS = {
     domination: "The system needs force or control to stand down; compliance cannot complete the need.",
     shutdown: "The first need is protected re-engagement before active regulation can run.",
   },
-  restoration: {
+  repairReturn: {
     baseline: "Relief may lower pressure, but the resting floor remains raised.",
-    connection: "Closeness may soothe without restoring internal safety access.",
+    connection: "Closeness may soothe without building internal safety access.",
     calibration: "Reassurance may reduce pressure briefly, but the boundary loop does not reset.",
     protection: "Mobilisation stays held; the body does not fully discharge or update.",
     strategic: "Management lowers pressure while unresolved load remains underneath.",
     domination: "Control can feel settling while blocking mutual regulation and adding load.",
-    shutdown: "Collapse reduces demand but does not restore capacity.",
+    shutdown: "Collapse reduces demand but does not return capacity.",
   },
   completion: {
     baseline: "Old activation carries into the next event.",
@@ -401,7 +401,7 @@ export const PUBLIC_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formati
     physiologicalCapacity: PUBLIC_CHRONIC_ROWS.physiologicalCapacity[formation.id],
     actionReadiness: PUBLIC_CHRONIC_ROWS.actionReadiness[formation.id],
     regulationNeeded: PUBLIC_CHRONIC_ROWS.regulationNeeded[formation.id],
-    restoration: PUBLIC_CHRONIC_ROWS.restoration[formation.id],
+    repairReturn: PUBLIC_CHRONIC_ROWS.repairReturn[formation.id],
     completion: PUBLIC_CHRONIC_ROWS.completion[formation.id],
     awarenessAccess: PUBLIC_CHRONIC_ROWS.awarenessAccess[formation.id],
     empathyAccess: PUBLIC_CHRONIC_ROWS.empathyAccess[formation.id],

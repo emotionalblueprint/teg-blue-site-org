@@ -18,7 +18,7 @@ const FORMATION_EXTRAS = {
   baseline: {
     sub: 'resting availability',
     pattern: 'Pattern X',
-    mechanism: 'Physiological baseline — restoration and broad capacity are available.',
+    mechanism: 'Physiological baseline — regulation and broad capacity are available.',
   },
   connection: {
     sub: 'safety → reciprocity',
@@ -149,7 +149,7 @@ export const cards = [
     descriptions: {
       baseline: {
         a: 'The point here is not a dominant emotion; it is the absence of a problem signal. Feeling can stay quiet because nothing needs defending, pursuing, or repairing.',
-        c: 'What looks like rest is not fully quiet. An unresolved signal keeps running underneath, so the body never drops all the way into restoration.',
+        c: 'What looks like rest is not fully quiet. An unresolved signal keeps running underneath, so the body never drops all the way into regulation.',
       },
       connection: {
         a: 'Signals organize toward contact. Warmth, trust, hope, and affection make approach, bonding, and repair easier.',
@@ -274,7 +274,7 @@ export const content = {
     shutdown: { a: 'Muted — signals flatten, fade, or go numb', c: chronicText('signalConfiguration', 'shutdown') },
   },
   behaviour: {
-    baseline: { a: 'Resting, restoring', c: chronicText('actionReadiness', 'baseline') },
+    baseline: { a: 'Resting, repairing', c: chronicText('actionReadiness', 'baseline') },
     connection: { a: 'Approaching, working together, repairing', c: chronicText('actionReadiness', 'connection') },
     calibration: { a: 'Checking, clarifying, reaching for repair', c: chronicText('actionReadiness', 'calibration') },
     protection: { a: 'Fight, flight, freeze, or fawn', c: chronicText('actionReadiness', 'protection') },
@@ -283,13 +283,13 @@ export const content = {
     shutdown: { a: 'Collapsing, withdrawing, going still', c: chronicText('actionReadiness', 'shutdown') },
   },
   repair: {
-    baseline: { a: 'Available — nothing to mend right now', c: chronicText('restoration', 'baseline') },
-    connection: { a: 'Open — acknowledging, reconnecting', c: chronicText('restoration', 'connection') },
-    calibration: { a: 'Within reach — repair still possible', c: chronicText('restoration', 'calibration') },
-    protection: { a: 'Difficult — self-protection takes priority over connection', c: chronicText('restoration', 'protection') },
-    strategic: { a: 'Avoided — admitting impact feels like losing control', c: chronicText('restoration', 'strategic') },
-    domination: { a: 'Out of reach — harm denied or justified', c: chronicText('restoration', 'domination') },
-    shutdown: { a: 'Blocked — re-engagement has to come first', c: chronicText('restoration', 'shutdown') },
+    baseline: { a: 'Available — nothing to mend right now', c: chronicText('repairReturn', 'baseline') },
+    connection: { a: 'Open — acknowledging, reconnecting', c: chronicText('repairReturn', 'connection') },
+    calibration: { a: 'Within reach — repair still possible', c: chronicText('repairReturn', 'calibration') },
+    protection: { a: 'Difficult — self-protection takes priority over connection', c: chronicText('repairReturn', 'protection') },
+    strategic: { a: 'Avoided — admitting impact feels like losing control', c: chronicText('repairReturn', 'strategic') },
+    domination: { a: 'Out of reach — harm denied or justified', c: chronicText('repairReturn', 'domination') },
+    shutdown: { a: 'Blocked — re-engagement has to come first', c: chronicText('repairReturn', 'shutdown') },
   },
   rush: {
     baseline: { a: 'Settled — moving at the pace of now', c: "Can't slow down, even at rest" },
@@ -314,17 +314,12 @@ export const groups = [
 // ─── SCIENCE GROUNDING (convergence, not derivation) — for static section + JSON-LD ──
 
 export const scienceGrounding = [
-  { part: 'The gradient / autonomic hierarchy', science: 'Polyvagal Theory — autonomic hierarchy and neuroception', authors: 'Porges' },
-  { part: 'State / activation', science: 'Polyvagal Theory (three states) + Stress Physiology', authors: 'Porges · Sapolsky · McEwen' },
-  { part: 'Perception', science: 'Cognitive Science — state-shaped perception + neuroception', authors: 'Barrett · Kahneman' },
-  { part: 'Cognition', science: 'Cognitive Science — cognitive load and state-shaped cognition', authors: 'Bower · Kahneman · Barrett' },
-  { part: 'Awareness', science: 'Interoception — internal signalling and the sense of self', authors: 'A. D. Craig' },
-  { part: 'Empathy', science: 'Interpersonal Neurobiology + Polyvagal social engagement', authors: 'Siegel · Porges' },
-  { part: 'Body / activation', science: 'Stress Physiology — acute activation → allostatic load', authors: 'Sapolsky · McEwen' },
-  { part: 'Time / tempo', science: 'Cognitive Science + Stress Physiology (threat compresses horizon and changes pace)', authors: 'Kahneman · Sapolsky' },
-  { part: 'Emotions / signals', science: 'Affective Neuroscience + Emotion Science', authors: 'Panksepp · Damasio · Barrett · LeDoux' },
-  { part: 'Behaviour / response', science: 'Polyvagal (mobilise / immobilise) + Trauma Research', authors: 'Porges · Levine · van der Kolk' },
-  { part: 'Repair', science: 'Trauma Research (completion of defence) + Attachment (co-regulation)', authors: 'Levine · van der Kolk · Bowlby' },
+  { part: 'Body-level organisation', science: 'Biology and physiology help ground survival, adaptation, arousal, shutdown, regulation, and repair capacity.', authors: 'Load-bearing research area' },
+  { part: 'State and activation', science: 'Autonomic neuroscience and stress physiology support claims about mobilisation, inhibition, chronic load, and return.', authors: 'Specific mechanisms require source trace' },
+  { part: 'Emotion and signal', science: 'Affective neuroscience and emotion science ground emotional salience, body signals, and action readiness.', authors: 'One part of the map' },
+  { part: 'Perception and certainty', science: 'Cognitive and behavioural research supports attention, appraisal, prediction, evidence-testing, and state-shaped perception.', authors: 'One research angle' },
+  { part: 'Relationship and repair', science: 'Attachment, trauma, developmental, and relational research connect proximity, rupture, protection, repair, and repeated patterns.', authors: 'Connected fields' },
+  { part: 'Context and scale', science: 'Psychology, social psychology, sociology, anthropology, and contemplative traditions locate overlapping parts without owning the full architecture.', authors: 'Each field remains itself' },
 ]
 
 // ─── FAQ (AEO — answer engines, voice, featured snippets) ────────────────────
@@ -333,31 +328,31 @@ export const faq = [
   {
     question: 'What is TEG-Blue?',
     answer:
-      'TEG-Blue is The Emotional Gradient Blueprint: a visual framework for how nervous-system state changes perception, emotions, empathy, repair, and behaviour.',
+      'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.',
   },
   {
     question: 'What is the Nervous System Gradient?',
     answer:
-      'The Nervous System Gradient is a map of the nervous system’s states. The nervous system continuously appraises one question — is it safe, or is there danger? — faster than conscious thought, and shifts the whole organism into the state that fits what it found, along an active continuum from rest, through connection and the defences, with shutdown shown as an off-gradient fallback when mobilisation cannot form.',
+      'The Nervous System Gradient is the current central public map inside TEG-Blue: a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.',
   },
   {
-    question: 'How does the nervous system choose a state?',
+    question: 'What does the Gradient help readers notice?',
     answer:
-      'Through neuroception — a continuous, pre-conscious read of safety versus danger. Based on that read, the system organises itself into one of seven ordered states: X, A, A↔B, B, C, D, and Z. Each state is a complete configuration of perception, cognition, the body, feeling, and behaviour — not a mood.',
+      'It helps readers notice how a state can shape perception, emotion, body activation, behaviour, empathy, accountability, and repair capacity without turning a visible pattern into diagnosis or motive certainty.',
   },
   {
     question: 'What is the difference between a passing state and a chronic one?',
     answer:
-      'Each position is a passing response the system is built to move through and leave (acute). When a position cannot be left, it stops being a passing response and hardens into the default (chronic). The chronic reading shows restriction, repetition and substitute routing — it describes a system that cannot leave a state, never a verdict about a person.',
+      'Some protective states move. Other protective patterns become repeated, rigid, or hard to leave. This distinction helps read patterns over time; it is not a public typology or a verdict about a person.',
   },
   {
-    question: 'What research is the Nervous System Gradient grounded in?',
+    question: 'What research is TEG-Blue grounded in?',
     answer:
-      'The architecture leads; established research provides grounding for specific claims. The gradient’s autonomic hierarchy draws from Polyvagal Theory (Porges); activation and chronic load from Stress Physiology (Sapolsky, McEwen); state-shaped perception and cognition from Cognitive Science (Barrett, Kahneman); interoception from A. D. Craig; empathy from Interpersonal Neurobiology (Siegel); emotions from Affective Neuroscience (Panksepp, Damasio, LeDoux); defence and repair from Trauma Research (Levine, van der Kolk) and Attachment (Bowlby).',
+      'TEG-Blue is grounded in science: established research areas support specific parts of the map, each field remains itself, and TEG-Blue places those parts in relation. The integration is TEG-Blue\'s contribution.',
   },
   {
-    question: 'What are fight, flight, fawn and freeze?',
+    question: 'Can TEG-Blue diagnose people?',
     answer:
-      'They are familiar names for points on the gradient. Fight, flight and fawn are defensive expressions of Protection (mobilised self-protection under threat). Freeze and collapse are Shutdown (the system conserves when mobilisation cannot form). Rest-and-digest is Baseline; social engagement is Connection.',
+      'No. TEG-Blue is educational and reflective. It can help read observable patterns, effects, boundaries, and repair needs, but it cannot identify someone\'s true internal state from the outside.',
   },
 ]

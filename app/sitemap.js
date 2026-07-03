@@ -5,33 +5,57 @@ const BASE_URL = "https://teg-blue.org";
 const STATIC_PAGES = [
   {
     path: "/",
-    lastModified: "2026-07-01",
+    lastModified: "2026-07-03",
     changeFrequency: "weekly",
     priority: 1,
   },
   {
     path: "/about",
-    lastModified: "2026-07-01",
+    lastModified: "2026-07-03",
     changeFrequency: "monthly",
     priority: 0.7,
   },
   {
     path: "/foundations",
-    lastModified: "2026-07-01",
+    lastModified: "2026-07-03",
     changeFrequency: "monthly",
     priority: 0.9,
   },
   {
     path: "/methodology",
-    lastModified: "2026-07-01",
+    lastModified: "2026-07-03",
     changeFrequency: "monthly",
     priority: 0.8,
   },
   {
     path: "/scientific-foundations",
-    lastModified: "2026-07-01",
+    lastModified: "2026-07-03",
     changeFrequency: "monthly",
     priority: 0.8,
+  },
+  {
+    path: "/ethics",
+    lastModified: "2026-07-03",
+    changeFrequency: "monthly",
+    priority: 0.75,
+  },
+  {
+    path: "/publications",
+    lastModified: "2026-07-03",
+    changeFrequency: "monthly",
+    priority: 0.65,
+  },
+  {
+    path: "/glossary",
+    lastModified: "2026-07-03",
+    changeFrequency: "monthly",
+    priority: 0.65,
+  },
+  {
+    path: "/collaborate",
+    lastModified: "2026-07-03",
+    changeFrequency: "monthly",
+    priority: 0.65,
   },
 ];
 

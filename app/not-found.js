@@ -20,10 +20,11 @@ export const metadata = {
 };
 
 const NAV_LINKS = [
-  { label: "Home", href: "/", description: "The current Nervous System Gradient surface." },
-  { label: "TEG-Blue overview", href: "/foundations", description: "Scope, pattern reading, and research status." },
-  { label: "Methodology", href: "/methodology", description: "Observation, claim calibration, responsible use, and limits." },
-  { label: "Scientific foundations", href: "/scientific-foundations", description: "Research areas that illuminate the Gradient." },
+  { label: "Home", href: "/", description: "The Emotional Gradient Blueprint public doorway." },
+  { label: "TEG-Blue overview", href: "/foundations", description: "Blueprint scope, pattern reading, and research status." },
+  { label: "Pattern reading", href: "/methodology", description: "Observation, interpretation, impact, claim status, and limits." },
+  { label: "Scientific grounding", href: "/scientific-foundations", description: "Research areas, field boundaries, and claim discipline." },
+  { label: "Ethics", href: "/ethics", description: "Dignity, agency, source honesty, attribution, permission, impact, and repair." },
   { label: "About", href: "/about", description: "Project background, founder, contact routes, and site distinction." },
 ];
 
@@ -74,8 +75,8 @@ export default function NotFound() {
               lineHeight: 1.75,
             }}
           >
-            The public .org surface is currently focused on the Gradient home page and four core reference pages.
-            Older routes have been cleared and may be rebuilt later.
+            The public .org surface is focused on the Blueprint home page and the current core reference pages.
+            Older routes have been cleared, parked, or redirected and may be rebuilt later.
           </p>
 
           <div
