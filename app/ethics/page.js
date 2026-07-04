@@ -17,7 +17,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How can TEG-Blue be reused?",
-    answer: "Public material may be cited, summarized, and referenced with visible attribution. Commercial, institutional, product, model, dataset, or adapted-tool use requires explicit written permission or a separate license.",
+    answer: "Original public written framework content may be cited, summarized, translated, adapted, and reused under CC BY 4.0 with visible attribution. Marks, tools, code, Engine logic, product surfaces, and third-party materials are excluded unless otherwise noted.",
   },
   {
     question: "How does TEG-Blue handle harm?",
@@ -97,11 +97,11 @@ const STEWARDSHIP = [
   },
   {
     title: "Public reference stays possible",
-    body: "The framework should be easy to cite, discuss, and summarize for non-commercial educational, research, press, and public-interest use when attribution and claim boundaries are preserved.",
+    body: "The framework should be easy to cite, discuss, summarize, translate, and teach from when attribution and claim boundaries are preserved.",
   },
   {
     title: "Permission is part of ethics",
-    body: "Commercial, institutional, product, model, dataset, sublicensed, translated, or adapted-tool use requires explicit written permission or a separate license.",
+    body: "Applied builds, institutional implementations, product integrations, custom tools, software integrations, and reuse of Engine or tool logic require explicit written permission or a separate agreement.",
   },
   {
     title: "Other work remains itself",
@@ -268,7 +268,7 @@ function StewardshipSection() {
       <p style={leadStyle}>
         The framework is meant to be citeable and discussable without becoming ownerless, extractive, or detached
         from its source. Reuse should preserve authorship, claim boundaries, and the difference between public
-        reference and licensed adaptation.
+        reference and applied adaptation.
       </p>
       <div style={gridStyle}>
         {STEWARDSHIP.map((item) => (

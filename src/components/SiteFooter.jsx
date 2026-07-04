@@ -61,14 +61,14 @@ export default function SiteFooter() {
 
       <p style={{ marginTop: 8, fontFamily: FONT.mono, fontSize: 10, color: TEXT.micro, lineHeight: 1.6 }}>
         <a
-          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          href="https://creativecommons.org/licenses/by/4.0/"
           rel="license noopener noreferrer"
           target="_blank"
           style={{ color: "inherit", textDecoration: "none" }}
         >
-          CC BY-NC-SA 4.0
+          CC BY 4.0
         </a>
-        {" · Attribution required · Commercial use requires permission"}
+        {" · Attribution required · Tools, marks, code, and Engine logic excluded"}
       </p>
 
       <style>{`.footer-link:hover { color: var(--text-primary); }`}</style>

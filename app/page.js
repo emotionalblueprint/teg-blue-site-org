@@ -16,7 +16,7 @@ const DESCRIPTION =
 const BASE_URL = "https://teg-blue.org";
 const DATE_MODIFIED = "2026-07-04";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
-const LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
+const LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";
 const SCHEMA_IDS = {
   organization: `${BASE_URL}/#organization`,
@@ -115,7 +115,7 @@ const gradientJsonLd = {
   author: { "@id": SCHEMA_IDS.person },
   creator: { "@id": SCHEMA_IDS.person },
   copyrightHolder: { "@id": SCHEMA_IDS.person },
-  copyrightNotice: "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Public framework content is licensed CC BY-NC-SA 4.0; commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
+  copyrightNotice: "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Original public written framework content is licensed CC BY 4.0 unless otherwise noted; marks, tools, code, Engine logic, and third-party materials are excluded.",
   license: LICENSE_URL,
   publisher: { "@id": SCHEMA_IDS.organization },
   isPartOf: {
@@ -433,9 +433,9 @@ const heroSafetyQuestions = [
 const attributionNotice = {
   title: "Authorship and use",
   body:
-    "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Public framework content is published under CC BY-NC-SA 4.0: attribution is required, use must be non-commercial, and adaptations must be shared under the same license.",
+    "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho. Original public written framework content is published under CC BY 4.0: attribution is required, and reuse should link back to the source.",
   restriction:
-    "Commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
+    "Marks, logos, tools, code, Engine logic, product surfaces, and third-party materials are excluded unless otherwise noted. Applied builds, institutional implementation, product integration, and reuse of Engine or tool logic require written permission.",
 };
 
 // ─── shared section styles ───────────────────────────────────────────────────
@@ -1010,7 +1010,7 @@ export default function Home() {
             <p style={{ margin: "0 0 14px", maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
               {attributionNotice.body}{" "}
               <a
-                href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                href="https://creativecommons.org/licenses/by/4.0/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "var(--spectrum-indigo)", textDecoration: "none", fontWeight: 600 }}
@@ -1042,7 +1042,7 @@ export default function Home() {
                   ORCID
                 </a>
                 <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--spectrum-indigo)", textDecoration: "none", fontWeight: 650 }}>
-                  CC BY-NC-SA 4.0
+                  CC BY 4.0
                 </a>
               </p>
             </div>

@@ -12,7 +12,9 @@ This repo keeps the framework and its research context close together: scientifi
 
 TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho.
 
-Original TEG-Blue framework content in this repository is published under CC BY-NC-SA 4.0 unless otherwise noted. Reuse must preserve visible attribution to Anna Paretas-Artacho and https://teg-blue.org. Commercial use, paid product integration, proprietary dataset or model integration, sublicensing, monetized reuse, or institutional implementation requires explicit written permission or a separate license.
+Original public written framework content in this repository is published under CC BY 4.0 unless otherwise noted. Reuse must preserve visible attribution to Anna Paretas-Artacho and https://teg-blue.org.
+
+The license does not grant permission to use TEG-Blue names, logos, marks, brand assets, source code, software, private data, Engine logic, interactive tools, product surfaces, or third-party materials unless those items are explicitly marked as included. Applied builds, institutional implementations, product integrations, custom tools, software integrations, and reuse of Engine or tool logic require explicit written permission or a separate agreement.
 
 See [LICENSE.md](./LICENSE.md) for the full repository notice.
 

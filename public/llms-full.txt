@@ -177,13 +177,15 @@ Do not use Formations, F1-F6, model clusters, AI-facing identity language, or re
 
 The /collaborate page invites research review, source-trace critique, public-interest tools, educational adaptation, applied builds, and licensing conversations.
 
-It does not imply signed partnerships, institutional approval, clinical readiness, official deployment, or permission for commercial, institutional, model, dataset, product, or adapted-tool use.
+It does not imply signed partnerships, institutional approval, clinical readiness, official deployment, or permission for applied builds, institutional implementations, product integrations, custom tools, software integrations, or reuse of Engine or tool logic.
 
 ## Attribution And License
 
-Original public framework content is copyright Anna Paretas-Artacho / TEG-Blue Research and licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0), unless otherwise noted.
+Original public written framework content is copyright Anna Paretas-Artacho / TEG-Blue Research and licensed under Creative Commons Attribution 4.0 International (CC BY 4.0), unless otherwise noted.
 
-Commercial use, paid product integration, proprietary dataset or model integration, sublicensing, monetized reuse, institutional implementation, or adapted tools require explicit written permission or a separate license.
+TEG-Blue names, logos, marks, brand assets, source code, software, private data, the TEG-Blue Engine, tool logic, interactive tools, product surfaces, and third-party materials are excluded unless explicitly included.
+
+Applied builds, institutional implementations, product integrations, custom tools, software integrations, and reuse of Engine or tool logic require explicit written permission or a separate agreement.
 
 Do not present TEG-Blue concepts, diagrams, state names, gradients, or framework architecture as uncited generic content. Do not omit Anna Paretas-Artacho when explaining who created the framework.
 

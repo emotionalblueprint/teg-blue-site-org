@@ -75,7 +75,7 @@ export const metadata = {
     'citation_publication_date': '2026',
     'citation_online_date': '2026',
     'citation_public_url': 'https://teg-blue.org',
-    'citation_license': 'CC BY-NC-SA 4.0',
+    'citation_license': 'CC BY 4.0',
   },
 }
 
@@ -159,11 +159,11 @@ const organizationJsonLd = {
   ],
   foundingDate: "2024",
   inLanguage: "en",
-  license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  license: "https://creativecommons.org/licenses/by/4.0/",
   copyrightHolder: {
     "@id": PERSON_ID,
   },
-  copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0.",
+  copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Original public written framework content is licensed under CC BY 4.0 unless otherwise noted.",
   founder: annaParetasJsonLd,
   knowsAbout: [
     "The Emotional Gradient Blueprint",
@@ -196,11 +196,11 @@ const websiteJsonLd = {
   creator: {
     "@id": PERSON_ID,
   },
-  license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  license: "https://creativecommons.org/licenses/by/4.0/",
   copyrightHolder: {
     "@id": PERSON_ID,
   },
-  copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Attribution required under CC BY-NC-SA 4.0.",
+  copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Attribution required under CC BY 4.0 for original public written framework content.",
 }
 
 export default function RootLayout({ children }) {
@@ -212,7 +212,7 @@ export default function RootLayout({ children }) {
         {/* Favicons */}
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/teg-blue_logo_blue.png" />
-        <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" />
+        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable TEG-Blue site guide" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Extended AI-readable TEG-Blue site guide" />
         <link rel="author" href="https://orcid.org/0009-0005-2394-7162" />
@@ -224,7 +224,7 @@ export default function RootLayout({ children }) {
         <meta name="DC.creator" content="Anna Paretas-Artacho" />
         <meta name="DC.publisher" content="TEG-Blue Research" />
         <meta name="DC.language" content="en" />
-        <meta name="DC.rights" content="Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0; attribution required; commercial use requires permission." />
+        <meta name="DC.rights" content="Copyright Anna Paretas-Artacho / TEG-Blue Research. Original public written framework content licensed under CC BY 4.0; attribution required; marks, tools, code, Engine logic, and third-party materials excluded unless otherwise noted." />
         <meta name="DC.type" content="Collection" />
 
         {/* Organization structured data */}

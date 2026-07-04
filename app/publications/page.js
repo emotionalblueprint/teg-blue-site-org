@@ -89,7 +89,7 @@ const CITATION_GUIDANCE = [
   {
     label: "Permission",
     title: "Check reuse boundaries",
-    body: "Commercial, institutional, product, model, dataset, sublicensed, translated, or adapted-tool use requires explicit written permission or a separate license.",
+    body: "Original public written framework content may be reused under CC BY 4.0 with attribution. Marks, tools, Engine logic, product surfaces, and third-party materials are outside that license unless explicitly marked.",
     color: SPECTRUM.indigo,
   },
 ];
@@ -118,8 +118,9 @@ const PUBLIC_DESCRIPTION_NOTES = [
 ];
 
 const REUSE_LINES = [
-  "Short quotations, commentary, academic citation, press reference, and non-commercial educational reference may cite public pages with attribution.",
-  "Commercial use, product integration, institutional implementation, proprietary dataset or model use, adapted tools, and sublicensing require explicit permission or a separate license.",
+  "Original public written framework content may be shared, quoted, summarized, translated, adapted, and reused under CC BY 4.0 with attribution to Anna Paretas-Artacho / TEG-Blue and a link to the source.",
+  "TEG-Blue names, logos, marks, brand assets, source code, software, private data, the TEG-Blue Engine, tool logic, interactive tools, product surfaces, and separately marked materials are excluded unless explicitly included.",
+  "Applied builds, institutional implementations, product integrations, custom tools, software integrations, and reuse of Engine or tool logic require explicit written permission or a separate agreement.",
   "Third-party sources, research, fonts, dependencies, and externally owned instruments remain under their own licenses and rights.",
 ];
 

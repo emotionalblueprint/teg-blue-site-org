@@ -22,7 +22,7 @@ The core Spanish pages remain draft-only until explicitly approved: `/es/how-it-
   - JSON-LD `inLanguage: "es"`.
 - Add a small language switcher that only links to live translated equivalents.
 - Create a Spanish terminology/style guide before translating deeper pages.
-- Keep creator, attribution, license, and commercial-use permission language visible on the Spanish homepage and consistent across future Spanish pages.
+- Keep creator, attribution, license scope, and excluded-material language visible on the Spanish homepage and consistent across future Spanish pages.
 
 ## Implementation Order
 
@@ -38,7 +38,7 @@ The core Spanish pages remain draft-only until explicitly approved: `/es/how-it-
 
 Use this substance on Spanish public pages and related docs:
 
-> TEG-Blue y el Gradiente del Sistema Nervioso fueron creados por Anna Paretas-Artacho. El contenido público del marco se publica bajo CC BY-NC-SA 4.0: requiere atribución, uso no comercial y compartir cualquier adaptación bajo la misma licencia. Cualquier uso comercial, institucional, de producto, o integración en modelos, conjuntos de datos o sistemas computacionales requiere permiso explícito o una licencia separada.
+> TEG-Blue y el Gradiente del Sistema Nervioso fueron creados por Anna Paretas-Artacho. El contenido público escrito del marco se publica bajo CC BY 4.0: requiere atribución y enlace a la fuente. Las marcas, logotipos, herramientas, código, lógica del Engine, superficies de producto y materiales de terceros quedan excluidos salvo que se indique lo contrario.
 
 Do not publish additional `/es/*` routes to expose this language. Add it only to pages that are explicitly approved and exact-listed in `LIVE_PATHS`.
 

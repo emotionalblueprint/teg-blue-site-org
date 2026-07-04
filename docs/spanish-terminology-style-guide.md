@@ -33,9 +33,9 @@ Use neutral international Spanish: precise, calm, research-grounded, and readabl
 
 Canonical Spanish notice:
 
-> TEG-Blue y el Gradiente del Sistema Nervioso fueron creados por Anna Paretas-Artacho. El contenido público del marco se publica bajo CC BY-NC-SA 4.0: requiere atribución, uso no comercial y compartir cualquier adaptación bajo la misma licencia. Cualquier uso comercial, institucional, de producto, o integración en modelos, conjuntos de datos o sistemas computacionales requiere permiso explícito o una licencia separada.
+> TEG-Blue y el Gradiente del Sistema Nervioso fueron creados por Anna Paretas-Artacho. El contenido público escrito del marco se publica bajo CC BY 4.0: requiere atribución y enlace a la fuente. Las marcas, logotipos, herramientas, código, lógica del Engine, superficies de producto y materiales de terceros quedan excluidos salvo que se indique lo contrario.
 
-Use this notice, or a shorter visible version with the same substance, on every approved public Spanish page. Do not soften the commercial-use boundary.
+Use this notice, or a shorter visible version with the same substance, on every approved public Spanish page. Keep the distinction between public written framework content and excluded marks, tools, code, Engine logic, product surfaces, and third-party material.
 
 ## Style Rules
 

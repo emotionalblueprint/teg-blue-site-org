@@ -43,7 +43,7 @@ const COLLABORATION_AREAS = [
   {
     label: "Licensing",
     title: "Permission for adapted or institutional use",
-    body: "Commercial, institutional, product, dataset, model, or adapted-tool use requires explicit permission or a separate license.",
+    body: "Applied builds, institutional implementations, product integrations, custom tools, software integrations, and reuse of Engine or tool logic require explicit permission or a separate agreement.",
     color: SPECTRUM.indigo,
   },
 ];
