@@ -36,19 +36,19 @@ const FORMATION_EXTRAS = {
     mechanism: 'Threat — mobilisation prioritises boundary, distance, or defence.',
   },
   strategic: {
-    sub: 'sustained control',
+    sub: 'persistent threat',
     pattern: 'Pattern C',
-    mechanism: 'Sustained threat — cognition organises around management and control.',
+    mechanism: 'Persistent threat — cognition organises around strategic management and control of variables.',
   },
   domination: {
-    sub: 'power → survival',
+    sub: 'power mobilisation',
     pattern: 'Pattern D',
     mechanism: 'Life threat — power mobilisation overrides relational access.',
   },
   shutdown: {
     sub: 'conservation / collapse',
     pattern: 'Pattern Z',
-    mechanism: 'Overwhelm — mobilisation drops and conservation becomes primary.',
+    mechanism: 'Capacity exceeded — active mobilisation drops and conservation becomes primary.',
   },
 }
 
@@ -165,11 +165,11 @@ export const cards = [
       },
       strategic: {
         a: 'Emotion is held under pressure rather than expressed directly. Anxiety and tension become management signals: watch, predict, contain, stay ahead.',
-        c: 'Feeling gets flattened into control. The system still carries pressure, but the original hurt or fear is harder to find.',
+        c: 'Feeling gets organized through management. The system still carries pressure, but the original hurt or fear is harder to find.',
       },
       domination: {
         a: 'The signal has reached survival pitch. Rage and force organize the system around overpowering what feels dangerous.',
-        c: 'The signal hardens into a destructive operating style. Harm can start to feel justified because power has become the route to safety.',
+        c: 'The signal hardens into a destructive operating style. Harm can start to feel justified because power and force are being used as the route.',
       },
       shutdown: {
         a: 'The signal system is going offline. Instead of producing a clear emotion, the body conserves, goes flat, and reduces contact.',
@@ -206,9 +206,9 @@ export const content = {
     connection: { a: 'Safety through connection', c: chronicText('state', 'connection') },
     calibration: { a: 'Checking whether safety still holds', c: chronicText('state', 'calibration') },
     protection: { a: 'Defence for immediate threat', c: chronicText('state', 'protection') },
-    strategic: { a: 'Control / Management for sustained threat', c: chronicText('state', 'strategic') },
-    domination: { a: 'Power mobilized for survival', c: chronicText('state', 'domination') },
-    shutdown: { a: 'Conservation when mobilizing is too much', c: chronicText('state', 'shutdown') },
+    strategic: { a: 'Strategic management for persistent threat', c: chronicText('state', 'strategic') },
+    domination: { a: 'Power mobilisation for life threat', c: chronicText('state', 'domination') },
+    shutdown: { a: 'Conservation when capacity is exceeded', c: chronicText('state', 'shutdown') },
   },
   perception: {
     baseline: { a: 'Wide field: the whole situation is available', c: chronicText('perception', 'baseline') },

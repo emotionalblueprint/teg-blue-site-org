@@ -2,7 +2,7 @@
  * Deep Engine chronic configuration data for .org.
  *
  * Source: /Users/annaparetas/Projects/teg-blue-engine/atlas-data.js
- * Snapshot: 2026-06-28 chronic build / ESC rewrite.
+ * Snapshot: 2026-07-04 Deep Engine source refresh.
  *
  * This file is intentionally chronic-only. Acute/formational state definitions
  * live in deep-engine-formations.js so temporary state configuration and
@@ -16,15 +16,15 @@ const cell = (lead, sub, note) => ({ lead, sub, note });
 
 export const DEEP_ENGINE_CHRONIC_FORMATION_META = {
   baseline: {
-    chronicConfig: "Chronic Elevated Physiological Baseline",
-    chronicConfigDetail: "No resting availability",
-    plainChronic: "Elevated baseline — regulation does not fully complete",
+    chronicConfig: "Chronic Elevated Baseline",
+    chronicConfigDetail: "Resting set-point elevated; rest does not fully land",
+    plainChronic: "Elevated baseline — rest does not fully land",
     chronicColor: CHRONIC_FORMATION.X,
   },
   connection: {
-    chronicConfig: "Chronic Connection / Belonging",
-    chronicConfigDetail: "No real Safety Access (pretending safety is the normal)",
-    plainChronic: "Connection / Belonging — safety is displayed without full access",
+    chronicConfig: "No Safety Access / Approximated Bonding-Belonging",
+    chronicConfigDetail: "Connection is performed or approximated without settled internal safety",
+    plainChronic: "Connection / Belonging — safety is performed or approximated without settled access",
     chronicColor: CHRONIC_FORMATION.A,
   },
   calibration: {
@@ -40,22 +40,22 @@ export const DEEP_ENGINE_CHRONIC_FORMATION_META = {
     chronicColor: CHRONIC_FORMATION.B,
   },
   strategic: {
-    chronicConfig: "Chronic Control / Management",
-    chronicConfigDetail: "Chronic Control / Management",
-    plainChronic: "Control / Management — management becomes the regulation route",
+    chronicConfig: "Chronic Strategy & Management",
+    chronicConfigDetail: "Sustained anticipation, inhibition and control of variables",
+    plainChronic: "Strategic Management — management becomes the held response to persistent threat",
     chronicColor: CHRONIC_FORMATION.C,
   },
   domination: {
     familiarChronic: "coercive control",
-    chronicConfig: "Chronic Domination",
-    chronicConfigDetail: "Power as identity",
-    plainChronic: "Domination — power becomes the regulation route",
+    chronicConfig: "Chronic Power & Dominance",
+    chronicConfigDetail: "Repeated maximum-protection organisation",
+    plainChronic: "Power Mobilisation — force and control stay readily available as substitute protection",
     chronicColor: CHRONIC_FORMATION.D,
   },
   shutdown: {
-    chronicConfig: "Shutdown",
-    chronicConfigDetail: "Shutdown",
-    plainChronic: "Persistent Shutdown — collapse becomes the running organisation",
+    chronicConfig: "Persistent Shutdown / Collapse",
+    chronicConfigDetail: "Conservation, withdrawal or reduced output difficult to leave",
+    plainChronic: "Persistent Shutdown / Collapse — capacity stays exceeded",
     chronicColor: CHRONIC_FORMATION.Z,
   },
 };
@@ -106,7 +106,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
     label: "Fused signals",
     cells: {
       baseline: "Chronic elevated baseline — unresolved source signals remain physiologically available after their completion window.",
-      connection: "Pretended Bonding-Belonging — safety display without settled internal safety.",
+      connection: "Approximated Bonding-Belonging — safety display without settled internal safety.",
       calibration: "Connection-Risk Fusion — bonding and belonging-at-risk signals fuse.",
       protection: "Connection-Defence Fusion — connection-preservation and organism-protection signals fuse.",
       strategic: "Distorted emotional signals — source, timing, scale, meaning, target, responsibility or response requirement can become mismatched.",
@@ -118,12 +118,12 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
     label: "Stuck state",
     cells: {
       baseline: "Chronic Elevated Baseline — rest never settles.",
-      connection: "Chronic Pattern A — built-then-rigidified / No Safety Access (pretended bonding-belonging).",
+      connection: "Chronic Pattern A — No Safety Access / approximated bonding-belonging.",
       calibration: "A↔B Transition — collapses toward chronic B.",
       protection: "Chronic Pattern B — sympathetic mobilisation held, not discharged.",
-      strategic: "Chronic Pattern C — Control; narrative carries regulation.",
-      domination: "Chronic Pattern D — Power Mobilisation; empathy-disabled, destruction as survival route.",
-      shutdown: "Persistent Shutdown — collapse as running organisation.",
+      strategic: "Chronic Pattern C — Strategic Management; narrative, coherence and control carry regulation.",
+      domination: "Chronic Pattern D — Power Mobilisation; empathy-disabled regulation, cost unable to register, destruction available as survival route.",
+      shutdown: "Persistent Shutdown / Collapse — collapse as running organisation.",
     },
   },
   physiologicalCapacity: {
@@ -154,7 +154,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
     label: "Regulation needed",
     cells: {
       baseline: cell("Somatic available but not completing; both substitutes active in background.", "Relational substitute low — another's co-regulation leaned on for background settling, not yet under control."),
-      connection: cell("Somatic not engaged (template never built); relational substitutes via pretended bonding-belonging.", "Another's closeness recruited as the safety the internal template never built — co-regulation co-opted, not mutual."),
+      connection: cell("Somatic not engaged (template never built); relational substitutes via approximated bonding-belonging.", "Another's closeness recruited as the safety the internal template never built — co-regulation co-opted, not mutual."),
       calibration: "— Position welded / never built.",
       protection: cell("Somatic suppressed; both somatic + relational substitutes active.", "Relational substitute co-opts another's co-regulation under defensive control — settling borrowed by managing the other, not met mutually."),
       strategic: cell("Somatic suppressed / diminishing; relational substitutes dominant (managing-field harm-signals).", "The regulation source is now largely another nervous system — its state managed to produce the controlling system's settling."),
@@ -165,7 +165,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
   repairReturn: {
     label: "Repair / return",
     cells: {
-      baseline: cell("Regulation does not fully land", "the raised floor remains; somatic clearing is available-but-not-completing."),
+      baseline: cell("Recovery does not fully land", "the raised floor remains; somatic clearing is available-but-not-completing."),
       connection: cell("Safety template never settles", "closeness may lower pressure without building internal safety access."),
       calibration: cell("Boundary loop does not reset", "the system stays held at the unresolved edge instead of returning to baseline."),
       protection: cell("Mobilisation stays held", "the brake cannot fully re-engage; discharge window remains suppressed."),
@@ -202,7 +202,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
     label: "Empathy access",
     cells: {
       baseline: "Available but conditional — relational cues read from a system never fully at rest; care present, lightly guarded.",
-      connection: "Connection displayed without internal safety access — largely the form of bonding (Pretended Bonding-Belonging), expressed to hold the relationship more than grounded in a self-read.",
+      connection: "Connection displayed without internal safety access — largely the form of bonding (Approximated Bonding-Belonging), expressed to hold the relationship more than grounded in a self-read.",
       calibration: "Held at the boundary — the other read for mismatch and possible threat rather than freely; care narrowing.",
       protection: "Narrowed by defensive interpretation — the other read through threat (the bond itself can read as danger); care subordinated to protection.",
       strategic: cell("Selective and controlled — the other read instrumentally through the management model; care reduced as the signal map distorts (source, scale, target).", "← M2-C control · M1-C distortion · ISSA◂ override standing"),
@@ -265,9 +265,9 @@ export const PUBLIC_CHRONIC_ROWS = {
     connection: "Connection without settled safety.",
     calibration: "The safety question stuck open.",
     protection: "Defence as the resting state.",
-    strategic: "Control as the only way to feel safe.",
-    domination: "Power becomes the default route to safety.",
-    shutdown: "Any pattern can drop into shutdown when capacity can no longer hold.",
+    strategic: "Strategic management becomes the held response to persistent threat.",
+    domination: "Power and force stay available as substitute protection.",
+    shutdown: "Capacity stays exceeded, so shutdown repeats.",
   },
   perception: {
     baseline: "The field cannot fully widen; background activation stays in the read.",
@@ -289,7 +289,7 @@ export const PUBLIC_CHRONIC_ROWS = {
   },
   signalConfiguration: {
     baseline: "Unfinished signals keep running under the surface.",
-    connection: "Safety can be displayed without fully landing inside.",
+    connection: "Safety can be performed or approximated without fully landing inside.",
     calibration: "Bonding and risk signals travel together.",
     protection: "Connection and defence get tangled in the same field.",
     strategic: "Feeling becomes organized through management; source, scale, target, or responsibility can get mismatched.",
@@ -320,7 +320,7 @@ export const PUBLIC_CHRONIC_ROWS = {
     calibration: "The loop needs reliable evidence or repair so the safety question can close.",
     protection: "The body needs discharge, boundary action, distance, or threat resolution.",
     strategic: "The system needs the management model to loosen and the body load to clear.",
-    domination: "The system needs force or control to stand down; compliance cannot complete the need.",
+    domination: "The system needs force or control to stand down; compliance, fear, or submission cannot complete the need.",
     shutdown: "The first need is protected re-engagement before active regulation can run.",
   },
   repairReturn: {
@@ -329,7 +329,7 @@ export const PUBLIC_CHRONIC_ROWS = {
     calibration: "Reassurance may reduce pressure briefly, but the boundary loop does not reset.",
     protection: "Mobilisation stays held; the body does not fully discharge or update.",
     strategic: "Management lowers pressure while unresolved load remains underneath.",
-    domination: "Control can feel settling while blocking mutual regulation and adding load.",
+    domination: "Control can lower pressure while blocking mutual regulation and adding load.",
     shutdown: "Collapse reduces demand but does not return capacity.",
   },
   completion: {
@@ -380,11 +380,11 @@ export const PUBLIC_CHRONIC_PERCEPTION_DETAILS = {
   protection:
     "The field stays narrowed around the threat template. Perception searches for boundary violation, danger, or escape routes before the present moment has fully updated.",
   strategic:
-    "The field narrows into a management map. Perception reads for what must be predicted, contained, corrected, or controlled, and softer information can be filtered out if it does not help the model.",
+    "The field narrows into a strategic management map. Perception reads for what must be predicted, contained, corrected, or controlled, and softer information can be filtered out if it does not help the model.",
   domination:
     "The field tunnels around power, leverage, and imposed outcome. Impact, autonomy, and separate reality may not register unless they affect control, force, or threat.",
   shutdown:
-    "The field stays withdrawn. Detail, signal, and context may remain distant or hard to use until protected re-engagement becomes available.",
+    "Capacity stays exceeded, so the field remains withdrawn. Detail, signal, and context may remain distant or hard to use until protected re-engagement becomes available.",
 };
 
 export const PUBLIC_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formation) => {

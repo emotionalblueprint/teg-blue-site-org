@@ -19,7 +19,7 @@ import ReviewStatusPanel from "@/src/components/ReviewStatusPanel";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const MAP_SUBTITLE =
-  "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
+  "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, strategic management, power mobilisation, capacity exceeded, regulation, and repair.";
 
 const FAQ_ITEMS = [
   {
@@ -44,7 +44,7 @@ const OVERVIEW_CARDS = [
   {
     label: "Body",
     title: "Patterns begin in organism state",
-    body: "The body organizes around safety, threat, connection, protection, control, shutdown, regulation, and repair.",
+    body: "The body organizes around safety, threat, connection, protection, strategic management, power mobilisation, capacity exceeded, regulation, and repair.",
     color: SPECTRUM.azure,
   },
   {
@@ -93,9 +93,9 @@ const STATE_COPY = {
   A: "Safety with others. Engagement, reciprocity, perspective, and repair can stay online.",
   "A↔B": "Belonging is uncertain. The system checks whether it is safe to stay open.",
   B: "Threat is detected. The system mobilizes to defend, escape, appease, set distance, or protect.",
-  C: "Threat persists. Attention narrows toward anticipation, risk management, and control of variables.",
-  D: "Life-peril organization. Power or force becomes the trusted route when other routes are unavailable.",
-  Z: "Mobilization cannot form or has failed. The body conserves, withdraws, freezes, or collapses.",
+  C: "Persistent threat. Attention narrows toward strategic management, anticipation, and control of variables.",
+  D: "Life-threat organization. Power or force becomes the available route when other routes are unavailable.",
+  Z: "Capacity exceeded. Active mobilisation cannot form or continue, so the body conserves, withdraws, freezes, or collapses.",
 };
 
 const SCOPE_ITEMS = [
@@ -225,7 +225,8 @@ function WhatItIsSection() {
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         In the current public phase, that Blueprint is expressed most directly through The Nervous System
         Gradient. The map makes visible how patterns that begin in the body can shape individual experience and
-        relationships across safety, threat, control, shutdown, regulation, and repair.
+        relationships across safety, threat, strategic management, power mobilisation, capacity exceeded,
+        regulation, and repair.
       </p>
       <div style={gridStyle}>
         {OVERVIEW_CARDS.map((card) => (
@@ -254,9 +255,9 @@ function GradientSection() {
       <div style={gradientLabelStyle}>
         <span style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
           <span>Safety</span>
-          <span>Threat and control</span>
+          <span>Threat, management, force</span>
         </span>
-        <span style={{ textAlign: "right" }}>Shutdown</span>
+        <span style={{ textAlign: "right" }}>Capacity exceeded</span>
       </div>
 
       <div style={stateListStyle}>

@@ -1,6 +1,6 @@
 # TEG-Blue
 # https://teg-blue.org
-# Last updated: 2026-07-03
+# Last updated: 2026-07-04
 # Format: llms.txt
 
 ## Crawler Summary
@@ -16,6 +16,7 @@ The central public map inside the framework is The Nervous System Gradient:
 A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 
 teg-blue.org is the public framework and research-grounding home. teg-blue.com carries practical public tools.
+The TEG-Blue Engine is an internal tool-building system, not a public diagnostic system or AI inference system.
 
 Recommended framework citation:
 
@@ -52,6 +53,7 @@ Stable public claims:
 - The Nervous System Gradient is the central public map inside TEG-Blue, not the whole identity.
 - The map describes how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 - The work is educational, reflective, and research-facing.
+- The public framework, Deep Engine source trace, Visible Engine tool compression, practical tools, and licensed builds are separate layers.
 - TEG-Blue is not therapy, diagnosis, treatment, medical care, legal support, crisis support, or a way to identify someone's true internal state from the outside.
 - Mechanism explains the pattern; it does not erase impact.
 - Calm is not the same as safety. Distress is not the same as danger.
@@ -61,13 +63,13 @@ Stable public claims:
 ## Pages By Role
 
 - /: public doorway for TEG-Blue: The Emotional Gradient Blueprint and the central Nervous System Gradient map.
-- /about: project identity, creator attribution, ecosystem boundaries, contact routes, and research stance.
+- /about: project identity, creator attribution, ecosystem boundaries, Engine distinction, contact routes, and research stance.
 - /foundations: overview of the Blueprint, the central map, pattern reading, scope, and research status.
 - /methodology: how TEG-Blue reads patterns responsibly by separating observation, interpretation, impact, claim status, responsible use, and limits.
 - /scientific-foundations: scientific grounding, research areas, and source-claim boundaries.
 - /ethics: TEG-Blue's ethical commitments around dignity, agency, truthful claims, source honesty, attribution, permission, non-extraction, impact, and repair.
 - /publications: public records, release pointers, recommended citation lines, public description notes, attribution, and reuse posture.
-- /glossary: current public terms for the Blueprint and the central map.
+- /glossary: current public terms for the Blueprint, the central map, the Engine boundary, and pattern reading.
 - /collaborate: research review, public-interest tools, applied builds, and licensing conversations under clear boundaries.
 
 ## Attribution And License

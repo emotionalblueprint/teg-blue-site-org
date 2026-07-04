@@ -37,6 +37,24 @@ const TERMS = [
     color: SPECTRUM.blue,
   },
   {
+    term: "TEG-Blue Engine",
+    definition: "The internal tool-building system that keeps source-tracing logic and practical tool-compression logic connected.",
+    note: "The Engine is not a public diagnostic system, AI inference system, or raw public copy source.",
+    color: SPECTRUM.blue,
+  },
+  {
+    term: "Deep Engine",
+    definition: "The source-tracing layer behind the public map: states, Formations, acute and chronic organization, element ownership, and research-theory trace.",
+    note: "Use as internal/provenance language unless a public page is explicitly explaining the ecosystem boundary.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    term: "Visible Engine",
+    definition: "The practical 4-mode compression used for tool-building and fast orientation.",
+    note: "Its modes are Connection, Protection, Control, and Domination; the compression stays traceable back to the Deep Engine.",
+    color: SPECTRUM.cobalt,
+  },
+  {
     term: "Emotional-pattern legibility",
     definition: "The ability to see and discuss emotional patterns as structured biological and relational information.",
     note: "This is the public-entry frame for .org.",
@@ -47,6 +65,30 @@ const TERMS = [
     definition: "A pattern of whole-organism organization that may shape perception, emotion, body activation, behaviour, relationship, and repair capacity.",
     note: "Use for pattern language, not diagnosis.",
     color: SPECTRUM.cobalt,
+  },
+  {
+    term: "Formation",
+    definition: "A Deep Engine column or state coordinate across the Gradient.",
+    note: "A Formation is not a person type, diagnosis, or moral category.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    term: "Actual Conditions",
+    definition: "The starting field the system is reading: what is happening, what has changed, and whether safety, threat, or capacity exceeded is in play.",
+    note: "Keep actual conditions distinct from the nervous-system state that organizes around them.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    term: "Acute state",
+    definition: "A fluid nervous-system configuration that can move when conditions update and enough capacity returns.",
+    note: "Use for passing state movement, not fixed identity.",
+    color: SPECTRUM.azure,
+  },
+  {
+    term: "Chronic pattern",
+    definition: "A held, repeated, or difficult-to-leave organization that keeps shaping perception, access, response, and repair over time.",
+    note: "Use for pattern-over-time language, not a public typology or person verdict.",
+    color: SPECTRUM.slate,
   },
   {
     term: "State-shaped perception",
@@ -87,6 +129,11 @@ export const metadata = {
     "TEG-Blue glossary",
     "The Emotional Gradient Blueprint",
     "Nervous System Gradient",
+    "TEG-Blue Engine",
+    "Deep Engine",
+    "Visible Engine",
+    "Formation",
+    "Actual Conditions",
     "emotional-pattern legibility",
     "state-shaped perception",
     "repair",
@@ -133,7 +180,7 @@ export default function GlossaryPage() {
             badge="GLOSSARY"
             title="Glossary"
             subtitle="Approved public terminology"
-            description="Public terms for TEG-Blue, the Blueprint, the central map, and the ethical commitments around pattern reading."
+            description="Public terms for TEG-Blue, the Blueprint, the central map, the Engine boundary, and the ethical commitments around pattern reading."
           />
         }
       >
@@ -182,7 +229,7 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Terminology</div>
-      <h2 style={sectionHeadingStyle}>A shared vocabulary for the Blueprint and its central map.</h2>
+      <h2 style={sectionHeadingStyle}>A shared vocabulary for the Blueprint, its central map, and the Engine boundary.</h2>
       <p style={leadStyle}>
         These terms name the public language of TEG-Blue: the framework, the central map, and the patterns the
         map makes easier to discuss. They are meant for clarity, not diagnosis, motive claims, or fixed moral

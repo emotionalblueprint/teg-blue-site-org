@@ -32,18 +32,18 @@ const ROWS = [
   {
     id: 'strategic',
     label: 'Persistent threat',
-    acute: 'Control / Management for sustained threat',
-    chronic: 'Control as the only way to feel safe.',
+    acute: 'Strategic management for persistent threat',
+    chronic: 'Strategic management becomes the held response to persistent threat.',
   },
   {
     id: 'domination',
     label: 'Life threat',
-    acute: 'Power mobilized for survival',
-    chronic: 'Power becomes the default route to safety.',
+    acute: 'Power Mobilisation for life threat',
+    chronic: 'Power and force stay available as substitute protection.',
   },
   {
     id: 'shutdown',
-    label: 'Collapse Shutdown',
+    label: 'Capacity exceeded',
     acute: 'The system conserves energy when mobilisation can no longer hold.',
     chronic: 'Shutdown repeats when demand keeps exceeding capacity.',
   },

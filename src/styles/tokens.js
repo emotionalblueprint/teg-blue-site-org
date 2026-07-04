@@ -124,9 +124,9 @@ export const FORMATION_META = {
   C: {
     id: "strategic",
     code: "C",
-    label: "Bigger threat",
-    mode: "Control / Management",
-    reality: "Bigger threat",
+    label: "Persistent threat",
+    mode: "Strategic Management",
+    reality: "Persistent threat",
     color: FORMATION.C,
     ink: BLUE[900],
     activeGradient: true,
@@ -135,7 +135,7 @@ export const FORMATION_META = {
     id: "domination",
     code: "D",
     label: "Life threat",
-    mode: "Domination",
+    mode: "Power Mobilisation",
     reality: "Life threat",
     color: FORMATION.D,
     ink: BLUE[900],
@@ -144,9 +144,9 @@ export const FORMATION_META = {
   Z: {
     id: "shutdown",
     code: "Z",
-    label: "Overwhelm Shutdown",
-    mode: "Body Shutdown",
-    reality: "Overwhelm",
+    label: "Capacity exceeded",
+    mode: "Shutdown",
+    reality: "Capacity exceeded",
     color: FORMATION.Z,
     ink: BLUE[900],
     activeGradient: false,
@@ -184,12 +184,12 @@ export const CHRONIC_FORMATION = {
 
 export const CHRONIC_FORMATION_META = {
   X: { label: "Elevated baseline", color: CHRONIC_FORMATION.X },
-  A: { label: "Chronic Connection / Belonging", color: CHRONIC_FORMATION.A },
+  A: { label: "No Safety Access / Approximated Bonding-Belonging", color: CHRONIC_FORMATION.A },
   AB: { label: "Chronic Safety Checking", color: CHRONIC_FORMATION.AB },
   B: { label: "Chronic Protection / Defence", color: CHRONIC_FORMATION.B },
-  C: { label: "Chronic Control / Management", color: CHRONIC_FORMATION.C },
-  D: { label: "Chronic Domination", color: CHRONIC_FORMATION.D },
-  Z: { label: "Persistent Shutdown", color: CHRONIC_FORMATION.Z },
+  C: { label: "Chronic Strategy & Management", color: CHRONIC_FORMATION.C },
+  D: { label: "Chronic Power & Dominance", color: CHRONIC_FORMATION.D },
+  Z: { label: "Persistent Shutdown / Collapse", color: CHRONIC_FORMATION.Z },
 };
 
 // ─── BACKGROUNDS ─────────────────────────────────────

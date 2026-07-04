@@ -2,7 +2,7 @@
  * Deep Engine acute/formational state data for .org.
  *
  * Source: /Users/annaparetas/Projects/teg-blue-engine/atlas-data.js
- * Snapshot: 2026-06-28 chronic build / ESC rewrite.
+ * Snapshot: 2026-07-04 Deep Engine source refresh.
  *
  * This file owns the seven formation positions and their acute/public labels.
  * Public perception copy translates the Engine's state-shaped perception row
@@ -98,19 +98,19 @@ export const DEEP_ENGINE_FORMATIONS = [
     id: "strategic",
     code: "C",
     systemCode: "C",
-    mode: "Control / Management",
-    atlasLabel: "Bigger threat",
-    familiar: "cognitive control / management",
+    mode: "Strategic Management",
+    atlasLabel: "Persistent threat",
+    familiar: "control / management",
     autonomic: "sympathetic + vagal brake",
-    reality: "BIGGER THREAT",
-    acuteConfig: "Control / Management",
-    acuteConfigDetail: "Control / Management",
+    reality: "PERSISTENT THREAT",
+    acuteConfig: "Strategic Management",
+    acuteConfigDetail: "Managed Mobilisation, sympathetic + vagal brake",
     acuteColor: FORMATION.C,
     publicPerception: {
       label: "Narrow management field",
       detail:
-        "The field narrows into a management map. What must be predicted, contained, sequenced, corrected, or controlled stands out because the system is trying to stay ahead of sustained threat.",
-      sourceTrace: "M2-C13 · formation C · control / management",
+        "The field narrows into a strategic management map. What must be predicted, contained, sequenced, corrected, or controlled stands out because the system is trying to stay ahead of persistent threat.",
+      sourceTrace: "M2-C13 · formation C · strategic management",
     },
     active: true,
   },
@@ -118,19 +118,19 @@ export const DEEP_ENGINE_FORMATIONS = [
     id: "domination",
     code: "D",
     systemCode: "D",
-    mode: "Domination",
+    mode: "Power Mobilisation",
     atlasLabel: "Life threat",
     familiar: "power mobilisation",
     autonomic: "sympathetic",
     reality: "LIFE THREAT",
-    acuteConfig: "Domination",
-    acuteConfigDetail: "Power Mobilisation",
+    acuteConfig: "Power Mobilisation",
+    acuteConfigDetail: "Life-threat mobilisation",
     acuteColor: FORMATION.D,
     publicPerception: {
       label: "Tunnel field",
       detail:
-        "The field tunnels around power, force, outcome, and blocked threat. Impact, empathy, and another person's separate reality become harder to register while survival output is primary.",
-      sourceTrace: "M2-C13 · formation D · domination",
+        "The field tunnels around power, force, outcome, and blocked threat. Impact, empathy, and another person's separate reality become harder to register while maximum protection output is primary.",
+      sourceTrace: "M2-C13 · formation D · power mobilisation",
     },
     active: true,
   },
@@ -139,18 +139,18 @@ export const DEEP_ENGINE_FORMATIONS = [
     code: "Z",
     systemCode: "Z",
     mode: "Shutdown",
-    atlasLabel: "Shutdown",
+    atlasLabel: "Capacity exceeded",
     familiar: "freeze · collapse",
     autonomic: "parasympathetic · dorsal vagal",
-    reality: "SHUTDOWN",
+    reality: "CAPACITY EXCEEDED",
     acuteConfig: "Shutdown",
     acuteConfigDetail: "Overwhelm, Freeze, Collapse",
     acuteColor: FORMATION.Z,
     publicPerception: {
       label: "Withdrawn field",
       detail:
-        "The field withdraws, fades, or goes distant. Less reaches usable awareness; fog, blankness, numbness, or collapse can replace active scanning.",
-      sourceTrace: "M2-C13 · formation Z · shutdown",
+        "Capacity is exceeded, so the field withdraws, fades, or goes distant. Less reaches usable awareness; fog, blankness, numbness, or collapse can replace active scanning.",
+      sourceTrace: "M2-C13 · formation Z · capacity exceeded / shutdown fallback",
     },
     active: false,
   },

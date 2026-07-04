@@ -63,13 +63,15 @@ const BOUNDARIES = [
   },
   {
     title: "The Engine is separate",
-    body: "The TEG-Blue Engine may support licensed or commissioned tools, but it is not a public diagnostic system or AI inference system.",
+    body: "The TEG-Blue Engine may support licensed or commissioned tools, but it remains separate from public pages and is not a public diagnostic system or AI inference system.",
   },
 ];
 
 const CONTACT_ROWS = [
   { label: "Research and collaboration", href: "mailto:research@teg-blue.org", text: "research@teg-blue.org" },
   { label: "Framework context", href: "/foundations", text: "TEG-Blue Overview" },
+  { label: "Ethical use boundaries", href: "/ethics", text: "Ethics" },
+  { label: "Terminology and Engine distinction", href: "/glossary", text: "Glossary" },
   { label: "Public records and citation notes", href: "/publications", text: "Publications" },
 ];
 
@@ -166,7 +168,7 @@ function OverviewSection() {
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         Good collaboration starts with a clear question: what audience, risk context, claim boundary, rights
-        boundary, and review route does this use require?
+        boundary, review route, and Engine layer does this use require?
       </p>
     </section>
   );

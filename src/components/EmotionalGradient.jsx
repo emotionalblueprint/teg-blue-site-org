@@ -125,8 +125,8 @@ const FOUR_MODE_TRACK = [
     id: 'chronic-control',
     positionIndex: 4,
     code: 'C',
-    mode: 'Chronic Control',
-    atlasLabel: 'Control / Management',
+    mode: 'Control',
+    atlasLabel: 'Strategic Management',
     readout: 'chronic',
     pattern: 'Pattern C',
     sub: positions[4].sub,
@@ -138,8 +138,8 @@ const FOUR_MODE_TRACK = [
     id: 'chronic-domination',
     positionIndex: 5,
     code: 'D',
-    mode: 'Chronic Domination',
-    atlasLabel: 'Domination',
+    mode: 'Domination',
+    atlasLabel: 'Power Mobilisation / chronic dominance',
     readout: 'chronic',
     pattern: 'Pattern D',
     sub: positions[5].sub,
@@ -263,10 +263,10 @@ export default function EmotionalGradient() {
   const barBg = isFourMode ? scaleGradient : barGradient
   const fourModeAtmosphere = `linear-gradient(135deg, ${hexToRgba(GRADIENT_SCALE.teal, panelLight ? 0.06 : 0.045)} 0%, ${BG.diagram} 48%, ${hexToRgba(GRADIENT_SCALE.pink, panelLight ? 0.045 : 0.035)} 100%)`
   const modeCaption = isFourMode
-    ? 'This 4-mode Gradient is the one used in the practical tools on teg-blue.com.'
+    ? '4-mode summary: the Visible Engine compression used in practical tools on teg-blue.com.'
     : chronic
-    ? '7-mode view with chronic pattern readouts.'
-    : '7-mode view with fluid, acute state readouts.'
+    ? '7-mode full view with chronic pattern readouts.'
+    : '7-mode full view with fluid, acute state readouts.'
   const gradientBadgeLabel = `${readingChronic ? 'Rigid Gradient · Chronic' : 'Fluid Gradient · Acute'} ${selectedItem.code}`
 
   function setTrackIndex(index) {

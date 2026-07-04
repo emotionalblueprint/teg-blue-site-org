@@ -61,6 +61,10 @@ const STATUS_ITEMS = [
     title: "Publication status stays visible",
     body: "A record can make something citeable without turning it into institutional approval, clinical authority, or review of the whole framework.",
   },
+  {
+    title: "Engine source and public copy stay distinct",
+    body: "Public pages may be translated from Engine source structure, but they are not raw Engine exports or permission to use the Engine as a diagnostic or inference system.",
+  },
 ];
 
 const CITATION_GUIDANCE = [
@@ -104,6 +108,10 @@ const PUBLIC_DESCRIPTION_NOTES = [
     body: "Research areas support specific parts of the map. Each field remains itself, and TEG-Blue places the parts in relation.",
   },
   {
+    title: "Engine boundary",
+    body: "The public framework, Deep Engine source trace, Visible Engine tool compression, practical tools, and licensed builds should not be collapsed into one another.",
+  },
+  {
     title: "Use boundary",
     body: "Do not describe TEG-Blue as able to diagnose people, prove motive, identify someone's true internal state, or replace professional care.",
   },
@@ -128,6 +136,9 @@ export const metadata = {
     "citation",
     "citation guidance",
     "reuse guidance",
+    "TEG-Blue Engine",
+    "Deep Engine",
+    "Visible Engine",
   ],
   alternates: {
     canonical: "https://teg-blue.org/publications",
@@ -211,6 +222,10 @@ function OverviewSection() {
         This page points to public TEG-Blue records and release locations. A publication record says where a
         citable item lives, how to attribute it, and what its status is. It does not imply more review,
         approval, or authority than the record itself carries.
+      </p>
+      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
+        The public site is a filtered public explanation of the framework. Engine-derived language should be
+        cited as public TEG-Blue material only when it appears on public pages or public records.
       </p>
     </section>
   );
@@ -318,6 +333,7 @@ function WhereNextSection() {
           <tbody>
             <NavRow label="Research context for the framework" href="/scientific-foundations" linkText="Scientific Grounding" />
             <NavRow label="Creator and ecosystem context" href="/about" linkText="About" />
+            <NavRow label="Terms for the Engine boundary" href="/glossary" linkText="Glossary" />
             <NavRow label="Collaboration and review conversations" href="/collaborate" linkText="Collaborate" />
           </tbody>
         </table>

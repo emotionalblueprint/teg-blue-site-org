@@ -63,8 +63,8 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
           Gradient states and shutdown fallback
         </h2>
         <p style={{ margin: '0 0 20px', maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-          The Gradient runs from physiological baseline through social engagement, protection, control, and domination.
-          Shutdown is shown as a fallback outside the line: a conservation state that changes perception, cognition,
+          The Gradient runs from physiological baseline through social engagement, protection, strategic management,
+          and power mobilisation. Shutdown is shown as a fallback outside the line: a conservation state that changes perception, cognition,
           awareness, empathy, action, and repair, but does not extend the gradient itself.
         </p>
         <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>

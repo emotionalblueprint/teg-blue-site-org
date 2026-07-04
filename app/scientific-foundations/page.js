@@ -267,7 +267,7 @@ function WhereNextSection() {
           </thead>
           <tbody>
             <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
-            <NavRow label="Public records and release pointers" href="/publications" linkText="Publications" />
+            <NavRow label="Terminology and Engine layer names" href="/glossary" linkText="Glossary" />
             <NavRow label="How to read claims responsibly" href="/methodology" linkText="Pattern reading" />
             <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
             <NavRow label="Collaboration and review conversations" href="/collaborate" linkText="Collaborate" />

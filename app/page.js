@@ -14,7 +14,7 @@ const MAP_SUBTITLE =
 const DESCRIPTION =
   "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns. Its central public map is The Nervous System Gradient.";
 const BASE_URL = "https://teg-blue.org";
-const DATE_MODIFIED = "2026-07-01";
+const DATE_MODIFIED = "2026-07-04";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
 const LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
 const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";

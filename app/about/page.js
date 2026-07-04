@@ -54,7 +54,7 @@ const ECOSYSTEM_LAYERS = [
   },
   {
     title: "TEG-Blue Engine",
-    body: "The Engine is the internal tool-building system that can turn the framework into structured, audience-specific tools.",
+    body: "The Engine is the internal tool-building system: Deep Engine source-tracing plus Visible Engine tool-compression logic for structured, audience-specific tools.",
     color: SPECTRUM.blue,
   },
   {
@@ -284,10 +284,19 @@ function EcosystemSection() {
         TEG-Blue has connected surfaces, but they do different jobs. Keeping those jobs distinct protects the
         research posture, tool boundaries, and public claims.
       </p>
+      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
+        The public site is not a raw Engine export. It translates source-depth into public explanation while
+        preserving mechanism, boundaries, attribution, and the distinction between research grounding and applied
+        tool use.
+      </p>
       <div style={gridStyle}>
         {ECOSYSTEM_LAYERS.map((item) => (
           <InfoCard key={item.title} item={{ label: item.title, ...item }} />
         ))}
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
+        <NavLink href="/glossary" label="Glossary terms" />
+        <NavLink href="/publications" label="Status and citation" />
       </div>
     </section>
   );
