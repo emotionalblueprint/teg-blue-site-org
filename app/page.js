@@ -416,15 +416,15 @@ const heroSafetyQuestions = [
   },
   {
     label: "Relational read",
-    question: "Am I safe around others, or should I protect myself?",
+    question: "Can connection stay accessible, or does it need safeguarding?",
     left: {
-      label: "Safe with others",
-      body: "Connection and co-regulation can stay available.",
+      label: "Connection open",
+      body: "Mutual presence, co-regulation, and repair can stay available.",
       color: FORMATION.A,
     },
     right: {
-      label: "Protect myself",
-      body: "Boundary, distance, defence, or appeasement takes priority.",
+      label: "Preserve connection",
+      body: "Attention moves toward preventing rupture, restoring closeness, or keeping the bond intact.",
       color: FORMATION.B,
     },
   },
@@ -480,7 +480,7 @@ function HomeSafetyQuestionCard() {
   return (
     <aside
       className="home-safety-question-card"
-      aria-label="Two safety questions the nervous system keeps asking"
+      aria-label="Two live reads the nervous system keeps making"
       style={{
         alignSelf: "start",
         marginTop: 0,
@@ -502,7 +502,7 @@ function HomeSafetyQuestionCard() {
       />
 
       <div style={{ marginBottom: 16 }}>
-        <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Live safety read</p>
+        <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Live state reads</p>
         <h2
           className="home-card-title"
           style={{

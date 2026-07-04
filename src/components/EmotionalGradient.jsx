@@ -317,6 +317,7 @@ export default function EmotionalGradient() {
   }
   const stateText = readoutText('state')
   const familiarLabel = selectedItem.familiar ?? (readingChronic && position.familiarChronic ? position.familiarChronic : position.familiar)
+  const nervousSystemBranch = selectedItem.autonomic ?? autonomic[position.id]
   const selectedReadoutCard = cardById[selectedReadoutId]
   const selectedReadoutText = readoutText(selectedReadoutId)
   const selectedReadoutDescription =
@@ -377,6 +378,12 @@ export default function EmotionalGradient() {
           <div className="gradient-toolbar-copy">
             <div className="sticky-state-title">
               <Badge color={readingChronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
+              {nervousSystemBranch && (
+                <p className="nervous-system-branch">
+                  <span className="nervous-system-branch-label">NS branch</span>{" "}
+                  <span className="nervous-system-branch-value">{nervousSystemBranch}</span>
+                </p>
+              )}
             </div>
             <p className="mode-caption">{modeCaption}</p>
           </div>
@@ -685,6 +692,40 @@ export default function EmotionalGradient() {
           gap: 8px 10px;
         }
 
+        .nervous-system-branch {
+          display: inline-flex;
+          max-width: 100%;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 6px 8px;
+          margin: 0;
+          padding: 6px 11px;
+          border: 1px solid color-mix(in srgb, var(--gradient-accent) 30%, transparent);
+          border-radius: 999px;
+          background: color-mix(in srgb, var(--gradient-accent) 10%, transparent);
+          color: var(--gradient-accent-text);
+          font-size: 12px;
+          line-height: 1.25;
+        }
+
+        .nervous-system-branch-label {
+          flex: 0 0 auto;
+          color: var(--gradient-accent-text);
+          font-family: var(--font-diagram), monospace;
+          font-size: 10px;
+          font-weight: 720;
+          letter-spacing: 0;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+
+        .nervous-system-branch-value {
+          min-width: 0;
+          color: var(--gradient-accent-text);
+          font-weight: 650;
+          overflow-wrap: anywhere;
+        }
+
         .mode-caption {
           margin: 0;
           max-width: 720px;
@@ -981,6 +1022,16 @@ export default function EmotionalGradient() {
           .state-pill-text {
             font-size: 9.5px !important;
             letter-spacing: 0 !important;
+          }
+
+          .nervous-system-branch {
+            gap: 5px 7px;
+            padding: 5px 9px;
+            font-size: 11px;
+          }
+
+          .nervous-system-branch-label {
+            font-size: 9.5px;
           }
 
           .mode-caption {
