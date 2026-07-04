@@ -45,6 +45,34 @@
   --org-title-start: var(--blue-50);
   --org-title-mid:   var(--blue-200);
   --org-title-end:   var(--blue-500);
+  --hero-title-gradient: linear-gradient(
+    90deg,
+    var(--formation-a),
+    var(--formation-ab),
+    var(--formation-b),
+    var(--formation-c),
+    var(--formation-d)
+  );
+
+  /* Contrast-safe accent text. These keep bright formation colors for bars
+     while giving small labels enough weight on light surfaces. */
+  --tone-spectrum-sky: var(--blue-50);
+  --tone-spectrum-azure: var(--blue-300);
+  --tone-spectrum-blue: var(--blue-500);
+  --tone-spectrum-cobalt: var(--blue-400);
+  --tone-spectrum-indigo: var(--blue-500);
+  --tone-spectrum-slate: var(--blue-200);
+  --tone-formation-x: var(--blue-50);
+  --tone-formation-a: var(--formation-a);
+  --tone-formation-ab: var(--formation-ab);
+  --tone-formation-b: var(--formation-b);
+  --tone-formation-c: var(--formation-c);
+  --tone-formation-d: var(--formation-d);
+  --tone-formation-z: var(--formation-z);
+  --tone-accent-orange: color-mix(in srgb, var(--chronic-b) 72%, var(--formation-d));
+  --tone-brand-mark-text: var(--blue-50);
+  --tone-brand-mark-border: color-mix(in srgb, var(--blue-50) 28%, transparent);
+  --tone-brand-mark-bg: color-mix(in srgb, var(--blue-300) 10%, transparent);
 
   /* Backgrounds — production .org dark stack */
   --bg-page:    #111729;
@@ -232,6 +260,32 @@ details > section {
   --org-title-start: var(--blue-950);
   --org-title-mid:   var(--blue-700);
   --org-title-end:   var(--blue-500);
+  --hero-title-gradient: linear-gradient(
+    90deg,
+    var(--tone-formation-a),
+    var(--tone-formation-ab),
+    var(--tone-formation-b),
+    var(--tone-formation-c),
+    var(--tone-formation-d)
+  );
+
+  --tone-spectrum-sky: var(--blue-700);
+  --tone-spectrum-azure: var(--blue-600);
+  --tone-spectrum-blue: var(--blue-600);
+  --tone-spectrum-cobalt: var(--blue-700);
+  --tone-spectrum-indigo: var(--blue-700);
+  --tone-spectrum-slate: var(--blue-700);
+  --tone-formation-x: var(--blue-700);
+  --tone-formation-a: color-mix(in srgb, var(--formation-a) 46%, var(--blue-900));
+  --tone-formation-ab: color-mix(in srgb, var(--formation-ab) 46%, var(--blue-900));
+  --tone-formation-b: color-mix(in srgb, var(--formation-b) 40%, var(--blue-900));
+  --tone-formation-c: color-mix(in srgb, var(--formation-c) 42%, var(--blue-900));
+  --tone-formation-d: color-mix(in srgb, var(--formation-d) 58%, var(--blue-900));
+  --tone-formation-z: color-mix(in srgb, var(--formation-z) 58%, var(--blue-900));
+  --tone-accent-orange: color-mix(in srgb, var(--chronic-b) 58%, var(--blue-900));
+  --tone-brand-mark-text: var(--blue-700);
+  --tone-brand-mark-border: color-mix(in srgb, var(--blue-600) 28%, transparent);
+  --tone-brand-mark-bg: color-mix(in srgb, var(--blue-500) 10%, var(--bg-primary));
 
   --bg-page:    var(--blue-50);
   --bg-diagram: #ffffff;

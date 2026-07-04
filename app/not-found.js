@@ -8,6 +8,7 @@ import {
   BLUE,
   MAIN_ORG,
   RADIUS,
+  contrastColor,
   hexToRgba,
 } from "@/src/styles/tokens";
 import SiteHeader from "@/src/components/SiteHeader";
@@ -49,7 +50,7 @@ export default function NotFound() {
               fontFamily: FONT.mono,
               textTransform: "uppercase",
               letterSpacing: 0,
-              color: SPECTRUM.azure,
+              color: contrastColor(SPECTRUM.azure),
             }}
           >
             404 · Page not found

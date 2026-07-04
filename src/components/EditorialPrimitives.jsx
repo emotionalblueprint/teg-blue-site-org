@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { BG, BORDER, FONT, RADIUS, SPECTRUM, TEXT, hexToRgba } from "@/src/styles/tokens";
+import { BG, BORDER, FONT, RADIUS, SPECTRUM, TEXT, contrastColor, hexToRgba } from "@/src/styles/tokens";
 
 export function SectionKicker({ children, color = SPECTRUM.azure }) {
+  const textColor = contrastColor(color);
+
   return (
     <div
       style={{
@@ -9,7 +11,7 @@ export function SectionKicker({ children, color = SPECTRUM.azure }) {
         alignItems: "center",
         gap: 8,
         marginBottom: 8,
-        color,
+        color: textColor,
         fontFamily: FONT.diagram,
         fontSize: 10,
         fontWeight: 700,
@@ -23,7 +25,7 @@ export function SectionKicker({ children, color = SPECTRUM.azure }) {
         style={{
           width: 18,
           height: 1,
-          background: color,
+          background: textColor,
         }}
       />
       {children}
@@ -167,7 +169,7 @@ export function ReferenceTable({ rows, headers = ["For", "Visit"] }) {
 function ReferenceLink({ row }) {
   const isExternal = row.external || row.href.startsWith("http") || row.href.startsWith("mailto:");
   const style = {
-    color: row.color || SPECTRUM.azure,
+    color: contrastColor(row.color || SPECTRUM.azure),
     textDecoration: "none",
     fontWeight: 600,
   };

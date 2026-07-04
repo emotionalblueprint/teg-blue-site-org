@@ -403,6 +403,54 @@ export const ACCENT = {
   pink:       '#d94f86',    // domination emphasis, diagrams
 };
 
+// Theme-aware text tones for accents that are intentionally bright on dark
+// surfaces. Use these for small labels or text that sits on light backgrounds;
+// keep the raw palette colors for bars, dots, rails, and fills.
+export const TONE = {
+  spectrum: {
+    sky: "var(--tone-spectrum-sky)",
+    azure: "var(--tone-spectrum-azure)",
+    blue: "var(--tone-spectrum-blue)",
+    cobalt: "var(--tone-spectrum-cobalt)",
+    indigo: "var(--tone-spectrum-indigo)",
+    slate: "var(--tone-spectrum-slate)",
+  },
+  formation: {
+    X: "var(--tone-formation-x)",
+    A: "var(--tone-formation-a)",
+    AB: "var(--tone-formation-ab)",
+    B: "var(--tone-formation-b)",
+    C: "var(--tone-formation-c)",
+    D: "var(--tone-formation-d)",
+    Z: "var(--tone-formation-z)",
+  },
+  accent: {
+    orange: "var(--tone-accent-orange)",
+  },
+  brandMark: {
+    text: "var(--tone-brand-mark-text)",
+    border: "var(--tone-brand-mark-border)",
+    bg: "var(--tone-brand-mark-bg)",
+  },
+};
+
+export function contrastColor(color) {
+  if (color === SPECTRUM.sky) return TONE.spectrum.sky;
+  if (color === SPECTRUM.azure) return TONE.spectrum.azure;
+  if (color === SPECTRUM.cobalt) return TONE.spectrum.cobalt;
+  if (color === SPECTRUM.slate) return TONE.spectrum.slate;
+  if (color === SPECTRUM.blue || color === SPECTRUM.indigo) return TONE.spectrum.blue;
+  if (color === FORMATION.X) return TONE.formation.X;
+  if (color === FORMATION.A) return TONE.formation.A;
+  if (color === FORMATION.AB) return TONE.formation.AB;
+  if (color === FORMATION.B) return TONE.formation.B;
+  if (color === FORMATION.C) return TONE.formation.C;
+  if (color === FORMATION.D) return TONE.formation.D;
+  if (color === FORMATION.Z) return TONE.formation.Z;
+  if (color === ACCENT.orange) return TONE.accent.orange;
+  return color;
+}
+
 // ─── STATUS COLORS (derives from accent + spectrum) ──
 
 export const STATUS = {

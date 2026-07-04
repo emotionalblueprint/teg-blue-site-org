@@ -1,4 +1,4 @@
-import { FONT, hexToRgba } from "../styles/tokens";
+import { FONT, contrastColor, hexToRgba } from "../styles/tokens";
 
 /**
  * BadgePill — Single badge style used across all pages.
@@ -8,6 +8,8 @@ import { FONT, hexToRgba } from "../styles/tokens";
  * @param {React.ReactNode} children - Badge text
  */
 export default function BadgePill({ color, children }) {
+  const textColor = contrastColor(color);
+
   return (
     <div
       style={{
@@ -19,7 +21,7 @@ export default function BadgePill({ color, children }) {
         fontFamily: FONT.mono,
         textTransform: "uppercase",
         letterSpacing: 0,
-        color: color,
+        color: textColor,
         backgroundColor: hexToRgba(color, 0.08),
         border: `1px solid ${hexToRgba(color, 0.26)}`,
       }}

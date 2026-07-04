@@ -6,6 +6,7 @@ import {
   FONT,
   SPECTRUM,
   RADIUS,
+  contrastColor,
   hexToRgba,
   gradientCardBg,
   REALITY_CHECK_STATES,
@@ -405,7 +406,7 @@ function NavRow({ label, href, linkText, external }) {
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{label}</td>
       <td style={tableCellStyle}>
-        <LinkEl href={href} {...extraProps} style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>
+        <LinkEl href={href} {...extraProps} style={{ color: contrastColor(SPECTRUM.azure), textDecoration: "none", fontWeight: 500 }}>
           {linkText}
         </LinkEl>
       </td>
@@ -420,7 +421,7 @@ function labelStyle(color) {
     fontFamily: FONT.mono,
     textTransform: "uppercase",
     letterSpacing: 0,
-    color,
+    color: contrastColor(color),
     marginBottom: 4,
   };
 }

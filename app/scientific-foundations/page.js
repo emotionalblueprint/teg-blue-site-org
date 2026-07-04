@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, contrastColor, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import SiteHeader from "@/src/components/SiteHeader";
 import SiteFooter from "@/src/components/SiteFooter";
 import PageLayout from "@/src/components/PageLayout";
@@ -316,7 +316,7 @@ function NavRow({ label, href, linkText, external }) {
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{label}</td>
       <td style={tableCellStyle}>
-        <LinkEl href={href} {...extraProps} style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>
+        <LinkEl href={href} {...extraProps} style={{ color: contrastColor(SPECTRUM.azure), textDecoration: "none", fontWeight: 500 }}>
           {linkText}
         </LinkEl>
       </td>
@@ -331,7 +331,7 @@ function labelStyle(color) {
     fontFamily: FONT.mono,
     textTransform: "uppercase",
     letterSpacing: 0,
-    color,
+    color: contrastColor(color),
     marginBottom: 4,
   };
 }

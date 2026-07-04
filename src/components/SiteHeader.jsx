@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BG, BORDER, FONT, SPACING, SPECTRUM, TEXT, TRANSITION, hexToRgba } from "../styles/tokens";
+import { BG, BORDER, FONT, SPACING, SPECTRUM, TEXT, TONE, TRANSITION, hexToRgba } from "../styles/tokens";
 import { ThemeToggle } from "./theme/ThemeToggle";
 import { SpectrumBar } from "./SharedComponents";
 import { getLiveLocaleLinks } from "../i18n/routing";
@@ -91,9 +91,9 @@ export default function SiteHeader({ currentPath = "/" }) {
                 display: "inline-grid",
                 placeItems: "center",
                 borderRadius: 6,
-                color: SPECTRUM.sky,
-                border: `1px solid ${hexToRgba(SPECTRUM.sky, 0.28)}`,
-                background: hexToRgba(SPECTRUM.azure, 0.10),
+                color: TONE.brandMark.text,
+                border: `1px solid ${TONE.brandMark.border}`,
+                background: TONE.brandMark.bg,
                 fontSize: 11,
                 lineHeight: 1,
               }}
@@ -130,7 +130,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                   }}
                 >
                   Explore
-                  <span aria-hidden="true" style={{ fontSize: 11, color: SPECTRUM.azure }}>
+                  <span aria-hidden="true" style={{ fontSize: 11, color: TONE.spectrum.azure }}>
                     ▾
                   </span>
                 </summary>
@@ -241,7 +241,7 @@ export default function SiteHeader({ currentPath = "/" }) {
         .site-explore-menu summary:hover { color: ${TEXT.primary}; }
         .site-explore-menu a:hover { color: ${TEXT.primary} !important; background: ${hexToRgba(SPECTRUM.azure, 0.12)} !important; }
         .site-brand:hover,
-        .site-tools-link:hover { color: ${SPECTRUM.azure} !important; }
+        .site-tools-link:hover { color: ${TONE.spectrum.azure} !important; }
         @media (max-width: 720px) {
           .site-header-nav { align-items: flex-start !important; }
           .site-header-actions { gap: 10px !important; flex-wrap: wrap; justify-content: flex-end; }

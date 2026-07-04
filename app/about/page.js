@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, contrastColor, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import SiteHeader from "@/src/components/SiteHeader";
 import SiteFooter from "@/src/components/SiteFooter";
 import PageLayout from "@/src/components/PageLayout";
@@ -370,7 +370,7 @@ function ContactRow({ item }) {
         <a
           href={item.href}
           {...(!isEmail && { target: "_blank", rel: "noopener noreferrer" })}
-          style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}
+          style={{ color: contrastColor(SPECTRUM.azure), textDecoration: "none", fontWeight: 500 }}
         >
           {item.text}
         </a>
@@ -394,7 +394,7 @@ function labelStyle(color) {
     fontFamily: FONT.mono,
     textTransform: "uppercase",
     letterSpacing: 0,
-    color,
+    color: contrastColor(color),
     marginBottom: 4,
   };
 }
@@ -502,7 +502,7 @@ const navLinkStyle = {
   alignItems: "center",
   padding: "10px 14px",
   background: hexToRgba(SPECTRUM.azure, 0.08),
-  color: SPECTRUM.azure,
+  color: contrastColor(SPECTRUM.azure),
   borderRadius: RADIUS.sm,
   fontWeight: 500,
   fontSize: 13,

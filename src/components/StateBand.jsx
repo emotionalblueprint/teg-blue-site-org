@@ -26,6 +26,7 @@ export function StateBand({
       >
         {REALITY_CHECK_STATES.map((state) => {
           const isShutdown = !state.activeGradient;
+          const isBaseline = state.color === FORMATION.X;
           return (
             <span
               key={state.code}
@@ -35,8 +36,12 @@ export function StateBand({
                 minHeight: compact ? 8 : 14,
                 borderRadius: compact ? 2 : RADIUS.sm,
                 background: isShutdown ? hexToRgba(state.color, 0.48) : state.color,
-                border: isShutdown ? `1px dashed ${hexToRgba(SPECTRUM.sky, 0.46)}` : `1px solid ${hexToRgba(state.color, 0.58)}`,
-                boxShadow: isShutdown ? "none" : `0 0 16px ${hexToRgba(state.color, 0.10)}`,
+                border: isBaseline
+                  ? `1px solid ${BORDER.hover}`
+                  : isShutdown
+                    ? `1px dashed ${hexToRgba(SPECTRUM.sky, 0.46)}`
+                    : `1px solid ${hexToRgba(state.color, 0.58)}`,
+                boxShadow: isBaseline || isShutdown ? "none" : `0 0 16px ${hexToRgba(state.color, 0.10)}`,
               }}
             />
           );

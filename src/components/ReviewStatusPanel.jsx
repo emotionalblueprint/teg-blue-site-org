@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, contrastColor } from "@/src/styles/tokens";
 import { StateBand } from "./StateBand";
 
 const DEFAULT_POINTS = [
@@ -57,7 +57,7 @@ export default function ReviewStatusPanel({
               fontWeight: 700,
               letterSpacing: 0,
               textTransform: "uppercase",
-              color: SPECTRUM.azure,
+              color: contrastColor(SPECTRUM.azure),
             }}
           >
             <span
@@ -126,7 +126,7 @@ export default function ReviewStatusPanel({
                   fontWeight: 700,
                   letterSpacing: 0,
                   textTransform: "uppercase",
-                  color: point.color,
+                  color: contrastColor(point.color),
                 }}
               >
                 {point.label}

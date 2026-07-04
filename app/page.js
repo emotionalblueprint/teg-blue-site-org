@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACCENT, FORMATION, MAIN_ORG, PATTERN_GRADIENT } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACCENT, FORMATION, MAIN_ORG, PATTERN_GRADIENT, TONE, contrastColor } from "@/src/styles/tokens";
 import SiteFooter from "@/src/components/SiteFooter";
 import SiteHeader from "@/src/components/SiteHeader";
 import EmotionalGradient from "@/src/components/EmotionalGradient";
@@ -533,7 +533,7 @@ function HomeSafetyQuestionCard() {
               <p
                 style={{
                   margin: "0 0 8px",
-                  color: index === 0 ? SPECTRUM.azure : FORMATION.A,
+                  color: index === 0 ? TONE.spectrum.azure : TONE.formation.A,
                   fontFamily: FONT.diagram,
                   fontSize: 10,
                   fontWeight: 720,
@@ -585,7 +585,7 @@ function HomeSafetyQuestionCard() {
                   <p
                     style={{
                       margin: 0,
-                      color: answer.color,
+                      color: contrastColor(answer.color),
                       fontFamily: FONT.mono,
                       fontSize: 12,
                       fontWeight: 820,
@@ -637,7 +637,7 @@ function WhatGradientIsCard() {
           }}
         >
           <div>
-            <p style={{ ...sectionEyebrowStyle, color: SPECTRUM.azure, margin: "0 0 10px" }}>Pattern recognition</p>
+            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Pattern recognition</p>
             <h2
               className="home-definition-title"
               id="what-gradient-is-heading"
@@ -685,6 +685,7 @@ function WhatGradientIsCard() {
                     borderRadius: 999,
                     background: p.acuteColor,
                     opacity: 0.9,
+                    boxShadow: `0 0 0 1px ${hexToRgba(BLUE[700], 0.16)}`,
                   }}
                 />
               ))}
@@ -694,7 +695,7 @@ function WhatGradientIsCard() {
                     height: 5,
                     borderRadius: 999,
                     background: shutdownPosition.acuteColor,
-                    outline: `1px dashed ${hexToRgba(BLUE[100], 0.4)}`,
+                    outline: `1px dashed ${hexToRgba(BLUE[700], 0.32)}`,
                     outlineOffset: 3,
                   }}
                 />
@@ -769,7 +770,7 @@ function WhatGradientIsCard() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
-                  color: item.color,
+                  color: contrastColor(item.color),
                   fontFamily: FONT.diagram,
                   fontSize: 10,
                   fontWeight: 650,
@@ -843,7 +844,7 @@ export default function Home() {
                 style={{
                   display: "block",
                   color: MAIN_ORG.accent,
-                  background: PATTERN_GRADIENT,
+                  background: "var(--hero-title-gradient)",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
