@@ -64,7 +64,7 @@ function inkFor(item) {
 export default function PatternRecognitionPrimer({ embedded = false }) {
   const [chronic, setChronic] = useState(false)
   const modeLabel = chronic ? 'Chronic pattern' : 'Acute state'
-  const switchTone = chronic ? byId.protection.chronicColor : BLUE[100]
+  const chronicTone = byId.protection.chronicColor
 
   return (
     <section
@@ -113,17 +113,18 @@ export default function PatternRecognitionPrimer({ embedded = false }) {
             minHeight: 40,
             alignItems: 'center',
             gap: 12,
-            border: `1px solid ${hexToRgba(switchTone, chronic ? 0.42 : 0.22)}`,
+            border: `1px solid ${hexToRgba(chronicTone, chronic ? 0.64 : 0.42)}`,
             borderRadius: 999,
-            background: hexToRgba(chronic ? byId.protection.chronicColor : BLUE[800], chronic ? 0.12 : 0.34),
-            color: chronic ? byId.protection.chronicColor : TEXT.secondary,
+            background: hexToRgba(chronicTone, chronic ? 0.2 : 0.1),
+            color: chronicTone,
             cursor: 'pointer',
             fontFamily: FONT.display,
             fontSize: 14,
             padding: '7px 12px 7px 18px',
+            boxShadow: chronic ? `0 0 0 3px ${hexToRgba(chronicTone, 0.1)}` : 'none',
           }}
         >
-          <span style={{ fontWeight: chronic ? 680 : 500 }}>Chronic view</span>
+          <span style={{ fontWeight: chronic ? 720 : 640 }}>Chronic view</span>
           <span
             aria-hidden="true"
             style={{
@@ -131,7 +132,7 @@ export default function PatternRecognitionPrimer({ embedded = false }) {
               width: 38,
               height: 22,
               borderRadius: 999,
-              background: chronic ? byId.protection.chronicColor : hexToRgba(BLUE[100], 0.35),
+              background: chronic ? chronicTone : hexToRgba(chronicTone, 0.28),
               transition: 'background 180ms ease',
             }}
           >

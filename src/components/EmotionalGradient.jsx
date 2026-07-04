@@ -65,6 +65,7 @@ const swatch = (hex) => adjustL(hex, Math.min(hexToHsl(hex).l, 0.52))
 const ink = (hex) => adjustL(hex, 0.3)
 
 const WARM = ACCENT.orange // chronic accent — oranges signal chronic only
+const CHRONIC_TOGGLE_TONE = positions.find((position) => position.id === 'protection')?.chronicColor || WARM
 const N = positions.length
 const SHUT = N - 1
 const GRAD = positions.slice(0, SHUT)
@@ -378,12 +379,6 @@ export default function EmotionalGradient() {
           <div className="gradient-toolbar-copy">
             <div className="sticky-state-title">
               <Badge color={readingChronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
-              {nervousSystemBranch && (
-                <p className="nervous-system-branch">
-                  <span className="nervous-system-branch-label">NS branch</span>{" "}
-                  <span className="nervous-system-branch-value">{nervousSystemBranch}</span>
-                </p>
-              )}
             </div>
             <p className="mode-caption">{modeCaption}</p>
           </div>
@@ -561,6 +556,11 @@ export default function EmotionalGradient() {
                 also known as <span>{familiarLabel}</span>
               </p>
             )}
+            {nervousSystemBranch && (
+              <p className="state-ns-branch">
+                Autonomic pathway <span>{nervousSystemBranch}</span>
+              </p>
+            )}
             <div className="state-source-trace">
               <span>{selectedItem.pattern || position.pattern} · {selectedItem.sub || position.sub}</span>
             </div>
@@ -692,40 +692,6 @@ export default function EmotionalGradient() {
           gap: 8px 10px;
         }
 
-        .nervous-system-branch {
-          display: inline-flex;
-          max-width: 100%;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 6px 8px;
-          margin: 0;
-          padding: 6px 11px;
-          border: 1px solid color-mix(in srgb, var(--gradient-accent) 30%, transparent);
-          border-radius: 999px;
-          background: color-mix(in srgb, var(--gradient-accent) 10%, transparent);
-          color: var(--gradient-accent-text);
-          font-size: 12px;
-          line-height: 1.25;
-        }
-
-        .nervous-system-branch-label {
-          flex: 0 0 auto;
-          color: var(--gradient-accent-text);
-          font-family: var(--font-diagram), monospace;
-          font-size: 10px;
-          font-weight: 720;
-          letter-spacing: 0;
-          line-height: 1.2;
-          text-transform: uppercase;
-        }
-
-        .nervous-system-branch-value {
-          min-width: 0;
-          color: var(--gradient-accent-text);
-          font-weight: 650;
-          overflow-wrap: anywhere;
-        }
-
         .mode-caption {
           margin: 0;
           max-width: 720px;
@@ -808,6 +774,18 @@ export default function EmotionalGradient() {
         }
 
         .state-alias span {
+          color: var(--gradient-accent-text);
+          font-weight: 650;
+        }
+
+        .state-ns-branch {
+          margin: 0;
+          color: var(--readout-ink);
+          font-size: 12.5px;
+          line-height: 1.45;
+        }
+
+        .state-ns-branch span {
           color: var(--gradient-accent-text);
           font-weight: 650;
         }
@@ -1024,16 +1002,6 @@ export default function EmotionalGradient() {
             letter-spacing: 0 !important;
           }
 
-          .nervous-system-branch {
-            gap: 5px 7px;
-            padding: 5px 9px;
-            font-size: 11px;
-          }
-
-          .nervous-system-branch-label {
-            font-size: 9.5px;
-          }
-
           .mode-caption {
             max-width: none;
             padding: 0;
@@ -1214,17 +1182,18 @@ function ChronicToggle({ chronic, onChange }) {
         gap: 12,
         minHeight: 46,
         borderRadius: 999,
-        border: '1px solid var(--gradient-control-border)',
-        background: 'var(--gradient-control-bg)',
+        border: `1px solid ${hexToRgba(CHRONIC_TOGGLE_TONE, chronic ? 0.64 : 0.42)}`,
+        background: hexToRgba(CHRONIC_TOGGLE_TONE, chronic ? 0.2 : 0.1),
         padding: '8px 12px 8px 18px',
         fontSize: 14,
         fontFamily: FONT.display,
         cursor: 'pointer',
-        color: chronic ? WARM : TEXT.secondary,
+        color: CHRONIC_TOGGLE_TONE,
+        boxShadow: chronic ? `0 0 0 3px ${hexToRgba(CHRONIC_TOGGLE_TONE, 0.1)}` : 'none',
       }}
     >
-      <span style={{ fontWeight: chronic ? 600 : 400 }}>Chronic view</span>
-      <span style={{ position: 'relative', height: 24, width: 42, borderRadius: 999, background: chronic ? WARM : hexToRgba(BLUE[100], 0.35), transition: 'background 200ms' }}>
+      <span style={{ fontWeight: chronic ? 720 : 640 }}>Chronic view</span>
+      <span aria-hidden="true" style={{ position: 'relative', height: 24, width: 42, borderRadius: 999, background: chronic ? CHRONIC_TOGGLE_TONE : hexToRgba(CHRONIC_TOGGLE_TONE, 0.28), transition: 'background 200ms' }}>
         <span style={{ position: 'absolute', top: 4, left: chronic ? 22 : 4, height: 16, width: 16, borderRadius: '50%', background: BG.primary, boxShadow: `0 1px 2px ${hexToRgba(BLUE[950], 0.2)}`, transition: 'left 200ms' }} />
       </span>
     </button>
