@@ -1175,26 +1175,27 @@ function ChronicToggle({ chronic, onChange }) {
       onClick={() => onChange(!chronic)}
       role="switch"
       aria-checked={chronic}
-      aria-label="Chronic view"
+      aria-label="Chronic Survival View"
       style={{
-        display: 'flex',
+        display: 'inline-flex',
         alignItems: 'center',
-        gap: 12,
+        gap: 10,
         minHeight: 46,
         borderRadius: 999,
         border: `1px solid ${hexToRgba(CHRONIC_TOGGLE_TONE, chronic ? 0.64 : 0.42)}`,
         background: hexToRgba(CHRONIC_TOGGLE_TONE, chronic ? 0.2 : 0.1),
-        padding: '8px 12px 8px 18px',
-        fontSize: 14,
+        padding: '5px 10px 5px 16px',
+        fontSize: 13,
         fontFamily: FONT.display,
+        lineHeight: 1.2,
         cursor: 'pointer',
         color: CHRONIC_TOGGLE_TONE,
         boxShadow: chronic ? `0 0 0 3px ${hexToRgba(CHRONIC_TOGGLE_TONE, 0.1)}` : 'none',
       }}
     >
-      <span style={{ fontWeight: chronic ? 720 : 640 }}>Chronic view</span>
-      <span aria-hidden="true" style={{ position: 'relative', height: 24, width: 42, borderRadius: 999, background: chronic ? CHRONIC_TOGGLE_TONE : hexToRgba(CHRONIC_TOGGLE_TONE, 0.28), transition: 'background 200ms' }}>
-        <span style={{ position: 'absolute', top: 4, left: chronic ? 22 : 4, height: 16, width: 16, borderRadius: '50%', background: BG.primary, boxShadow: `0 1px 2px ${hexToRgba(BLUE[950], 0.2)}`, transition: 'left 200ms' }} />
+      <span style={{ fontWeight: chronic ? 720 : 650, whiteSpace: 'nowrap' }}>Chronic Survival View</span>
+      <span aria-hidden="true" style={{ position: 'relative', height: 22, width: 38, borderRadius: 999, flex: '0 0 auto', background: chronic ? CHRONIC_TOGGLE_TONE : hexToRgba(CHRONIC_TOGGLE_TONE, 0.28), transition: 'background 200ms' }}>
+        <span style={{ position: 'absolute', top: 4, left: chronic ? 20 : 4, height: 14, width: 14, borderRadius: '50%', background: BG.primary, boxShadow: `0 1px 2px ${hexToRgba(BLUE[950], 0.2)}`, transition: 'left 200ms' }} />
       </span>
     </button>
   )

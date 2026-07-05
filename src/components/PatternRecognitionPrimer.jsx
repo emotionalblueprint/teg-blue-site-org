@@ -106,25 +106,26 @@ export default function PatternRecognitionPrimer({ embedded = false }) {
           type="button"
           role="switch"
           aria-checked={chronic}
-          aria-label="Chronic view"
+          aria-label="Chronic Survival View"
           onClick={() => setChronic((value) => !value)}
           style={{
             display: 'inline-flex',
             minHeight: 40,
             alignItems: 'center',
-            gap: 12,
+            gap: 10,
             border: `1px solid ${hexToRgba(chronicTone, chronic ? 0.64 : 0.42)}`,
             borderRadius: 999,
             background: hexToRgba(chronicTone, chronic ? 0.2 : 0.1),
             color: chronicTone,
             cursor: 'pointer',
             fontFamily: FONT.display,
-            fontSize: 14,
-            padding: '7px 12px 7px 18px',
+            fontSize: 13,
+            lineHeight: 1.2,
+            padding: '7px 10px 7px 16px',
             boxShadow: chronic ? `0 0 0 3px ${hexToRgba(chronicTone, 0.1)}` : 'none',
           }}
         >
-          <span style={{ fontWeight: chronic ? 720 : 640 }}>Chronic view</span>
+          <span style={{ fontWeight: chronic ? 720 : 650, whiteSpace: 'nowrap' }}>Chronic Survival View</span>
           <span
             aria-hidden="true"
             style={{
