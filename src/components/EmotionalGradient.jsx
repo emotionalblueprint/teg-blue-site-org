@@ -9,7 +9,6 @@ import {
   FONT,
   ACCENT,
   BLUE,
-  RADIUS,
   GRADIENT_SCALE,
   GRADIENT_SCALE_MODE,
   GRADIENT_SCALE_MODE_GRADIENT,
@@ -157,31 +156,6 @@ function fourModeIndexForExtended(positionIndex) {
   return 3
 }
 
-function Badge({ color, light, children }) {
-  const dot = light ? swatch(color) : color
-  const txt = light ? ink(color) : color
-  return (
-    <span
-      className="state-pill"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        maxWidth: '100%',
-        gap: 8,
-        padding: '6px 12px',
-        borderRadius: RADIUS.md,
-        background: hexToRgba(dot, 0.12),
-        border: `1px solid ${hexToRgba(dot, 0.3)}`,
-      }}
-    >
-      <span className="state-pill-dot" style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: dot }} />
-      <span className="state-pill-text" style={{ minWidth: 0, fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0, lineHeight: 1.2, color: txt }}>
-        {children}
-      </span>
-    </span>
-  )
-}
-
 export default function EmotionalGradient() {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -263,12 +237,10 @@ export default function EmotionalGradient() {
     : GRADIENT_SCALE_MODE_GRADIENT
   const barBg = isFourMode ? scaleGradient : barGradient
   const fourModeAtmosphere = `linear-gradient(135deg, ${hexToRgba(GRADIENT_SCALE.teal, panelLight ? 0.06 : 0.045)} 0%, ${BG.diagram} 48%, ${hexToRgba(GRADIENT_SCALE.pink, panelLight ? 0.045 : 0.035)} 100%)`
-  const modeCaption = isFourMode
-    ? '4-mode summary: the Visible Engine compression used in practical tools on teg-blue.com.'
-    : chronic
-    ? '7-mode full view with chronic pattern readouts.'
-    : '7-mode full view with fluid, acute state readouts.'
-  const gradientBadgeLabel = `${readingChronic ? 'Rigid Gradient · Chronic' : 'Fluid Gradient · Acute'} ${selectedItem.code}`
+  const gradientTypeLabel = readingChronic ? 'Rigid Gradient' : 'Fluid Gradient'
+  const gradientDescription = readingChronic
+    ? 'Pattern is held; chronic pressure keeps it active.'
+    : 'State is moving; capacity shifts with conditions.'
 
   function setTrackIndex(index) {
     if (isFourMode) setFourModeIndex(index)
@@ -377,10 +349,10 @@ export default function EmotionalGradient() {
         {/* state ribbon — current position and mode controls */}
         <div className="gradient-toolbar">
           <div className="gradient-toolbar-copy">
-            <div className="sticky-state-title">
-              <Badge color={readingChronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
+            <div className="gradient-type-lockup">
+              <p className="gradient-type-label">{gradientTypeLabel}</p>
+              <p className="mode-caption">{gradientDescription}</p>
             </div>
-            <p className="mode-caption">{modeCaption}</p>
           </div>
           <div className="gradient-toolbar-controls">
             <div className="chronic-toggle-slot" aria-hidden={isFourMode}>
@@ -684,12 +656,23 @@ export default function EmotionalGradient() {
           outline-offset: 2px;
         }
 
-        .sticky-state-title {
+        .gradient-type-lockup {
           display: flex;
           min-width: 0;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 8px 10px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+        }
+
+        .gradient-type-label {
+          margin: 0;
+          color: var(--gradient-accent-text);
+          font-family: var(--font-diagram), monospace;
+          font-size: 12px;
+          font-weight: 760;
+          letter-spacing: 0;
+          line-height: 1.2;
+          text-transform: uppercase;
         }
 
         .mode-caption {
@@ -977,29 +960,6 @@ export default function EmotionalGradient() {
 
           .gradient-view-control {
             min-width: 0;
-          }
-
-          .sticky-state-title {
-            display: flex;
-            min-width: 0;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 6px;
-          }
-
-          .state-pill {
-            gap: 6px !important;
-            padding: 5px 9px !important;
-          }
-
-          .state-pill-dot {
-            width: 8px !important;
-            height: 8px !important;
-          }
-
-          .state-pill-text {
-            font-size: 9.5px !important;
-            letter-spacing: 0 !important;
           }
 
           .mode-caption {
