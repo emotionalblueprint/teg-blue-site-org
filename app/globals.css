@@ -261,12 +261,11 @@ details > section {
   --org-title-mid:   var(--blue-700);
   --org-title-end:   var(--blue-500);
   --hero-title-gradient: linear-gradient(
-    90deg,
-    var(--tone-formation-a),
-    var(--tone-formation-ab),
-    var(--tone-formation-b),
-    var(--tone-formation-c),
-    var(--tone-formation-d)
+    94deg,
+    var(--blue-500) 0%,
+    var(--blue-600) 36%,
+    var(--blue-800) 72%,
+    var(--blue-950) 100%
   );
 
   --tone-spectrum-sky: var(--blue-700);
