@@ -415,16 +415,18 @@ function StateSpineStrip() {
               flex: "1 1 92px",
               minWidth: 92,
               borderRadius: RADIUS.md,
-              border: `1px solid ${BORDER.default}`,
-              borderTop: `2px solid ${p.acuteColor}`,
-              background: `linear-gradient(180deg, ${hexToRgba(p.acuteColor, 0.12)}, transparent)`,
+              border: `1px solid ${hexToRgba(BLUE[900], 0.18)}`,
+              borderTop: `2px solid ${hexToRgba(BLUE[900], 0.32)}`,
+              background: p.acuteColor,
               padding: "10px 10px 9px",
+              color: BLUE[900],
+              boxShadow: `inset 0 1px 0 ${hexToRgba(BLUE[50], 0.34)}`,
             }}
           >
-            <span style={{ display: "block", fontFamily: FONT.diagram, fontSize: 12, fontWeight: 650, letterSpacing: 0, color: p.acuteColor }}>
+            <span style={{ display: "block", fontFamily: FONT.diagram, fontSize: 12, fontWeight: 750, letterSpacing: 0, color: BLUE[900] }}>
               {p.code}
             </span>
-            <span style={{ display: "block", marginTop: 3, fontSize: 11.5, lineHeight: 1.25, color: TEXT.secondary }}>
+            <span style={{ display: "block", marginTop: 3, fontSize: 11.5, lineHeight: 1.25, color: BLUE[900] }}>
               {p.atlasLabel}
             </span>
           </div>
