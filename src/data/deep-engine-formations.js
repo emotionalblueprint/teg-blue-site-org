@@ -60,7 +60,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     systemCode: "A B Transition",
     mode: "Safety Checking",
     atlasLabel: "Is it still safe?",
-    familiar: "",
+    familiar: "belonging at risk",
     autonomic: "parasympathetic → sympathetic",
     reality: "UNCERTAINTY",
     acuteConfig: "Safety Checking",
