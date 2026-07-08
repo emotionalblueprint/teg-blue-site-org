@@ -9,9 +9,6 @@ import {
   FONT,
   ACCENT,
   BLUE,
-  GRADIENT_SCALE,
-  GRADIENT_SCALE_MODE,
-  GRADIENT_SCALE_MODE_GRADIENT,
   hexToRgba,
 } from '../styles/tokens'
 import { positions, cards, content, autonomic } from '../lib/gradient-data'
@@ -70,14 +67,6 @@ const SHUT = N - 1
 const GRAD = positions.slice(0, SHUT)
 const cardById = Object.fromEntries(cards.map((c) => [c.id, c]))
 const HOME_READOUT_IDS = ['perception', 'time', 'emotions', 'empathy', 'repair']
-const FOUR_MODE_SCALE_COLORS = [
-  GRADIENT_SCALE_MODE.connection,
-  GRADIENT_SCALE_MODE.protection,
-  GRADIENT_SCALE_MODE.control,
-  GRADIENT_SCALE_MODE.domination,
-]
-const VERSION_FOUR = 'four'
-const VERSION_EXTENDED = 'extended'
 const EXTENDED_TRACK = GRAD.map((position, index) => ({
   id: position.id,
   positionIndex: index,
@@ -94,74 +83,11 @@ const SHUTDOWN_ITEM = {
   atlasLabel: positions[SHUT].atlasLabel,
   readout: 'auto',
 }
-const FOUR_MODE_TRACK = [
-  {
-    id: 'acute-connection',
-    positionIndex: 1,
-    code: 'A',
-    mode: 'Acute Connection',
-    atlasLabel: 'Connection / Belonging',
-    readout: 'acute',
-    pattern: 'Pattern A',
-    sub: 'safety → reciprocity',
-    mechanism: positions[1].mechanism,
-    familiar: positions[1].familiar,
-    autonomic: autonomic.connection,
-  },
-  {
-    id: 'chronic-defence',
-    positionIndex: 3,
-    code: 'A↔B + B',
-    mode: 'Chronic Defence',
-    atlasLabel: 'Safety Checking + Protection',
-    readout: 'chronic',
-    pattern: 'Patterns A↔B + B',
-    sub: 'safety question unresolved + mobilisation held',
-    mechanism: `${positions[2].mechanismChronic}. ${positions[3].mechanismChronic}.`,
-    familiar: 'safety checking · fight / flight / fawn',
-    autonomic: 'parasympathetic → sympathetic / sympathetic',
-  },
-  {
-    id: 'chronic-control',
-    positionIndex: 4,
-    code: 'C',
-    mode: 'Control',
-    atlasLabel: 'Strategic Management',
-    readout: 'chronic',
-    pattern: 'Pattern C',
-    sub: positions[4].sub,
-    mechanism: positions[4].mechanismChronic,
-    familiar: positions[4].familiar,
-    autonomic: autonomic.strategic,
-  },
-  {
-    id: 'chronic-domination',
-    positionIndex: 5,
-    code: 'D',
-    mode: 'Domination',
-    atlasLabel: 'Power Mobilisation / chronic dominance',
-    readout: 'chronic',
-    pattern: 'Pattern D',
-    sub: positions[5].sub,
-    mechanism: positions[5].mechanismChronic,
-    familiar: positions[5].familiarChronic || positions[5].familiar,
-    autonomic: autonomic.domination,
-  },
-]
-
-function fourModeIndexForExtended(positionIndex) {
-  if (positionIndex <= 1) return 0
-  if (positionIndex <= 3) return 1
-  if (positionIndex === 4) return 2
-  return 3
-}
 
 export default function EmotionalGradient() {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [gradientVersion, setGradientVersion] = useState(VERSION_EXTENDED)
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
-  const [fourModeIndex, setFourModeIndex] = useState(0)
   const [chronic, setChronic] = useState(false)
   const [selectedReadoutId, setSelectedReadoutId] = useState(HOME_READOUT_IDS[0])
   const barRef = useRef(null)
@@ -169,24 +95,20 @@ export default function EmotionalGradient() {
 
   useEffect(() => setMounted(true), [])
 
-  const isFourMode = gradientVersion === VERSION_FOUR
-  const trackItems = isFourMode ? FOUR_MODE_TRACK : EXTENDED_TRACK
+  const trackItems = EXTENDED_TRACK
   const trackCount = trackItems.length
-  const activeTrackIndex = isFourMode ? fourModeIndex : Math.min(posIndex, trackCount - 1)
-  const selectedItem = isFourMode
-    ? FOUR_MODE_TRACK[fourModeIndex]
-    : (posIndex === SHUT ? SHUTDOWN_ITEM : EXTENDED_TRACK[posIndex])
+  const activeTrackIndex = Math.min(posIndex, trackCount - 1)
+  const selectedItem = posIndex === SHUT ? SHUTDOWN_ITEM : EXTENDED_TRACK[posIndex]
   const position = positions[selectedItem.positionIndex]
   const itemUsesChronic = (item) => item.readout === 'chronic' || (item.readout === 'auto' && chronic)
   const readingChronic = itemUsesChronic(selectedItem)
-  const isShutdown = !isFourMode && selectedItem.positionIndex === SHUT
+  const isShutdown = selectedItem.positionIndex === SHUT
   const colorForItem = (item) => {
     const itemPosition = positions[item.positionIndex]
     return itemUsesChronic(item) ? itemPosition.chronicColor : itemPosition.acuteColor
   }
-  const fourModeScaleColorOf = (i) => FOUR_MODE_SCALE_COLORS[i] || FOUR_MODE_SCALE_COLORS[0]
   const colorOf = (i) => (chronic ? positions[i].chronicColor : positions[i].acuteColor)
-  const accent = isFourMode ? fourModeScaleColorOf(activeTrackIndex) : colorForItem(selectedItem)
+  const accent = colorForItem(selectedItem)
 
   const isDark = mounted ? resolvedTheme !== 'light' : true
   const panelLight = !isDark
@@ -216,7 +138,6 @@ export default function EmotionalGradient() {
   }
 
   const labelColor = (i) => {
-    if (isFourMode) return panelLight ? ink(fourModeScaleColorOf(i)) : fourModeScaleColorOf(i)
     const item = trackItems[i]
     const itemPosition = positions[item.positionIndex]
     const selectedAcuteBaseline = itemPosition.id === 'baseline' && !itemUsesChronic(item)
@@ -224,47 +145,24 @@ export default function EmotionalGradient() {
     return panelLight ? ink(colorForItem(item)) : colorForItem(item)
   }
   const barStop = (i) => {
-    const color = isFourMode ? fourModeScaleColorOf(i) : colorForItem(trackItems[i])
+    const color = colorForItem(trackItems[i])
     return panelLight ? swatch(color) : color
   }
   const shutColor = panelLight ? swatch(colorOf(SHUT)) : colorOf(SHUT)
   const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${trackItems.map(
     (_, i) => `${barStop(i)} ${(((i + 0.5) / trackCount) * 100).toFixed(2)}%`,
   ).join(', ')}, ${barStop(trackCount - 1)} 100%)`
-  const scaleStop = (color) => (panelLight ? swatch(color) : color)
-  const scaleGradient = panelLight
-    ? `linear-gradient(90deg, ${scaleStop(GRADIENT_SCALE_MODE.connection)}, ${scaleStop(GRADIENT_SCALE_MODE.protection)}, ${scaleStop(GRADIENT_SCALE_MODE.control)}, ${scaleStop(GRADIENT_SCALE_MODE.domination)})`
-    : GRADIENT_SCALE_MODE_GRADIENT
-  const barBg = isFourMode ? scaleGradient : barGradient
-  const fourModeAtmosphere = `linear-gradient(135deg, ${hexToRgba(GRADIENT_SCALE.teal, panelLight ? 0.06 : 0.045)} 0%, ${BG.diagram} 48%, ${hexToRgba(GRADIENT_SCALE.pink, panelLight ? 0.045 : 0.035)} 100%)`
   const gradientTypeLabel = readingChronic ? 'Rigid Gradient' : 'Fluid Gradient'
   const gradientDescription = readingChronic
     ? 'Pattern is held; chronic pressure keeps it active.'
     : 'State is moving; capacity shifts with conditions.'
 
   function setTrackIndex(index) {
-    if (isFourMode) setFourModeIndex(index)
-    else setPosIndex(index)
+    setPosIndex(index)
   }
 
   function moveTrackIndex(delta) {
-    if (isFourMode) {
-      setFourModeIndex((i) => Math.max(0, Math.min(i + delta, FOUR_MODE_TRACK.length - 1)))
-    } else {
-      setPosIndex((i) => Math.max(0, Math.min(i + delta, N - 1)))
-    }
-  }
-
-  function setGradientView(nextVersion) {
-    if (nextVersion === gradientVersion) return
-    if (nextVersion === VERSION_EXTENDED) {
-      setPosIndex(selectedItem.positionIndex)
-      setChronic(selectedItem.readout === 'chronic')
-      setGradientVersion(VERSION_EXTENDED)
-    } else {
-      setFourModeIndex(fourModeIndexForExtended(posIndex))
-      setGradientVersion(VERSION_FOUR)
-    }
+    setPosIndex((i) => Math.max(0, Math.min(i + delta, N - 1)))
   }
 
   function setFromClientX(clientX) {
@@ -323,21 +221,19 @@ export default function EmotionalGradient() {
       className="gradient-card"
       tabIndex={0}
       onKeyDown={onTrackKey}
-      aria-label={isFourMode ? 'The Nervous System Gradient, 4-mode view' : 'The Nervous System Gradient, extended view'}
+      aria-label="The Nervous System Gradient"
       style={{
         overflow: 'visible',
         borderRadius: 8,
         outline: 'none',
-        background: isFourMode ? fourModeAtmosphere : BG.diagram,
+        background: BG.diagram,
         border: `1px solid ${BORDER.default}`,
         fontFamily: FONT.display,
         boxShadow: 'none',
-        '--gradient-sticky-bg': isFourMode ? fourModeAtmosphere : BG.diagram,
+        '--gradient-sticky-bg': BG.diagram,
         '--gradient-line': panel.line,
         '--gradient-accent': panel.cDot,
         '--gradient-accent-text': panel.cText,
-        '--gradient-control-bg': hexToRgba(panel.cDot, panelLight ? 0.07 : 0.06),
-        '--gradient-control-border': hexToRgba(panel.cDot, panelLight ? 0.32 : 0.28),
         '--readout-ink': tile.ink,
         '--readout-soft': tile.soft,
         '--readout-accent': tile.cText,
@@ -355,10 +251,9 @@ export default function EmotionalGradient() {
             </div>
           </div>
           <div className="gradient-toolbar-controls">
-            <div className="chronic-toggle-slot" aria-hidden={isFourMode}>
-              {!isFourMode && <ChronicToggle chronic={chronic} onChange={setChronic} />}
+            <div className="chronic-toggle-slot">
+              <ChronicToggle chronic={chronic} onChange={setChronic} />
             </div>
-            <GradientViewControl version={gradientVersion} onChange={setGradientView} />
           </div>
         </div>
 
@@ -380,7 +275,7 @@ export default function EmotionalGradient() {
               dragging.current = false
             }}
           >
-            <div ref={barRef} className="gradient-bar" style={{ position: 'relative', height: 14, borderRadius: 999, background: barBg, boxShadow: panelLight ? 'inset 0 0 0 1px rgba(0,0,0,0.06)' : 'none' }}>
+            <div ref={barRef} className="gradient-bar" style={{ position: 'relative', height: 14, borderRadius: 999, background: barGradient, boxShadow: panelLight ? 'inset 0 0 0 1px rgba(0,0,0,0.06)' : 'none' }}>
               {Array.from({ length: trackCount - 1 }, (_, i) => (
                 <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: readingChronic ? 2 : 1, transform: 'translateX(-50%)', left: `${((i + 1) / trackCount) * 100}%`, background: readingChronic ? (panelLight ? 'rgba(255,255,255,0.72)' : 'rgba(10,13,20,0.42)') : (panelLight ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.3)') }} />
               ))}
@@ -424,7 +319,7 @@ export default function EmotionalGradient() {
             </div>
           </div>
 
-          {!isFourMode && <div className="gradient-shutdown-track" style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
+          <div className="gradient-shutdown-track" style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
             <div className="gradient-shutdown-divider" style={{ height: 20, borderLeft: `1px dashed ${panel.line}` }} />
             <button type="button" className="gradient-shutdown-button" onClick={() => setPosIndex(SHUT)} aria-label="Shutdown — off-gradient" style={{ padding: '12px 0', background: 'transparent', border: 'none', cursor: 'pointer' }}>
               <div
@@ -439,7 +334,7 @@ export default function EmotionalGradient() {
                 }}
               />
             </button>
-          </div>}
+          </div>
         </div>
 
         <div
@@ -458,7 +353,7 @@ export default function EmotionalGradient() {
         <div className="gradient-track-labels" style={{ display: 'flex', gap: 12, marginTop: 10 }}>
           <div style={{ display: 'flex', flex: 1 }}>
             {trackItems.map((item, i) => {
-              const itemColor = isFourMode ? fourModeScaleColorOf(i) : colorForItem(item)
+              const itemColor = colorForItem(item)
               const selected = i === activeTrackIndex && !isShutdown
               return (
               <button
@@ -486,7 +381,7 @@ export default function EmotionalGradient() {
               )
             })}
           </div>
-          {!isFourMode && <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12 }}>
+          <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12 }}>
             <div style={{ height: 20, borderLeft: '1px solid transparent' }} />
             <button
               type="button"
@@ -509,7 +404,7 @@ export default function EmotionalGradient() {
               <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, letterSpacing: 0 }}>{positions[SHUT].code}</span>
               <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, fontFamily: FONT.display }}>Shutdown</span>
             </button>
-          </div>}
+          </div>
         </div>
       </div>
       </div>
@@ -608,52 +503,6 @@ export default function EmotionalGradient() {
         .chronic-toggle-slot {
           display: flex;
           justify-content: flex-end;
-        }
-
-        .gradient-view-control {
-          display: inline-flex;
-          align-items: center;
-        }
-
-        .gradient-segmented-control {
-          display: inline-flex;
-          gap: 5px;
-          padding: 5px;
-          border: 1px solid var(--gradient-control-border);
-          border-radius: 999px;
-          background: var(--gradient-control-bg);
-        }
-
-        .gradient-segment {
-          appearance: none;
-          min-height: 34px;
-          border: 0;
-          border-radius: 999px;
-          background: transparent;
-          color: var(--readout-soft);
-          cursor: pointer;
-          font: inherit;
-          font-size: 13px;
-          font-weight: 650;
-          line-height: 1.2;
-          padding: 7px 18px;
-          transition:
-            background-color 160ms ease,
-            color 160ms ease;
-        }
-
-        .gradient-segment:hover {
-          color: var(--gradient-accent-text);
-        }
-
-        .gradient-segment.is-active {
-          background: color-mix(in srgb, var(--gradient-accent) 16%, transparent);
-          color: var(--gradient-accent-text);
-        }
-
-        .gradient-segment:focus-visible {
-          outline: 1px solid color-mix(in srgb, var(--gradient-accent) 42%, transparent);
-          outline-offset: 2px;
         }
 
         .gradient-type-lockup {
@@ -958,10 +807,6 @@ export default function EmotionalGradient() {
             justify-content: flex-start;
           }
 
-          .gradient-view-control {
-            min-width: 0;
-          }
-
           .mode-caption {
             max-width: none;
             padding: 0;
@@ -1096,34 +941,6 @@ export default function EmotionalGradient() {
         }
       `}</style>
     </section>
-  )
-}
-
-function GradientViewControl({ version, onChange }) {
-  const options = [
-    { value: VERSION_EXTENDED, label: '7-mode full' },
-    { value: VERSION_FOUR, label: '4-mode summary' },
-  ]
-
-  return (
-    <div className="gradient-view-control" role="group" aria-label="Gradient view">
-      <div className="gradient-segmented-control">
-        {options.map((option) => {
-          const active = version === option.value
-          return (
-            <button
-              key={option.value}
-              type="button"
-              className={active ? 'gradient-segment is-active' : 'gradient-segment'}
-              onClick={() => onChange(option.value)}
-              aria-pressed={active}
-            >
-              {option.label}
-            </button>
-          )
-        })}
-      </div>
-    </div>
   )
 }
 
