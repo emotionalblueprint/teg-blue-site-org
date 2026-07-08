@@ -1,6 +1,6 @@
 # TEG-Blue .org
 
-Public framework and research-grounding home for **TEG-Blue: The Emotional Gradient Blueprint** — a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve.
+Public framework and research-grounding home for **TEG-Blue: The Emotional Gradient Blueprint** — a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.
 
 The central public map inside the framework is **The Nervous System Gradient**: a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 

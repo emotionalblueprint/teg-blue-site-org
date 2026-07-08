@@ -83,7 +83,7 @@ const CITATION_GUIDANCE = [
   {
     label: "Describe",
     title: "Use modest public language",
-    body: "Describe TEG-Blue as an educational, reflective, research-grounded visual framework, not as therapy, diagnosis, treatment, or clinical assessment.",
+    body: "Describe TEG-Blue as a science-grounded visual educational framework, not as therapy, diagnosis, treatment, or clinical assessment.",
     color: SPECTRUM.cobalt,
   },
   {
@@ -97,7 +97,7 @@ const CITATION_GUIDANCE = [
 const PUBLIC_DESCRIPTION_NOTES = [
   {
     title: "Short description",
-    body: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+    body: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
   },
   {
     title: "Central public map",

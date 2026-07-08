@@ -26,7 +26,7 @@ const TERMS = [
   },
   {
     term: "The Emotional Gradient Blueprint",
-    definition: "A layered visual framework that maps how emotions, nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve.",
+    definition: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
     note: "This is the foundational name and current .org doorway.",
     color: SPECTRUM.azure,
   },

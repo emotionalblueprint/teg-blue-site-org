@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
   },
   {
     question: "Who created TEG-Blue?",
@@ -138,7 +138,7 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="The project, creator, ecosystem boundaries, and research stance behind a layered visual framework for emotional-pattern legibility."
+            description="The project, creator, ecosystem boundaries, and research stance behind a science-grounded visual educational framework for emotional-pattern legibility."
           />
         }
       >
@@ -224,8 +224,8 @@ function OverviewSection() {
       <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
       <h2 style={sectionHeadingStyle}>TEG-Blue is The Emotional Gradient Blueprint.</h2>
       <p style={leadStyle}>
-        TEG-Blue is a layered visual framework that maps how emotions, nervous systems, survival strategies,
-        identity, social patterns, and repair capacity form and evolve.
+        TEG-Blue is a science-grounded visual educational framework for reading how emotional, nervous-system,
+        relational, and repair patterns form and change.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         It shows how patterns that begin in the body can shape individual experience and relationships across

@@ -1,6 +1,6 @@
 # TEG-Blue
 # https://teg-blue.org
-# Last updated: 2026-07-04
+# Last updated: 2026-07-08
 # Format: llms.txt
 
 ## Crawler Summary
@@ -9,7 +9,9 @@ TEG-Blue is The Emotional Gradient Blueprint, created by Anna Paretas-Artacho.
 
 Primary home page heading: TEG-Blue: The Emotional Gradient Blueprint.
 
-TEG-Blue is a layered visual framework for reading emotional, nervous-system, relational, and social patterns. It maps how emotions, nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve.
+TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.
+
+TEG-Blue translates established research into visual educational maps for emotional-pattern legibility.
 
 The central public map inside the framework is The Nervous System Gradient:
 
@@ -49,7 +51,8 @@ Other model, framework, AI, emotional-technology, prototype, Spanish, citations,
 Stable public claims:
 
 - TEG-Blue is The Emotional Gradient Blueprint.
-- TEG-Blue is a layered visual framework for emotional-pattern legibility.
+- TEG-Blue is a science-grounded visual educational framework for emotional-pattern legibility.
+- TEG-Blue translates established research into visual educational maps.
 - The Nervous System Gradient is the central public map inside TEG-Blue, not the whole identity.
 - The map describes how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 - The work is educational, reflective, and research-facing.

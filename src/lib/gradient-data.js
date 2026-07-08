@@ -328,7 +328,7 @@ export const faq = [
   {
     question: 'What is TEG-Blue?',
     answer:
-      'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.',
+      'TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.',
   },
   {
     question: 'What is the Nervous System Gradient?',
@@ -348,7 +348,7 @@ export const faq = [
   {
     question: 'What research is TEG-Blue grounded in?',
     answer:
-      'TEG-Blue is grounded in science: established research areas support specific parts of the map, each field remains itself, and TEG-Blue places those parts in relation. The integration is TEG-Blue\'s contribution.',
+      'TEG-Blue translates established research into visual educational maps for emotional-pattern legibility. Established research areas support specific parts of the map, each field remains itself, and the integration is TEG-Blue\'s contribution.',
   },
   {
     question: 'Can TEG-Blue diagnose people?',

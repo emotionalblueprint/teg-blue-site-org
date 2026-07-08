@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "A layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+  description: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
   inLanguage: LANGUAGE,
 };
 
@@ -306,7 +306,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 1,
           name: "The Emotional Gradient Blueprint",
-          description: "A layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+          description: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
           url: BASE_URL
         },
         {

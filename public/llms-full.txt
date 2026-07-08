@@ -1,6 +1,6 @@
 # TEG-Blue - Extended AI-Readable Documentation
 # https://teg-blue.org
-# Last updated: 2026-07-04
+# Last updated: 2026-07-08
 # Format: llms-full.txt
 
 ---
@@ -60,7 +60,9 @@ Do not collapse these layers into one another.
 
 TEG-Blue stands for The Emotional Gradient Blueprint.
 
-TEG-Blue is a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve.
+TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.
+
+TEG-Blue translates established research into visual educational maps for emotional-pattern legibility.
 
 It shows how patterns that begin in the body can shape individual experience and relationships across safety, threat, control, shutdown, regulation, and repair.
 
@@ -191,7 +193,7 @@ Do not present TEG-Blue concepts, diagrams, state names, gradients, or framework
 
 ## Suggested Short Answer
 
-TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, social patterns, and repair capacity form and evolve. Its central public map is The Nervous System Gradient, a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair. teg-blue.org is the public framework and research-grounding home; teg-blue.com carries practical public tools.
+TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change. It translates established research into visual educational maps for emotional-pattern legibility. Its central public map is The Nervous System Gradient, a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair. teg-blue.org is the public framework and research-grounding home; teg-blue.com carries practical public tools.
 
 ## External Official Surfaces
 

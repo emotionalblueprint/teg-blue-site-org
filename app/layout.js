@@ -32,8 +32,8 @@ export const metadata = {
     default: 'TEG-Blue — The Emotional Gradient Blueprint',
     template: '%s | TEG-Blue',
   },
-  description: 'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.',
-  keywords: ['emotional regulation', 'nervous system', 'attachment research', 'trauma research', 'emotional patterns', 'nervous system gradient', 'layered visual framework', 'research grounding', 'state-shaped capacity', 'repair', 'protective patterns', 'relationship patterns', 'impact'],
+  description: 'TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.',
+  keywords: ['emotional regulation', 'nervous system', 'attachment research', 'trauma research', 'emotional patterns', 'nervous system gradient', 'visual educational framework', 'emotional-pattern legibility', 'research grounding', 'state-shaped capacity', 'repair', 'protective patterns', 'relationship patterns', 'impact'],
   authors: [{ name: 'Anna Paretas-Artacho', url: 'https://orcid.org/0009-0005-2394-7162' }],
   creator: 'Anna Paretas-Artacho',
   publisher: 'TEG-Blue Research',
@@ -47,12 +47,12 @@ export const metadata = {
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue',
     title: 'TEG-Blue — The Emotional Gradient Blueprint',
-    description: 'A layered visual framework for reading emotional, bodily, nervous-system, and relational patterns across safety, threat, control, shutdown, regulation, and repair.',
+    description: 'A science-grounded visual educational framework for reading how emotional, bodily, nervous-system, relational, and repair patterns shift across safety, threat, control, shutdown, regulation, and repair.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TEG-Blue — The Emotional Gradient Blueprint',
-    description: 'A layered visual framework for reading emotional, bodily, nervous-system, and relational patterns.',
+    description: 'A science-grounded visual educational framework for emotional-pattern legibility.',
   },
   robots: {
     index: true,
@@ -146,7 +146,7 @@ const organizationJsonLd = {
   name: "TEG-Blue",
   url: BASE_URL,
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+  description: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -189,7 +189,7 @@ const websiteJsonLd = {
   name: "TEG-Blue.org",
   url: BASE_URL,
   inLanguage: "en",
-  description: "Public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint, with The Nervous System Gradient as its central public map.",
+  description: "Public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint, a science-grounded visual educational framework with The Nervous System Gradient as its central public map.",
   publisher: {
     "@id": ORGANIZATION_ID,
   },

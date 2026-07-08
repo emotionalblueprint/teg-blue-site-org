@@ -56,7 +56,7 @@ const CLAIM_LAYERS = [
   {
     label: "Identity",
     title: "What TEG-Blue calls itself",
-    body: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+    body: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
     status: "Identity claims need internal consistency and creator attribution.",
     color: SPECTRUM.azure,
   },

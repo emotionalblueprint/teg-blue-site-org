@@ -12,9 +12,9 @@ const HOME_HEADING = "TEG-Blue: The Emotional Gradient Blueprint";
 const MAP_SUBTITLE =
   "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
 const DESCRIPTION =
-  "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework for reading emotional, nervous-system, relational, and social patterns. Its central public map is The Nervous System Gradient.";
+  "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change. Its central public map is The Nervous System Gradient.";
 const BASE_URL = "https://teg-blue.org";
-const DATE_MODIFIED = "2026-07-04";
+const DATE_MODIFIED = "2026-07-08";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
 const LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";
@@ -122,7 +122,7 @@ const gradientJsonLd = {
     "@type": "ResearchProject",
     "@id": `${BASE_URL}/#research-project`,
     name: "TEG-Blue: The Emotional Gradient Blueprint",
-    description: "A layered visual framework for reading emotional, nervous-system, relational, and social patterns.",
+    description: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
     url: BASE_URL,
     creator: { "@id": SCHEMA_IDS.person },
     publisher: { "@id": SCHEMA_IDS.organization },
@@ -857,13 +857,13 @@ export default function Home() {
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              A layered visual framework for reading emotional, nervous-system, relational, and social patterns. We do
-              not stay the same in every situation: open and trusting one moment, guarded or controlling the next.
+              TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for
+              reading how emotional, nervous-system, relational, and repair patterns form and change.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              Created by Anna Paretas-Artacho, TEG-Blue maps how emotions, nervous systems, survival strategies,
-              identity, social patterns, and repair capacity form and evolve. Its central public map is The Nervous
-              System Gradient.
+              Created by Anna Paretas-Artacho, TEG-Blue translates established research into visual educational maps
+              for emotional-pattern legibility. We do not stay the same in every situation: open and trusting one
+              moment, guarded or controlling the next. Its central public map is The Nervous System Gradient.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
               The Nervous System Gradient is{" "}
@@ -985,8 +985,9 @@ export default function Home() {
               Scientific grounding
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The public framework names the integration, then shows which research areas support
-              specific parts of the map. Each field remains itself; TEG-Blue places the parts in relation.
+              TEG-Blue translates established research into visual educational maps for emotional-pattern legibility.
+              The public framework names the integration, then shows which research areas support specific parts of
+              the map. Each field remains itself; TEG-Blue places the parts in relation.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
               {scienceGrounding.map((s) => (
