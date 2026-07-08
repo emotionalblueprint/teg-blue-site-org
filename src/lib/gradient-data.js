@@ -314,12 +314,12 @@ export const groups = [
 // ─── SCIENCE GROUNDING (convergence, not derivation) — for static section + JSON-LD ──
 
 export const scienceGrounding = [
-  { part: 'Body-level organisation', science: 'Biology and physiology help ground survival, adaptation, arousal, shutdown, regulation, and repair capacity.', authors: 'Load-bearing research area' },
-  { part: 'State and activation', science: 'Autonomic neuroscience and stress physiology support claims about mobilisation, inhibition, chronic load, and return.', authors: 'Specific mechanisms require source trace' },
-  { part: 'Emotion and signal', science: 'Affective neuroscience and emotion science ground emotional salience, body signals, and action readiness.', authors: 'One part of the map' },
-  { part: 'Perception and certainty', science: 'Cognitive and behavioural research supports attention, appraisal, prediction, evidence-testing, and state-shaped perception.', authors: 'One research angle' },
-  { part: 'Relationship and repair', science: 'Attachment, trauma, developmental, and relational research connect proximity, rupture, protection, repair, and repeated patterns.', authors: 'Connected fields' },
-  { part: 'Context and scale', science: 'Psychology, social psychology, sociology, anthropology, and contemplative traditions locate overlapping parts without owning the full architecture.', authors: 'Each field remains itself' },
+  { part: 'Gradient and autonomic state', science: 'Autonomic neuroscience, neuroception, and stress physiology ground the safety-threat axis, mobilisation, inhibition, chronic load, and return.', authors: 'Porges · Sapolsky · McEwen' },
+  { part: 'Perception and cognition', science: 'Cognitive science, appraisal research, attention, prediction, cognitive load, and state-shaped perception ground the narrowing or widening of the field.', authors: 'Barrett · Kahneman · Bower' },
+  { part: 'Awareness and body signals', science: 'Interoception and body-awareness research ground the way inner signals become available, muted, narrowed, or difficult to name.', authors: 'A. D. Craig · contemplative research' },
+  { part: 'Emotion and action readiness', science: 'Affective neuroscience and emotion science ground emotional salience, body signals, urgency, and action readiness.', authors: 'Panksepp · Damasio · Barrett · LeDoux' },
+  { part: 'Relationship and repair', science: 'Attachment, interpersonal neurobiology, trauma research, and developmental research ground proximity, rupture, protection, co-regulation, and repair.', authors: 'Bowlby · Siegel · Levine · van der Kolk' },
+  { part: 'Context and scale', science: 'Psychology, social psychology, sociology, and anthropology locate overlapping parts of the map without owning the whole architecture.', authors: 'Contextual grounding' },
 ]
 
 // ─── FAQ (AEO — answer engines, voice, featured snippets) ────────────────────
@@ -328,7 +328,7 @@ export const faq = [
   {
     question: 'What is TEG-Blue?',
     answer:
-      'TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.',
+      'TEG-Blue is The Emotional Gradient Blueprint: a research-grounded visual framework for reading how emotional, nervous-system, relational, and repair patterns form and change.',
   },
   {
     question: 'What is the Nervous System Gradient?',
@@ -348,7 +348,7 @@ export const faq = [
   {
     question: 'What research is TEG-Blue grounded in?',
     answer:
-      'TEG-Blue translates established research into visual educational maps for emotional-pattern legibility. Established research areas support specific parts of the map, each field remains itself, and the integration is TEG-Blue\'s contribution.',
+      'The architecture leads; established research provides grounding for specific parts of the map. These are source traces and orientation points, not a claim that the whole system has clinical validation.',
   },
   {
     question: 'Can TEG-Blue diagnose people?',

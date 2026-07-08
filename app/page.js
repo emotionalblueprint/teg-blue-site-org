@@ -1,18 +1,17 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACCENT, FORMATION, MAIN_ORG, PATTERN_GRADIENT, TONE, contrastColor } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACCENT, MAIN_ORG, TONE, contrastColor } from "@/src/styles/tokens";
 import SiteFooter from "@/src/components/SiteFooter";
 import SiteHeader from "@/src/components/SiteHeader";
 import EmotionalGradient from "@/src/components/EmotionalGradient";
-import PatternRecognitionPrimer from "@/src/components/PatternRecognitionPrimer";
 import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "TEG-Blue — The Emotional Gradient Blueprint";
-const HOME_HEADING = "TEG-Blue: The Emotional Gradient Blueprint";
+const TITLE = "TEG-Blue — The Nervous System Gradient";
+const HOME_HEADING = "The Nervous System Gradient";
 const MAP_SUBTITLE =
   "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
 const DESCRIPTION =
-  "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change. Its central public map is The Nervous System Gradient.";
+  "The current public center of TEG-Blue: a research-grounded map of how safety and threat reshape perception, emotion, body activation, behaviour, relationship patterns, and repair.";
 const BASE_URL = "https://teg-blue.org";
 const DATE_MODIFIED = "2026-07-08";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
@@ -122,7 +121,7 @@ const gradientJsonLd = {
     "@type": "ResearchProject",
     "@id": `${BASE_URL}/#research-project`,
     name: "TEG-Blue: The Emotional Gradient Blueprint",
-    description: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+    description: "A visual framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
     url: BASE_URL,
     creator: { "@id": SCHEMA_IDS.person },
     publisher: { "@id": SCHEMA_IDS.organization },
@@ -173,45 +172,29 @@ const breadcrumbJsonLd = generateBreadcrumbJsonLd([
 const HOME_CSS = `
   .home-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
-    grid-template-areas:
-      "head card"
-      "intro card";
-    column-gap: clamp(22px, 3vw, 32px);
-    row-gap: clamp(24px, 4vw, 38px);
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: clamp(18px, 3vw, 28px);
     align-items: start;
   }
 
   .home-hero-head {
-    grid-area: head;
     min-width: 0;
+    max-width: 780px;
   }
 
   .home-hero-intro {
-    grid-area: intro;
     min-width: 0;
+    max-width: 760px;
   }
 
   .home-hero-title {
-    max-width: min(100%, 680px);
-    font-size: 64px;
-    line-height: 0.96;
-  }
-
-  .home-title-line {
-    white-space: nowrap;
+    max-width: min(100%, 760px);
+    font-size: 58px;
+    line-height: 1.02;
   }
 
   .home-hero-lead {
     font-size: 20px;
-  }
-
-  .home-card-title {
-    font-size: 26px;
-  }
-
-  .home-card-question {
-    font-size: 17px;
   }
 
   .home-definition-title {
@@ -228,7 +211,7 @@ const HOME_CSS = `
 
   .home-hero-actions {
     display: grid;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(3, max-content);
     justify-content: start;
     align-items: center;
     gap: 8px;
@@ -269,11 +252,15 @@ const HOME_CSS = `
     background: color-mix(in srgb, var(--blue-500) 14%, var(--bg-primary));
   }
 
-  .home-safety-question-card {
-    grid-area: card;
-    position: relative;
-    overflow: hidden;
-    margin-top: clamp(28px, 3vw, 40px) !important;
+  .home-state-strip {
+    margin-top: 28px;
+    max-width: 840px;
+  }
+
+  .home-state-strip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   @media (min-width: 1180px) {
@@ -287,22 +274,6 @@ const HOME_CSS = `
     }
   }
 
-  @media (max-width: 1180px) {
-    .home-hero {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "head"
-        "intro"
-        "card";
-    }
-
-    .home-safety-question-card {
-      justify-self: start;
-      max-width: 760px;
-      margin-top: clamp(8px, 2vw, 18px) !important;
-    }
-  }
-
   @media (max-width: 760px) {
     .home-hero {
       grid-template-columns: 1fr;
@@ -312,8 +283,8 @@ const HOME_CSS = `
       grid-template-columns: repeat(2, minmax(0, max-content));
     }
 
-    .home-safety-question-card {
-      margin-top: 0 !important;
+    .home-state-strip {
+      margin-top: 24px;
     }
 
     .home-hero-title {
@@ -324,7 +295,6 @@ const HOME_CSS = `
       font-size: 18px;
     }
 
-    .home-card-title,
     .home-definition-title,
     .home-section-heading {
       font-size: 26px;
@@ -336,17 +306,9 @@ const HOME_CSS = `
   }
 
   @media (max-width: 620px) {
-    .home-title-line {
-      white-space: normal;
-    }
-
     .home-hero-actions {
       grid-template-columns: 1fr;
       align-items: stretch;
-    }
-
-    .home-question-answers {
-      grid-template-columns: 1fr !important;
     }
 
     .home-hero-title {
@@ -358,14 +320,9 @@ const HOME_CSS = `
       font-size: 17px;
     }
 
-    .home-card-title,
     .home-definition-title,
     .home-section-heading {
       font-size: 24px;
-    }
-
-    .home-card-question {
-      font-size: 15px;
     }
 
     .home-gradient-heading {
@@ -396,37 +353,6 @@ const patternRecognitionMoves = [
     title: "What repeats over time",
     body: "When threat or pressure lasts, a passing response can become a recurring pattern. Sustained threat can become the filter through which the system reads the world, shaping perception, relationships, and choices.",
     color: ACCENT.orange,
-  },
-];
-
-const heroSafetyQuestions = [
-  {
-    label: "Safety read",
-    question: "Is this safe, or is there danger?",
-    left: {
-      label: "Safe",
-      body: "Rest, orientation, and choice can stay available.",
-      color: SPECTRUM.azure,
-    },
-    right: {
-      label: "Danger",
-      body: "Energy moves toward mobilisation, scanning, or shutdown if capacity drops.",
-      color: ACCENT.orange,
-    },
-  },
-  {
-    label: "Relational read",
-    question: "Can connection stay accessible, or does it need safeguarding?",
-    left: {
-      label: "Connection open",
-      body: "Mutual presence, co-regulation, and repair can stay available.",
-      color: FORMATION.A,
-    },
-    right: {
-      label: "Preserve connection",
-      body: "Attention moves toward preventing rupture, restoring closeness, or keeping the bond intact.",
-      color: FORMATION.B,
-    },
   },
 ];
 
@@ -476,136 +402,35 @@ const cardStyle = {
 const gradientLinePositions = positions.filter((p) => p.id !== "shutdown");
 const shutdownPosition = positions.find((p) => p.id === "shutdown");
 
-function HomeSafetyQuestionCard() {
+function StateSpineStrip() {
   return (
-    <aside
-      className="home-safety-question-card"
-      aria-label="Two live reads the nervous system keeps making"
-      style={{
-        alignSelf: "start",
-        marginTop: 0,
-        background: BG.diagram,
-        border: `1px solid ${BORDER.default}`,
-        borderRadius: RADIUS.lg,
-        padding: "clamp(16px, 2.6vw, 20px)",
-        boxShadow: `0 24px 70px ${hexToRgba(BLUE[800], 0.1)}`,
-      }}
-    >
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: "0 0 auto",
-          height: 2,
-          background: PATTERN_GRADIENT,
-        }}
-      />
-
-      <div style={{ marginBottom: 16 }}>
-        <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>Live state reads</p>
-        <h2
-          className="home-card-title"
-          style={{
-            margin: 0,
-            maxWidth: 420,
-            color: TEXT.primary,
-            fontWeight: 760,
-            letterSpacing: 0,
-            lineHeight: 1.1,
-          }}
-        >
-          The nervous system keeps asking two questions.
-        </h2>
-      </div>
-
-      <div style={{ display: "grid", gap: 10 }}>
-        {heroSafetyQuestions.map((item, index) => (
-          <article
-            key={item.label}
+    <div className="home-state-strip" aria-label="State spine from safety to shutdown">
+      <div className="home-state-strip-list" role="list">
+        {positions.map((p) => (
+          <div
+            role="listitem"
+            key={p.id}
             style={{
-              border: `1px solid ${hexToRgba(index === 0 ? SPECTRUM.azure : FORMATION.A, 0.18)}`,
+              "--state-color": p.acuteColor,
+              flex: "1 1 92px",
+              minWidth: 92,
               borderRadius: RADIUS.md,
-              background: BG.primary,
-              overflow: "hidden",
+              border: `1px solid ${BORDER.default}`,
+              borderTop: `2px solid ${p.acuteColor}`,
+              background: `linear-gradient(180deg, ${hexToRgba(p.acuteColor, 0.12)}, transparent)`,
+              padding: "10px 10px 9px",
             }}
           >
-            <div style={{ padding: "12px 12px 10px" }}>
-              <p
-                style={{
-                  margin: "0 0 8px",
-                  color: index === 0 ? TONE.spectrum.azure : TONE.formation.A,
-                  fontFamily: FONT.diagram,
-                  fontSize: 10,
-                  fontWeight: 720,
-                  letterSpacing: 0,
-                  lineHeight: 1.2,
-                  textTransform: "uppercase",
-                }}
-              >
-                {item.label}
-              </p>
-              <p className="home-card-question" style={{ margin: 0, color: TEXT.primary, fontWeight: 720, lineHeight: 1.25 }}>
-                {item.question}
-              </p>
-            </div>
-
-            <div
-              aria-hidden="true"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-                padding: "0 12px 10px",
-              }}
-            >
-              <span style={{ width: 9, height: 9, borderRadius: "50%", background: item.left.color, flex: "0 0 auto" }} />
-              <span
-                style={{
-                  height: 3,
-                  flex: "1 1 0",
-                  borderRadius: 999,
-                  background: `linear-gradient(90deg, ${item.left.color}, ${item.right.color})`,
-                }}
-              />
-              <span style={{ width: 9, height: 9, borderRadius: "50%", background: item.right.color, flex: "0 0 auto" }} />
-            </div>
-
-            <div
-              className="home-question-answers"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-                gap: 1,
-                background: BORDER.default,
-                borderTop: `1px solid ${BORDER.default}`,
-              }}
-            >
-              {[item.left, item.right].map((answer) => (
-                <div key={answer.label} style={{ minWidth: 0, background: BG.diagram, padding: "10px 11px" }}>
-                  <p
-                    style={{
-                      margin: 0,
-                      color: contrastColor(answer.color),
-                      fontFamily: FONT.mono,
-                      fontSize: 12,
-                      fontWeight: 820,
-                      letterSpacing: 0,
-                      lineHeight: 1.2,
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {answer.label}
-                  </p>
-                  <p style={{ margin: "5px 0 0", color: TEXT.secondary, fontSize: 12, lineHeight: 1.4 }}>
-                    {answer.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </article>
+            <span style={{ display: "block", fontFamily: FONT.diagram, fontSize: 12, fontWeight: 650, letterSpacing: 0, color: p.acuteColor }}>
+              {p.code}
+            </span>
+            <span style={{ display: "block", marginTop: 3, fontSize: 11.5, lineHeight: 1.25, color: TEXT.secondary }}>
+              {p.atlasLabel}
+            </span>
+          </div>
         ))}
       </div>
-    </aside>
+    </div>
   );
 }
 
@@ -801,14 +626,6 @@ function WhatGradientIsCard() {
         </div>
       </div>
 
-      <div
-        aria-hidden="true"
-        style={{
-          borderTop: `1px solid ${homeSurface.border}`,
-        }}
-      />
-
-      <PatternRecognitionPrimer embedded />
     </div>
   );
 }
@@ -830,7 +647,7 @@ export default function Home() {
         {/* Hero — static, crawlable */}
         <section className="home-hero" style={{ ...sectionStyle, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
           <div className="home-hero-head">
-            <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · Public framework</p>
+            <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · The Emotional Gradient Blueprint</p>
             <h1
               className="home-hero-title"
               style={{
@@ -839,36 +656,24 @@ export default function Home() {
                 color: TEXT.primary,
               }}
             >
-              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>TEG-Blue:</span>{" "}
-              <span
-                style={{
-                  display: "block",
-                  color: MAIN_ORG.accent,
-                  background: "var(--hero-title-gradient)",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                The Emotional Gradient Blueprint
-              </span>
+              The Nervous System Gradient
             </h1>
           </div>
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for
-              reading how emotional, nervous-system, relational, and repair patterns form and change.
+              The current public center of TEG-Blue is a research-grounded map of how safety and threat reshape
+              perception, emotion, body activation, behaviour, relationship patterns, and repair.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              Created by Anna Paretas-Artacho, TEG-Blue translates established research into visual educational maps
-              for emotional-pattern legibility. We do not stay the same in every situation: open and trusting one
-              moment, guarded or controlling the next. Its central public map is The Nervous System Gradient.
+              We do not stay the same in every situation: open and trusting one moment, guarded or controlling the
+              next. These shifts are not random. They are state changes in the nervous system.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              The Nervous System Gradient is{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.</strong>{" "}
-              It helps make pattern movement visible without turning a moment, behaviour, or state into a whole-person verdict.
+              Established research appears here as{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>grounding for specific mechanisms</strong>: source
+              traces, not a claim that the whole framework has clinical validation. The map helps make pattern movement
+              visible without turning a moment, behaviour, or state into a whole-person verdict.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
@@ -880,14 +685,13 @@ export default function Home() {
                   background: hexToRgba(MAIN_ORG.accent, 0.1),
                 }}
               >
-                See the Gradient Map
+                Explore the map
               </a>
-              <a className="home-action" href="#science-heading">Research grounding</a>
-              <a className="home-action" href="https://teg-blue.com/">Use practical tools ↗</a>
-              <a className="home-action" href="#rights-heading">Use and attribution</a>
+              <a className="home-action" href="#science-heading">Source traces</a>
+              <a className="home-action" href="https://teg-blue.com/">Practical tools ↗</a>
             </div>
+            <StateSpineStrip />
           </div>
-          <HomeSafetyQuestionCard />
         </section>
 
         {/* What the gradient is — definitional note and Safety → threat Gradient in one instrument */}
@@ -982,12 +786,11 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Research</p>
             <h2 id="science-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
-              Scientific grounding
+              Research grounding and source traces
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              TEG-Blue translates established research into visual educational maps for emotional-pattern legibility.
-              The public framework names the integration, then shows which research areas support specific parts of
-              the map. Each field remains itself; TEG-Blue places the parts in relation.
+              The architecture leads; established research provides grounding for specific parts of the map. These are
+              source traces and orientation points, not a claim that the whole system has clinical validation.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
               {scienceGrounding.map((s) => (
