@@ -1,17 +1,10 @@
 import { FONT, SPACING, TEXT, TRANSITION } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
+import { FOOTER_COPY, getSiteCopy } from "../i18n/site-copy";
 
-const LINKS = [
-  { label: "Practical tools ↗", href: "https://teg-blue.com/" },
-  { label: "Substack", href: "https://annaparetas.substack.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
-  { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },
-  { label: "GitHub", href: "https://github.com/emotionalblueprint" },
-  { label: "Zenodo", href: "https://zenodo.org/communities/teg-blue" },
-  { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162" },
-];
+export default function SiteFooter({ locale = "en" }) {
+  const copy = getSiteCopy(FOOTER_COPY, locale);
 
-export default function SiteFooter() {
   return (
     <footer
       style={{
@@ -33,9 +26,9 @@ export default function SiteFooter() {
           justifyContent: "center",
           gap: "10px 22px",
         }}
-        aria-label="Footer"
+        aria-label={copy.ariaLabel}
       >
-        {LINKS.map((l) => (
+        {copy.links.map((l) => (
           <a
             key={l.label}
             href={l.href}
@@ -68,7 +61,7 @@ export default function SiteFooter() {
         >
           CC BY 4.0
         </a>
-        {" · Attribution required · Tools, marks, code, and Engine logic excluded"}
+        {copy.licenseText}
       </p>
 
       <style>{`.footer-link:hover { color: var(--text-primary); }`}</style>

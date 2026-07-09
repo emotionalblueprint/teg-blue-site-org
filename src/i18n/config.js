@@ -13,6 +13,10 @@ export const ROUTE_TRANSLATIONS = {
     en: "/",
     es: "/es",
   },
+  "/glossary": {
+    en: "/glossary",
+    es: "/es/glossary",
+  },
 };
 
 export function normalizePath(pathname = "/") {

@@ -92,8 +92,8 @@ const TERMS = [
   },
   {
     term: "State-shaped perception",
-    definition: "The idea that nervous-system states do not only change what people feel; they change what feels true.",
-    note: "A feeling is real as experience, but it may not be the full fact of the situation.",
+    definition: "The idea that nervous-system states do not only change what a person feels; they can also change what feels true, especially when there is not yet practice listening to body signals and emotions in the moment.",
+    note: "A feeling is real as experience, but it may not contain the full fact of the situation. The practice begins by noticing what is felt, what emotion is present, and what information is missing before treating the feeling as complete reality.",
     color: SPECTRUM.indigo,
   },
   {

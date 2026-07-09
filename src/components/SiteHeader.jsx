@@ -5,54 +5,27 @@ import { BG, BORDER, FONT, SPACING, SPECTRUM, TEXT, TONE, TRANSITION, hexToRgba 
 import { ThemeToggle } from "./theme/ThemeToggle";
 import { SpectrumBar } from "./SharedComponents";
 import { getLiveLocaleLinks } from "../i18n/routing";
+import { getLocaleFromPath, getSourcePath, ROUTE_TRANSLATIONS, SPANISH_LOCALE } from "../i18n/config";
+import { HEADER_COPY, getSiteCopy } from "../i18n/site-copy";
 import { isLive } from "../lib/live-paths";
 
-const EXPLORE_LINKS = [
-  {
-    label: "About",
-    href: "/about",
-    description: "Project background, founder, research stance, contact routes, and site distinction.",
-  },
-  {
-    label: "TEG-Blue overview",
-    href: "/foundations",
-    description: "The Emotional Gradient Blueprint and the central Nervous System Gradient map.",
-  },
-  {
-    label: "Pattern reading",
-    href: "/methodology",
-    description: "How TEG-Blue separates observation, interpretation, impact, and claim status.",
-  },
-  {
-    label: "Scientific grounding",
-    href: "/scientific-foundations",
-    description: "Research areas, field boundaries, and claim discipline behind the map.",
-  },
-  {
-    label: "Ethics",
-    href: "/ethics",
-    description: "Dignity, agency, source honesty, attribution, permission, impact, and repair.",
-  },
-  {
-    label: "Publications",
-    href: "/publications",
-    description: "Public records, release pointers, citation guidance, and source posture.",
-  },
-  {
-    label: "Glossary",
-    href: "/glossary",
-    description: "Current public terms for the Blueprint and the central map.",
-  },
-  {
-    label: "Collaborate",
-    href: "/collaborate",
-    description: "Research review, applied builds, and licensing conversations.",
-  },
-];
+function getLocalizedHref(sourceHref, locale) {
+  if (locale !== SPANISH_LOCALE) return sourceHref;
+  return ROUTE_TRANSLATIONS[sourceHref]?.[locale] || sourceHref;
+}
 
 export default function SiteHeader({ currentPath = "/" }) {
+  const locale = getLocaleFromPath(currentPath);
+  const sourcePath = getSourcePath(currentPath);
+  const copy = getSiteCopy(HEADER_COPY, locale);
   const localeLinks = getLiveLocaleLinks(currentPath);
-  const exploreLinks = EXPLORE_LINKS.filter((link) => isLive(link.href));
+  const exploreLinks = copy.exploreLinks
+    .filter((link) => isLive(link.href))
+    .map((link) => ({
+      ...link,
+      href: getLocalizedHref(link.href, locale),
+      sourceHref: link.href,
+    }));
 
   return (
     <header
@@ -129,7 +102,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                     transition: `color ${TRANSITION.normal}`,
                   }}
                 >
-                  Explore
+                  {copy.exploreLabel}
                   <span aria-hidden="true" style={{ fontSize: 11, color: TONE.spectrum.azure }}>
                     ▾
                   </span>
@@ -150,7 +123,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                   }}
                 >
                   {exploreLinks.map((link) => {
-                    const active = currentPath === link.href;
+                    const active = sourcePath === link.sourceHref;
                     return (
                       <Link
                         key={link.href}
@@ -180,7 +153,7 @@ export default function SiteHeader({ currentPath = "/" }) {
             )}
             {localeLinks.length > 1 && (
               <nav
-                aria-label="Language"
+                aria-label={copy.languageLabel}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -228,7 +201,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                 transition: `color ${TRANSITION.normal}`,
               }}
             >
-              Practical tools ↗
+              {copy.toolsLabel}
             </a>
             <ThemeToggle />
           </div>

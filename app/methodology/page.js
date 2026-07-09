@@ -95,7 +95,7 @@ const RESPONSIBLE_QUESTIONS = [
 const PERCEPTION_POINTS = [
   {
     title: "Feeling and fact stay distinct",
-    body: "A feeling is real as an experience. It may still need to be separated from what happened, what was assumed, and what evidence is available.",
+    body: "A feeling is real as an experience. It may still need to be separated from what happened, what was assumed, what body and emotional signals are present, and what evidence is available.",
   },
   {
     title: "Calm is not safety",
@@ -279,8 +279,8 @@ function PerceptionSection() {
       <h2 style={sectionHeadingStyle}>Nervous-system states can change what feels true.</h2>
       <p style={leadStyle}>
         TEG-Blue treats perception as state-shaped. The question is not whether a feeling matters. The question
-        is what kind of information the feeling is carrying, what evidence is available, and what response is
-        needed.
+        is what kind of information the feeling is carrying, whether the person can notice body and emotional
+        signals in the moment, what evidence is available, and what response is needed.
       </p>
       <div style={gridStyle}>
         {PERCEPTION_POINTS.map((item) => (
