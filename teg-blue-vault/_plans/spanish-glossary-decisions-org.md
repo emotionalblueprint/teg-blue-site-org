@@ -140,7 +140,7 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | Fluid Gradient | Gradiente fluido | Home map toggle state. | Short UI label. |
 | Rigid Gradient | Gradiente rígido | Chronic view label. | Ensure it does not sound like person judgment. |
 | Chronic Survival View | Vista de supervivencia crónica | Map toggle. | Long; check mobile. |
-| state-shaped perception | percepción modulada por el estado | Explaining how nervous-system state can influence what feels true, safe, possible, or threatening, especially when a person has not yet learned to track body signals and emotions in the moment. | Avoid making it sound like state determines truth or that the feeling is wrong. |
+| state-shaped perception | percepción modulada por el estado | Methodology or article-level explanation of how nervous-system state can influence what feels true, safe, possible, or threatening, especially when a person has not yet learned to track body signals and emotions in the moment. | Parked from the first glossary slice until the surrounding state-shaped perception work is revised. Avoid making it sound like state determines truth or that the feeling is wrong. |
 | what feels true | lo que se siente verdadero | Methodology explanation. | Keep feeling and fact distinct. |
 
 ## Research And Source Terms
@@ -251,17 +251,24 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 
 ## Current Page Decisions Applied In `/es/glossary`
 
+- `/es/glossary` is now a simple first-reader glossary, not a full technical
+  terminology reference. Keep it short and emotionally safe: core names, map
+  orientation, patterns, capacity, regulation, repair, and pattern reading.
 - Formal framework name stays `The Emotional Gradient Blueprint`, with Spanish
   descriptive copy around it.
 - Central map display name uses `El Gradiente del Sistema Nervioso`.
-- Engine names stay in English: `TEG-Blue Engine`, `Deep Engine`, and
-  `Visible Engine`.
-- `Formation / Formación` is shown as a paired term until Anna reviews whether
-  the Engine provenance term should stay English-only.
-- `Actual Conditions` is rendered as `condiciones reales`.
-- `state-shaped perception` should render as `percepción modulada por el
-  estado`.
-- `emotional-pattern legibility` is rendered as `legibilidad de patrones
-  emocionales`, with body copy also using the verb frame `hacer visibles`.
+- Engine names stay in English when they appear elsewhere: `TEG-Blue Engine`,
+  `Deep Engine`, and `Visible Engine`. They are parked from the simple glossary
+  for now.
+- `Formation / Formación` remains an open decision for Engine/provenance copy,
+  but is parked from the simple glossary.
+- `Actual Conditions` can render as `condiciones reales` in technical or method
+  copy, but is parked from the simple glossary.
+- `state-shaped perception` is parked from the first glossary slice. When used
+  in methodology or article context, it should render as `percepción modulada
+  por el estado`.
+- `emotional-pattern legibility` can render as `legibilidad de patrones
+  emocionales`, with body copy also using the verb frame `hacer visibles`, but
+  the simple glossary currently uses `patrones emocionales`.
 - `claim status` should be handled as `alcance de la afirmación` or
   `tipo de afirmación`, depending on sentence context.

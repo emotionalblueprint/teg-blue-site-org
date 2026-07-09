@@ -64,10 +64,12 @@ Progress:
 
 - `/es/glossary` drafted for review, with Spanish metadata and Spanish
   glossary body copy.
+- `/es/foundations` drafted for review, with Spanish metadata, local Spanish
+  JSON-LD, localized state labels, and Spanish review-status copy.
 - Shared header/footer copy now has a Spanish path, but untranslated Spanish
   nav targets intentionally fall back to the approved English live routes.
-- `/es/glossary` is not in `LIVE_PATHS` or sitemap, so it remains unpublished
-  outside localhost development review.
+- `/es/glossary` and `/es/foundations` are not in `LIVE_PATHS` or sitemap, so
+  they remain unpublished outside localhost development review.
 
 ## Shared Surfaces In The First Slice
 
@@ -137,24 +139,43 @@ AI-readable guide is intentionally added.
 ## Glossary Decisions To Use Now
 
 Use `teg-blue-vault/_plans/spanish-glossary-decisions-org.md` before translating
-page copy. The `/es/glossary` pass has locked the first set of defaults:
+page copy. The `/es/glossary` pass is now intentionally simplified as a
+first-reader orientation page. Keep the visible glossary short, safe, and easy
+to enter.
+
+Current visible glossary defaults:
 
 - `The Emotional Gradient Blueprint`
 - `The Nervous System Gradient`
+- `emotional patterns` / `patrones emocionales`
+- `nervous-system pattern` / `patrón del sistema nervioso`
+- `capacity` / `capacidad`
+- `pattern reading` / `lectura de patrones`
+- `regulation` / `regulación`
+- `repair` / `reparación`
+
+Keep available for other `.org` pages, but do not elevate into the simple
+glossary unless Anna asks for a more technical reference:
+
 - `emotional-pattern legibility`
 - `science-grounded` / `research-grounded`
 - `source trace` / `source-traced`
 - `claim status`
-- `pattern reading`
-- `state-shaped perception`
 - `whole-person verdict`
 - `TEG-Blue Engine`, `Deep Engine`, `Visible Engine`
 - `Actual Conditions`
 - `capacity exceeded`
+- `Formation`
+
+Parked from the first glossary slice:
+
+- `state-shaped perception` / `percepción modulada por el estado`: keep the
+  translation decision available for methodology or article-level explanation,
+  but do not elevate it as a public glossary term until the surrounding
+  state-shaped perception work is revised.
 
 Terms still open for real UI/map review:
 
-- `Formation`
 - `shutdown`
 - `strategic management`
 - `power mobilisation`
@@ -168,7 +189,7 @@ consistent.
 
 1. Core names, glossary, and public map:
    - `/glossary` (`/es/glossary` drafted for review)
-   - `/foundations`
+   - `/foundations` (`/es/foundations` drafted for review)
    - `/`
    - `src/lib/gradient-data.js`
    - `src/data/deep-engine-formations.js`

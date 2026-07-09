@@ -7,135 +7,83 @@ import ResearcherHero from "@/src/components/ResearcherHero";
 
 const FAQ_ITEMS = [
   {
-    question: "¿Para qué sirve el glosario de TEG-Blue?",
-    answer: "El glosario define los términos públicos aprobados para TEG-Blue, The Emotional Gradient Blueprint y el Gradiente del Sistema Nervioso.",
+    question: "¿Para qué sirve este glosario?",
+    answer: "Este glosario reúne unas pocas palabras compartidas para orientarse en TEG-Blue sin convertirlas en etiquetas para personas.",
   },
   {
-    question: "¿Cómo deben usarse estos términos?",
-    answer: "Úsalos para aclarar patrones observables, impacto, capacidad y respuesta sin diagnosticar a personas ni afirmar certeza sobre su estado interno.",
+    question: "¿Cómo conviene leerlo?",
+    answer: "Como una ayuda para entender el mapa y hablar de patrones con más cuidado. No es una herramienta de diagnóstico ni una forma de decidir quién es alguien.",
   },
 ];
 
 const TERMS = [
   {
     term: "TEG-Blue",
-    definition: "El nombre público del proyecto The Emotional Gradient Blueprint.",
-    note: "Úsalo para nombrar el marco, su ecosistema y las herramientas que nacen de él.",
+    definition: "El nombre corto del proyecto.",
+    note: "Cuando hablamos de TEG-Blue, hablamos del marco, el mapa y las herramientas que ayudan a leer patrones emocionales con más claridad.",
     color: SPECTRUM.azure,
   },
   {
     term: "The Emotional Gradient Blueprint",
-    definition: "Un marco visual educativo, informado por investigación, para leer cómo se forman y cambian los patrones emocionales, corporales, relacionales y de reparación.",
-    note: "Es el nombre fundacional y la puerta de entrada actual de .org. Puede ir acompañado de una explicación descriptiva, pero el nombre formal se mantiene.",
+    definition: "El nombre completo del marco.",
+    note: "Es una forma visual y educativa de explorar cómo los patrones emocionales, corporales y relacionales pueden formarse, cambiar y repararse.",
     color: SPECTRUM.azure,
   },
   {
     term: "El Gradiente del Sistema Nervioso",
-    definition: "El mapa público central dentro de TEG-Blue: una forma visual de ver cómo los patrones emocionales, corporales y relacionales se mueven entre seguridad, amenaza, control, colapso, regulación y reparación.",
-    note: "Mantén el mapa en el centro, pero no lo conviertas en toda la identidad del sitio.",
+    definition: "El mapa central de TEG-Blue.",
+    note: "Ayuda a ver cómo una persona o una relación puede moverse entre más seguridad, más protección, más control, colapso, regulación y reparación.",
     color: SPECTRUM.blue,
   },
   {
-    term: "TEG-Blue Engine",
-    definition: "El sistema interno que ayuda a construir herramientas manteniendo conectadas las fuentes, la lógica del mapa y la lectura práctica de patrones.",
-    note: "El Engine no es una herramienta pública de diagnóstico, inferencia de IA ni una fuente bruta para copiar en páginas públicas.",
-    color: SPECTRUM.blue,
-  },
-  {
-    term: "Deep Engine",
-    definition: "La capa interna que guarda la trazabilidad del mapa: fuentes, estados, formaciones, organización aguda y crónica, elementos del sistema y líneas de investigación.",
-    note: "Úsalo como lenguaje interno o de procedencia, salvo cuando una página pública explique explícitamente los límites del ecosistema.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    term: "Visible Engine",
-    definition: "La versión compacta del mapa que organiza la lectura pública en cuatro modos: Connection, Protection, Control y Domination.",
-    note: "Sirve para construir herramientas y orientar con rapidez. La trazabilidad completa sigue perteneciendo al Deep Engine.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    term: "Legibilidad de patrones emocionales",
-    definition: "La capacidad de ver y hablar de patrones emocionales como información corporal, relacional y contextual.",
-    note: "Es el marco de entrada público para .org. En prosa, a veces funciona mejor decir que el trabajo hace visibles los patrones.",
+    term: "Patrones emocionales",
+    definition: "Formas repetidas en que sentimos, reaccionamos, nos protegemos o intentamos reparar.",
+    note: "Un patrón no es una identidad fija. Es algo que puede observarse con cuidado y cambiar con las condiciones adecuadas.",
     color: SPECTRUM.cobalt,
   },
   {
     term: "Patrón del sistema nervioso",
-    definition: "Una forma repetida en que el cuerpo se organiza bajo presión, y que puede moldear percepción, emoción, activación corporal, conducta, relación y capacidad de reparación.",
-    note: "Úsalo como lenguaje de patrones, no como diagnóstico ni tipo de persona.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    term: "Formation / Formación",
-    definition: "Una columna del Deep Engine o una posición de estado dentro del Gradiente.",
-    note: "Una Formation no es un tipo de persona, un diagnóstico ni una categoría moral.",
+    definition: "Una forma en que el cuerpo se organiza bajo presión o seguridad.",
+    note: "Puede influir en lo que sentimos, percibimos, hacemos y podemos reparar. No describe el valor de una persona.",
     color: SPECTRUM.indigo,
   },
   {
-    term: "Condiciones reales",
-    definition: "El campo inicial que el sistema lee: qué está ocurriendo, qué ha cambiado y si hay seguridad, amenaza o capacidad desbordada.",
-    note: "Mantén las condiciones reales separadas del estado del sistema nervioso que se organiza alrededor de ellas.",
-    color: SPECTRUM.indigo,
-  },
-  {
-    term: "Estado transitorio",
-    definition: "Una configuración fluida del sistema nervioso que puede cambiar cuando las condiciones se actualizan y la persona recupera capacidad suficiente.",
-    note: "Úsalo para nombrar movimiento de estado, no identidad fija.",
+    term: "Capacidad",
+    definition: "La energía y flexibilidad disponibles para sentir, pensar, escuchar, responder o reparar.",
+    note: "Cuando la capacidad baja, una respuesta puede volverse más estrecha o protectora. Eso ayuda a entender el patrón sin justificar el daño.",
     color: SPECTRUM.azure,
   },
   {
-    term: "Patrón crónico",
-    definition: "Una organización sostenida, repetida o difícil de abandonar que sigue moldeando percepción, acceso, respuesta y reparación a lo largo del tiempo.",
-    note: "Úsalo para patrones en el tiempo, no como tipología pública ni veredicto sobre una persona.",
-    color: SPECTRUM.slate,
-  },
-  {
-    term: "Percepción modulada por el estado",
-    definition: "La idea de que los estados del sistema nervioso no solo cambian lo que una persona siente; también pueden cambiar lo que se siente verdadero, sobre todo cuando todavía no hay práctica de escuchar las señales corporales y emocionales del momento.",
-    note: "Una sensación es real como experiencia, pero puede no contener todo el hecho de la situación. La práctica empieza por notar qué se siente, qué emoción está presente y qué datos faltan antes de tomarlo como realidad completa.",
+    term: "Lectura de patrones",
+    definition: "Una forma de observar qué se repite, qué impacto tiene y qué respuesta podría cuidar mejor la situación.",
+    note: "La lectura de patrones no intenta adivinar motivos ni diagnosticar estados internos.",
     color: SPECTRUM.indigo,
   },
   {
     term: "Regulación",
-    definition: "El término público más claro para procesos corporales y relacionales que ayudan a un sistema a volver hacia más capacidad, flexibilidad y reparación.",
-    note: "Úsalo en lenguaje compacto, de primera pantalla y de páginas generales.",
+    definition: "Procesos que ayudan al cuerpo a volver hacia más capacidad, flexibilidad y presencia.",
+    note: "Puede incluir recursos corporales, relación, tiempo, límites, descanso o apoyo.",
     color: SPECTRUM.azure,
   },
   {
     term: "Reparación",
-    definition: "El retorno a realidad compartida, responsabilidad, cuidado, límite cuando haga falta y cambio de patrón después de una ruptura o daño.",
-    note: "La reparación no es solo una disculpa.",
+    definition: "El trabajo de volver a la realidad compartida después de una ruptura, un error o un daño.",
+    note: "Puede incluir responsabilidad, cuidado, límites y un cambio real del patrón. No es solo pedir perdón.",
     color: SPECTRUM.blue,
-  },
-  {
-    term: "Mecanismo e impacto",
-    definition: "La distinción entre cómo se organiza un patrón y qué efecto o daño causa.",
-    note: "El mecanismo explica el patrón; no borra el impacto.",
-    color: SPECTRUM.indigo,
-  },
-  {
-    term: "Calma y seguridad",
-    definition: "Una regla de cuidado: una presentación calmada no demuestra seguridad, y el malestar visible no demuestra peligro.",
-    note: "El control puede presentarse con compostura mientras su impacto aparece en otro lugar.",
-    color: SPECTRUM.slate,
   },
 ];
 
 export const metadata = {
   title: "Glosario",
-  description: "Términos públicos aprobados para TEG-Blue, The Emotional Gradient Blueprint y el Gradiente del Sistema Nervioso.",
+  description: "Una guía breve y sencilla de palabras clave para orientarse en TEG-Blue y el Gradiente del Sistema Nervioso.",
   keywords: [
     "glosario TEG-Blue",
     "The Emotional Gradient Blueprint",
     "Gradiente del Sistema Nervioso",
-    "TEG-Blue Engine",
-    "Deep Engine",
-    "Visible Engine",
-    "Formation",
-    "condiciones reales",
-    "capacidad desbordada",
-    "legibilidad de patrones emocionales",
-    "percepción modulada por el estado",
+    "patrones emocionales",
+    "patrones del sistema nervioso",
+    "capacidad",
+    "lectura de patrones",
     "reparación",
     "regulación",
   ],
@@ -149,7 +97,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Glosario - TEG-Blue",
-    description: "Términos públicos actuales para TEG-Blue.",
+    description: "Palabras clave para orientarse en TEG-Blue.",
     url: "https://teg-blue.org/es/glossary",
     siteName: "TEG-Blue",
     type: "article",
@@ -159,7 +107,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Glosario - TEG-Blue",
-    description: "Términos públicos actuales para TEG-Blue.",
+    description: "Palabras clave para orientarse en TEG-Blue.",
   },
 };
 
@@ -235,8 +183,8 @@ export default function SpanishGlossaryPage() {
           <ResearcherHero
             badge="GLOSARIO"
             title="Glosario"
-            subtitle="Terminología pública actual"
-            description="Términos públicos para TEG-Blue, el Blueprint, el mapa central, los límites del Engine y los compromisos éticos para leer patrones sin diagnosticar personas."
+            subtitle="Palabras clave para orientarse"
+            description="Una guía breve para entender el lenguaje básico de TEG-Blue, el Blueprint y el Gradiente del Sistema Nervioso sin convertir los patrones en etiquetas para personas."
           />
         }
       >
@@ -258,11 +206,11 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Terminología</div>
-      <h2 style={sectionHeadingStyle}>Un vocabulario compartido para el Blueprint, su mapa central y los límites del Engine.</h2>
+      <h2 style={sectionHeadingStyle}>Un vocabulario simple para entrar en TEG-Blue con cuidado.</h2>
       <p style={leadStyle}>
-        Estos términos nombran el lenguaje público de TEG-Blue: el marco, el mapa central y los patrones que el
-        mapa ayuda a ver y discutir. Buscan claridad, no diagnóstico; lectura de patrones, no certeza sobre
-        motivos; orientación, no categorías morales fijas.
+        Este glosario reúne las palabras que más ayudan al principio. La intención es orientar, no diagnosticar;
+        nombrar patrones sin reducir a nadie a una etiqueta; y dejar espacio para contexto, impacto, límites y
+        reparación.
       </p>
     </section>
   );
@@ -271,8 +219,8 @@ function OverviewSection() {
 function TermsSection() {
   return (
     <section id="terms" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.cobalt)}>Términos públicos aprobados</div>
-      <h2 style={sectionHeadingStyle}>Terminología actual para páginas generales.</h2>
+      <div style={labelStyle(SPECTRUM.cobalt)}>Palabras básicas</div>
+      <h2 style={sectionHeadingStyle}>Lo mínimo para leer el mapa sin perderse.</h2>
       <div style={gridStyle}>
         {TERMS.map((item) => (
           <TermCard key={item.term} item={item} />
@@ -286,7 +234,7 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Dónde seguir</div>
-      <h2 style={sectionHeadingStyle}>Usa este glosario junto con las páginas de ética y lectura de patrones.</h2>
+      <h2 style={sectionHeadingStyle}>Cuando quieras más contexto, sigue por estas páginas.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>

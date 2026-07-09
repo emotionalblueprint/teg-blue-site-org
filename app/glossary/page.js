@@ -8,134 +8,83 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const FAQ_ITEMS = [
   {
-    question: "What is the TEG-Blue Glossary for?",
-    answer: "The glossary defines approved public terms for TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient.",
+    question: "What is this glossary for?",
+    answer: "This glossary gathers a few shared words for finding your way around TEG-Blue without turning them into labels for people.",
   },
   {
-    question: "How should these terms be used?",
-    answer: "Use terms to clarify observable patterns, impact, capacity, and response without diagnosing people or claiming certainty about inner state.",
+    question: "How should it be read?",
+    answer: "As a simple orientation aid for understanding the map and talking about patterns with more care. It is not a diagnostic tool or a way to decide who someone is.",
   },
 ];
 
 const TERMS = [
   {
     term: "TEG-Blue",
-    definition: "The project name for The Emotional Gradient Blueprint.",
-    note: "Use as the public name of the framework and ecosystem.",
+    definition: "The short name of the project.",
+    note: "When we talk about TEG-Blue, we mean the framework, the map, and the tools that help emotional patterns become easier to see.",
     color: SPECTRUM.azure,
   },
   {
     term: "The Emotional Gradient Blueprint",
-    definition: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
-    note: "This is the foundational name and current .org doorway.",
+    definition: "The full name of the framework.",
+    note: "It is a visual educational way to explore how emotional, bodily, and relational patterns can form, change, and repair.",
     color: SPECTRUM.azure,
   },
   {
     term: "The Nervous System Gradient",
-    definition: "The current central public map inside TEG-Blue: a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.",
-    note: "Keep the map central, but do not make it the whole site identity.",
+    definition: "The central map inside TEG-Blue.",
+    note: "It helps show how a person or relationship may move between more safety, more protection, more control, shutdown, regulation, and repair.",
     color: SPECTRUM.blue,
   },
   {
-    term: "TEG-Blue Engine",
-    definition: "The internal tool-building system that keeps source-tracing logic and practical tool-compression logic connected.",
-    note: "The Engine is not a public diagnostic system, AI inference system, or raw public copy source.",
-    color: SPECTRUM.blue,
-  },
-  {
-    term: "Deep Engine",
-    definition: "The source-tracing layer behind the public map: states, Formations, acute and chronic organization, element ownership, and research-theory trace.",
-    note: "Use as internal/provenance language unless a public page is explicitly explaining the ecosystem boundary.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    term: "Visible Engine",
-    definition: "The practical 4-mode compression used for tool-building and fast orientation.",
-    note: "Its modes are Connection, Protection, Control, and Domination; the compression stays traceable back to the Deep Engine.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    term: "Emotional-pattern legibility",
-    definition: "The ability to see and discuss emotional patterns as structured biological and relational information.",
-    note: "This is the public-entry frame for .org.",
+    term: "Emotional patterns",
+    definition: "Repeated ways we feel, react, protect ourselves, or try to repair.",
+    note: "A pattern is not a fixed identity. It is something that can be noticed carefully and can change when conditions change.",
     color: SPECTRUM.cobalt,
   },
   {
     term: "Nervous-system pattern",
-    definition: "A pattern of whole-organism organization that may shape perception, emotion, body activation, behaviour, relationship, and repair capacity.",
-    note: "Use for pattern language, not diagnosis.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    term: "Formation",
-    definition: "A Deep Engine column or state coordinate across the Gradient.",
-    note: "A Formation is not a person type, diagnosis, or moral category.",
+    definition: "A way the body organizes under pressure or safety.",
+    note: "It can influence what we feel, perceive, do, and can repair. It does not describe a person's worth.",
     color: SPECTRUM.indigo,
   },
   {
-    term: "Actual Conditions",
-    definition: "The starting field the system is reading: what is happening, what has changed, and whether safety, threat, or capacity exceeded is in play.",
-    note: "Keep actual conditions distinct from the nervous-system state that organizes around them.",
-    color: SPECTRUM.indigo,
-  },
-  {
-    term: "Acute state",
-    definition: "A fluid nervous-system configuration that can move when conditions update and enough capacity returns.",
-    note: "Use for passing state movement, not fixed identity.",
+    term: "Capacity",
+    definition: "The available energy and flexibility to feel, think, listen, respond, or repair.",
+    note: "When capacity drops, a response may become narrower or more protective. That can help explain the pattern without excusing harm.",
     color: SPECTRUM.azure,
   },
   {
-    term: "Chronic pattern",
-    definition: "A held, repeated, or difficult-to-leave organization that keeps shaping perception, access, response, and repair over time.",
-    note: "Use for pattern-over-time language, not a public typology or person verdict.",
-    color: SPECTRUM.slate,
-  },
-  {
-    term: "State-shaped perception",
-    definition: "The idea that nervous-system states do not only change what a person feels; they can also change what feels true, especially when there is not yet practice listening to body signals and emotions in the moment.",
-    note: "A feeling is real as experience, but it may not contain the full fact of the situation. The practice begins by noticing what is felt, what emotion is present, and what information is missing before treating the feeling as complete reality.",
+    term: "Pattern reading",
+    definition: "A way to notice what repeats, what impact it has, and what response may care for the situation better.",
+    note: "Pattern reading does not try to guess motives or diagnose inner states.",
     color: SPECTRUM.indigo,
   },
   {
     term: "Regulation",
-    definition: "The clearer public term for body-level and relational processes that help a system return toward enough capacity, flexibility, and repair.",
-    note: "Use regulation in compact, first-screen, and general-page language.",
+    definition: "Processes that help the body return toward more capacity, flexibility, and presence.",
+    note: "This may include body resources, relationship, time, boundaries, rest, or support.",
     color: SPECTRUM.azure,
   },
   {
     term: "Repair",
-    definition: "The return of shared reality, responsibility, care, boundary where needed, and changed pattern after rupture or harm.",
-    note: "Repair is not apology alone.",
+    definition: "The work of returning to shared reality after rupture, mistake, or harm.",
+    note: "It may include responsibility, care, boundaries, and a real change in the pattern. It is not apology alone.",
     color: SPECTRUM.blue,
-  },
-  {
-    term: "Mechanism and impact",
-    definition: "The distinction between how a pattern is organized and what effect or harm it caused.",
-    note: "Mechanism explains the pattern; it does not erase impact.",
-    color: SPECTRUM.indigo,
-  },
-  {
-    term: "Calm and safety",
-    definition: "A guardrail that calm presentation is not proof of safety, and visible distress is not proof of danger.",
-    note: "Control can look composed while its impact appears elsewhere.",
-    color: SPECTRUM.slate,
   },
 ];
 
 export const metadata = {
   title: "Glossary",
-  description: "Approved public terms for TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient.",
+  description: "A short, simple guide to key words for finding your way around TEG-Blue and The Nervous System Gradient.",
   keywords: [
     "TEG-Blue glossary",
     "The Emotional Gradient Blueprint",
     "Nervous System Gradient",
-    "TEG-Blue Engine",
-    "Deep Engine",
-    "Visible Engine",
-    "Formation",
-    "Actual Conditions",
-    "emotional-pattern legibility",
-    "state-shaped perception",
+    "emotional patterns",
+    "nervous system patterns",
+    "capacity",
+    "pattern reading",
     "repair",
     "regulation",
   ],
@@ -144,7 +93,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Glossary - TEG-Blue",
-    description: "Current public terms for TEG-Blue.",
+    description: "Key words for finding your way around TEG-Blue.",
     url: "https://teg-blue.org/glossary",
     siteName: "TEG-Blue",
     type: "article",
@@ -152,7 +101,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Glossary - TEG-Blue",
-    description: "Current public terms for TEG-Blue.",
+    description: "Key words for finding your way around TEG-Blue.",
   },
 };
 
@@ -179,8 +128,8 @@ export default function GlossaryPage() {
           <ResearcherHero
             badge="GLOSSARY"
             title="Glossary"
-            subtitle="Approved public terminology"
-            description="Public terms for TEG-Blue, the Blueprint, the central map, the Engine boundary, and the ethical commitments around pattern reading."
+            subtitle="Key words for orientation"
+            description="A short guide to the basic language of TEG-Blue, the Blueprint, and The Nervous System Gradient without turning patterns into labels for people."
           />
         }
       >
@@ -229,11 +178,11 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Terminology</div>
-      <h2 style={sectionHeadingStyle}>A shared vocabulary for the Blueprint, its central map, and the Engine boundary.</h2>
+      <h2 style={sectionHeadingStyle}>A simple vocabulary for entering TEG-Blue with care.</h2>
       <p style={leadStyle}>
-        These terms name the public language of TEG-Blue: the framework, the central map, and the patterns the
-        map makes easier to discuss. They are meant for clarity, not diagnosis, motive claims, or fixed moral
-        categories.
+        This glossary gathers the words that help most at the beginning. The aim is orientation, not diagnosis;
+        naming patterns without reducing anyone to a label; and leaving room for context, impact, boundaries, and
+        repair.
       </p>
     </section>
   );
@@ -242,8 +191,8 @@ function OverviewSection() {
 function TermsSection() {
   return (
     <section id="terms" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.cobalt)}>Approved public terms</div>
-      <h2 style={sectionHeadingStyle}>Current terminology for general pages.</h2>
+      <div style={labelStyle(SPECTRUM.cobalt)}>Basic words</div>
+      <h2 style={sectionHeadingStyle}>The minimum needed to read the map without getting lost.</h2>
       <div style={gridStyle}>
         {TERMS.map((item) => (
           <TermCard key={item.term} item={item} />
@@ -257,7 +206,7 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
-      <h2 style={sectionHeadingStyle}>Use the glossary with the ethics and pattern-reading pages.</h2>
+      <h2 style={sectionHeadingStyle}>When you want more context, continue with these pages.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>

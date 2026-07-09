@@ -37,7 +37,7 @@ export const HEADER_COPY = {
       {
         label: "Glossary",
         href: "/glossary",
-        description: "Current public terms for the Blueprint and the central map.",
+        description: "Key words for finding your way around the map.",
       },
       {
         label: "Collaborate",
@@ -84,7 +84,7 @@ export const HEADER_COPY = {
       {
         label: "Glosario",
         href: "/glossary",
-        description: "Términos públicos actuales para el Blueprint y el mapa central.",
+        description: "Palabras clave para orientarse en el mapa.",
       },
       {
         label: "Colaborar",
@@ -107,7 +107,7 @@ export const FOOTER_COPY = {
       { label: "Zenodo", href: "https://zenodo.org/communities/teg-blue" },
       { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162" },
     ],
-    licenseText: " · Attribution required · Tools, marks, code, and Engine logic excluded",
+    licenseText: " · Attribution required · Does not include tools, marks, code, or internal logic",
   },
   es: {
     ariaLabel: "Pie de página",
@@ -120,7 +120,7 @@ export const FOOTER_COPY = {
       { label: "Zenodo", href: "https://zenodo.org/communities/teg-blue" },
       { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162" },
     ],
-    licenseText: " · Atribución requerida · Herramientas, marcas, código y lógica del Engine excluidos",
+    licenseText: " · Atribución requerida · No incluye herramientas, marcas, código ni lógica interna",
   },
 };
 
