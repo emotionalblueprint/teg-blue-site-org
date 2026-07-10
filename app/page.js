@@ -11,9 +11,9 @@ const HOME_HEADING = "The Nervous System Gradient";
 const MAP_SUBTITLE =
   "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
 const DESCRIPTION =
-  "The current public center of TEG-Blue: a research-grounded map of how safety and threat reshape perception, emotion, body activation, behaviour, relationship patterns, and repair.";
+  "The current public center of TEG-Blue: a research-grounded map of how emotion can make body-state change visible across safety, threat, protection, shutdown, regulation, and repair.";
 const BASE_URL = "https://teg-blue.org";
-const DATE_MODIFIED = "2026-07-08";
+const DATE_MODIFIED = "2026-07-10";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
 const LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";
@@ -40,7 +40,10 @@ export const metadata = {
     "TEG-Blue",
     "The Emotional Gradient Blueprint",
     "Nervous System Gradient",
+    "emotions as information",
+    "body state",
     "emotional-pattern legibility",
+    "emotional access",
     "nervous-system patterns",
     "state-shaped perception",
     "emotional regulation",
@@ -337,21 +340,21 @@ function Ld({ data }) {
 
 const patternRecognitionMoves = [
   {
-    label: "Detects",
-    title: "Safety, threat, and rest",
-    body: "The body is continually reading conditions: is this safe, is there pressure, can I stay connected, can I rest?",
+    label: "Body state",
+    title: "What the body is doing",
+    body: "The body is continually reading conditions: can I connect, protect, act, rest, or repair?",
     color: SPECTRUM.azure,
   },
   {
-    label: "Shows",
-    title: "What becomes available",
-    body: "State changes what can be perceived, felt, considered, expressed, interrupted, repaired, or protected.",
+    label: "Emotion",
+    title: "What the feeling is carrying",
+    body: "Emotion can carry signals about safety, threat, need, boundary, impact, connection, or repair.",
     color: SPECTRUM.indigo,
   },
   {
-    label: "Chronic",
-    title: "What repeats over time",
-    body: "When threat or pressure lasts, a passing response can become a recurring pattern. Sustained threat can become the filter through which the system reads the world, shaping perception, relationships, and choices.",
+    label: "Reality",
+    title: "What can be held together",
+    body: "State can change access to body information, evidence, context, another person's reality, impact, and repair.",
     color: ACCENT.orange,
   },
 ];
@@ -464,7 +467,7 @@ function WhatGradientIsCard() {
           }}
         >
           <div>
-            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Pattern recognition</p>
+            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Emotion as information</p>
             <h2
               className="home-definition-title"
               id="what-gradient-is-heading"
@@ -477,20 +480,20 @@ function WhatGradientIsCard() {
                 lineHeight: 1.16,
               }}
             >
-              A continuous range of nervous-system organisation.
+              A map for the shifts we feel before we fully understand them.
             </h2>
             <div style={{ display: "grid", gap: 10, margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
               <p style={{ margin: 0 }}>
-                The gradient is the range the nervous system moves through as the body reads safety, threat, and whether
-                rest is possible.
+                The Gradient follows the range the nervous system moves through as the body reads safety, pressure,
+                threat, and whether rest or repair is possible.
               </p>
               <p style={{ margin: 0 }}>
-                When working well, it can mobilise for danger, return toward safety after danger has passed, and settle
-                into baseline when rest becomes possible.
+                Emotions are one way that movement becomes visible: tension, openness, urgency, shame, anger, care,
+                numbness, or the need to repair.
               </p>
               <p style={{ margin: 0 }}>
-                Wherever it lands, the whole organism shifts with it: body, mind, emotion, behaviour, perception, and the
-                capacity to repair.
+                A feeling can be real and important without being the whole fact. The map helps separate body signal,
+                interpretation, impact, and response.
               </p>
             </div>
           </div>
@@ -664,18 +667,18 @@ export default function Home() {
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              The current public center of TEG-Blue is a research-grounded map of how safety and threat reshape
-              perception, emotion, body activation, behaviour, relationship patterns, and repair.
+              Something changes in us before we fully understand why. The body tightens or opens, reaches or withdraws,
+              protects, controls, freezes, or repairs. Emotion is one way that shift becomes visible.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
               We do not stay the same in every situation: open and trusting one moment, guarded or controlling the
               next. These shifts are not random. They are state changes in the nervous system.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              Established research appears here as{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>grounding for specific mechanisms</strong>: source
-              traces, not a claim that the whole framework has clinical validation. The map helps make pattern movement
-              visible without turning a moment, behaviour, or state into a whole-person verdict.
+              TEG-Blue treats emotions and nervous-system states as{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>structured biological and relational information</strong>:
+              real signals about state, need, boundary, impact, and repair, not automatic facts. When we stop listening
+              to what the body is reporting, we do not become more rational; we become less informed.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
@@ -718,8 +721,8 @@ export default function Home() {
               Move through the nervous-system Gradient.
             </h2>
             <p style={{ margin: "10px 0 0", maxWidth: 760, color: TEXT.secondary, fontSize: 15.5, lineHeight: 1.7 }}>
-              Use the map to see how safety, threat, chronic pressure, and shutdown change what becomes available:
-              perception, emotion, empathy, repair, and the capacity to stay connected.
+              Use the map to see how a shift in state changes what becomes available: body information, perception,
+              emotion, empathy, repair, and the capacity to stay connected.
             </p>
           </div>
           <EmotionalGradient />
@@ -733,14 +736,18 @@ export default function Home() {
               From state shifts to relationship patterns
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The Gradient is useful at the scale where people meet: one nervous system, one interaction, and the patterns that repeat between people. A state shift changes perception, tempo, emotion, empathy, and repair; when the same shifts repeat, they can become familiar relational patterns. That helps explain how distance, harm, protection, or repair form while keeping impact, accountability, and boundaries in view.
+              The Gradient is useful at the scale where people meet: one body reading conditions, one interaction, and
+              the patterns that repeat between people. Emotion may be the first signal that state has shifted. When the
+              same shifts repeat, they can become familiar relational patterns. That helps explain how distance, harm,
+              protection, control, or repair form while keeping impact, accountability, and boundaries in view.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
+                ["Emotion as information", "feelings can signal body state, need, boundary, impact, or repair without becoming automatic fact."],
                 ["Why care is not always enough", "under threat, empathy and repair can narrow even when care is present."],
                 ["How rupture repeats", "the same state pattern can return as distance, defensiveness, withdrawal, or pressure for certainty."],
                 ["How protection turns into control", "repeated self-protection can become managing, testing, pursuing, avoiding, or pushing back."],
-                ["Language for shifts as they happen", "recognised as state changes without turning one moment into a whole-person verdict."],
+                ["Language for shifts as they happen", "recognised through emotion and body state without turning one moment into a whole-person verdict."],
                 ["A route back to connection", "repair begins with the state the system is actually in, and with enough safety for impact and empathy to land."],
               ].map(([head, body]) => (
                 <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
