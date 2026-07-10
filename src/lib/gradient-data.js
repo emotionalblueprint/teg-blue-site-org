@@ -73,6 +73,159 @@ const perceptionDescriptions = Object.fromEntries(
   ])
 )
 
+const readoutScienceGrounding = {
+  perception: {
+    baseline: {
+      a: 'Research on attention, interoception, and cognitive load grounds this: low threat load leaves body, context, people, and options in view.',
+      c: 'Research on allostatic load and chronic stress grounds this: a raised activation floor can make perception thinner even at rest.',
+    },
+    connection: {
+      a: 'Research on social perception, attachment, and co-regulation grounds this: safety with others keeps face, tone, timing, context, and shared meaning readable.',
+      c: 'Research on attachment and social threat grounds this: contact can be scanned for loss or mismatch even when connection is present.',
+    },
+    calibration: {
+      a: 'Research on safety appraisal and attachment grounds this: small shifts in tone, timing, distance, or attention become more salient.',
+      c: 'Research on uncertainty and rejection sensitivity grounds this: ambiguous social cues can stay foregrounded after the moment has moved on.',
+    },
+    protection: {
+      a: 'Research on threat attention and cue utilization grounds this: danger narrows perception toward boundary, risk, escape, or defence.',
+      c: 'Research on chronic stress and threat bias grounds this: neutral or close contact can be read through a protective filter.',
+    },
+    strategic: {
+      a: 'Research on anticipatory stress and executive control grounds this: perception tracks variables that help predict, manage, or contain threat.',
+      c: 'Research on perseverative cognition and allostatic load grounds this: the field can stay organized around control even during quiet moments.',
+    },
+    domination: {
+      a: 'Research on defensive survival and anger action grounds this: imminent threat can narrow perception to force, obstacle, and outcome.',
+      c: 'Research on aggression, dominance, and threat grounds this: power cues can stay central while impact and context fall out of view.',
+    },
+    shutdown: {
+      a: 'Research on the defense cascade and dissociation grounds this: overwhelmed systems can reduce perception, contact, and usable context.',
+      c: 'Research on hypoarousal and trauma grounds this: perception can remain dim, distant, or hard to sequence after repeated overwhelm.',
+    },
+  },
+  time: {
+    baseline: {
+      a: 'Research on homeostasis, HRV, and attention grounds this: low pressure supports unhurried sequencing across past, present, and future.',
+      c: 'Research on allostatic load grounds this: pressure can remain at rest when the body has not fully returned to baseline.',
+    },
+    connection: {
+      a: 'Research on social baseline and positive affect grounds this: safe contact can make time feel open enough for continuity.',
+      c: 'Research on attachment threat grounds this: connection can carry hurry when the body is preparing for possible loss.',
+    },
+    calibration: {
+      a: 'Research on uncertainty and error monitoring grounds this: tempo quickens when the system checks what changed.',
+      c: 'Research on perseverative cognition and attachment grounds this: unresolved rupture can keep time looping around the same question.',
+    },
+    protection: {
+      a: 'Research on stress physiology and time perception grounds this: immediate threat compresses time into urgency.',
+      c: 'Research on chronic stress and anticipatory anxiety grounds this: urgency can feel constant before the moment declares itself.',
+    },
+    strategic: {
+      a: 'Research on worry and anticipatory stress grounds this: time moves ahead to the next possible threat.',
+      c: 'Research on perseverative cognition grounds this: the next threat is rehearsed in advance.',
+    },
+    domination: {
+      a: 'Research on survival defence and action readiness grounds this: time can collapse to the forced outcome.',
+      c: 'Research on threat control and dominance grounds this: future, repair, and consequence can shrink behind maintaining control.',
+    },
+    shutdown: {
+      a: 'Research on the defense cascade and dissociation grounds this: time can freeze, fragment, or drop out under overwhelm.',
+      c: 'Research on hypoarousal and trauma grounds this: time can stay collapsed until protected re-engagement becomes possible.',
+    },
+  },
+  emotions: {
+    baseline: {
+      a: 'Research on affective science and interoception grounds this: quiet emotion can mean low signal demand, not absence of feeling capacity.',
+      c: 'Research on chronic stress grounds this: unfinished signals can keep tension, irritability, or need running under the surface.',
+    },
+    connection: {
+      a: 'Research on attachment, social safety, and positive emotion grounds this: warmth, trust, care, and approach can move under safe contact.',
+      c: 'Research on attachment threat grounds this: warmth and vigilance can mix when bonding is present but not fully settled.',
+    },
+    calibration: {
+      a: 'Research on appraisal and attachment grounds this: unease, shame, sadness, or fear can signal rupture and repair.',
+      c: 'Research on rejection sensitivity and perseverative cognition grounds this: grief and watchfulness can fuse around an unresolved safety question.',
+    },
+    protection: {
+      a: 'Research on threat appraisal and defensive response grounds this: fear, anxiety, and vigilance can act as boundary and escape signals.',
+      c: 'Research on chronic threat and attachment grounds this: protective emotion can stay tangled with the wish to connect.',
+    },
+    strategic: {
+      a: 'Research on emotion regulation and stress grounds this: feeling becomes a signal to monitor and contain.',
+      c: 'Research on suppression and chronic stress grounds this: original hurt or fear can become harder to find inside managed pressure.',
+    },
+    domination: {
+      a: 'Research on anger and action readiness grounds this: rage can mobilise high output toward an obstacle or threat.',
+      c: 'Research on aggression, threat, and moral disengagement grounds this: force can start to feel justified while impact is reduced.',
+    },
+    shutdown: {
+      a: 'Research on the defense cascade and trauma grounds this: signals can flatten or go numb when capacity is exceeded.',
+      c: 'Research on hypoarousal and dissociation grounds this: signals may remain difficult to feel, name, or use for repair.',
+    },
+  },
+  empathy: {
+    baseline: {
+      a: 'Research on social cognition grounds this: empathy can stay available when threat is low and no urgent signal is demanding the field.',
+      c: 'Research on chronic stress and interoception grounds this: care can stay lightly guarded when the system never fully rests.',
+    },
+    connection: {
+      a: 'Research on attachment, mentalizing, and social baseline grounds this: another person can stay real, separate, and emotionally readable.',
+      c: 'Research on attachment threat grounds this: closeness may be sought while separateness and impact are harder to hold.',
+    },
+    calibration: {
+      a: 'Research on mentalizing and attachment grounds this: another person is read closely while repair still feels reachable.',
+      c: 'Research on rejection sensitivity and social threat grounds this: the other can become a constant safety signal to monitor.',
+    },
+    protection: {
+      a: 'Research on threat and social perception grounds this: another person is read first for risk, not felt through open resonance.',
+      c: 'Research on trauma and threat bias grounds this: closeness can activate protection before empathy has room to register.',
+    },
+    strategic: {
+      a: 'Research on theory of mind and executive control grounds this: the other is modeled to predict and manage outcomes.',
+      c: "Research on chronic threat grounds this: another person's separate reality can be filtered through control and cost management.",
+    },
+    domination: {
+      a: 'Research on survival defence and aggression grounds this: impact on others can drop offline during maximum mobilisation.',
+      c: 'Research on dominance, aggression, and social cognition grounds this: empathy may stay unavailable while power and outcome remain primary.',
+    },
+    shutdown: {
+      a: 'Research on hypoarousal, dissociation, and trauma grounds this: relational contact and resonance can withdraw under overwhelm.',
+      c: 'Research on dissociation and trauma grounds this: contact may stay distant until safety and activation return gradually.',
+    },
+  },
+  repair: {
+    baseline: {
+      a: 'Research on recovery and regulation grounds this: repair capacity is available when the body has no active rupture to manage.',
+      c: 'Research on allostatic load grounds this: relief may lower pressure without fully restoring repair, sleep, digestion, or reset.',
+    },
+    connection: {
+      a: 'Research on rupture repair, attachment, and co-regulation grounds this: impact, empathy, and reconnection can happen in safety.',
+      c: 'Research on attachment and co-regulation grounds this: closeness may soothe without completing internal safety or repair.',
+    },
+    calibration: {
+      a: 'Research on rupture repair and responsiveness grounds this: clarification, reassurance, or boundary update can restore safety.',
+      c: 'Research on attachment and uncertainty grounds this: repair attempts can be repeatedly tested when the rupture question stays active.',
+    },
+    protection: {
+      a: 'Research on defensive response grounds this: boundary and safety come before repair when threat is still active.',
+      c: 'Research on chronic threat and trauma grounds this: repair can feel unsafe until protection stands down enough to receive impact.',
+    },
+    strategic: {
+      a: 'Research on control, shame, and stress grounds this: admitting impact can feel destabilizing while management is primary.',
+      c: 'Research on perseverative cognition and chronic stress grounds this: repair may be delayed by prediction, containment, and control.',
+    },
+    domination: {
+      a: 'Research on defensive survival and aggression grounds this: repair is out of reach while force output is still organizing action.',
+      c: 'Research on coercive control and moral disengagement grounds this: impact can be denied or justified when power remains the route.',
+    },
+    shutdown: {
+      a: 'Research on trauma and re-engagement grounds this: repair has to wait until contact, orientation, and capacity return.',
+      c: 'Research on hypoarousal and trauma grounds this: protected re-engagement must come before accountability or reconnection can land.',
+    },
+  },
+}
+
 // ─── AUTONOMIC BRANCH (recognisable grounding) ───────────────────────────────
 
 export const autonomic = {
@@ -89,7 +242,7 @@ export const autonomic = {
 
 export const cards = [
   { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Biology, physiology, autonomic neuroscience, and stress physiology', source: 'M2 + GC' },
-  { id: 'perception', label: 'Perception', description: 'Perception starts with field width: in safety, the field is wide enough to include body, context, and others; under threat, it narrows toward risk, control, force, or shutdown.', descriptions: perceptionDescriptions, science: 'Cognitive science, appraisal research, prediction, and state-shaped perception', source: 'M2-C13' },
+  { id: 'perception', label: 'Perception', description: 'Perception starts with field width: in safety, the field is wide enough to include body, context, and others; under threat, it narrows toward risk, control, force, or shutdown.', descriptions: perceptionDescriptions, science: 'Cognitive science, appraisal research, prediction, and state-shaped perception', scienceGrounding: readoutScienceGrounding.perception, source: 'M2-C13' },
   { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive science, attention, cognitive load, and state-shaped reasoning', source: 'M2-C14 · CLS' },
   { id: 'selfAwareness', label: 'Awareness', description: 'The state changes how much awareness is available: in safety, body signals and context can be felt and named; under threat, awareness narrows, backgrounds cost, or goes numb.', science: 'Interoception, body awareness, attention, and contemplative research', source: 'M2-C15' },
   {
@@ -102,6 +255,7 @@ export const cards = [
       },
     },
     science: 'Relational neuroscience, attachment research, social perception, and care capacity',
+    scienceGrounding: readoutScienceGrounding.empathy,
     source: 'M2-C16 · AEC',
   },
   { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress physiology, energy mobilisation, chronic load, regulation, and return', source: 'M2-C17 · ESS' },
@@ -140,6 +294,7 @@ export const cards = [
       },
     },
     science: 'Cognitive science, stress physiology, time perception, urgency, and hyperarousal',
+    scienceGrounding: readoutScienceGrounding.time,
     source: 'M2-C18 + derived rush',
   },
   {
@@ -177,6 +332,7 @@ export const cards = [
       },
     },
     science: 'Affective neuroscience and emotion science',
+    scienceGrounding: readoutScienceGrounding.emotions,
     source: 'M1',
   },
   { id: 'behaviour', label: 'Behaviour / response', description: 'The state narrows or opens the action menu: in safety, the system can approach, cooperate, and repair; under threat, it moves toward defending, managing, overpowering, or withdrawing.', science: 'Action readiness, defensive response, trauma research, and behavioural adaptation', source: 'M3' },
@@ -193,6 +349,7 @@ export const cards = [
       },
     },
     science: 'Trauma research, attachment research, completion, reconnection, and repair',
+    scienceGrounding: readoutScienceGrounding.repair,
     source: 'M3 · ESC',
   },
   { id: 'rush', label: 'Rush (tempo)', description: "The state sets the system's pace: safety can move at the speed of the situation; threat accelerates into urgency or pressured management; shutdown slows time toward freeze.", science: 'Stress physiology, cognitive science, time perception, urgency, and hyperarousal', source: 'derived · M2 + C18' },
@@ -348,7 +505,7 @@ export const faq = [
   {
     question: 'What research is TEG-Blue grounded in?',
     answer:
-      'The architecture leads; established research provides grounding for specific parts of the map. These are source traces and orientation points, not a claim that the whole system has clinical validation.',
+      'TEG-Blue organizes established research into a visual framework. Sources ground specific parts of the map; no single source is treated as proof of the whole architecture.',
   },
   {
     question: 'Can TEG-Blue diagnose people?',

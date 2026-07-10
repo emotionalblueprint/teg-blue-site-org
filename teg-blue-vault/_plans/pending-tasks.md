@@ -1,6 +1,22 @@
 # Pending Tasks
 
-Last updated: 2026-07-09.
+Last updated: 2026-07-10.
+
+## Homepage Gradient Science Grounding
+
+- Homepage now introduces the Nervous System Gradient as state changes in the
+  nervous system, then frames TEG-Blue as an integrative visual map of
+  established research.
+- Next review should check whether the hero intro feels human enough while still
+  clear that TEG-Blue is organizing existing science rather than claiming a
+  fully validated clinical model.
+- Decide where the detailed DOI/source links in
+  `_drafts/gradient-modes-science-grounding.md` should become public:
+  `/scientific-foundations`, a future mode-grounding page, or a claim-audit
+  bibliography.
+- Review the interactive Gradient "Grounding science" readouts after more mode
+  testing; current copy is mode-specific and field-level, without direct DOI
+  links inside the home panel.
 
 ## Spanish Translation For teg-blue.org
 

@@ -11,7 +11,7 @@ const HOME_HEADING = "The Nervous System Gradient";
 const MAP_SUBTITLE =
   "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
 const DESCRIPTION =
-  "The current public center of TEG-Blue: a research-grounded map of how emotion can make body-state change visible across safety, threat, protection, shutdown, regulation, and repair.";
+  "The current public center of TEG-Blue: an integrative visual map that organizes established research on emotion, body state, relationship, protection, shutdown, regulation, and repair.";
 const BASE_URL = "https://teg-blue.org";
 const DATE_MODIFIED = "2026-07-10";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
@@ -340,6 +340,12 @@ function Ld({ data }) {
 
 const patternRecognitionMoves = [
   {
+    label: "Mode",
+    title: "How the pattern presents",
+    body: "Each mode names a recognizable configuration of state, perception, emotion, body activation, action, and repair capacity.",
+    color: SPECTRUM.blue,
+  },
+  {
     label: "Body state",
     title: "What the body is doing",
     body: "The body is continually reading conditions: can I connect, protect, act, rest, or repair?",
@@ -352,16 +358,25 @@ const patternRecognitionMoves = [
     color: SPECTRUM.indigo,
   },
   {
-    label: "Reality",
-    title: "What feels true",
-    body: "State changes what feels real. It can hold body signals, facts, and context together, or make one signal feel like the whole situation.",
-    color: ACCENT.green,
-  },
-  {
     label: "Chronic",
     title: "What repeats",
     body: "When threat or pressure lasts, a response can become a pattern. The system may read the world through what it has learned to expect.",
     color: ACCENT.orange,
+  },
+];
+
+const modeGroundingPrinciples = [
+  {
+    label: "Mode",
+    body: "how the pattern feels or presents in lived experience.",
+  },
+  {
+    label: "State",
+    body: "the nervous-system organization shaping perception, body activation, and response.",
+  },
+  {
+    label: "Configuration",
+    body: "the expression of mode and state across acute shifts and chronic patterns.",
   },
 ];
 
@@ -473,7 +488,7 @@ function WhatGradientIsCard() {
           }}
         >
           <div>
-            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Emotion and nervous system states as information</p>
+            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Emotion and nervous-system state</p>
             <h2
               className="home-definition-title"
               id="what-gradient-is-heading"
@@ -486,20 +501,19 @@ function WhatGradientIsCard() {
                 lineHeight: 1.16,
               }}
             >
-              A map for the shifts we feel before we fully understand them.
+              What changes when state changes.
             </h2>
             <div style={{ display: "grid", gap: 10, margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
               <p style={{ margin: 0 }}>
-                The Gradient follows the range the nervous system moves through as the body reads safety, pressure,
-                threat, and whether rest or repair is possible.
+                The Gradient organizes established research into a visual map of body state, emotion, perception,
+                relationship, action, and repair.
               </p>
               <p style={{ margin: 0 }}>
-                Emotions are one way that movement becomes visible: tension, openness, urgency, shame, anger, care,
-                numbness, or the need to repair.
+                Each mode names a recurring configuration: what the body is doing, what the person can notice, what the
+                emotion is carrying, and what response is available.
               </p>
               <p style={{ margin: 0 }}>
-                A feeling can be real and important without being the whole fact. The map helps separate body signal,
-                interpretation, impact, and response.
+                It is a pattern-reading tool, not a diagnosis or a claim of certainty about motive.
               </p>
             </div>
           </div>
@@ -673,19 +687,18 @@ export default function Home() {
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              Something changes in us before we fully understand why. The body tightens or opens, reaches or withdraws,
-              protects, controls, freezes, or repairs. Emotion is one way that shift becomes visible.
-            </p>
-            <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
               We do not stay the same in every situation: open and trusting one moment, guarded or controlling the
               next. These shifts are not random. They are state changes in the nervous system.
             </p>
+            <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
+              Emotion, body state, perception, relationship, protection, shutdown, and repair are often studied in
+              separate fields. The Nervous System Gradient brings those pieces into one visual map.
+            </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              TEG-Blue treats emotions and nervous-system states as{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>structured biological and relational information</strong>:
-              when we listen more closely to the body and understand what emotions and nervous-system states are
-              reporting, we have more information for relating, discerning, setting boundaries, and repairing. When we
-              stop listening to what the body is reporting, we do not become more rational; we become less informed.
+              Its contribution is integrative: it organizes established research into a pattern language for seeing how
+              state changes can shape what feels real, what becomes possible, and what repair requires. The aim is to
+              make patterns easier to read without turning them into diagnosis, motive certainty, or a verdict about a
+              person.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
@@ -802,12 +815,36 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Research</p>
             <h2 id="science-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
-              Research grounding and source traces
+              Research grounding and mode-by-mode source traces
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The architecture leads; established research provides grounding for specific parts of the map. These are
-              source traces and orientation points, not a claim that the whole system has clinical validation.
+              TEG-Blue organizes existing research into a visual framework. Established science grounds specific parts
+              of the map; no single source is treated as proof of the whole architecture.
             </p>
+            <p style={{ margin: "0 0 20px", maxWidth: 760, fontSize: 14.5, lineHeight: 1.7, color: TEXT.secondary }}>
+              Each mode is read across recurring grounded dimensions: autonomic state, perception, cognition, body
+              activation, emotion, relational access, action, chronic organization, and repair.
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                gap: "14px 22px",
+                marginBottom: 24,
+                padding: "16px 0",
+                borderTop: `1px solid ${BORDER.default}`,
+                borderBottom: `1px solid ${BORDER.default}`,
+              }}
+            >
+              {modeGroundingPrinciples.map((item) => (
+                <div key={item.label}>
+                  <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 10, fontWeight: 650, textTransform: "uppercase", letterSpacing: 0, color: TONE.spectrum.azure }}>
+                    {item.label}
+                  </p>
+                  <p style={{ margin: "5px 0 0", fontSize: 13.5, lineHeight: 1.6, color: TEXT.secondary }}>{item.body}</p>
+                </div>
+              ))}
+            </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
               {scienceGrounding.map((s) => (
                 <div key={s.part}>
@@ -818,6 +855,14 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <p style={{ margin: "22px 0 0", maxWidth: 760, fontSize: 14, lineHeight: 1.65, color: TEXT.secondary }}>
+              Detailed source links belong in the scientific grounding layer, where each link can stay attached to a
+              specific claim, support area, and boundary.{" "}
+              <a href="/scientific-foundations" style={{ color: TONE.spectrum.indigo, textDecoration: "none", fontWeight: 600 }}>
+                Read the public claim discipline
+              </a>
+              .
+            </p>
           </div>
         </section>
 

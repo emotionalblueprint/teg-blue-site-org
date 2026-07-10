@@ -196,6 +196,9 @@ export default function EmotionalGradient() {
     selectedReadoutCard.descriptions?.[position.id]?.[readingChronic ? 'c' : 'a'] ||
     selectedReadoutText ||
     selectedReadoutCard.description
+  const selectedScienceText =
+    selectedReadoutCard.scienceGrounding?.[position.id]?.[readingChronic ? 'c' : 'a'] ||
+    selectedReadoutCard.science
 
   const renderRow = (id) => {
     const card = cardById[id]
@@ -452,7 +455,7 @@ export default function EmotionalGradient() {
               </div>
               <div className="readout-detail-block">
                 <span className="readout-detail-kicker">Grounding science</span>
-                <p>{selectedReadoutCard.science}</p>
+                <p>{selectedScienceText}</p>
               </div>
             </div>
           </div>
