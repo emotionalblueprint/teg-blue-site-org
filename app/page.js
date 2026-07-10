@@ -683,8 +683,9 @@ export default function Home() {
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
               TEG-Blue treats emotions and nervous-system states as{" "}
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>structured biological and relational information</strong>:
-              real signals about state, need, boundary, impact, and repair, not automatic facts. When we stop listening
-              to what the body is reporting, we do not become more rational; we become less informed.
+              when we listen more closely to the body and understand what emotions and nervous-system states are
+              reporting, we have more information for relating, discerning, setting boundaries, and repairing. When we
+              stop listening to what the body is reporting, we do not become more rational; we become less informed.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
