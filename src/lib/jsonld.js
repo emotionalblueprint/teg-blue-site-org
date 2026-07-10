@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+  description: "A map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.",
   inLanguage: LANGUAGE,
 };
 
@@ -147,14 +147,14 @@ export function generateFrameworkJsonLd(node) {
     name: node.title,
     headline: node.title,
     author: AUTHOR,
-    url: `${RESEARCH_BASE}/frameworks/${node.slug}`,
+    url: `${RESEARCH_BASE}/foundations`,
     description: node.summary,
     isPartOf: TEG_BLUE_PROJECT,
     keywords: node.tags,
     inLanguage: LANGUAGE,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${RESEARCH_BASE}/frameworks/${node.slug}`,
+      "@id": `${RESEARCH_BASE}/foundations`,
     },
   };
 }
@@ -289,7 +289,7 @@ export function generateSystemOverviewJsonLd() {
     "@type": "WebPage",
     name: "TEG-Blue Overview",
     url: `${BASE_URL}/foundations`,
-    description: "Public overview of TEG-Blue: The Emotional Gradient Blueprint and its central public map, The Nervous System Gradient.",
+    description: "What TEG-Blue is, what The Nervous System Gradient maps, how to read patterns, and what the map does not claim.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
@@ -300,13 +300,13 @@ export function generateSystemOverviewJsonLd() {
     mainEntity: {
       "@type": "ItemList",
       name: "TEG-Blue Overview",
-      description: "The overview introduces The Emotional Gradient Blueprint, responsible pattern reading, research foundations, and applied tools.",
+      description: "The overview introduces The Emotional Gradient Blueprint, responsible pattern reading, research grounding, scope, and use limits.",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "The Emotional Gradient Blueprint",
-          description: "A science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+          description: "A map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.",
           url: BASE_URL
         },
         {
@@ -333,9 +333,9 @@ export function generateSystemOverviewJsonLd() {
         {
           "@type": "ListItem",
           position: 5,
-          name: "Applied Tools",
-          description: "Interactive tools on teg-blue.com translate the map into practical public use.",
-          url: "https://teg-blue.com/"
+          name: "Public Terms",
+          description: "The glossary defines current public terms for TEG-Blue and The Nervous System Gradient.",
+          url: `${BASE_URL}/glossary`
         }
       ]
     },
@@ -360,20 +360,21 @@ export function generateScientificFoundationsJsonLd() {
     "@type": "WebPage",
     name: "Scientific Grounding - TEG-Blue",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "Research areas that support specific parts of the TEG-Blue map while each field remains itself.",
+    description: "How research areas support specific parts of the TEG-Blue map without proving the whole Gradient as a clinical model.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
-      name: "Research Areas Connected to the TEG-Blue Map",
-      description: "Research areas that ground emotional, bodily, nervous-system, and relational pattern reading without claiming that any one field contains the whole framework.",
+      name: "Research dimensions connected to the TEG-Blue map",
+      description: "Concrete dimensions that can be grounded with research while keeping each source within its own limit.",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Biology and Physiology", description: "Survival, adaptation, arousal, shutdown, regulation, and repair capacity" },
-        { "@type": "ListItem", position: 2, name: "Autonomic Neuroscience and Stress Physiology", description: "State organization, mobilisation, inhibition, chronic load, and return" },
-        { "@type": "ListItem", position: 3, name: "Affective Neuroscience and Emotion Science", description: "Emotional salience, body signals, and action readiness" },
-        { "@type": "ListItem", position: 4, name: "Psychology", description: "Attention, appraisal, interpretation, learning, behaviour, and relational dynamics" },
-        { "@type": "ListItem", position: 5, name: "Attachment, Trauma, and Developmental Research", description: "Relational safety, rupture, protection, repair, expectation, and repeated patterns" },
-        { "@type": "ListItem", position: 6, name: "Social, Cultural, and Contemplative Fields", description: "Context, social patterning, attention, awareness, and later-scale questions" }
+        { "@type": "ListItem", position: 1, name: "Autonomic state", description: "Rest, social engagement, mobilisation, inhibition, shutdown, and return" },
+        { "@type": "ListItem", position: 2, name: "Safety and threat read", description: "How a body may read a situation as safe, uncertain, threatening, blocked, or too much" },
+        { "@type": "ListItem", position: 3, name: "Perception and attention", description: "Why some cues become louder and other cues drop away under stress or uncertainty" },
+        { "@type": "ListItem", position: 4, name: "Cognition under load", description: "Planning, working memory, reflection, inhibition, and threat prediction" },
+        { "@type": "ListItem", position: 5, name: "Emotion and action readiness", description: "Emotion as embodied information about need, threat, boundary, value, action, and repair" },
+        { "@type": "ListItem", position: 6, name: "Relation and repair", description: "When another person can stay real and separate, and when repair can or cannot land" },
+        { "@type": "ListItem", position: 7, name: "Chronic organization", description: "How repeated stress, learning, and prediction can turn a response into a lasting pattern" }
       ]
     },
     keywords: [
@@ -490,12 +491,12 @@ function getNodeUrl(node) {
   const paths = {
     publication: `/scientific-foundations`,
     "working-paper": `/scientific-foundations`,
-    theory: `/research/foundations?theory=${node.slug}`,
-    glossary: `/research/glossary?term=${node.slug}`,
-    framework: `/research/frameworks/${node.slug}`,
+    theory: `/foundations`,
+    glossary: `/glossary?term=${node.slug}`,
+    framework: `/foundations`,
     methodology: `/foundations`,
   };
-  return `${BASE_URL}${paths[node.type] || `/research/${node.slug}`}`;
+  return `${BASE_URL}${paths[node.type] || `/foundations`}`;
 }
 
 // ─── FAQ SCHEMA ───────────────────────────────────────

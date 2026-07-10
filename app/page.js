@@ -6,12 +6,12 @@ import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "TEG-Blue — The Nervous System Gradient";
+const TITLE = "TEG-Blue — The Emotional Gradient Blueprint";
 const HOME_HEADING = "The Nervous System Gradient";
 const MAP_SUBTITLE =
   "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.";
 const DESCRIPTION =
-  "The current public center of TEG-Blue: an integrative visual map that organizes established research on emotion, body state, relationship, protection, shutdown, regulation, and repair.";
+  "TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.";
 const BASE_URL = "https://teg-blue.org";
 const DATE_MODIFIED = "2026-07-10";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
@@ -124,7 +124,7 @@ const gradientJsonLd = {
     "@type": "ResearchProject",
     "@id": `${BASE_URL}/#research-project`,
     name: "TEG-Blue: The Emotional Gradient Blueprint",
-    description: "A visual framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+    description: "A map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.",
     url: BASE_URL,
     creator: { "@id": SCHEMA_IDS.person },
     publisher: { "@id": SCHEMA_IDS.organization },

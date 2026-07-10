@@ -1,41 +1,42 @@
 import { isLive } from "@/src/lib/live-paths";
 
 const BASE_URL = "https://teg-blue.org";
+const LAST_MODIFIED = "2026-07-10";
 
 const STATIC_PAGES = [
   {
     path: "/",
-    lastModified: "2026-07-04",
+    lastModified: LAST_MODIFIED,
     changeFrequency: "weekly",
     priority: 1,
   },
   {
     path: "/about",
-    lastModified: "2026-07-04",
+    lastModified: LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.7,
   },
   {
     path: "/foundations",
-    lastModified: "2026-07-04",
+    lastModified: LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.9,
   },
   {
     path: "/scientific-foundations",
-    lastModified: "2026-07-04",
+    lastModified: LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.8,
   },
   {
     path: "/ethics",
-    lastModified: "2026-07-04",
+    lastModified: LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.75,
   },
   {
     path: "/glossary",
-    lastModified: "2026-07-04",
+    lastModified: LAST_MODIFIED,
     changeFrequency: "monthly",
     priority: 0.65,
   },

@@ -16,7 +16,7 @@ export default async function Image() {
     OgImage({
       badge: 'TEG-Blue · The Emotional Gradient Blueprint',
       title: 'The Emotional Gradient Blueprint',
-      subtitle: 'A science-grounded visual educational framework for emotional-pattern legibility.',
+      subtitle: 'A research-grounded map for reading body state, emotion, relationship, and repair.',
       url: 'teg-blue.org',
       needle: 0.125,
     }),

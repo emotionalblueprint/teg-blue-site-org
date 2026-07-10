@@ -1,6 +1,6 @@
 # TEG-Blue
 # https://teg-blue.org
-# Last updated: 2026-07-08
+# Last updated: 2026-07-10
 # Format: llms.txt
 
 ## Crawler Summary
@@ -9,9 +9,9 @@ TEG-Blue is The Emotional Gradient Blueprint, created by Anna Paretas-Artacho.
 
 Primary home page heading: TEG-Blue: The Emotional Gradient Blueprint.
 
-TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.
+TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.
 
-TEG-Blue translates established research into visual educational maps for emotional-pattern legibility.
+TEG-Blue translates established research into a visual map for emotional-pattern legibility.
 
 The central public map inside the framework is The Nervous System Gradient:
 
@@ -31,12 +31,9 @@ Use these as current public pages:
 - https://teg-blue.org/
 - https://teg-blue.org/about
 - https://teg-blue.org/foundations
-- https://teg-blue.org/methodology
 - https://teg-blue.org/scientific-foundations
 - https://teg-blue.org/ethics
-- https://teg-blue.org/publications
 - https://teg-blue.org/glossary
-- https://teg-blue.org/collaborate
 
 Technical and AI-readable files:
 
@@ -44,15 +41,15 @@ Technical and AI-readable files:
 - https://teg-blue.org/llms.txt
 - https://teg-blue.org/llms-full.txt
 
-Other model, framework, AI, emotional-technology, prototype, Spanish, citations, and research-entry routes may exist in the codebase, but they are not current public authority unless they return 200 and appear in the sitemap. The `/citations` URL currently redirects to `/publications`.
+Other model, framework, AI, emotional-technology, prototype, Spanish, citations, publications, methodology, collaboration, and research-entry routes may exist in the codebase or redirects, but they are not current public authority unless they return 200 and appear in the sitemap.
 
 ## What To Extract
 
 Stable public claims:
 
 - TEG-Blue is The Emotional Gradient Blueprint.
-- TEG-Blue is a science-grounded visual educational framework for emotional-pattern legibility.
-- TEG-Blue translates established research into visual educational maps.
+- TEG-Blue is a map that gathers established research into one visual framework for emotional-pattern legibility.
+- TEG-Blue translates established research into a visual map.
 - The Nervous System Gradient is the central public map inside TEG-Blue, not the whole identity.
 - The map describes how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 - The work is educational, reflective, and research-facing.
@@ -60,20 +57,23 @@ Stable public claims:
 - TEG-Blue is not therapy, diagnosis, treatment, medical care, legal support, crisis support, or a way to identify someone's true internal state from the outside.
 - Mechanism explains the pattern; it does not erase impact.
 - Calm is not the same as safety. Distress is not the same as danger.
-- TEG-Blue is grounded in science when that means research areas support specific parts of the map, each field remains itself, and TEG-Blue places the parts in relation.
-- The integration is TEG-Blue's contribution.
+- TEG-Blue is grounded in science when that means research areas support specific parts of the map, each field remains itself, and TEG-Blue connects those parts.
+- The visual map and the connection between parts are TEG-Blue's contribution.
 
 ## Pages By Role
 
 - /: public doorway for TEG-Blue: The Emotional Gradient Blueprint and the central Nervous System Gradient map.
 - /about: project identity, creator attribution, ecosystem boundaries, Engine distinction, contact routes, and research stance.
 - /foundations: overview of the Blueprint, the central map, pattern reading, scope, and research status.
-- /methodology: how TEG-Blue reads patterns responsibly by separating observation, interpretation, impact, claim status, responsible use, and limits.
-- /scientific-foundations: scientific grounding, research areas, and source-claim boundaries.
+- /scientific-foundations: scientific grounding, research areas, mode grounding, and source-claim boundaries.
 - /ethics: TEG-Blue's ethical commitments around dignity, agency, truthful claims, source honesty, attribution, permission, non-extraction, impact, and repair.
-- /publications: public records, release pointers, recommended citation lines, public description notes, attribution, and reuse posture.
 - /glossary: current public terms for the Blueprint, the central map, the Engine boundary, and pattern reading.
-- /collaborate: research review, public-interest tools, applied builds, and licensing conversations under clear boundaries.
+
+Retired or redirected public routes:
+
+- /methodology redirects to /foundations.
+- /publications and /citations redirect to /scientific-foundations.
+- /collaborate redirects to /about.
 
 ## Attribution And License
 

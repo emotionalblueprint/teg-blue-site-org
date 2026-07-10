@@ -127,11 +127,12 @@ const SCOPE_ITEMS = [
 
 export const metadata = {
   title: "TEG-Blue Overview",
-  description: "A public overview of TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient as its central public map.",
+  description: "What TEG-Blue is, what The Nervous System Gradient maps, how to read patterns, and what the map does not claim.",
   keywords: [
     "TEG-Blue overview",
     "The Emotional Gradient Blueprint",
     "Nervous System Gradient",
+    "body state",
     "emotional patterns",
     "nervous system patterns",
     "state-shaped perception",
@@ -143,7 +144,7 @@ export const metadata = {
   },
   openGraph: {
     title: "TEG-Blue Overview",
-    description: "The Emotional Gradient Blueprint and its central public map, The Nervous System Gradient.",
+    description: "The Emotional Gradient Blueprint, its central public map, and the limits of responsible pattern reading.",
     url: "https://teg-blue.org/foundations",
     type: "article",
     siteName: "TEG-Blue",
@@ -151,7 +152,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TEG-Blue Overview",
-    description: "A public overview of The Emotional Gradient Blueprint.",
+    description: "What TEG-Blue maps, how to read patterns, and what the map does not claim.",
   },
 };
 

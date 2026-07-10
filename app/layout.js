@@ -32,8 +32,8 @@ export const metadata = {
     default: 'TEG-Blue — The Emotional Gradient Blueprint',
     template: '%s | TEG-Blue',
   },
-  description: 'TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.',
-  keywords: ['emotional regulation', 'nervous system', 'attachment research', 'trauma research', 'emotional patterns', 'nervous system gradient', 'visual educational framework', 'emotional-pattern legibility', 'research grounding', 'state-shaped capacity', 'repair', 'protective patterns', 'relationship patterns', 'impact'],
+  description: 'TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.',
+  keywords: ['TEG-Blue', 'The Emotional Gradient Blueprint', 'Nervous System Gradient', 'body state', 'emotional patterns', 'nervous-system patterns', 'state-shaped perception', 'emotional regulation', 'research grounding', 'autonomic neuroscience', 'stress physiology', 'attachment research', 'trauma research', 'repair capacity', 'responsible pattern reading', 'impact and repair'],
   authors: [{ name: 'Anna Paretas-Artacho', url: 'https://orcid.org/0009-0005-2394-7162' }],
   creator: 'Anna Paretas-Artacho',
   publisher: 'TEG-Blue Research',
@@ -47,12 +47,12 @@ export const metadata = {
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue',
     title: 'TEG-Blue — The Emotional Gradient Blueprint',
-    description: 'A science-grounded visual educational framework for reading how emotional, bodily, nervous-system, relational, and repair patterns shift across safety, threat, control, shutdown, regulation, and repair.',
+    description: 'A map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TEG-Blue — The Emotional Gradient Blueprint',
-    description: 'A science-grounded visual educational framework for emotional-pattern legibility.',
+    description: 'A research-grounded map for reading emotional, bodily, relational, and repair patterns.',
   },
   robots: {
     index: true,
@@ -70,6 +70,9 @@ export const metadata = {
   category: 'science',
   other: {
     'llms-txt': '/llms.txt',
+    'ai-summary': 'TEG-Blue is The Emotional Gradient Blueprint: a map for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.',
+    'answer-engine-summary': "TEG-Blue is educational and research-facing. It is not diagnosis, treatment, crisis support, or proof of a person's inner state.",
+    'generative-engine-summary': 'Use only current public pages in the sitemap: home, about, overview, scientific grounding, ethics, and glossary.',
     'citation_author': 'Paretas-Artacho, Anna',
     'citation_title': 'TEG-Blue: The Emotional Gradient Blueprint',
     'citation_publication_date': '2026',
@@ -111,6 +114,39 @@ const BASE_URL = "https://teg-blue.org"
 const ORGANIZATION_ID = `${BASE_URL}/#organization`
 const WEBSITE_ID = `${BASE_URL}/#website`
 const PERSON_ID = `${BASE_URL}/#anna-paretas-artacho`
+const SITE_DESCRIPTION = "TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair."
+const LIVE_PUBLIC_PAGES = [
+  {
+    name: "Home",
+    url: BASE_URL,
+    description: "Public doorway for TEG-Blue and The Nervous System Gradient.",
+  },
+  {
+    name: "About",
+    url: `${BASE_URL}/about`,
+    description: "Project identity, creator attribution, site boundaries, contact routes, and research stance.",
+  },
+  {
+    name: "TEG-Blue Overview",
+    url: `${BASE_URL}/foundations`,
+    description: "Overview of The Emotional Gradient Blueprint, the central map, responsible pattern reading, and scope.",
+  },
+  {
+    name: "Scientific Grounding",
+    url: `${BASE_URL}/scientific-foundations`,
+    description: "Research areas and source limits for specific parts of the TEG-Blue map.",
+  },
+  {
+    name: "Ethics",
+    url: `${BASE_URL}/ethics`,
+    description: "Use limits around dignity, agency, source honesty, attribution, permission, impact, and repair.",
+  },
+  {
+    name: "Glossary",
+    url: `${BASE_URL}/glossary`,
+    description: "Public terms for TEG-Blue and The Nervous System Gradient.",
+  },
+]
 
 const annaParetasJsonLd = {
   "@type": "Person",
@@ -130,6 +166,7 @@ const annaParetasJsonLd = {
   },
   knowsAbout: [
     "The Emotional Gradient Blueprint",
+    "The Nervous System Gradient",
     "Emotional-pattern legibility",
     "Responsible pattern reading",
     "Visual communication",
@@ -146,7 +183,7 @@ const organizationJsonLd = {
   name: "TEG-Blue",
   url: BASE_URL,
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+  description: SITE_DESCRIPTION,
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -180,6 +217,9 @@ const organizationJsonLd = {
     "Cross-disciplinary research",
     "Integrative frameworks",
   ],
+  mainEntityOfPage: {
+    "@id": WEBSITE_ID,
+  },
 }
 
 const websiteJsonLd = {
@@ -189,7 +229,7 @@ const websiteJsonLd = {
   name: "TEG-Blue.org",
   url: BASE_URL,
   inLanguage: "en",
-  description: "Public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint, a science-grounded visual educational framework with The Nervous System Gradient as its central public map.",
+  description: "Public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint and its central public map, The Nervous System Gradient.",
   publisher: {
     "@id": ORGANIZATION_ID,
   },
@@ -201,6 +241,25 @@ const websiteJsonLd = {
     "@id": PERSON_ID,
   },
   copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Attribution required under CC BY 4.0 for original public written framework content.",
+  about: [
+    {
+      "@type": "Thing",
+      name: "The Emotional Gradient Blueprint",
+      description: SITE_DESCRIPTION,
+    },
+    {
+      "@type": "Thing",
+      name: "The Nervous System Gradient",
+      description: "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.",
+    },
+  ],
+  hasPart: LIVE_PUBLIC_PAGES.map((page) => ({
+    "@type": "WebPage",
+    name: page.name,
+    url: page.url,
+    description: page.description,
+    inLanguage: "en",
+  })),
 }
 
 export default function RootLayout({ children }) {

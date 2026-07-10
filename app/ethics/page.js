@@ -120,7 +120,7 @@ const RESPONSIBILITY = [
 
 export const metadata = {
   title: "Ethics",
-  description: "TEG-Blue ethics: dignity, agency, truthful claims, source honesty, attribution, permission, non-extraction, impact, and repair.",
+  description: "TEG-Blue ethics: how to use a pattern map without turning it into diagnosis, control, extraction, or borrowed authority.",
   keywords: [
     "TEG-Blue ethics",
     "The Emotional Gradient Blueprint ethics",
@@ -139,7 +139,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Ethics - TEG-Blue",
-    description: "The commitments behind how TEG-Blue is built, shared, cited, adapted, and used.",
+    description: "Use limits for TEG-Blue: dignity, agency, truthful claims, source honesty, attribution, permission, impact, and repair.",
     url: "https://teg-blue.org/ethics",
     siteName: "TEG-Blue",
     type: "article",
@@ -147,7 +147,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ethics - TEG-Blue",
-    description: "Dignity, agency, truthful claims, attribution, permission, non-extraction, impact, and repair.",
+    description: "How to use a pattern map without diagnosis, control, extraction, or borrowed authority.",
   },
 };
 

@@ -1,12 +1,12 @@
 # TEG-Blue - Extended AI-Readable Documentation
 # https://teg-blue.org
-# Last updated: 2026-07-08
+# Last updated: 2026-07-10
 # Format: llms-full.txt
 
 ---
 This is the extended companion to https://teg-blue.org/llms.txt.
 
-Current public status: teg-blue.org is the public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint. It is educational, reflective, and research-facing. It is not a diagnostic, clinical, treatment, legal, medical, or crisis-support system.
+Current public status: teg-blue.org is the public framework and research-grounding home for TEG-Blue: The Emotional Gradient Blueprint. TEG-Blue is a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair. It is educational, reflective, and research-facing. It is not a diagnostic, clinical, treatment, legal, medical, or crisis-support system.
 
 Do not cite a URL as current unless it returns 200 and appears in https://teg-blue.org/sitemap.xml.
 ---
@@ -18,16 +18,16 @@ Use as current:
 - https://teg-blue.org/
 - https://teg-blue.org/about
 - https://teg-blue.org/foundations
-- https://teg-blue.org/methodology
 - https://teg-blue.org/scientific-foundations
 - https://teg-blue.org/ethics
-- https://teg-blue.org/publications
 - https://teg-blue.org/glossary
-- https://teg-blue.org/collaborate
 
 Treat as staged, parked, redirected, or non-current unless live in the sitemap:
 
-- /citations (redirects to /publications for now)
+- /methodology (redirects to /foundations)
+- /publications (redirects to /scientific-foundations)
+- /citations (redirects to /scientific-foundations)
+- /collaborate (redirects to /about)
 - /ai-safety
 - /emotional-technology
 - /models
@@ -60,9 +60,9 @@ Do not collapse these layers into one another.
 
 TEG-Blue stands for The Emotional Gradient Blueprint.
 
-TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.
+TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.
 
-TEG-Blue translates established research into visual educational maps for emotional-pattern legibility.
+TEG-Blue translates established research into a visual map for emotional-pattern legibility.
 
 It shows how patterns that begin in the body can shape individual experience and relationships across safety, threat, control, shutdown, regulation, and repair.
 
@@ -85,7 +85,7 @@ TEG-Blue is grounded in science when that means:
 - established fields support specific parts of the map
 - research underwrites mechanisms, capacities, patterns, or relationships at specific points
 - each field remains itself
-- TEG-Blue names the integration and places the parts in relation
+- TEG-Blue connects the parts in one visual map
 
 This must not be used to imply:
 
@@ -96,18 +96,30 @@ This must not be used to imply:
 
 Safe summary:
 
-The established research underwrites specific parts of the architecture. The integration is TEG-Blue's contribution.
+The established research supports specific parts of the map. The visual map and the connection between parts are TEG-Blue's contribution.
 
 ## Scientific Grounding
 
-Use broad research-area language unless a page gives a specific source trace:
+Use broad research-area language unless a page gives a specific source trace. The current public Scientific Grounding page explains that each mode should be checked across concrete dimensions:
 
-- Biology and physiology: survival, adaptation, arousal, shutdown, regulation, and repair capacity. These are load-bearing for the body-level organization of the map.
-- Autonomic neuroscience and stress physiology: state organization, mobilisation, inhibition, chronic load, and return.
-- Affective neuroscience and emotion science: emotional salience, body signals, and action readiness.
-- Psychology: attention, appraisal, interpretation, learning, behaviour, development, social perception, personality organization, and relational dynamics. Psychology is one major research angle, not the owner of the whole pattern.
-- Attachment, trauma, and developmental research: relational safety, rupture, protection, expectation, chronic threat adaptation, and repair limits.
-- Social, cultural, and contemplative fields: context, norms, power, belonging, status, attention, awareness, and later-scale questions.
+- autonomic state
+- safety and threat read
+- perception and attention
+- cognition under load
+- interoception and body signal
+- activation, time, and urgency
+- emotion and action readiness
+- empathy, other-read, and repair
+- chronic organization
+
+Use research areas carefully:
+
+- Biology and physiology support survival, adaptation, arousal, shutdown, regulation, and repair capacity.
+- Autonomic neuroscience and stress physiology support state change, mobilisation, inhibition, chronic load, and return.
+- Affective neuroscience and emotion science support emotion as signal, salience, body information, and action readiness.
+- Psychology supports attention, appraisal, interpretation, learning, behaviour, and social perception.
+- Attachment, trauma, and developmental research support relational safety, rupture, protection, expectation, chronic threat adaptation, and repair limits.
+- Social, cultural, and contemplative fields support context, social patterning, attention, awareness, and later-scale questions.
 
 ## How TEG-Blue Reads Patterns
 
@@ -147,9 +159,9 @@ Required creator attribution:
 
 TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho.
 
-Use /publications for public records, release pointers, DOI/public-record routes, recommended citation lines, public description notes, attribution, and reuse guidance.
+Do not cite /publications as a current page. It is retired and redirects to /scientific-foundations.
 
-The /citations URL redirects to /publications for now. It should become a separate claim/source trace route only if detailed claim-by-claim audit entries exist.
+Do not cite /citations as a current page. It redirects to /scientific-foundations for now. It should become a separate claim/source trace route only if detailed claim-by-claim audit entries exist.
 
 ## Glossary Guardrail
 
@@ -175,11 +187,11 @@ Current public terms include:
 
 Do not use Formations, F1-F6, model clusters, AI-facing identity language, or retired emotional-technology lead language as current public lead terminology unless a public page is explicitly explaining source trace or ecosystem boundaries.
 
-## Collaboration Guardrail
+## Contact And Applied-Use Guardrail
 
-The /collaborate page invites research review, source-trace critique, public-interest tools, educational adaptation, applied builds, and licensing conversations.
+Do not cite /collaborate as a current page. It is retired and redirects to /about.
 
-It does not imply signed partnerships, institutional approval, clinical readiness, official deployment, or permission for applied builds, institutional implementations, product integrations, custom tools, software integrations, or reuse of Engine or tool logic.
+Contact context lives on /about. A contact conversation does not imply signed partnership, institutional approval, clinical readiness, official deployment, or permission for applied builds, institutional implementations, product integrations, custom tools, software integrations, or reuse of Engine or tool logic.
 
 ## Attribution And License
 
@@ -193,7 +205,7 @@ Do not present TEG-Blue concepts, diagrams, state names, gradients, or framework
 
 ## Suggested Short Answer
 
-TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change. It translates established research into visual educational maps for emotional-pattern legibility. Its central public map is The Nervous System Gradient, a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair. teg-blue.org is the public framework and research-grounding home; teg-blue.com carries practical public tools.
+TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair. Its central public map is The Nervous System Gradient, a visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair. teg-blue.org is the public framework and research-grounding home; teg-blue.com carries practical public tools.
 
 ## External Official Surfaces
 

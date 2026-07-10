@@ -34,7 +34,7 @@ const PURPOSE_CARDS = [
   },
   {
     label: "Routes",
-    title: "Where each public surface lives",
+    title: "Where each public page fits",
     body: "teg-blue.org explains the framework, source limits, ethics, glossary, and contact routes. teg-blue.com carries practical public tools.",
     color: SPECTRUM.cobalt,
   },
@@ -98,7 +98,7 @@ const CONTACT_LINKS = [
 
 export const metadata = {
   title: "About",
-  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, site limits, and public research stance.",
+  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, public pages, contact routes, and use limits.",
   keywords: [
     "TEG-Blue",
     "The Emotional Gradient Blueprint",
@@ -114,7 +114,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About TEG-Blue",
-    description: "The project, creator, site limits, and research stance behind The Emotional Gradient Blueprint.",
+    description: "The project, creator, public pages, contact routes, and use limits behind The Emotional Gradient Blueprint.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue",
     type: "profile",
@@ -123,7 +123,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About TEG-Blue",
-    description: "The project and creator behind The Emotional Gradient Blueprint.",
+    description: "The project, creator, public pages, and use limits behind The Emotional Gradient Blueprint.",
   },
 };
 
@@ -138,7 +138,7 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="Who created TEG-Blue, what each public surface is for, where the records are, and how to contact the project."
+            description="Who created TEG-Blue, what each public page is for, how to contact the project, and what the work does not claim."
           />
         }
       >
@@ -171,7 +171,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, site limits, and public research stance.",
+            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, public pages, contact routes, and use limits.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
@@ -224,7 +224,7 @@ function OverviewSection() {
       <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
       <h2 style={sectionHeadingStyle}>TEG-Blue is The Emotional Gradient Blueprint.</h2>
       <p style={leadStyle}>
-        This page is about the project: creator, public records, site routes, contact routes, and use limits.
+        This page is about the project: creator, public pages, contact routes, and use limits.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         For the map itself, use the TEG-Blue Overview. That page explains what the framework is, what the
@@ -241,9 +241,9 @@ function PurposeSection() {
   return (
     <section id="purpose" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.cobalt)}>This page covers</div>
-      <h2 style={sectionHeadingStyle}>Use About for project identity and routes.</h2>
+      <h2 style={sectionHeadingStyle}>Use About for project identity and contact.</h2>
       <p style={leadStyle}>
-        About is the place for authorship, records, site differences, and contact. The overview page is the
+        About is the place for authorship, site differences, contact, and use limits. The overview page is the
         place for the framework and the map.
       </p>
       <div style={gridStyle}>
@@ -322,7 +322,7 @@ function ResearchStanceSection() {
 function ContactSection() {
   return (
     <section id="contact" style={{ marginBottom: 32 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Contact and records</div>
+      <div style={labelStyle(SPECTRUM.azure)}>Contact</div>
       <h2 style={sectionHeadingStyle}>Use these routes.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>

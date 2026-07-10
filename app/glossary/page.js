@@ -76,7 +76,7 @@ const TERMS = [
 
 export const metadata = {
   title: "Glossary",
-  description: "A short, simple guide to key words for finding your way around TEG-Blue and The Nervous System Gradient.",
+  description: "Simple definitions for TEG-Blue, The Emotional Gradient Blueprint, The Nervous System Gradient, state, repair, and related terms.",
   keywords: [
     "TEG-Blue glossary",
     "The Emotional Gradient Blueprint",
@@ -93,7 +93,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Glossary - TEG-Blue",
-    description: "Key words for finding your way around TEG-Blue.",
+    description: "Simple definitions for the core TEG-Blue map language.",
     url: "https://teg-blue.org/glossary",
     siteName: "TEG-Blue",
     type: "article",
@@ -101,7 +101,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Glossary - TEG-Blue",
-    description: "Key words for finding your way around TEG-Blue.",
+    description: "Simple definitions for the core TEG-Blue map language.",
   },
 };
 
