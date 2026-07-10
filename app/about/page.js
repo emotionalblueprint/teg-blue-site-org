@@ -33,9 +33,9 @@ const PURPOSE_CARDS = [
     color: SPECTRUM.azure,
   },
   {
-    label: "Routes",
-    title: "Where each public page fits",
-    body: "teg-blue.org explains the framework, source limits, ethics, glossary, and contact routes. teg-blue.com carries practical public tools.",
+    label: "Websites",
+    title: "Where to learn and where to practise",
+    body: "teg-blue.org explains the framework, evidence, ethics, and key terms. teg-blue.com offers practical tools for everyday situations.",
     color: SPECTRUM.cobalt,
   },
   {
@@ -49,22 +49,22 @@ const PURPOSE_CARDS = [
 const ECOSYSTEM_LAYERS = [
   {
     title: "Public site",
-    body: "teg-blue.org explains The Emotional Gradient Blueprint, The Nervous System Gradient, source limits, ethics, glossary terms, and contact routes.",
+    body: "teg-blue.org is the place to understand The Emotional Gradient Blueprint, explore its central map, review the research boundaries, and learn the key terms.",
     color: SPECTRUM.azure,
   },
   {
-    title: "TEG-Blue Engine",
-    body: "The Engine is the private tool-building system used to trace sources and shape structured tools for specific audiences.",
+    title: "Research and development",
+    body: "Behind the public work is an ongoing process of tracing sources, testing language, and developing tools for different audiences.",
     color: SPECTRUM.blue,
   },
   {
     title: "Practical tools",
-    body: "teg-blue.com carries public tools for reading emotional and nervous-system patterns in real situations.",
+    body: "teg-blue.com offers practical ways to explore emotional and nervous-system patterns in real situations.",
     color: SPECTRUM.cobalt,
   },
   {
-    title: "Applied builds",
-    body: "Licensed or commissioned builds may be made for a specific audience, institution, risk context, or public-interest need.",
+    title: "Work with organizations",
+    body: "TEG-Blue can also be adapted, with permission, for a specific audience, organization, risk context, or public-interest need.",
     color: SPECTRUM.indigo,
   },
 ];
@@ -98,7 +98,7 @@ const CONTACT_LINKS = [
 
 export const metadata = {
   title: "About",
-  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, public pages, contact routes, and use limits.",
+  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, purpose, public resources, contact information, and use limits.",
   keywords: [
     "TEG-Blue",
     "The Emotional Gradient Blueprint",
@@ -114,7 +114,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About TEG-Blue",
-    description: "The project, creator, public pages, contact routes, and use limits behind The Emotional Gradient Blueprint.",
+    description: "The project, creator, purpose, public resources, and use limits behind The Emotional Gradient Blueprint.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue",
     type: "profile",
@@ -138,7 +138,7 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="Who created TEG-Blue, what each public page is for, how to contact the project, and what the work does not claim."
+            description="Meet the creator of TEG-Blue, understand the project’s purpose and limits, and find the right place to explore the research or practical tools."
           />
         }
       >
@@ -171,7 +171,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, public pages, contact routes, and use limits.",
+            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, purpose, public resources, contact information, and use limits.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
@@ -224,7 +224,7 @@ function OverviewSection() {
       <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
       <h2 style={sectionHeadingStyle}>TEG-Blue is The Emotional Gradient Blueprint.</h2>
       <p style={leadStyle}>
-        This page is about the project: creator, public pages, contact routes, and use limits.
+        This page introduces the project, its creator, its public resources, how to get in touch, and the limits of the work.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         For the map itself, use the TEG-Blue Overview. That page explains what the framework is, what the
@@ -241,10 +241,10 @@ function PurposeSection() {
   return (
     <section id="purpose" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.cobalt)}>This page covers</div>
-      <h2 style={sectionHeadingStyle}>Use About for project identity and contact.</h2>
+      <h2 style={sectionHeadingStyle}>What you can find here.</h2>
       <p style={leadStyle}>
-        About is the place for authorship, site differences, contact, and use limits. The overview page is the
-        place for the framework and the map.
+        Learn who created TEG-Blue, how the two public websites differ, how to contact the project, and what the
+        framework is—and is not—designed to do.
       </p>
       <div style={gridStyle}>
         {PURPOSE_CARDS.map((card) => (
@@ -279,14 +279,14 @@ function EcosystemSection() {
   return (
     <section id="ecosystem" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Project parts</div>
-      <h2 style={sectionHeadingStyle}>The public site, tools, Engine, and licensed builds do different jobs.</h2>
+      <h2 style={sectionHeadingStyle}>From open research to practical use.</h2>
       <p style={leadStyle}>
-        TEG-Blue has connected parts, but they should not be treated as one thing. A public page, a practical
-        tool, a private source system, and a licensed build carry different claims.
+        TEG-Blue includes public explanations, practical tools, ongoing research and development, and carefully
+        scoped work with organizations. Each serves a different purpose.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        The public site is not a raw Engine export. It uses public language and keeps source support, attribution,
-        use limits, and applied tool use separate.
+        Public pages are written for readers. They explain what is supported by research, what TEG-Blue adds,
+        how the work may be used, and where its limits are.
       </p>
       <div style={gridStyle}>
         {ECOSYSTEM_LAYERS.map((item) => (
@@ -323,7 +323,7 @@ function ContactSection() {
   return (
     <section id="contact" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Contact</div>
-      <h2 style={sectionHeadingStyle}>Use these routes.</h2>
+      <h2 style={sectionHeadingStyle}>Contact and follow the work.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>

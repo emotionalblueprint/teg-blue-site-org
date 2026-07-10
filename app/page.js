@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACCENT, MAIN_ORG, TONE, contrastColor } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, TONE, contrastColor } from "@/src/styles/tokens";
 import SiteFooter from "@/src/components/SiteFooter";
 import SiteHeader from "@/src/components/SiteHeader";
 import EmotionalGradient from "@/src/components/EmotionalGradient";
@@ -200,10 +200,6 @@ const HOME_CSS = `
     font-size: 20px;
   }
 
-  .home-definition-title {
-    font-size: 28px;
-  }
-
   .home-gradient-heading {
     font-size: 34px;
   }
@@ -298,7 +294,6 @@ const HOME_CSS = `
       font-size: 18px;
     }
 
-    .home-definition-title,
     .home-section-heading {
       font-size: 26px;
     }
@@ -323,7 +318,6 @@ const HOME_CSS = `
       font-size: 17px;
     }
 
-    .home-definition-title,
     .home-section-heading {
       font-size: 24px;
     }
@@ -338,45 +332,45 @@ function Ld({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
-const patternRecognitionMoves = [
+const patternWalkthrough = [
   {
-    label: "Mode",
-    title: "How the pattern presents",
-    body: "Each mode names a recognizable configuration of state, perception, emotion, body activation, action, and repair capacity.",
-    color: SPECTRUM.blue,
-  },
-  {
-    label: "Body state",
-    title: "What the body is doing",
-    body: "The body is continually reading conditions: can I connect, protect, act, rest, or repair?",
+    label: "A · Connection",
+    title: "Contact feels safe enough",
+    body: "Tone, context, and the other person's perspective remain available. A mismatch can be discussed without immediately threatening the relationship.",
     color: SPECTRUM.azure,
   },
   {
-    label: "Emotion",
-    title: "What the feeling is carrying",
-    body: "Emotion can carry signals about safety, threat, need, boundary, impact, connection, or repair.",
-    color: SPECTRUM.indigo,
+    label: "A↔B · Safety checking",
+    title: "Uncertainty becomes louder",
+    body: "A delayed reply or change in tone draws attention. The system checks distance, timing, and signs of rupture while clarification is still possible.",
+    color: SPECTRUM.blue,
   },
   {
-    label: "Chronic",
-    title: "What repeats",
-    body: "When threat or pressure lasts, a response can become a pattern. The system may read the world through what it has learned to expect.",
-    color: ACCENT.orange,
+    label: "B · Protection",
+    title: "Threat organizes the response",
+    body: "Attention narrows. Defending, withdrawing, appeasing, pursuing, or setting distance may become more available than perspective or repair.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    label: "Return · Regulation and repair",
+    title: "More capacity becomes available",
+    body: "With enough safety, time, support, or boundary, the field can widen again. Impact can be named, perspective can return, and repair may begin.",
+    color: SPECTRUM.indigo,
   },
 ];
 
 const modeGroundingPrinciples = [
   {
     label: "Mode",
-    body: "how the pattern feels or presents in lived experience.",
+    body: "how the pattern feels and presents in lived experience.",
   },
   {
     label: "State",
-    body: "the nervous-system organization shaping perception, body activation, and response.",
+    body: "how the nervous system is organizing attention, energy, and response.",
   },
   {
     label: "Configuration",
-    body: "the expression of mode and state across acute shifts and chronic patterns.",
+    body: "how mode and state appear together, either as a short-term shift or a pattern that keeps returning.",
   },
 ];
 
@@ -423,9 +417,6 @@ const cardStyle = {
   boxShadow: `0 18px 50px ${hexToRgba(BLUE[800], 0.06)}`,
 };
 
-const gradientLinePositions = positions.filter((p) => p.id !== "shutdown");
-const shutdownPosition = positions.find((p) => p.id === "shutdown");
-
 function StateSpineStrip() {
   return (
     <div className="home-state-strip" aria-label="State spine from safety to shutdown">
@@ -460,197 +451,49 @@ function StateSpineStrip() {
   );
 }
 
-function WhatGradientIsCard() {
+function PatternWalkthrough() {
   return (
     <div
       style={{
         ...cardStyle,
-        padding: 0,
-        overflow: "hidden",
+        padding: "clamp(20px, 3vw, 30px)",
         background: homeSurface.primary,
         border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.16)}`,
       }}
     >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
-          gap: 0,
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            minHeight: "100%",
-            flexDirection: "column",
-            gap: 28,
-            padding: "clamp(20px, 3vw, 30px)",
-          }}
-        >
-          <div>
-            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Emotion and nervous-system state</p>
-            <h2
-              className="home-definition-title"
-              id="what-gradient-is-heading"
-              style={{
-                margin: 0,
-                maxWidth: 620,
-                color: homeSurface.text,
-                fontWeight: 700,
-                letterSpacing: 0,
-                lineHeight: 1.16,
-              }}
-            >
-              What changes when state changes.
-            </h2>
-            <div style={{ display: "grid", gap: 10, margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
-              <p style={{ margin: 0 }}>
-                The Gradient organizes established research into a visual map of body state, emotion, perception,
-                relationship, action, and repair.
-              </p>
-              <p style={{ margin: 0 }}>
-                Each mode names a recurring configuration: what the body is doing, what the person can notice, what the
-                emotion is carrying, and what response is available.
-              </p>
-              <p style={{ margin: 0 }}>
-                It is a pattern-reading tool, not a diagnosis or a claim of certainty about motive.
-              </p>
-            </div>
-          </div>
-
-          <div aria-hidden="true">
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${gradientLinePositions.length}, minmax(0, 1fr)) 22px`,
-                gap: 5,
-                alignItems: "center",
-              }}
-            >
-              {gradientLinePositions.map((p) => (
-                <span
-                  key={p.id}
-                  style={{
-                    height: 5,
-                    borderRadius: 999,
-                    background: p.acuteColor,
-                    opacity: 0.9,
-                    boxShadow: `0 0 0 1px ${hexToRgba(BLUE[700], 0.16)}`,
-                  }}
-                />
-              ))}
-              {shutdownPosition && (
-                <span
-                  style={{
-                    height: 5,
-                    borderRadius: 999,
-                    background: shutdownPosition.acuteColor,
-                    outline: `1px dashed ${hexToRgba(BLUE[700], 0.32)}`,
-                    outlineOffset: 3,
-                  }}
-                />
-              )}
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${gradientLinePositions.length}, minmax(0, 1fr)) 22px`,
-                gap: 5,
-                marginTop: 8,
-                color: homeSurface.muted,
-                fontFamily: FONT.diagram,
-                fontSize: 10,
-                lineHeight: 1.25,
-                letterSpacing: 0,
-                textTransform: "uppercase",
-              }}
-            >
-              <span
-                style={{
-                  position: "relative",
-                  gridColumn: `1 / ${gradientLinePositions.length + 1}`,
-                  minHeight: 24,
-                }}
-              >
-                <span
-                  style={{
-                    position: "absolute",
-                    left: "41.666%",
-                    display: "inline-grid",
-                    gridTemplateColumns: "auto auto auto",
-                    gap: 6,
-                    alignItems: "center",
-                    transform: "translateX(-50%)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  <span>Safety</span>
-                  <span style={{ color: homeSurface.secondary }}>|</span>
-                  <span>Threat</span>
-                </span>
-              </span>
-              <span style={{ justifySelf: "center" }}>Off</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "grid",
-            alignContent: "start",
-            borderLeft: `1px solid ${homeSurface.border}`,
-          }}
-        >
-          {patternRecognitionMoves.map((item, index) => (
-            <div
-              key={item.label}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "92px minmax(0, 1fr)",
-                gap: 16,
-                alignItems: "start",
-                paddingBlockStart: index === 0 ? "clamp(24px, 3vw, 34px)" : "clamp(14px, 1.8vw, 18px)",
-                paddingBlockEnd: "clamp(14px, 1.8vw, 18px)",
-                paddingInline: "clamp(18px, 2.7vw, 24px)",
-                borderTop: index === 0 ? 0 : `1px solid ${homeSurface.border}`,
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  color: contrastColor(item.color),
-                  fontFamily: FONT.diagram,
-                  fontSize: 10,
-                  fontWeight: 650,
-                  letterSpacing: 0,
-                  lineHeight: 1.2,
-                  textTransform: "uppercase",
-                }}
-              >
-                <span
-                  style={{
-                    width: 7,
-                    height: 7,
-                    flex: "0 0 auto",
-                    borderRadius: "50%",
-                    background: item.color,
-                    boxShadow: `0 0 0 4px color-mix(in srgb, ${item.color} 14%, transparent)`,
-                  }}
-                  aria-hidden="true"
-                />
-                {item.label}
-              </span>
-              <div>
-                <p style={{ margin: 0, color: homeSurface.text, fontSize: 14.5, fontWeight: 650, lineHeight: 1.35 }}>{item.title}</p>
-                <p style={{ margin: "5px 0 0", color: homeSurface.secondary, fontSize: 13.5, lineHeight: 1.6 }}>{item.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>One possible shift</p>
+      <h2 id="walkthrough-heading" className="home-section-heading" style={{ margin: "0 0 8px", color: homeSurface.text }}>
+        From connection to protection—and back toward repair
+      </h2>
+      <p style={{ margin: 0, maxWidth: 780, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
+        Imagine a change in tone during an important conversation. The event stays the same, but what the body
+        expects—and therefore what the person can notice and do—may shift.
+      </p>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))", gap: 10, marginTop: 22 }}>
+        {patternWalkthrough.map((item) => (
+          <article
+            key={item.label}
+            style={{
+              minHeight: 210,
+              padding: 16,
+              background: `color-mix(in srgb, ${item.color} 7%, ${homeSurface.primary})`,
+              border: `1px solid ${hexToRgba(item.color, 0.18)}`,
+              borderTop: `4px solid ${item.color}`,
+              borderRadius: RADIUS.md,
+            }}
+          >
+            <p style={{ margin: 0, color: contrastColor(item.color), fontFamily: FONT.diagram, fontSize: 10, fontWeight: 700, textTransform: "uppercase" }}>
+              {item.label}
+            </p>
+            <h3 style={{ margin: "12px 0 8px", color: homeSurface.text, fontSize: 17, lineHeight: 1.3 }}>{item.title}</h3>
+            <p style={{ margin: 0, color: homeSurface.secondary, fontSize: 13.5, lineHeight: 1.65 }}>{item.body}</p>
+          </article>
+        ))}
       </div>
-
+      <p style={{ margin: "16px 0 0", maxWidth: 820, color: homeSurface.muted, fontSize: 13, lineHeight: 1.65 }}>
+        This is one possible pattern, not a universal sequence. Context, impact, repetition, power, and available
+        capacity still determine what the pattern means and what response fits.
+      </p>
     </div>
   );
 }
@@ -687,20 +530,19 @@ export default function Home() {
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              We do not stay the same in every situation: open and trusting one moment, guarded or controlling the
-              next. These shifts are not random. They are state changes in the nervous system.
+              TEG-Blue is a visual map of how nervous-system state can shape emotion, perception, relationship,
+              action, and repair.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              Emotion, body state, perception, relationship, protection, shutdown, and repair are often studied in
-              separate fields. The Nervous System Gradient brings those pieces into one visual map.
+              The Nervous System Gradient brings established research together to show how these patterns may shift
+              across safety, threat, control, shutdown, regulation, and repair.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              Its contribution is integrative: it organizes established research into a pattern language for seeing how
-              state changes can shape what feels real, what becomes possible, and what repair requires. The aim is to
-              make patterns easier to read without turning them into diagnosis, motive certainty, or a verdict about a
-              person.
+              It makes linked changes visible: what the body prepares for, what draws attention, what feels possible,
+              how another person is perceived, and whether repair can begin. It is a map for studying patterns, not a
+              diagnosis or a claim of certainty about motive.
             </p>
-            <div className="home-hero-actions" aria-label="Primary routes">
+            <div className="home-hero-actions" aria-label="Explore TEG-Blue">
               <a
                 className="home-action primary"
                 href="#gradient-map"
@@ -712,16 +554,11 @@ export default function Home() {
               >
                 Explore the map
               </a>
-              <a className="home-action" href="#science-heading">Source traces</a>
+              <a className="home-action" href="#science-heading">Research basis</a>
               <a className="home-action" href="https://teg-blue.com/">Practical tools ↗</a>
             </div>
             <StateSpineStrip />
           </div>
-        </section>
-
-        {/* What the gradient is — definitional note and Safety → threat Gradient in one instrument */}
-        <section style={{ ...sectionStyle, paddingBottom: "clamp(28px, 4vw, 44px)" }} aria-labelledby="what-gradient-is-heading">
-          <WhatGradientIsCard />
         </section>
 
         {/* Interactive instrument */}
@@ -748,6 +585,11 @@ export default function Home() {
           <EmotionalGradient />
         </section>
 
+        {/* A concrete walkthrough — the Gradient applied to one possible shift */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="walkthrough-heading">
+          <PatternWalkthrough />
+        </section>
+
         {/* What the gradient explains — the payoff, directly under the instrument */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="explains-heading">
           <div style={cardStyle}>
@@ -756,19 +598,17 @@ export default function Home() {
               From state shifts to relationship patterns
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The Gradient is useful at the scale where people meet: one body reading conditions, one interaction, and
-              the patterns that repeat between people. Emotion may be the first signal that state has shifted. When the
-              same shifts repeat, they can become familiar relational patterns. That helps explain how distance, harm,
-              protection, control, or repair form while keeping impact, accountability, and boundaries in view.
+              The Gradient connects changes that are often considered separately. It helps a reader examine what the
+              body is preparing for, how attention and emotion change, what happens between people, and what conditions
+              may allow repair—while keeping impact, accountability, and boundaries in view.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
                 ["Emotion as information", "feelings can signal body state, need, boundary, impact, or repair without becoming automatic fact."],
                 ["Why care is not always enough", "under threat, empathy and repair can narrow even when care is present."],
-                ["How rupture repeats", "the same state pattern can return as distance, defensiveness, withdrawal, or pressure for certainty."],
-                ["How protection turns into control", "repeated self-protection can become managing, testing, pursuing, avoiding, or pushing back."],
-                ["Language for shifts as they happen", "recognised through emotion and body state without turning one moment into a whole-person verdict."],
-                ["A route back to connection", "repair begins with the state the system is actually in, and with enough safety for impact and empathy to land."],
+                ["How rupture repeats", "a short-term shift can become a familiar pattern of distance, defence, withdrawal, or pressure for certainty."],
+                ["How protection can become control", "repeated protection may organize around managing, testing, pursuing, avoiding, or overriding another person's options."],
+                ["What repair requires", "repair depends on enough capacity for impact, empathy, accountability, boundary, and changed pattern to become available."],
               ].map(([head, body]) => (
                 <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: "var(--spectrum-indigo)" }} aria-hidden="true" />
@@ -780,7 +620,7 @@ export default function Home() {
             </ul>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
               <a
-                href="https://teg-blue.com/"
+                href="/foundations"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -796,9 +636,9 @@ export default function Home() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Explore applied tools ↗
+                Learn how to read the Gradient
               </a>
-              <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: 0, color: TEXT.muted }}>teg-blue.com</span>
+              <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: 0, color: TEXT.muted }}>TEG-Blue Overview</span>
             </div>
           </div>
         </section>
@@ -815,15 +655,15 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Research</p>
             <h2 id="science-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
-              Research grounding and mode-by-mode source traces
+              What research supports—and where its limits are
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
               TEG-Blue organizes existing research into a visual framework. Established science grounds specific parts
               of the map; no single source is treated as proof of the whole architecture.
             </p>
             <p style={{ margin: "0 0 20px", maxWidth: 760, fontSize: 14.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              Each mode is read across recurring grounded dimensions: autonomic state, perception, cognition, body
-              activation, emotion, relational access, action, chronic organization, and repair.
+              Each part of the map is checked separately: body state, perception, thinking, activation, emotion,
+              access to other people, action, repeated patterns, and repair.
             </p>
             <div
               style={{
@@ -856,10 +696,10 @@ export default function Home() {
               ))}
             </div>
             <p style={{ margin: "22px 0 0", maxWidth: 760, fontSize: 14, lineHeight: 1.65, color: TEXT.secondary }}>
-              Detailed source links belong in the scientific grounding layer, where each link can stay attached to a
-              specific claim, support area, and boundary.{" "}
+              The Scientific Grounding page explains which research areas support each part of the map and where each
+              claim stops.{" "}
               <a href="/scientific-foundations" style={{ color: TONE.spectrum.indigo, textDecoration: "none", fontWeight: 600 }}>
-                Read the public claim discipline
+                Read the scientific grounding
               </a>
               .
             </p>

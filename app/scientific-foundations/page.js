@@ -70,8 +70,8 @@ const GROUNDING_DIMENSIONS = [
   },
   {
     label: "Relation",
-    title: "Empathy, other-read, and repair",
-    body: "Research helps explain when another person can stay real and separate, and when repair can or cannot land.",
+    title: "Empathy, perspective, and repair",
+    body: "Research helps explain when we can keep another person's experience in view and when repair can or cannot take hold.",
     color: SPECTRUM.indigo,
   },
   {
@@ -117,7 +117,7 @@ const MODE_GROUPS = [
     color: SPECTRUM.azure,
   },
   {
-    title: "Chronic configurations",
+    title: "Chronic configurations (repeated patterns)",
     body: "Chronic means the pattern has repeated or stayed active long enough to become a familiar way the system reads the world.",
     modes: [
       "X - Chronic elevated baseline",
@@ -227,6 +227,57 @@ const CLAIM_CARE = [
   },
 ];
 
+const CORE_REFERENCES = [
+  {
+    field: "Stress and allostasis",
+    citation: "McEwen, B. S. (1998). Protective and damaging effects of stress mediators. New England Journal of Medicine.",
+    href: "https://doi.org/10.1056/NEJM199801153380307",
+    supports: "Chronic stress load, adaptation, recovery cost, and the difference between a useful short-term response and a costly repeated pattern.",
+  },
+  {
+    field: "Predictive regulation",
+    citation: "Sterling, P. (2012). Allostasis: A model of predictive regulation. Physiology & Behavior.",
+    href: "https://doi.org/10.1016/j.physbeh.2011.06.004",
+    supports: "How the body anticipates demand and changes its operating state rather than maintaining one fixed baseline.",
+  },
+  {
+    field: "Interoception",
+    citation: "Craig, A. D. (2002). How do you feel? Interoception: The sense of the physiological condition of the body. Nature Reviews Neuroscience.",
+    href: "https://doi.org/10.1038/nrn894",
+    supports: "How information about the body's condition contributes to feeling, awareness, and the reading of internal state.",
+  },
+  {
+    field: "Stress and cognition",
+    citation: "Arnsten, A. F. T. (2009). Stress signalling pathways that impair prefrontal cortex structure and function. Nature Reviews Neuroscience.",
+    href: "https://doi.org/10.1038/nrn2648",
+    supports: "Why stress can narrow reflective thinking, working memory, inhibition, and flexible decision-making.",
+  },
+  {
+    field: "Attention under arousal",
+    citation: "Easterbrook, J. A. (1959). The effect of emotion on cue utilization and the organization of behavior. Psychological Review.",
+    href: "https://doi.org/10.1037/h0047707",
+    supports: "Why heightened arousal can narrow the range of cues a person notices and uses.",
+  },
+  {
+    field: "Uncertainty and anticipation",
+    citation: "Grupe, D. W., & Nitschke, J. B. (2013). Uncertainty and anticipation in anxiety. Nature Reviews Neuroscience.",
+    href: "https://doi.org/10.1038/nrn3524",
+    supports: "Safety checking, anticipatory attention, and the effects of uncertainty on emotion and cognition.",
+  },
+  {
+    field: "Emotion and embodied prediction",
+    citation: "Barrett, L. F. (2017). The theory of constructed emotion: An active inference account of interoception and categorization. Social Cognitive and Affective Neuroscience.",
+    href: "https://doi.org/10.1093/scan/nsw154",
+    supports: "Emotion as an embodied, context-shaped construction rather than a direct readout of objective fact.",
+  },
+  {
+    field: "Autonomic regulation",
+    citation: "Thayer, J. F., & Lane, R. D. (2000). A model of neurovisceral integration in emotion regulation and dysregulation. Journal of Affective Disorders.",
+    href: "https://doi.org/10.1016/S0165-0327(00)00338-4",
+    supports: "Links among autonomic regulation, attention, emotion, and flexible response.",
+  },
+];
+
 export default function ScientificFoundationsPage() {
   return (
     <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
@@ -247,6 +298,7 @@ export default function ScientificFoundationsPage() {
         <ModeGroundingSection />
         <ResearchSequenceSection />
         <ResearchAreasSection />
+        <CoreReferencesSection />
         <ClaimCareSection />
         <WhereNextSection />
       </PageLayout>
@@ -316,10 +368,10 @@ function GroundingDimensionsSection() {
   return (
     <section id="grounding-dimensions" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.cobalt)}>What gets grounded</div>
-      <h2 style={sectionHeadingStyle}>Each mode is read across concrete dimensions.</h2>
+      <h2 style={sectionHeadingStyle}>Research supports specific, testable parts of the map.</h2>
       <p style={leadStyle}>
-        The page is not asking whether one theory proves TEG-Blue. It asks which field supports each described
-        part of a mode.
+        No single theory is asked to prove TEG-Blue. Instead, each claim is matched to the field that can support
+        it—for example, stress physiology for mobilisation or emotion science for action readiness.
       </p>
       <div style={dimensionGridStyle}>
         {GROUNDING_DIMENSIONS.map((item) => (
@@ -333,11 +385,12 @@ function GroundingDimensionsSection() {
 function ModeGroundingSection() {
   return (
     <section id="mode-grounding" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.indigo)}>Mode grounding</div>
-      <h2 style={sectionHeadingStyle}>The draft grounds seven acute modes and seven chronic configurations.</h2>
+      <div style={labelStyle(SPECTRUM.indigo)}>Modes and configurations</div>
+      <h2 style={sectionHeadingStyle}>The map distinguishes acute modes from chronic configurations.</h2>
       <p style={leadStyle}>
-        Acute modes describe what the system is organizing around now. Chronic configurations describe what
-        happens when a pattern keeps repeating or does not fully return.
+        An acute mode describes how a pattern presents in the moment and the nervous-system state beneath it. A
+        chronic configuration describes what happens when that organization repeats long enough to shape what the
+        system expects from the world.
       </p>
       <div style={modeGridStyle}>
         {MODE_GROUPS.map((group) => (
@@ -388,6 +441,46 @@ function ResearchAreasSection() {
   );
 }
 
+function CoreReferencesSection() {
+  return (
+    <section id="core-references" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.cobalt)}>Selected research</div>
+      <h2 style={sectionHeadingStyle}>Start with the sources behind the main mechanisms.</h2>
+      <p style={leadStyle}>
+        These peer-reviewed sources are a starting set, not a claim that any one paper proves the Gradient. Each
+        source is attached to the specific part of the map it helps explain.
+      </p>
+      <div style={{ ...gridStyle, gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))" }}>
+        {CORE_REFERENCES.map((reference) => (
+          <article key={reference.href} style={plainCardStyle}>
+            <div style={labelStyle(SPECTRUM.cobalt)}>{reference.field}</div>
+            <p style={{ ...cardBodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 10 }}>
+              {reference.citation}
+            </p>
+            <p style={{ ...cardBodyStyle, marginBottom: 12 }}>{reference.supports}</p>
+            <a
+              href={reference.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: contrastColor(SPECTRUM.azure), fontSize: 12, fontWeight: 600, textDecoration: "none" }}
+            >
+              Open DOI ↗
+            </a>
+          </article>
+        ))}
+      </div>
+      <div style={calloutStyle(SPECTRUM.slate)}>
+        <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>What these sources do not establish</p>
+        <p style={bodyStyle}>
+          They do not validate the entire Gradient as a clinical model, identify a person's exact internal state,
+          or establish one universal sequence. They ground particular mechanisms that TEG-Blue brings together in
+          a visual architecture.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function ClaimCareSection() {
   return (
     <section id="claim-care" style={{ marginBottom: 42 }}>
@@ -410,7 +503,7 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
-      <h2 style={sectionHeadingStyle}>Follow the source question you are asking.</h2>
+      <h2 style={sectionHeadingStyle}>Continue with the question that matters to you.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
@@ -422,7 +515,7 @@ function WhereNextSection() {
           <tbody>
             <NavRow label="Basic terms" href="/glossary" linkText="Glossary" />
             <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
-            <NavRow label="Project, creator, and contact routes" href="/about" linkText="About" />
+            <NavRow label="Project, creator, and contact information" href="/about" linkText="About" />
           </tbody>
         </table>
       </div>

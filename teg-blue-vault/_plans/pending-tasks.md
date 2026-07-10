@@ -4,19 +4,25 @@ Last updated: 2026-07-10.
 
 ## Homepage Gradient Science Grounding
 
-- Homepage now introduces the Nervous System Gradient as state changes in the
-  nervous system, then frames TEG-Blue as an integrative visual map of
-  established research.
-- Next review should check whether the hero intro feels human enough while still
-  clear that TEG-Blue is organizing existing science rather than claiming a
-  fully validated clinical model.
-- Decide where the detailed DOI/source links in
-  `_drafts/gradient-modes-science-grounding.md` should become public:
-  `/scientific-foundations`, a future mode-grounding page, or a claim-audit
-  bibliography.
+- Homepage now defines TEG-Blue directly, places the interactive Gradient first,
+  and includes a concrete connection → safety checking → protection → repair
+  walkthrough.
+- `/foundations` is now the dedicated reading guide for mode, state,
+  configuration, position, acute shifts, chronic configurations, impact,
+  capacity, and response.
+- `/scientific-foundations` includes an initial reviewed-looking public source
+  layer with eight named peer-reviewed references and explicit claim boundaries.
+- Next pass should reshape Scientific Grounding around evidence by Gradient
+  dimension and position, using `_drafts/gradient-modes-science-grounding.md` as
+  the working research source without publishing unreviewed draft claims.
+- Verify each DOI, source choice, supported mechanism, and claim boundary before
+  expanding the public mode-by-mode grounding layer.
 - Review the interactive Gradient "Grounding science" readouts after more mode
   testing; current copy is mode-specific and field-level, without direct DOI
   links inside the home panel.
+- After the scientific page is settled, make a final reduction pass across
+  About, Ethics, and Glossary so supporting material never competes with the
+  site's core sequence: see the Gradient, learn to read it, inspect the science.
 
 ## Spanish Translation For teg-blue.org
 

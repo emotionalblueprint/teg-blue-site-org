@@ -312,7 +312,7 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
-      <h2 style={sectionHeadingStyle}>Follow the part of the ethical question you need.</h2>
+      <h2 style={sectionHeadingStyle}>Continue with the guidance you need.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>

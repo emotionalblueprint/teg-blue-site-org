@@ -5,7 +5,6 @@ import {
   BORDER,
   FONT,
   SPECTRUM,
-  ACCENT,
   RADIUS,
   contrastColor,
   hexToRgba,
@@ -44,28 +43,43 @@ const FAQ_ITEMS = [
 
 const OVERVIEW_CARDS = [
   {
-    label: "Body state",
-    title: "What the body is doing",
-    body: "The body is continually reading conditions: can I connect, protect, act, rest, or repair?",
+    label: "Mode",
+    title: "How the pattern presents",
+    body: "The lived form of the pattern: how it feels, what becomes noticeable, and which responses seem available.",
     color: SPECTRUM.azure,
   },
   {
-    label: "Emotion",
-    title: "What the feeling is carrying",
-    body: "Emotion can signal safety, threat, need, boundary, impact, connection, or repair.",
+    label: "State",
+    title: "How the nervous system is organizing",
+    body: "The body organization shaping attention, energy, activation, inhibition, connection, protection, or shutdown.",
+    color: SPECTRUM.blue,
+  },
+  {
+    label: "Configuration",
+    title: "How mode and state appear together",
+    body: "The combined pattern across perception, emotion, body activation, relationship, action, and repair capacity.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    label: "Position",
+    title: "Where the pattern sits on the Gradient",
+    body: "A working location from available safety through uncertainty, protection, management, power mobilisation, or capacity exceeded.",
     color: SPECTRUM.indigo,
   },
+];
+
+const TIME_SCALES = [
   {
-    label: "Reality",
-    title: "What feels true",
-    body: "State changes what feels real. It can hold body signals, facts, and context together, or make one signal feel like the whole situation.",
-    color: ACCENT.green,
+    label: "Acute mode",
+    title: "What is organizing the response now",
+    body: "An acute mode describes a present shift around safety, uncertainty, threat, action, or shutdown. It may change as conditions and capacity change.",
+    color: SPECTRUM.azure,
   },
   {
-    label: "Chronic",
-    title: "What repeats",
-    body: "When threat or pressure lasts, a response can become a pattern. The system may read the world through what it has learned to expect.",
-    color: ACCENT.orange,
+    label: "Chronic configuration",
+    title: "What the system has learned to expect",
+    body: "A chronic configuration describes a pattern that repeats or stays active long enough to shape baseline, perception, relationship, and recovery.",
+    color: SPECTRUM.indigo,
   },
 ];
 
@@ -126,8 +140,8 @@ const SCOPE_ITEMS = [
 ];
 
 export const metadata = {
-  title: "TEG-Blue Overview",
-  description: "What TEG-Blue is, what The Nervous System Gradient maps, how to read patterns, and what the map does not claim.",
+  title: "How to Read the Nervous System Gradient",
+  description: "How to read TEG-Blue modes, nervous-system states, Gradient positions, acute shifts, chronic configurations, impact, capacity, and response.",
   keywords: [
     "TEG-Blue overview",
     "The Emotional Gradient Blueprint",
@@ -143,16 +157,16 @@ export const metadata = {
     canonical: "https://teg-blue.org/foundations",
   },
   openGraph: {
-    title: "TEG-Blue Overview",
-    description: "The Emotional Gradient Blueprint, its central public map, and the limits of responsible pattern reading.",
+    title: "How to Read the Nervous System Gradient",
+    description: "A guide to modes, states, Gradient positions, acute shifts, chronic configurations, and responsible pattern reading.",
     url: "https://teg-blue.org/foundations",
     type: "article",
     siteName: "TEG-Blue",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TEG-Blue Overview",
-    description: "What TEG-Blue maps, how to read patterns, and what the map does not claim.",
+    title: "How to Read the Nervous System Gradient",
+    description: "Modes, states, acute shifts, chronic configurations, and responsible pattern reading in TEG-Blue.",
   },
 };
 
@@ -165,16 +179,17 @@ export default function FoundationsPage() {
         header={
           <ResearcherHero
             badge="FRAMEWORK OVERVIEW"
-            title="TEG-Blue Overview"
-            subtitle="The Emotional Gradient Blueprint"
-            description="What the framework is, what the Gradient maps, how to read patterns, and what the map does not claim."
+            title="How to Read the Gradient"
+            subtitle="Modes, states, positions, and patterns over time"
+            description="A practical guide to reading what is happening now, what may be repeating, what impact occurred, and what response fits."
           />
         }
       >
         <WhatItIsSection />
         <GradientSection />
-        <ReadingPatternsSection />
+        <TimeScaleSection />
         <StateShiftsSection />
+        <ReadingPatternsSection />
         <ScopeSection />
 
         <ReviewStatusPanel
@@ -197,7 +212,7 @@ export default function FoundationsPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "TEG-Blue Overview", url: "/foundations" },
+              { name: "How to Read the Gradient", url: "/foundations" },
             ])
           ),
         }}
@@ -211,7 +226,7 @@ export default function FoundationsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "TEG-Blue Overview",
+              name: "How to Read the Nervous System Gradient",
               url: "https://teg-blue.org/foundations",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -225,31 +240,16 @@ export default function FoundationsPage() {
 function WhatItIsSection() {
   return (
     <section id="what-it-is" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
-      <h2 style={sectionHeadingStyle}>TEG-Blue shows what can change when state changes.</h2>
+      <div style={labelStyle(SPECTRUM.azure)}>Reading language</div>
+      <h2 style={sectionHeadingStyle}>Four terms keep different parts of the pattern in view.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a map that gathers research from different fields into one
-        visual framework for reading body state, emotion, relationship, protection, shutdown, and repair.
+        Begin by separating how a pattern presents, how the nervous system may be organizing, how the parts appear
+        together, and where the pattern sits on the Gradient.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        In the current public phase, the Blueprint is expressed most directly through The Nervous System
-        Gradient. The map shows how shifts that begin in the body can change what feels true, what becomes
-        possible, what repeats, and what repair may require.
+        These are observation tools, not four labels for a person. A useful reading remains provisional and can
+        change when context, evidence, conditions, or available capacity change.
       </p>
-      <div style={calloutStyle(SPECTRUM.cobalt)}>
-        <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
-          In plain language: TEG-Blue puts separate research areas into one map.
-        </p>
-        <p style={bodyStyle}>
-          Emotion science, body-state research, stress physiology, attachment, trauma, relationship, and repair
-          are often studied separately. TEG-Blue arranges those parts so a reader can see how they may move
-          together in one pattern.
-        </p>
-        <p style={{ ...bodyStyle, marginTop: 10 }}>
-          This does not mean one field proves the whole framework. It means each part of the map should stay
-          connected to the research area that supports it.
-        </p>
-      </div>
       <div style={gridStyle}>
         {OVERVIEW_CARDS.map((card) => (
           <InfoCard key={card.title} item={card} />
@@ -262,12 +262,15 @@ function WhatItIsSection() {
 function GradientSection() {
   return (
     <section id="gradient" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.cobalt)}>Central public map</div>
-      <h2 style={sectionHeadingStyle}>The Nervous System Gradient sits inside the Blueprint.</h2>
-      <p style={leadStyle}>{MAP_SUBTITLE}</p>
+      <div style={labelStyle(SPECTRUM.cobalt)}>Gradient positions</div>
+      <h2 style={sectionHeadingStyle}>Read from available safety toward increasing protection and capacity exceeded.</h2>
+      <p style={leadStyle}>
+        The positions show different organizing demands: rest, connection, uncertainty, protection, strategic
+        management, power mobilisation, and shutdown.
+      </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        The Gradient does not reveal a person's hidden truth. It gives a shared way to ask what pattern may be
-        shaping perception, emotion, body activation, what feels real, behaviour, relationship, and repair.
+        Read the position as a working question: what appears to be organizing the response, and what becomes more
+        or less available there? Positions are not ranks, personality types, or proof of a hidden internal state.
       </p>
 
       <div aria-hidden="true" style={gradientBarWrapStyle}>
@@ -286,6 +289,31 @@ function GradientSection() {
         {REALITY_CHECK_STATES.map((state, index) => (
           <StateRow key={state.code} state={state} index={index} isLast={index === REALITY_CHECK_STATES.length - 1} />
         ))}
+      </div>
+    </section>
+  );
+}
+
+function TimeScaleSection() {
+  return (
+    <section id="time-scale" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.indigo)}>Time scale</div>
+      <h2 style={sectionHeadingStyle}>Separate a present shift from a pattern that keeps returning.</h2>
+      <p style={leadStyle}>
+        The same Gradient position can describe a short-term response or part of a longer organization. Time,
+        repetition, recovery, and updating matter.
+      </p>
+      <div style={{ ...gridStyle, gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))" }}>
+        {TIME_SCALES.map((item) => (
+          <InfoCard key={item.label} item={item} />
+        ))}
+      </div>
+      <div style={calloutStyle(SPECTRUM.cobalt)}>
+        <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>The practical difference</p>
+        <p style={bodyStyle}>
+          A protective response that settles when safety returns is different from a pattern that keeps reading
+          threat, reducing options, or blocking repair after the immediate conditions have changed.
+        </p>
       </div>
     </section>
   );
@@ -323,15 +351,14 @@ function ReadingPatternsSection() {
 function StateShiftsSection() {
   return (
     <section id="state-shifts" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>What shifts</div>
-      <h2 style={sectionHeadingStyle}>State changes what feels true, possible, and repeatable.</h2>
+      <div style={labelStyle(SPECTRUM.azure)}>Reading dimensions</div>
+      <h2 style={sectionHeadingStyle}>Read across the pattern, not from one signal.</h2>
       <p style={leadStyle}>
-        The Gradient is useful because several things can shift together: what the system notices, what feels
-        true, what the body prepares to do, whether empathy can stay present, and whether repair can begin. When
-        threat or pressure lasts, a response can become a recurring pattern.
+        A position becomes more informative when several dimensions move together. Look for changes in attention,
+        emotion, activation, action, relationship, and repair rather than treating one feeling or behaviour as proof.
       </p>
       <div style={pillWrapStyle}>
-        {["Perception", "Emotion", "Body activation", "What feels true", "Empathy", "Accountability", "Repair", "Repetition"].map((dimension) => (
+        {["Perception", "Thinking", "Emotion", "Body activation", "Tempo", "Action", "Relational access", "Repair", "Repetition"].map((dimension) => (
           <span key={dimension} style={pillStyle}>
             {dimension}
           </span>
@@ -363,7 +390,7 @@ function WhereNextSection() {
   return (
     <section id="where-next" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
-      <h2 style={sectionHeadingStyle}>Follow the part of the work you need.</h2>
+      <h2 style={sectionHeadingStyle}>Choose what you want to explore next.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>

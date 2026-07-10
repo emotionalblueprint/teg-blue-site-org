@@ -127,9 +127,9 @@ const LIVE_PUBLIC_PAGES = [
     description: "Project identity, creator attribution, site boundaries, contact routes, and research stance.",
   },
   {
-    name: "TEG-Blue Overview",
+    name: "How to Read the Gradient",
     url: `${BASE_URL}/foundations`,
-    description: "Overview of The Emotional Gradient Blueprint, the central map, responsible pattern reading, and scope.",
+    description: "Modes, states, positions, acute shifts, chronic configurations, responsible pattern reading, and scope.",
   },
   {
     name: "Scientific Grounding",

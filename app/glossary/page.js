@@ -128,8 +128,8 @@ export default function GlossaryPage() {
           <ResearcherHero
             badge="GLOSSARY"
             title="Glossary"
-            subtitle="Key words for orientation"
-            description="A short guide to the basic language of TEG-Blue, the Blueprint, and The Nervous System Gradient without turning patterns into labels for people."
+            subtitle="Plain-language definitions"
+            description="Understand the essential terms used in TEG-Blue and The Nervous System Gradient, with clear limits on what those terms can tell us about a person."
           />
         }
       >
@@ -178,7 +178,7 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Terminology</div>
-      <h2 style={sectionHeadingStyle}>Start with these words.</h2>
+      <h2 style={sectionHeadingStyle}>The words you will see across TEG-Blue.</h2>
       <p style={leadStyle}>
         This glossary gathers the words that help most at the beginning. Use them to understand the map, not to
         label people. Context, impact, boundaries, and repair still matter.
@@ -191,7 +191,7 @@ function TermsSection() {
   return (
     <section id="terms" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.cobalt)}>Basic words</div>
-      <h2 style={sectionHeadingStyle}>The minimum needed to read the map without getting lost.</h2>
+      <h2 style={sectionHeadingStyle}>Clear definitions for reading the map.</h2>
       <div style={gridStyle}>
         {TERMS.map((item) => (
           <TermCard key={item.term} item={item} />

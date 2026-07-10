@@ -287,9 +287,9 @@ export function generateSystemOverviewJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "TEG-Blue Overview",
+    name: "How to Read the Nervous System Gradient",
     url: `${BASE_URL}/foundations`,
-    description: "What TEG-Blue is, what The Nervous System Gradient maps, how to read patterns, and what the map does not claim.",
+    description: "How to read TEG-Blue modes, nervous-system states, Gradient positions, acute shifts, chronic configurations, impact, capacity, and response.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
@@ -299,40 +299,47 @@ export function generateSystemOverviewJsonLd() {
     },
     mainEntity: {
       "@type": "ItemList",
-      name: "TEG-Blue Overview",
-      description: "The overview introduces The Emotional Gradient Blueprint, responsible pattern reading, research grounding, scope, and use limits.",
+      name: "How to Read the Nervous System Gradient",
+      description: "A guide to modes, states, Gradient positions, patterns over time, responsible pattern reading, and use limits.",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "The Emotional Gradient Blueprint",
-          description: "A map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.",
-          url: BASE_URL
+          name: "Reading Language",
+          description: "Mode, state, configuration, and position keep different parts of a Gradient reading distinct.",
+          url: `${BASE_URL}/foundations#what-it-is`
         },
         {
           "@type": "ListItem",
           position: 2,
+          name: "Acute Modes and Chronic Configurations",
+          description: "The guide separates present state shifts from patterns that repeat or remain active over time.",
+          url: `${BASE_URL}/foundations#time-scale`
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
           name: "Responsible Pattern Reading",
           description: "TEG-Blue reads patterns through organisation, impact, available capacity, and the response that fits.",
           url: `${BASE_URL}/foundations#reading-patterns`
         },
         {
           "@type": "ListItem",
-          position: 3,
+          position: 4,
           name: "Use and Limits",
           description: "The map supports pattern reading while requiring context, observation, and attention to impact.",
           url: `${BASE_URL}/foundations#scope`
         },
         {
           "@type": "ListItem",
-          position: 4,
+          position: 5,
           name: "Scientific Grounding",
-          description: "Research areas, field boundaries, and claim discipline behind the map.",
+          description: "The research supporting specific parts of the map and the limits of those claims.",
           url: `${BASE_URL}/scientific-foundations`
         },
         {
           "@type": "ListItem",
-          position: 5,
+          position: 6,
           name: "Public Terms",
           description: "The glossary defines current public terms for TEG-Blue and The Nervous System Gradient.",
           url: `${BASE_URL}/glossary`

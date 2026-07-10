@@ -7,17 +7,17 @@ export const HEADER_COPY = {
       {
         label: "About",
         href: "/about",
-        description: "Project background, founder, research stance, contact routes, and site distinction.",
+        description: "Creator, project purpose, public resources, contact information, and use limits.",
       },
       {
-        label: "TEG-Blue overview",
+        label: "How to read the Gradient",
         href: "/foundations",
-        description: "The Emotional Gradient Blueprint and the central Nervous System Gradient map.",
+        description: "Modes, states, positions, acute shifts, chronic configurations, impact, and response.",
       },
       {
         label: "Scientific grounding",
         href: "/scientific-foundations",
-        description: "Research areas, field boundaries, and claim discipline behind the map.",
+        description: "The research supporting each part of the map and the limits of those claims.",
       },
       {
         label: "Ethics",
