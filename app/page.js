@@ -353,8 +353,14 @@ const patternRecognitionMoves = [
   },
   {
     label: "Reality",
-    title: "What can be held together",
-    body: "State can change access to body information, evidence, context, another person's reality, impact, and repair.",
+    title: "What feels true",
+    body: "State changes what feels real. It can hold body signals, facts, and context together, or make one signal feel like the whole situation.",
+    color: ACCENT.green,
+  },
+  {
+    label: "Chronic",
+    title: "What repeats",
+    body: "When threat or pressure lasts, a response can become a pattern. The system may read the world through what it has learned to expect.",
     color: ACCENT.orange,
   },
 ];
@@ -467,7 +473,7 @@ function WhatGradientIsCard() {
           }}
         >
           <div>
-            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Emotion as information</p>
+            <p style={{ ...sectionEyebrowStyle, color: TONE.spectrum.azure, margin: "0 0 10px" }}>Emotion and nervous system states as information</p>
             <h2
               className="home-definition-title"
               id="what-gradient-is-heading"
