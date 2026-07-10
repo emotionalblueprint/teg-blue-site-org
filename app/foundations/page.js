@@ -5,6 +5,7 @@ import {
   BORDER,
   FONT,
   SPECTRUM,
+  ACCENT,
   RADIUS,
   contrastColor,
   hexToRgba,
@@ -25,7 +26,7 @@ const MAP_SUBTITLE =
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading emotions and nervous-system states as biological and relational information.",
   },
   {
     question: "What is The Nervous System Gradient?",
@@ -43,22 +44,28 @@ const FAQ_ITEMS = [
 
 const OVERVIEW_CARDS = [
   {
-    label: "Body",
-    title: "Patterns begin in organism state",
-    body: "The body organizes around safety, threat, connection, protection, strategic management, power mobilisation, capacity exceeded, regulation, and repair.",
+    label: "Body state",
+    title: "What the body is doing",
+    body: "The body is continually reading conditions: can I connect, protect, act, rest, or repair?",
     color: SPECTRUM.azure,
   },
   {
-    label: "Experience",
-    title: "State changes what feels possible",
-    body: "Perception, emotion, tempo, empathy, body activation, and repair capacity can shift together.",
-    color: SPECTRUM.cobalt,
+    label: "Emotion",
+    title: "What the feeling is carrying",
+    body: "Emotion can signal safety, threat, need, boundary, impact, connection, or repair.",
+    color: SPECTRUM.indigo,
   },
   {
-    label: "Relationship",
-    title: "Patterns repeat between people",
-    body: "A state-level pattern can shape boundaries, distance, pressure, rupture, accountability, and repair.",
-    color: SPECTRUM.indigo,
+    label: "Reality",
+    title: "What feels true",
+    body: "State changes what feels real. It can hold body signals, facts, and context together, or make one signal feel like the whole situation.",
+    color: ACCENT.green,
+  },
+  {
+    label: "Chronic",
+    title: "What repeats",
+    body: "When threat or pressure lasts, a response can become a pattern. The system may read the world through what it has learned to expect.",
+    color: ACCENT.orange,
   },
 ];
 
@@ -120,7 +127,7 @@ const SCOPE_ITEMS = [
 
 export const metadata = {
   title: "TEG-Blue Overview",
-  description: "A public overview of TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient as its central public map.",
+  description: "A public overview of TEG-Blue, emotions and nervous-system states as information, and The Nervous System Gradient as its central public map.",
   keywords: [
     "TEG-Blue overview",
     "The Emotional Gradient Blueprint",
@@ -159,7 +166,7 @@ export default function FoundationsPage() {
             badge="FRAMEWORK OVERVIEW"
             title="TEG-Blue Overview"
             subtitle="The Emotional Gradient Blueprint"
-            description="A public overview of the science-grounded visual educational framework, with The Nervous System Gradient as its central public map."
+            description="A public overview of emotions and nervous-system states as biological and relational information, with The Nervous System Gradient as the central public map and practical tools available on teg-blue.com."
           />
         }
       >
@@ -218,16 +225,16 @@ function WhatItIsSection() {
   return (
     <section id="what-it-is" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
-      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional patterns legible as biological and relational information.</h2>
+      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotions and nervous-system states legible as biological and relational information.</h2>
       <p style={leadStyle}>
         TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading
-        how emotional, nervous-system, relational, and repair patterns form and change.
+        how emotion, body state, perception, relationship, and repair patterns form and change.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         In the current public phase, that Blueprint is expressed most directly through The Nervous System
-        Gradient. The map makes visible how patterns that begin in the body can shape individual experience and
-        relationships across safety, threat, strategic management, power mobilisation, capacity exceeded,
-        regulation, and repair.
+        Gradient. The map makes visible how shifts that begin in the body can change what feels true, what becomes
+        possible, and what repeats across safety, threat, strategic management, power mobilisation, capacity
+        exceeded, regulation, and repair.
       </p>
       <div style={gridStyle}>
         {OVERVIEW_CARDS.map((card) => (
@@ -246,7 +253,8 @@ function GradientSection() {
       <p style={leadStyle}>{MAP_SUBTITLE}</p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         The Gradient does not claim to reveal a person's hidden truth. It gives a shared way to ask what pattern
-        may be organizing perception, emotion, body activation, behaviour, relationship, and repair.
+        may be organizing perception, emotion, body activation, what feels real, behaviour, relationship, and
+        repair.
       </p>
 
       <div aria-hidden="true" style={gradientBarWrapStyle}>
@@ -303,13 +311,14 @@ function StateShiftsSection() {
   return (
     <section id="state-shifts" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>What shifts</div>
-      <h2 style={sectionHeadingStyle}>State changes what becomes available.</h2>
+      <h2 style={sectionHeadingStyle}>State changes what feels true, possible, and repeatable.</h2>
       <p style={leadStyle}>
         The Gradient is useful because several capacities can shift together: what the system notices, what feels
-        true, how much time and choice remain, whether empathy can stay present, and whether repair can begin.
+        true, what the body prepares to do, whether empathy can stay present, and whether repair can begin. When
+        threat or pressure lasts, a response can become a recurring pattern.
       </p>
       <div style={pillWrapStyle}>
-        {["Perception", "Emotion", "Body activation", "Tempo", "Empathy", "Accountability", "Repair"].map((dimension) => (
+        {["Perception", "Emotion", "Body activation", "What feels true", "Empathy", "Accountability", "Repair", "Repetition"].map((dimension) => (
           <span key={dimension} style={pillStyle}>
             {dimension}
           </span>
@@ -355,7 +364,7 @@ function WhereNextSection() {
             <NavRow label="Research areas and claim boundaries" href="/scientific-foundations" linkText="Scientific Grounding" />
             <NavRow label="How TEG-Blue reads patterns" href="/methodology" linkText="Pattern reading" />
             <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
-            <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
+            <NavRow label="Practical tools for applying the map" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>
       </div>
