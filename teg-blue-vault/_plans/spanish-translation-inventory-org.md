@@ -49,12 +49,9 @@ Translate only the current approved public surface first. Mirror
 | `/` | `/es` | `app/page.js` |
 | `/about` | `/es/about` | `app/about/page.js` |
 | `/foundations` | `/es/foundations` | `app/foundations/page.js` |
-| `/methodology` | `/es/methodology` | `app/methodology/page.js` |
 | `/scientific-foundations` | `/es/scientific-foundations` | `app/scientific-foundations/page.js` |
 | `/ethics` | `/es/ethics` | `app/ethics/page.js` |
-| `/publications` | `/es/publications` | `app/publications/page.js` |
 | `/glossary` | `/es/glossary` | `app/glossary/page.js` |
-| `/collaborate` | `/es/collaborate` | `app/collaborate/page.js` |
 
 Open decision: use English slugs under `/es` for the first slice, or translate
 slugs. Existing route helpers point toward English slugs under `/es`; translated
@@ -109,6 +106,9 @@ Do not translate staged, redirected, or non-live routes in the first slice:
 - `/emotional-technology`
 - `/research-entry`
 - `/design-system`
+- `/methodology`
+- `/publications`
+- `/collaborate`
 - `/citations`
 - `/how-it-works`
 - `/explore/labels`
@@ -195,19 +195,16 @@ consistent.
    - `src/data/deep-engine-formations.js`
    - public rows from `src/data/deep-engine-chronic-data.js`
 
-2. Method and ethics:
-   - `/methodology`
+2. Ethics and use limits:
    - `/ethics`
    - `src/components/ReviewStatusPanel.jsx`
 
-3. Research, citation, and reuse:
+3. Research grounding:
    - `/scientific-foundations`
-   - `/publications`
-   - JSON-LD generators used by these pages
+   - JSON-LD generators used by this page
 
-4. Project identity and collaboration:
+4. Project identity and contact routes:
    - `/about`
-   - `/collaborate`
    - header/footer shared surfaces
 
 5. SEO, route gate, and visual QA:

@@ -9,15 +9,15 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What research does TEG-Blue draw from?",
-    answer: "TEG-Blue draws from established research areas including biology, physiology, affective neuroscience, autonomic neuroscience, psychology, attachment research, trauma research, developmental science, anthropology, sociology, social psychology, and contemplative traditions.",
+    answer: "TEG-Blue draws from research on autonomic state, stress, emotion, perception, interoception, attention, attachment, trauma, social safety, repair, and chronic load.",
   },
   {
     question: "Does any one field already say TEG-Blue?",
-    answer: "No. Each field remains itself. TEG-Blue places parts from different fields into relation, and that integration is its contribution.",
+    answer: "No. Each field remains itself. TEG-Blue gathers supported parts from different fields and places them into one visual map.",
   },
   {
     question: "How should citations be used?",
-    answer: "A citation should connect field, finding, function, and position in the sequence. It should support a specific part of the architecture, not the whole system at once.",
+    answer: "A citation should connect field, finding, function, and place in the map. It should support a specific part, not the whole Gradient at once.",
   },
   {
     question: "Is TEG-Blue diagnostic?",
@@ -25,11 +25,118 @@ const FAQ_ITEMS = [
   },
 ];
 
+const GROUNDING_DIMENSIONS = [
+  {
+    label: "State",
+    title: "Autonomic state",
+    body: "Research helps ground rest, social engagement, mobilisation, inhibition, shutdown, and return.",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Safety",
+    title: "Safety and threat read",
+    body: "Research helps explain why a body may read a situation as safe, uncertain, threatening, blocked, or too much.",
+    color: SPECTRUM.blue,
+  },
+  {
+    label: "Attention",
+    title: "Perception and attention",
+    body: "Research helps ground why some cues become louder and other cues drop away under stress or uncertainty.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    label: "Thinking",
+    title: "Cognition under load",
+    body: "Research helps explain changes in planning, working memory, reflection, inhibition, and threat prediction.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    label: "Body",
+    title: "Interoception and body signal",
+    body: "Research helps ground how body signals become clear, noisy, muted, overwhelming, or hard to name.",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Tempo",
+    title: "Activation, time, and urgency",
+    body: "Research helps explain mobilisation, recovery cost, rush, time compression, freeze, and collapse.",
+    color: SPECTRUM.blue,
+  },
+  {
+    label: "Emotion",
+    title: "Emotion and action readiness",
+    body: "Research helps ground emotion as embodied information about need, threat, boundary, value, action, and repair.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    label: "Relation",
+    title: "Empathy, other-read, and repair",
+    body: "Research helps explain when another person can stay real and separate, and when repair can or cannot land.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    label: "Pattern",
+    title: "Chronic organization",
+    body: "Research helps ground how repeated stress, learning, and prediction can turn a response into a lasting pattern.",
+    color: SPECTRUM.slate,
+  },
+];
+
+const MODE_AUDIT_STEPS = [
+  {
+    title: "Name what TEG-Blue describes",
+    body: "Use plain terms: baseline, connection, safety checking, protection, management, power mobilisation, or shutdown.",
+  },
+  {
+    title: "Separate the part being grounded",
+    body: "Do not ground a whole mode at once. Check state, perception, cognition, body activation, emotion, empathy, action, repair, and chronic load separately.",
+  },
+  {
+    title: "Use the right field",
+    body: "Stress physiology may support mobilisation. Attachment research may support proximity. Emotion science may support salience and action readiness.",
+  },
+  {
+    title: "Say what is not being claimed",
+    body: "A source should not be used to prove a whole person, hidden motive, diagnosis, or the whole Gradient.",
+  },
+];
+
+const MODE_GROUPS = [
+  {
+    title: "Acute modes",
+    body: "Acute means the pattern is active now. The body is organizing around current safety, uncertainty, threat, action, or shutdown.",
+    modes: [
+      "X - Baseline / physiological baseline",
+      "A - Connection / belonging",
+      "A↔B - Safety checking",
+      "B - Protection / defence",
+      "C - Strategic management",
+      "D - Power mobilisation",
+      "Z - Shutdown",
+    ],
+    color: SPECTRUM.azure,
+  },
+  {
+    title: "Chronic configurations",
+    body: "Chronic means the pattern has repeated or stayed active long enough to become a familiar way the system reads the world.",
+    modes: [
+      "X - Chronic elevated baseline",
+      "A - No safety access / approximated bonding",
+      "A↔B - Chronic safety checking",
+      "B - Chronic protection / defence",
+      "C - Chronic strategy and management",
+      "D - Chronic power and dominance",
+      "Z - Persistent shutdown / collapse",
+    ],
+    color: SPECTRUM.indigo,
+  },
+];
+
 const RESEARCH_SEQUENCE = [
   {
     label: "Field",
     title: "Which research area is speaking?",
-    body: "Biology, physiology, psychology, attachment research, trauma research, social psychology, and other fields each keep their own methods and boundaries.",
+    body: "Biology, physiology, psychology, attachment research, trauma research, social psychology, and other fields each keep their own methods and limits.",
     color: SPECTRUM.azure,
   },
   {
@@ -47,7 +154,7 @@ const RESEARCH_SEQUENCE = [
   {
     label: "Position",
     title: "Where does it sit in the map?",
-    body: "TEG-Blue places supported parts into relation across safety, threat, control, shutdown, regulation, and repair.",
+    body: "Name the part of the map the source supports: safety, threat, control, shutdown, regulation, repair, or a related capacity.",
     color: SPECTRUM.indigo,
   },
 ];
@@ -55,15 +162,15 @@ const RESEARCH_SEQUENCE = [
 const RESEARCH_AREAS = [
   {
     title: "Biology and physiology",
-    role: "Load-bearing for the body-level organization of the map.",
-    body: "These fields ground survival, adaptation, organism-environment response, arousal, energy mobilization, shutdown, regulation, and repair capacity.",
+    role: "Body state on the map.",
+    body: "These fields support discussion of survival, adaptation, arousal, energy use, shutdown, regulation, and repair capacity.",
     boundary: "They do not make visible behaviour a biological measurement or prove someone's inner state from outside.",
     color: SPECTRUM.azure,
   },
   {
     title: "Autonomic neuroscience and stress physiology",
-    role: "Grounds state organization and chronic load.",
-    body: "These areas support careful discussion of mobilisation, inhibition, arousal flexibility, stress physiology, allostatic pressure, shutdown, and return.",
+    role: "State change and chronic load.",
+    body: "These areas support discussion of mobilisation, inhibition, arousal flexibility, stress load, shutdown, and return.",
     boundary: "Specific mechanisms, markers, or pathways need source trace before public use.",
     color: SPECTRUM.blue,
   },
@@ -76,8 +183,8 @@ const RESEARCH_AREAS = [
   },
   {
     title: "Psychology",
-    role: "One major research angle, not the owner of the pattern.",
-    body: "Psychology supports discussion of cognition, behaviour, appraisal, learning, development, social perception, personality organization, and relational dynamics.",
+    role: "Cognition, behaviour, and learning.",
+    body: "Psychology supports discussion of cognition, behaviour, appraisal, learning, development, social perception, personality patterns, and relationship patterns.",
     boundary: "TEG-Blue should not be presented as a psychology model, therapy model, diagnosis, or clinical assessment.",
     color: SPECTRUM.indigo,
   },
@@ -90,9 +197,9 @@ const RESEARCH_AREAS = [
   },
   {
     title: "Social, cultural, and contemplative fields",
-    role: "Locate context, attention, awareness, norms, power, and later scale.",
+    role: "Context, power, attention, and culture.",
     body: "Social psychology, sociology, anthropology, evolutionary research, and contemplative traditions help clarify social patterning, belonging, status, care, attention, and awareness.",
-    boundary: "Groups, institutions, and culture are deeper scale language, not the current public lead.",
+    boundary: "Group and cultural claims need careful wording and a more specific page.",
     color: SPECTRUM.slate,
   },
 ];
@@ -103,16 +210,20 @@ const CLAIM_CARE = [
     body: "A research area may help explain one mechanism, condition, capacity, or pattern. It should not be used to claim the whole framework is already established.",
   },
   {
-    title: "The integration is named honestly",
-    body: "TEG-Blue places source-supported parts into relation. That relational architecture is the contribution.",
+    title: "The map connects the parts",
+    body: "TEG-Blue places source-supported parts together. That connection is the contribution.",
   },
   {
-    title: "Named theories need calibration",
+    title: "Named theories need exact wording",
     body: "When a page names a theory, construct, mechanism, or clinical field, the claim should say exactly what that source can and cannot support.",
   },
   {
+    title: "Polyvagal language stays modest",
+    body: "It can help name social engagement, mobilisation, and shutdown. It is one language bridge, not the whole scientific basis.",
+  },
+  {
     title: "Impact remains visible",
-    body: "Mechanism never erases effect. Pattern reading still asks what happened, what impact occurred, and what response fits.",
+    body: "Mechanism never erases effect. A responsible read still asks what happened, what impact occurred, and what response fits.",
   },
 ];
 
@@ -126,12 +237,14 @@ export default function ScientificFoundationsPage() {
           <ResearcherHero
             badge="SCIENTIFIC GROUNDING"
             title="Scientific Grounding"
-            subtitle="Research areas, source boundaries, and claim discipline"
-            description="A public guide to how established fields support specific parts of The Emotional Gradient Blueprint without being collapsed into one theory."
+            subtitle="Research areas, source limits, and public claims"
+            description="How established fields support specific parts of The Emotional Gradient Blueprint without becoming proof of the whole map."
           />
         }
       >
         <OverviewSection />
+        <GroundingDimensionsSection />
+        <ModeGroundingSection />
         <ResearchSequenceSection />
         <ResearchAreasSection />
         <ClaimCareSection />
@@ -174,25 +287,67 @@ export default function ScientificFoundationsPage() {
 function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Research stance</div>
-      <h2 style={sectionHeadingStyle}>Scientific grounding means each source supports a specific part.</h2>
+      <div style={labelStyle(SPECTRUM.azure)}>Research use</div>
+      <h2 style={sectionHeadingStyle}>TEG-Blue is a map. Science grounds the parts.</h2>
       <p style={leadStyle}>
-        TEG-Blue is grounded in science when that means established fields support specific parts of the map,
-        each field remains itself, and TEG-Blue places the parts in relation.
+        TEG-Blue gathers research from different fields into one visual map for reading body state, emotion,
+        perception, relationship, protection, shutdown, regulation, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 800 }}>
-        No source already says TEG-Blue. A source may support a mechanism, condition, capacity, or pattern. The
-        Blueprint contributes the visual architecture that holds those parts together across safety, threat,
-        control, shutdown, regulation, and repair.
+        The claim is specific. Existing science can support parts of the map. It can support how stress changes
+        attention, how threat can narrow cognition, how social safety can reduce load, how shutdown protects
+        capacity, and why repair needs enough safety to land. It does not already prove the whole Gradient as one
+        finished clinical model.
       </p>
       <div style={calloutStyle(SPECTRUM.cobalt)}>
         <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
-          The established research underwrites specific parts. The integration is TEG-Blue's contribution.
+          In plain language: sources ground parts of the map. TEG-Blue connects those parts.
         </p>
         <p style={bodyStyle}>
-          This page names research areas and claim boundaries. It does not turn the framework into a diagnostic,
-          clinical, treatment, or assessment system.
+          A source may support a mechanism, capacity, condition, or repeated pattern. It should not be stretched
+          into a claim about a person's hidden state, motive, diagnosis, or whole identity.
         </p>
+      </div>
+    </section>
+  );
+}
+
+function GroundingDimensionsSection() {
+  return (
+    <section id="grounding-dimensions" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.cobalt)}>What gets grounded</div>
+      <h2 style={sectionHeadingStyle}>Each mode is read across concrete dimensions.</h2>
+      <p style={leadStyle}>
+        The page is not asking whether one theory proves TEG-Blue. It asks which field supports each described
+        part of a mode.
+      </p>
+      <div style={dimensionGridStyle}>
+        {GROUNDING_DIMENSIONS.map((item) => (
+          <InfoCard key={item.title} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ModeGroundingSection() {
+  return (
+    <section id="mode-grounding" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.indigo)}>Mode grounding</div>
+      <h2 style={sectionHeadingStyle}>The draft grounds seven acute modes and seven chronic configurations.</h2>
+      <p style={leadStyle}>
+        Acute modes describe what the system is organizing around now. Chronic configurations describe what
+        happens when a pattern keeps repeating or does not fully return.
+      </p>
+      <div style={modeGridStyle}>
+        {MODE_GROUPS.map((group) => (
+          <ModeGroupCard key={group.title} group={group} />
+        ))}
+      </div>
+      <div style={{ ...gridStyle, marginTop: 18 }}>
+        {MODE_AUDIT_STEPS.map((item) => (
+          <PlainCard key={item.title} item={item} />
+        ))}
       </div>
     </section>
   );
@@ -201,10 +356,10 @@ function OverviewSection() {
 function ResearchSequenceSection() {
   return (
     <section id="research-sequence" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.indigo)}>Citation discipline</div>
+      <div style={labelStyle(SPECTRUM.indigo)}>Citing sources</div>
       <h2 style={sectionHeadingStyle}>Move from field to finding to function to position.</h2>
       <p style={leadStyle}>
-        A clear citation does more than name an authority. It shows what the source clarifies and where that
+        A clear citation does more than name an authority. It shows what the source supports and where that
         support stops.
       </p>
       <div style={gridStyle}>
@@ -220,10 +375,9 @@ function ResearchAreasSection() {
   return (
     <section id="research-areas" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Research areas</div>
-      <h2 style={sectionHeadingStyle}>Different fields have different jobs inside the architecture.</h2>
+      <h2 style={sectionHeadingStyle}>Different fields answer different questions.</h2>
       <p style={leadStyle}>
-        These areas are not collapsed into one theory. They ground mechanisms, capacities, conditions, patterns,
-        and repair routes inside the Gradient.
+        These areas are not one theory. They support different parts of the Gradient.
       </p>
       <div style={areaGridStyle}>
         {RESEARCH_AREAS.map((area) => (
@@ -241,7 +395,7 @@ function ClaimCareSection() {
       <h2 style={sectionHeadingStyle}>Use research carefully, and only for the part it can support.</h2>
       <p style={leadStyle}>
         The clearest scientific page is not the page with the most names. It is the page where the reader can
-        see what kind of support is being claimed and where the claim stops.
+        see what each source supports and where the claim stops.
       </p>
       <div style={gridStyle}>
         {CLAIM_CARE.map((item) => (
@@ -266,11 +420,9 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
-            <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
-            <NavRow label="Terminology and Engine layer names" href="/glossary" linkText="Glossary" />
-            <NavRow label="How to read claims responsibly" href="/methodology" linkText="Pattern reading" />
+            <NavRow label="Basic terms" href="/glossary" linkText="Glossary" />
             <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
-            <NavRow label="Collaboration and review conversations" href="/collaborate" linkText="Collaborate" />
+            <NavRow label="Project, creator, and contact routes" href="/about" linkText="About" />
           </tbody>
         </table>
       </div>
@@ -295,6 +447,22 @@ function ResearchAreaCard({ area }) {
       <h3 style={cardTitleStyle}>{area.role}</h3>
       <p style={{ ...cardBodyStyle, marginBottom: 10 }}>{area.body}</p>
       <p style={boundaryStyle}>{area.boundary}</p>
+    </div>
+  );
+}
+
+function ModeGroupCard({ group }) {
+  return (
+    <div style={modeGroupCardStyle(group.color)}>
+      <div style={labelStyle(group.color)}>{group.title}</div>
+      <p style={{ ...cardBodyStyle, marginBottom: 12 }}>{group.body}</p>
+      <ul style={modeListStyle}>
+        {group.modes.map((mode) => (
+          <li key={mode} style={modeItemStyle}>
+            {mode}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -358,6 +526,16 @@ function areaCardStyle(color) {
   };
 }
 
+function modeGroupCardStyle(color) {
+  return {
+    padding: 16,
+    background: gradientCardBg(color, 0.055),
+    border: `1px solid ${hexToRgba(color, 0.16)}`,
+    borderTop: `3px solid ${color}`,
+    borderRadius: RADIUS.md,
+  };
+}
+
 function calloutStyle(color) {
   return {
     marginTop: 18,
@@ -376,11 +554,38 @@ const gridStyle = {
   marginTop: 18,
 };
 
+const dimensionGridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
+
 const areaGridStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
   gap: 12,
   marginTop: 18,
+};
+
+const modeGridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
+  gap: 12,
+  marginTop: 18,
+};
+
+const modeListStyle = {
+  display: "grid",
+  gap: 8,
+  margin: 0,
+  paddingLeft: 18,
+};
+
+const modeItemStyle = {
+  fontSize: 13,
+  color: TEXT.secondary,
+  lineHeight: 1.55,
 };
 
 const sectionHeadingStyle = {

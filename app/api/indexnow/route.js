@@ -6,7 +6,7 @@
  *
  * Usage:
  *   POST /api/indexnow
- *   Body: { "urls": ["/about", "/methodology"] }
+ *   Body: { "urls": ["/about", "/scientific-foundations"] }
  *
  *   Or for single URL:
  *   POST /api/indexnow

@@ -22,12 +22,6 @@ const STATIC_PAGES = [
     priority: 0.9,
   },
   {
-    path: "/methodology",
-    lastModified: "2026-07-04",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
     path: "/scientific-foundations",
     lastModified: "2026-07-04",
     changeFrequency: "monthly",
@@ -40,19 +34,7 @@ const STATIC_PAGES = [
     priority: 0.75,
   },
   {
-    path: "/publications",
-    lastModified: "2026-07-04",
-    changeFrequency: "monthly",
-    priority: 0.65,
-  },
-  {
     path: "/glossary",
-    lastModified: "2026-07-04",
-    changeFrequency: "monthly",
-    priority: 0.65,
-  },
-  {
-    path: "/collaborate",
     lastModified: "2026-07-04",
     changeFrequency: "monthly",
     priority: 0.65,

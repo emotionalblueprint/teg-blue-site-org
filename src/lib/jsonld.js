@@ -56,7 +56,7 @@ export function generatePublicationJsonLd(node) {
       },
       sameAs: `https://doi.org/${node.doi}`,
     }),
-    url: `${RESEARCH_BASE}/publications/${node.slug}`,
+    url: `${RESEARCH_BASE}/scientific-foundations`,
     abstract: publicDescription,
     description: publicDescription,
     keywords: node.tags,
@@ -64,7 +64,7 @@ export function generatePublicationJsonLd(node) {
     publisher: AUTHOR,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${RESEARCH_BASE}/publications/${node.slug}`,
+      "@id": `${RESEARCH_BASE}/scientific-foundations`,
     },
     ...(node.connections && {
       citation: node.connections
@@ -72,7 +72,7 @@ export function generatePublicationJsonLd(node) {
         .map((c) => ({
           "@type": "ScholarlyArticle",
           name: c.label || c.targetSlug,
-          url: `${RESEARCH_BASE}/${c.targetType === "theory" ? "foundations" : "publications"}/${c.targetSlug}`,
+          url: `${RESEARCH_BASE}/${c.targetType === "theory" ? "foundations" : "scientific-foundations"}`,
         })),
     }),
     ...(node.glossaryTerms && {
@@ -132,7 +132,7 @@ export function generateGlossaryJsonLd(node) {
         .map((c) => ({
           "@type": "ScholarlyArticle",
           name: c.label || c.targetSlug,
-          url: `${RESEARCH_BASE}/publications/${c.targetSlug}`,
+          url: `${RESEARCH_BASE}/scientific-foundations`,
         })),
     }),
   };
@@ -333,13 +333,6 @@ export function generateSystemOverviewJsonLd() {
         {
           "@type": "ListItem",
           position: 5,
-          name: "Pattern Reading",
-          description: "Pattern reading explains observation, interpretation, impact, claim status, limits, responsible use, and review needs.",
-          url: `${BASE_URL}/methodology`
-        },
-        {
-          "@type": "ListItem",
-          position: 6,
           name: "Applied Tools",
           description: "Interactive tools on teg-blue.com translate the map into practical public use.",
           url: "https://teg-blue.com/"
@@ -399,42 +392,6 @@ export function generateScientificFoundationsJsonLd() {
       "sociology",
       "state-shaped capacity",
       "repair capacity"
-    ]
-  };
-}
-
-// ─── METHODOLOGY PAGE JSON-LD ───────────────────────
-
-export function generateMethodologyJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "How TEG-Blue Reads Patterns",
-    url: `${BASE_URL}/methodology`,
-    description: "How to read visible patterns responsibly: observation, pattern, impact, claim status, use, limits, and review.",
-    inLanguage: LANGUAGE,
-    isPartOf: TEG_BLUE_PROJECT,
-    about: {
-      "@type": "ItemList",
-      name: "Responsible Pattern Reading",
-      description: "The public guide for reading nervous-system patterns while keeping observation, interpretation, impact, and claim status separate.",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Observation", description: "Start with what can be seen: behaviour, context, repetition, and relational effect." },
-        { "@type": "ListItem", position: 2, name: "Pattern Reading", description: "Use the map to ask whether a pattern is moving toward safety, threat, control, shutdown, regulation, or repair." },
-        { "@type": "ListItem", position: 3, name: "Impact and Response", description: "Track effect on clarity, autonomy, safety, accountability, and repair before choosing support, boundary, protection, accountability, or further study." },
-        { "@type": "ListItem", position: 4, name: "Claim Status", description: "Keep research support, TEG-Blue integration, applied tools, and review as separate layers." }
-      ]
-    },
-    keywords: [
-      "TEG-Blue pattern reading",
-      "Nervous System Gradient",
-      "responsible pattern reading",
-      "claim status",
-      "state-shaped capacity",
-      "research integration",
-      "visual map",
-      "repair capacity",
-      "framework limits"
     ]
   };
 }
@@ -531,17 +488,17 @@ export function generateMetaTags(node) {
 
 function getNodeUrl(node) {
   const paths = {
-    publication: `/publications/${node.slug}`,
-    "working-paper": `/publications/${node.slug}`,
+    publication: `/scientific-foundations`,
+    "working-paper": `/scientific-foundations`,
     theory: `/research/foundations?theory=${node.slug}`,
     glossary: `/research/glossary?term=${node.slug}`,
     framework: `/research/frameworks/${node.slug}`,
-    methodology: `/research/methodology`,
+    methodology: `/foundations`,
   };
   return `${BASE_URL}${paths[node.type] || `/research/${node.slug}`}`;
 }
 
-// ─── FAQ SCHEMA (for methodology, about pages) ───────
+// ─── FAQ SCHEMA ───────────────────────────────────────
 
 export function generateFAQJsonLd(questions) {
   // questions: [{ question: string, answer: string }]

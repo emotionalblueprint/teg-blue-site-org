@@ -62,7 +62,7 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | --- | --- | --- | --- |
 | TEG-Blue | TEG-Blue | Project and ecosystem name. | Do not expand into a Spanish invented acronym. |
 | The Emotional Gradient Blueprint | The Emotional Gradient Blueprint | Formal framework name, citation, metadata, authorship. Add Spanish description nearby. | Do not lock a translated title until reviewed. Candidate descriptive gloss: `el marco visual del gradiente emocional`. |
-| Blueprint | Blueprint / marco / arquitectura | Use `Blueprint` when naming the formal work; use `marco` or `arquitectura` in explanatory prose. | `Plano` may sound architectural and thin; review in real copy. |
+| Blueprint | The Emotional Gradient Blueprint / el marco | Use the full English title when naming the formal work; use `el marco` or `TEG-Blue` in explanatory prose. | Avoid standalone `el Blueprint`; it sounds Spanglish/internal. `Plano` may sound architectural and thin; review in real copy. |
 | The Nervous System Gradient | el Gradiente del Sistema Nervioso | Central public map. Keep English name in metadata/citation if needed. | Avoid making it sound like a medical measurement. |
 | Gradient | Gradiente | The map/line itself. | If `gradiente` repeats heavily, alternate with `mapa` when accurate. |
 | TEG-Blue Engine | TEG-Blue Engine | Named internal tool-building/source system. | Avoid `motor` as the formal name unless a Spanish product decision is made. |
@@ -84,7 +84,7 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | visual educational framework | marco visual educativo | Public description. | Keep the source posture nearby where needed. |
 | science-grounded | basado en campos científicos establecidos / informado por investigación | Source posture and public explanation. | Avoid implying the whole framework is clinically validated. |
 | research-grounded | informado por investigación | Research posture and source pages. | Avoid heavier `fundamentado en investigación` unless the sentence needs formal emphasis. |
-| research-facing | orientado a investigación / de cara a investigación | About/collaborate stance. | Avoid making it sound institutionally endorsed. |
+| research-facing | orientado a investigación / de cara a investigación | About and source posture. | Avoid making it sound institutionally endorsed. |
 | public framework | marco público | `.org` role. | Distinguish from tools, Engine, and applied builds. |
 | public map | mapa público | The Nervous System Gradient. | Do not make the map the whole TEG-Blue identity. |
 
@@ -111,6 +111,7 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | agency | agencia / margen de elección | Ethics and autonomy. | Use `margen de elección` if `agencia` feels too technical. |
 | autonomy | autonomía | Harm, control, ethics. | Keep tied to choice and consent. |
 | whole-person verdict | juicio sobre la persona entera | Guardrail language. | Avoid legal-heavy `veredicto` unless explicitly needed. |
+| mind reading | lectura de mente | Methodology/scope guardrail: do not infer hidden inner state, intention, or identity as certainty. | Prefer over `lectura mental`, which sounds less natural in this context. |
 | motive certainty | certeza sobre el motivo / certeza sobre la intención | Methodology limits. | Avoid implying TEG-Blue can prove motive. |
 | claim status | alcance de la afirmación / tipo de afirmación | Methodology, source discipline, explaining what kind of claim is being made. | Avoid `estatus de la afirmación` as the default. |
 
@@ -148,7 +149,7 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | English | Default Spanish | Use when | Avoid / watch |
 | --- | --- | --- | --- |
 | scientific grounding | fundamentación científica | Page title and source posture. | `Base científica` is simpler for body copy. |
-| source trace | trazabilidad de fuentes | Home, publications, methodology. | Avoid `rastro de fuentes` as the default for `.org`. |
+| source trace | trazabilidad de fuentes | Home, scientific grounding, future citation records. | Avoid `rastro de fuentes` as the default for `.org`. |
 | source-traced | con trazabilidad de fuentes | Review status and source posture. | Avoid overclaiming. |
 | established fields | campos consolidados | Scientific grounding. | `Campos establecidos` is okay but less natural. |
 | field boundaries | límites de cada campo | Scientific grounding. | Keep each discipline distinct. |
@@ -157,14 +158,14 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | integration | integración | TEG-Blue contribution. | Do not imply source fields already contain TEG-Blue. |
 | review | revisión / evaluación crítica | Scholarly review and public critique. | `Review` is not always peer review. |
 | peer-reviewed | revisado por pares | Publication/research status. | Use only for specific sources/publications. |
-| public record | registro público | Publications. | Distinguish record from authority. |
-| citable | citable | Publications. | Fine in academic Spanish. |
-| DOI pointer | referencia DOI / enlace DOI | Publications. | Use by sentence. |
-| publication status | estado de publicación | Publications. | Keep visible. |
-| attribution | atribución | License, ethics, publications. | `Crédito` can work in UI, but `atribución` is legal/license. |
+| public record | registro público | Future citation records. | Distinguish record from authority. |
+| citable | citable | Future citation records. | Fine in academic Spanish. |
+| DOI pointer | referencia DOI / enlace DOI | Future citation records. | Use by sentence. |
+| publication status | estado de publicación | Future citation records. | Keep visible. |
+| attribution | atribución | License, ethics, future citation records. | `Crédito` can work in UI, but `atribución` is legal/license. |
 | reuse | reutilización / uso reutilizable | License/reuse posture. | Use `reutilizar` in verbs. |
-| applied builds | desarrollos aplicados | About/collaborate/license. | Avoid making it sound like public tools. |
-| public-interest tools | herramientas de interés público | Collaborate. | Good `.org` phrase. |
+| applied builds | desarrollos aplicados | About, future applied-use pages, or license context. | Avoid making it sound like public tools. |
+| public-interest tools | herramientas de interés público | Future applied-use pages. | Good `.org` phrase. |
 
 ## Research Field Names
 
@@ -229,9 +230,7 @@ These terms are stable enough to use as defaults across `/es/glossary`,
 | How TEG-Blue Reads Patterns | Cómo TEG-Blue lee patrones | Plain and faithful. |
 | Scientific Grounding | Fundamentación científica | Strong default. |
 | Ethics | Ética | Direct. |
-| Publications | Publicaciones | Direct. |
 | Glossary | Glosario | Direct. |
-| Collaborate | Colaborar | Direct. |
 
 ## Terms Still Open For Real Page Copy
 

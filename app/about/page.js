@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading how emotional, nervous-system, relational, and repair patterns form and change.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual framework for seeing how body state, emotion, relationship, protection, shutdown, and repair can change across safety and threat.",
   },
   {
     question: "Who created TEG-Blue?",
@@ -17,54 +17,54 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the difference between teg-blue.org and teg-blue.com?",
-    answer: "teg-blue.org is the public framework and research-grounding home. teg-blue.com carries practical public tools for reading emotional and nervous-system patterns in everyday situations.",
+    answer: "teg-blue.org explains the framework and its research links. teg-blue.com carries practical tools for reading emotional and nervous-system patterns in everyday situations.",
   },
   {
     question: "Is TEG-Blue a clinical system?",
-    answer: "No. TEG-Blue is educational, reflective, and research-facing. It is not therapy, diagnosis, treatment, medical care, legal support, or crisis support.",
+    answer: "No. TEG-Blue is educational and research-facing. It is not therapy, diagnosis, treatment, medical care, legal support, or crisis support.",
   },
 ];
 
 const PURPOSE_CARDS = [
   {
-    label: "Legibility",
-    title: "Make emotional patterns easier to see",
-    body: "TEG-Blue gives shared language for patterns that are often felt before they are clearly understood.",
+    label: "Creator",
+    title: "Who made the work",
+    body: "TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho.",
     color: SPECTRUM.azure,
   },
   {
-    label: "Relationship",
-    title: "Hold body state and relationship together",
-    body: "The framework tracks how patterns that begin in the body can shape individual experience and relationships.",
+    label: "Routes",
+    title: "Where each public surface lives",
+    body: "teg-blue.org explains the framework, source limits, ethics, glossary, and contact routes. teg-blue.com carries practical public tools.",
     color: SPECTRUM.cobalt,
   },
   {
-    label: "Response",
-    title: "Keep response proportional to the pattern",
-    body: "Pattern reading stays connected to care, boundary, protection, accountability, support, and repair.",
+    label: "Limits",
+    title: "What the work does not claim",
+    body: "TEG-Blue is not therapy, diagnosis, treatment, legal support, medical care, or crisis support.",
     color: SPECTRUM.indigo,
   },
 ];
 
 const ECOSYSTEM_LAYERS = [
   {
-    title: "Public framework",
-    body: "teg-blue.org carries The Emotional Gradient Blueprint, The Nervous System Gradient, responsible pattern-reading guidance, publication records, citation guidance, and collaboration materials.",
+    title: "Public site",
+    body: "teg-blue.org explains The Emotional Gradient Blueprint, The Nervous System Gradient, source limits, ethics, glossary terms, and contact routes.",
     color: SPECTRUM.azure,
   },
   {
     title: "TEG-Blue Engine",
-    body: "The Engine is the internal tool-building system: Deep Engine source-tracing plus Visible Engine tool-compression logic for structured, audience-specific tools.",
+    body: "The Engine is the private tool-building system used to trace sources and shape structured tools for specific audiences.",
     color: SPECTRUM.blue,
   },
   {
     title: "Practical tools",
-    body: "teg-blue.com is the practical public tools surface for reading emotional and nervous-system patterns in real situations.",
+    body: "teg-blue.com carries public tools for reading emotional and nervous-system patterns in real situations.",
     color: SPECTRUM.cobalt,
   },
   {
     title: "Applied builds",
-    body: "Applied or licensed builds may be created for a specific audience, institution, risk context, or public-interest need under clear boundaries.",
+    body: "Licensed or commissioned builds may be made for a specific audience, institution, risk context, or public-interest need.",
     color: SPECTRUM.indigo,
   },
 ];
@@ -72,11 +72,11 @@ const ECOSYSTEM_LAYERS = [
 const STANCE_ITEMS = [
   {
     title: "Framework, not diagnosis",
-    body: "TEG-Blue maps patterns of organization. It does not determine motive, assign clinical categories, or identify a person's true internal state from the outside.",
+    body: "TEG-Blue maps visible patterns. It does not determine motive, assign clinical categories, or identify a person's true internal state from the outside.",
   },
   {
-    title: "Science with boundaries",
-    body: "Established research areas support specific parts of the map. Each field remains itself, and TEG-Blue places those parts in relation.",
+    title: "Science with limits",
+    body: "Research areas support specific parts of the map. Each field keeps its own methods and limits.",
   },
   {
     title: "Mechanism and impact stay separate",
@@ -84,7 +84,7 @@ const STANCE_ITEMS = [
   },
   {
     title: "Open to review",
-    body: "The public framework is presented for study, critique, correction, adaptation conversations, and future research.",
+    body: "The public work is available for study, critique, correction, adaptation conversations, and future research.",
   },
 ];
 
@@ -98,7 +98,7 @@ const CONTACT_LINKS = [
 
 export const metadata = {
   title: "About",
-  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, ecosystem boundaries, and public research stance.",
+  description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, site limits, and public research stance.",
   keywords: [
     "TEG-Blue",
     "The Emotional Gradient Blueprint",
@@ -114,7 +114,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About TEG-Blue",
-    description: "The project, creator, ecosystem boundaries, and research stance behind The Emotional Gradient Blueprint.",
+    description: "The project, creator, site limits, and research stance behind The Emotional Gradient Blueprint.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue",
     type: "profile",
@@ -138,7 +138,7 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="The project, creator, ecosystem boundaries, and research stance behind a science-grounded visual educational framework for emotional-pattern legibility."
+            description="Who created TEG-Blue, what each public surface is for, where the records are, and how to contact the project."
           />
         }
       >
@@ -171,7 +171,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, ecosystem boundaries, and public research stance.",
+            description: "About TEG-Blue, The Emotional Gradient Blueprint, its creator, site limits, and public research stance.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
@@ -224,14 +224,15 @@ function OverviewSection() {
       <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
       <h2 style={sectionHeadingStyle}>TEG-Blue is The Emotional Gradient Blueprint.</h2>
       <p style={leadStyle}>
-        TEG-Blue is a science-grounded visual educational framework for reading how emotional, nervous-system,
-        relational, and repair patterns form and change.
+        This page is about the project: creator, public records, site routes, contact routes, and use limits.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        It shows how patterns that begin in the body can shape individual experience and relationships across
-        safety, threat, control, shutdown, regulation, and repair. The Nervous System Gradient is the central
-        public map inside that wider framework.
+        For the map itself, use the TEG-Blue Overview. That page explains what the framework is, what the
+        Nervous System Gradient maps, how to read it, and what it does not claim.
       </p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
+        <NavLink href="/foundations" label="TEG-Blue Overview" />
+      </div>
     </section>
   );
 }
@@ -239,11 +240,11 @@ function OverviewSection() {
 function PurposeSection() {
   return (
     <section id="purpose" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.cobalt)}>Purpose</div>
-      <h2 style={sectionHeadingStyle}>The work is built for emotional-pattern legibility.</h2>
+      <div style={labelStyle(SPECTRUM.cobalt)}>This page covers</div>
+      <h2 style={sectionHeadingStyle}>Use About for project identity and routes.</h2>
       <p style={leadStyle}>
-        The goal is not to label people. The goal is to make patterns visible enough to reduce ambiguity,
-        interrupt harm where needed, and support clearer care, boundary, accountability, and repair.
+        About is the place for authorship, records, site differences, and contact. The overview page is the
+        place for the framework and the map.
       </p>
       <div style={gridStyle}>
         {PURPOSE_CARDS.map((card) => (
@@ -262,13 +263,12 @@ function FounderSection() {
       <div style={calloutStyle(SPECTRUM.indigo)}>
         <p style={bodyStyle}>
           Anna Paretas-Artacho is the Barcelona-based founder and creator of TEG-Blue, The Emotional Gradient
-          Blueprint. Working independently, she develops visual frameworks and practical tools for making
-          emotional, nervous-system, relational, and social patterns easier to see and work with.
+          Blueprint. Working independently, she develops visual maps and practical tools for seeing emotional,
+          nervous-system, relational, and social patterns more clearly.
         </p>
         <p style={{ ...bodyStyle, marginTop: 12 }}>
-          Her work brings together visual communication, systems thinking, applied pattern design,
-          cross-disciplinary research, and public-interest tool building. It should not be read as a clinical,
-          medical, legal, or crisis-support service.
+          Her work brings together visual communication, systems thinking, cross-disciplinary research, and
+          public-interest tool building. It is not a clinical, medical, legal, or crisis-support service.
         </p>
       </div>
     </section>
@@ -278,16 +278,15 @@ function FounderSection() {
 function EcosystemSection() {
   return (
     <section id="ecosystem" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Ecosystem</div>
-      <h2 style={sectionHeadingStyle}>The public framework, tools, Engine, and applied builds stay distinct.</h2>
+      <div style={labelStyle(SPECTRUM.azure)}>Project parts</div>
+      <h2 style={sectionHeadingStyle}>The public site, tools, Engine, and licensed builds do different jobs.</h2>
       <p style={leadStyle}>
-        TEG-Blue has connected surfaces, but they do different jobs. Keeping those jobs distinct protects the
-        research posture, tool boundaries, and public claims.
+        TEG-Blue has connected parts, but they should not be treated as one thing. A public page, a practical
+        tool, a private source system, and a licensed build carry different claims.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        The public site is not a raw Engine export. It translates source-depth into public explanation while
-        preserving mechanism, boundaries, attribution, and the distinction between research grounding and applied
-        tool use.
+        The public site is not a raw Engine export. It uses public language and keeps source support, attribution,
+        use limits, and applied tool use separate.
       </p>
       <div style={gridStyle}>
         {ECOSYSTEM_LAYERS.map((item) => (
@@ -296,7 +295,7 @@ function EcosystemSection() {
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
         <NavLink href="/glossary" label="Glossary terms" />
-        <NavLink href="/publications" label="Status and citation" />
+        <NavLink href="/scientific-foundations" label="Source limits" />
       </div>
     </section>
   );
@@ -306,10 +305,10 @@ function ResearchStanceSection() {
   return (
     <section id="research-stance" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.slate)}>Research stance</div>
-      <h2 style={sectionHeadingStyle}>The framework is public so it can be studied, questioned, and refined.</h2>
+      <h2 style={sectionHeadingStyle}>The work is public so it can be studied, questioned, and corrected.</h2>
       <p style={leadStyle}>
-        TEG-Blue is grounded in science when that means established research areas support specific
-        parts of the map, each field remains itself, and TEG-Blue places those parts in relation.
+        Research areas support specific parts of the map. No single source proves the whole framework. The
+        public wording should make that clear.
       </p>
       <div style={gridStyle}>
         {STANCE_ITEMS.map((item) => (
@@ -324,7 +323,7 @@ function ContactSection() {
   return (
     <section id="contact" style={{ marginBottom: 32 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Contact and records</div>
-      <h2 style={sectionHeadingStyle}>Routes into the work.</h2>
+      <h2 style={sectionHeadingStyle}>Use these routes.</h2>
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>
@@ -335,8 +334,7 @@ function ContactSection() {
         </table>
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-        <NavLink href="/collaborate" label="Collaboration" />
-        <NavLink href="/publications" label="Publications" />
+        <NavLink href="/scientific-foundations" label="Scientific Grounding" />
       </div>
     </section>
   );

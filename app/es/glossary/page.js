@@ -184,7 +184,7 @@ export default function SpanishGlossaryPage() {
             badge="GLOSARIO"
             title="Glosario"
             subtitle="Palabras clave para orientarse"
-            description="Una guía breve para entender el lenguaje básico de TEG-Blue, el Blueprint y el Gradiente del Sistema Nervioso sin convertir los patrones en etiquetas para personas."
+            description="Una guía breve para entender el lenguaje básico de TEG-Blue y el Gradiente del Sistema Nervioso sin convertir los patrones en etiquetas para personas."
           />
         }
       >
@@ -238,10 +238,9 @@ function WhereNextSection() {
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>
-            <NavRow label="Cómo TEG-Blue lee patrones" href="/methodology" linkText="Lectura de patrones" />
             <NavRow label="Ética y límites de uso" href="/ethics" linkText="Ética" />
             <NavRow label="Visión general del marco" href="/foundations" linkText="Visión general de TEG-Blue" />
-            <NavRow label="Citas y registros públicos" href="/publications" linkText="Publicaciones" />
+            <NavRow label="Áreas de investigación y límites de las afirmaciones" href="/scientific-foundations" linkText="Fundamentación científica" />
           </tbody>
         </table>
       </div>

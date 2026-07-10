@@ -21,12 +21,12 @@ import ReviewStatusPanel from "@/src/components/ReviewStatusPanel";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const MAP_SUBTITLE =
-  "A visual map of how emotional, bodily, and relational patterns shift across safety, threat, strategic management, power mobilisation, capacity exceeded, regulation, and repair.";
+  "A visual map of how body state, emotion, perception, relationship, protection, shutdown, regulation, and repair can shift across safety and threat.";
 
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading emotions and nervous-system states as biological and relational information.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a map that gathers research from different fields into one visual framework for reading body state, emotion, relationship, protection, shutdown, and repair.",
   },
   {
     question: "What is The Nervous System Gradient?",
@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How should the framework be used?",
-    answer: "Use it as a map for reading patterns, impact, capacity, and possible response. It is educational and reflective, not diagnostic or clinical.",
+    answer: "Use it as a map for reading patterns, impact, capacity, and possible response. It is educational and research-facing, not diagnostic or clinical.",
   },
   {
     question: "How does TEG-Blue handle harm?",
@@ -120,14 +120,14 @@ const SCOPE_ITEMS = [
     body: "A protective origin can still cause harm when a pattern becomes rigid, repeated, controlling, or unrepaired.",
   },
   {
-    title: "A framework with research boundaries",
-    body: "Established research supports specific parts of the map. The integration is TEG-Blue's contribution.",
+    title: "A framework with research limits",
+    body: "Research supports specific parts of the map. TEG-Blue's contribution is the way those parts are placed together.",
   },
 ];
 
 export const metadata = {
   title: "TEG-Blue Overview",
-  description: "A public overview of TEG-Blue, emotions and nervous-system states as information, and The Nervous System Gradient as its central public map.",
+  description: "A public overview of TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient as its central public map.",
   keywords: [
     "TEG-Blue overview",
     "The Emotional Gradient Blueprint",
@@ -166,7 +166,7 @@ export default function FoundationsPage() {
             badge="FRAMEWORK OVERVIEW"
             title="TEG-Blue Overview"
             subtitle="The Emotional Gradient Blueprint"
-            description="A public overview of emotions and nervous-system states as biological and relational information, with The Nervous System Gradient as the central public map and practical tools available on teg-blue.com."
+            description="What the framework is, what the Gradient maps, how to read patterns, and what the map does not claim."
           />
         }
       >
@@ -178,7 +178,7 @@ export default function FoundationsPage() {
 
         <ReviewStatusPanel
           title="Grounded in science, with the parts kept distinct."
-          description="Research areas support specific parts of the map. Each field remains itself; TEG-Blue places the parts in relation. The integration is the contribution."
+          description="Research areas support specific parts of the map. Each field keeps its own methods and limits. TEG-Blue places the parts together."
         />
 
         <WhereNextSection />
@@ -225,17 +225,30 @@ function WhatItIsSection() {
   return (
     <section id="what-it-is" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
-      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotions and nervous-system states legible as biological and relational information.</h2>
+      <h2 style={sectionHeadingStyle}>TEG-Blue shows what can change when state changes.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a science-grounded visual educational framework for reading
-        how emotion, body state, perception, relationship, and repair patterns form and change.
+        TEG-Blue is The Emotional Gradient Blueprint: a map that gathers research from different fields into one
+        visual framework for reading body state, emotion, relationship, protection, shutdown, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        In the current public phase, that Blueprint is expressed most directly through The Nervous System
-        Gradient. The map makes visible how shifts that begin in the body can change what feels true, what becomes
-        possible, and what repeats across safety, threat, strategic management, power mobilisation, capacity
-        exceeded, regulation, and repair.
+        In the current public phase, the Blueprint is expressed most directly through The Nervous System
+        Gradient. The map shows how shifts that begin in the body can change what feels true, what becomes
+        possible, what repeats, and what repair may require.
       </p>
+      <div style={calloutStyle(SPECTRUM.cobalt)}>
+        <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
+          In plain language: TEG-Blue puts separate research areas into one map.
+        </p>
+        <p style={bodyStyle}>
+          Emotion science, body-state research, stress physiology, attachment, trauma, relationship, and repair
+          are often studied separately. TEG-Blue arranges those parts so a reader can see how they may move
+          together in one pattern.
+        </p>
+        <p style={{ ...bodyStyle, marginTop: 10 }}>
+          This does not mean one field proves the whole framework. It means each part of the map should stay
+          connected to the research area that supports it.
+        </p>
+      </div>
       <div style={gridStyle}>
         {OVERVIEW_CARDS.map((card) => (
           <InfoCard key={card.title} item={card} />
@@ -252,9 +265,8 @@ function GradientSection() {
       <h2 style={sectionHeadingStyle}>The Nervous System Gradient sits inside the Blueprint.</h2>
       <p style={leadStyle}>{MAP_SUBTITLE}</p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        The Gradient does not claim to reveal a person's hidden truth. It gives a shared way to ask what pattern
-        may be organizing perception, emotion, body activation, what feels real, behaviour, relationship, and
-        repair.
+        The Gradient does not reveal a person's hidden truth. It gives a shared way to ask what pattern may be
+        shaping perception, emotion, body activation, what feels real, behaviour, relationship, and repair.
       </p>
 
       <div aria-hidden="true" style={gradientBarWrapStyle}>
@@ -284,8 +296,8 @@ function ReadingPatternsSection() {
       <div style={labelStyle(SPECTRUM.indigo)}>Pattern reading</div>
       <h2 style={sectionHeadingStyle}>Read observation, impact, capacity, and response separately.</h2>
       <p style={leadStyle}>
-        Responsible pattern reading starts from what can be seen and what effect occurred. Interpretation should
-        stay close to context, repetition, available capacity, and the response that fits.
+        Start with what can be seen and what effect occurred. Then ask what capacity was available and what
+        response fits now.
       </p>
       <div style={gridStyle}>
         {READING_POINTS.map((point) => (
@@ -313,7 +325,7 @@ function StateShiftsSection() {
       <div style={labelStyle(SPECTRUM.azure)}>What shifts</div>
       <h2 style={sectionHeadingStyle}>State changes what feels true, possible, and repeatable.</h2>
       <p style={leadStyle}>
-        The Gradient is useful because several capacities can shift together: what the system notices, what feels
+        The Gradient is useful because several things can shift together: what the system notices, what feels
         true, what the body prepares to do, whether empathy can stay present, and whether repair can begin. When
         threat or pressure lasts, a response can become a recurring pattern.
       </p>
@@ -334,8 +346,8 @@ function ScopeSection() {
       <div style={labelStyle(SPECTRUM.slate)}>Scope and limits</div>
       <h2 style={sectionHeadingStyle}>Use the framework as a map, not as authority over a person.</h2>
       <p style={leadStyle}>
-        TEG-Blue works best when it keeps humility, observation, and impact in the foreground. Calm is not the
-        same as safety; distress is not the same as danger.
+        TEG-Blue works best when it starts with observation and impact. Calm is not the same as safety. Distress
+        is not the same as danger.
       </p>
       <div style={gridStyle}>
         {SCOPE_ITEMS.map((item) => (
@@ -360,10 +372,9 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
-            <NavRow label="Ethical commitments and use boundaries" href="/ethics" linkText="Ethics" />
-            <NavRow label="Research areas and claim boundaries" href="/scientific-foundations" linkText="Scientific Grounding" />
-            <NavRow label="How TEG-Blue reads patterns" href="/methodology" linkText="Pattern reading" />
-            <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
+            <NavRow label="Ethical commitments and use limits" href="/ethics" linkText="Ethics" />
+            <NavRow label="Research areas and source limits" href="/scientific-foundations" linkText="Scientific Grounding" />
+            <NavRow label="Basic terms and map language" href="/glossary" linkText="Glossary" />
             <NavRow label="Practical tools for applying the map" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>

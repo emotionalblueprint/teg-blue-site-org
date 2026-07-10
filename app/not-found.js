@@ -23,7 +23,6 @@ export const metadata = {
 const NAV_LINKS = [
   { label: "Home", href: "/", description: "The Emotional Gradient Blueprint public doorway." },
   { label: "TEG-Blue overview", href: "/foundations", description: "Blueprint scope, pattern reading, and research status." },
-  { label: "Pattern reading", href: "/methodology", description: "Observation, interpretation, impact, claim status, and limits." },
   { label: "Scientific grounding", href: "/scientific-foundations", description: "Research areas, field boundaries, and claim discipline." },
   { label: "Ethics", href: "/ethics", description: "Dignity, agency, source honesty, attribution, permission, impact, and repair." },
   { label: "About", href: "/about", description: "Project background, founder, contact routes, and site distinction." },

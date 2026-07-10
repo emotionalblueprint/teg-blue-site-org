@@ -15,11 +15,6 @@ export const HEADER_COPY = {
         description: "The Emotional Gradient Blueprint and the central Nervous System Gradient map.",
       },
       {
-        label: "Pattern reading",
-        href: "/methodology",
-        description: "How TEG-Blue separates observation, interpretation, impact, and claim status.",
-      },
-      {
         label: "Scientific grounding",
         href: "/scientific-foundations",
         description: "Research areas, field boundaries, and claim discipline behind the map.",
@@ -30,19 +25,9 @@ export const HEADER_COPY = {
         description: "Dignity, agency, source honesty, attribution, permission, impact, and repair.",
       },
       {
-        label: "Publications",
-        href: "/publications",
-        description: "Public records, release pointers, citation guidance, and source posture.",
-      },
-      {
         label: "Glossary",
         href: "/glossary",
         description: "Key words for finding your way around the map.",
-      },
-      {
-        label: "Collaborate",
-        href: "/collaborate",
-        description: "Research review, applied builds, and licensing conversations.",
       },
     ],
   },
@@ -62,11 +47,6 @@ export const HEADER_COPY = {
         description: "The Emotional Gradient Blueprint y el Gradiente del Sistema Nervioso como mapa central.",
       },
       {
-        label: "Lectura de patrones",
-        href: "/methodology",
-        description: "Cómo TEG-Blue separa observación, interpretación, impacto y tipo de afirmación.",
-      },
-      {
         label: "Fundamentación científica",
         href: "/scientific-foundations",
         description: "Áreas de investigación, límites de cada campo y disciplina de afirmaciones detrás del mapa.",
@@ -77,19 +57,9 @@ export const HEADER_COPY = {
         description: "Dignidad, agencia, honestidad de fuentes, atribución, permiso, impacto y reparación.",
       },
       {
-        label: "Publicaciones",
-        href: "/publications",
-        description: "Registros públicos, publicaciones, orientación de cita y postura de fuentes.",
-      },
-      {
         label: "Glosario",
         href: "/glossary",
         description: "Palabras clave para orientarse en el mapa.",
-      },
-      {
-        label: "Colaborar",
-        href: "/collaborate",
-        description: "Revisión de investigación, desarrollos aplicados y conversaciones de licencia.",
       },
     ],
   },

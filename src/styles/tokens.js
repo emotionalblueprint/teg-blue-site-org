@@ -246,7 +246,6 @@ export const CONTENT_TYPE_COLORS = {
   framework:    SPECTRUM.cobalt,
   methodology:  SPECTRUM.slate,
   opendata:     SPECTRUM.azure,
-  collaboration: SPECTRUM.azure,
   citation:     SPECTRUM.slate,
   reframe:      SPECTRUM.slate,
 };
@@ -261,7 +260,6 @@ export const CONTENT_TYPE_LABELS = {
   framework:     "Framework",
   methodology:   "Methodology",
   opendata:      "Open Data",
-  collaboration: "Collaborate",
   citation:      "Citation",
   reframe:       "Reframe",
 };

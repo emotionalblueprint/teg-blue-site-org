@@ -9,11 +9,11 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What does TEG-Blue mean by ethics?",
-    answer: "TEG-Blue ethics are the commitments that govern how the framework is built, shared, cited, adapted, and used with people: dignity, agency, truthful claims, source honesty, attribution, non-extraction, and repair.",
+    answer: "TEG-Blue ethics are the rules for how the framework is built, shared, cited, adapted, and used with people: dignity, agency, truthful claims, source honesty, attribution, non-extraction, and repair.",
   },
   {
     question: "Is TEG-Blue clinical or diagnostic?",
-    answer: "No. TEG-Blue is educational, reflective, and research-grounded. It should not be used as diagnosis, treatment, crisis support, or authority over a person's true internal state.",
+    answer: "No. TEG-Blue is educational and research-facing. It should not be used as diagnosis, treatment, crisis support, or authority over a person's true internal state.",
   },
   {
     question: "How can TEG-Blue be reused?",
@@ -55,11 +55,11 @@ const ETHICAL_COMMITMENTS = [
 const CLAIM_ETHICS = [
   {
     title: "Name what is known",
-    body: "Separate observation, interpretation, source support, TEG-Blue integration, and open questions. Do not make an inference sound like a fact.",
+    body: "Separate observation, interpretation, source support, what TEG-Blue adds, and open questions. Do not make an inference sound like a fact.",
   },
   {
     title: "Do not borrow authority",
-    body: "Research can support specific parts of the map. It should not be used to imply whole-framework validation or clinical authority.",
+    body: "Research can support specific parts of the map. It should not be used to imply proof of all of TEG-Blue or clinical authority.",
   },
   {
     title: "Keep the person larger than the pattern",
@@ -67,7 +67,7 @@ const CLAIM_ETHICS = [
   },
   {
     title: "Name limits before use",
-    body: "Tools and pages are for reflection, education, comparison, and clearer conversation. They are not crisis support or professional judgment.",
+    body: "Tools and pages are for reflection, education, comparison, and clearer conversation. They are not crisis support, treatment, legal support, or professional judgment.",
   },
 ];
 
@@ -97,7 +97,7 @@ const STEWARDSHIP = [
   },
   {
     title: "Public reference stays possible",
-    body: "The framework should be easy to cite, discuss, summarize, translate, and teach from when attribution and claim boundaries are preserved.",
+    body: "The framework should be easy to cite, discuss, summarize, translate, and teach from when attribution and claim limits are preserved.",
   },
   {
     title: "Permission is part of ethics",
@@ -105,7 +105,7 @@ const STEWARDSHIP = [
   },
   {
     title: "Other work remains itself",
-    body: "Third-party research, sources, fonts, dependencies, and externally owned instruments keep their own rights, licenses, authorship, and institutional boundaries.",
+    body: "Third-party research, sources, fonts, dependencies, and externally owned instruments keep their own rights, licenses, authorship, and limits.",
   },
 ];
 
@@ -128,7 +128,7 @@ export const metadata = {
     "source honesty",
     "creator attribution",
     "non-extraction",
-    "permission boundaries",
+    "permission limits",
     "responsible pattern reading",
     "mechanism and impact",
     "repair capacity",
@@ -161,7 +161,7 @@ export default function EthicsPage() {
             badge="ETHICS"
             title="Ethics"
             subtitle="How the work should be held"
-            description="The commitments behind how TEG-Blue is built, shared, cited, adapted, and used with people."
+            description="Rules for using TEG-Blue without turning a pattern map into control, diagnosis, extraction, or borrowed authority."
           />
         }
       >
@@ -209,11 +209,11 @@ function CommitmentsSection() {
   return (
     <section id="commitments" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Core commitments</div>
-      <h2 style={sectionHeadingStyle}>The map should make people more legible, not smaller.</h2>
+      <h2 style={sectionHeadingStyle}>The map should help people see patterns without shrinking people.</h2>
       <p style={leadStyle}>
-        TEG-Blue exists to make emotional, bodily, and relational patterns easier to see and work with. Its
-        ethics begin with the way that visibility is used: to support clarity, agency, responsibility, and
-        repair rather than reduction, control, or extraction.
+        TEG-Blue exists to make emotional, bodily, and relational patterns easier to see and work with. That
+        visibility should support clarity, agency, responsibility, and repair. It should not be used to reduce,
+        control, or extract from a person.
       </p>
       <div style={gridStyle}>
         {ETHICAL_COMMITMENTS.map((item) => (
@@ -230,8 +230,8 @@ function ClaimEthicsSection() {
       <div style={labelStyle(SPECTRUM.cobalt)}>Claim ethics</div>
       <h2 style={sectionHeadingStyle}>Truthfulness matters at the level of the sentence.</h2>
       <p style={leadStyle}>
-        The ethics of TEG-Blue are not only about good intentions. They show up in small claims: what a page says
-        is observed, inferred, sourced, integrated, unresolved, or outside the framework's authority.
+        TEG-Blue ethics show up in small claims: what a page says was observed, inferred, sourced, added by
+        TEG-Blue, still unresolved, or outside what the framework can claim.
       </p>
       <div style={gridStyle}>
         {CLAIM_ETHICS.map((item) => (
@@ -246,10 +246,10 @@ function UseEthicsSection() {
   return (
     <section id="use" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.indigo)}>Use with people</div>
-      <h2 style={sectionHeadingStyle}>A framework about emotion must be careful with power.</h2>
+      <h2 style={sectionHeadingStyle}>Be careful when a map is used with people.</h2>
       <p style={leadStyle}>
         TEG-Blue deals with vulnerable material: body states, relational harm, perception, control, shutdown,
-        repair, and meaning. That makes consent, context, agency, and power part of the work itself.
+        repair, and meaning. Consent, context, agency, and power matter every time the map is used.
       </p>
       <div style={gridStyle}>
         {USE_ETHICS.map((item) => (
@@ -264,11 +264,11 @@ function StewardshipSection() {
   return (
     <section id="stewardship" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Stewardship</div>
-      <h2 style={sectionHeadingStyle}>Attribution, permission, and boundaries are ethical commitments.</h2>
+      <h2 style={sectionHeadingStyle}>Attribution and permission matter.</h2>
       <p style={leadStyle}>
-        The framework is meant to be citeable and discussable without becoming ownerless, extractive, or detached
-        from its source. Reuse should preserve authorship, claim boundaries, and the difference between public
-        reference and applied adaptation.
+        The framework is meant to be citeable and discussable without becoming ownerless or detached from its
+        source. Reuse should preserve authorship, claim limits, and the difference between public reference and
+        applied adaptation.
       </p>
       <div style={gridStyle}>
         {STEWARDSHIP.map((item) => (
@@ -285,8 +285,8 @@ function ImpactRepairSection() {
       <div style={labelStyle(SPECTRUM.slate)}>Impact and repair</div>
       <h2 style={sectionHeadingStyle}>Mechanism explains the pattern; it does not erase impact.</h2>
       <p style={leadStyle}>
-        This guardrail remains central because it protects the whole project from turning explanation into
-        absolution. A pattern may have a protective origin and still cause harm.
+        This rule keeps explanation from covering over harm. A pattern may have a protective origin and still
+        cause harm.
       </p>
       <div style={calloutStyle(SPECTRUM.slate)}>
         <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
@@ -316,9 +316,8 @@ function WhereNextSection() {
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>
-            <NavRow label="How TEG-Blue reads patterns" href="/methodology" linkText="Pattern reading" />
-            <NavRow label="Source support and reuse posture" href="/publications" linkText="Publications" />
-            <NavRow label="Project, creator, and site boundaries" href="/about" linkText="About" />
+            <NavRow label="Source support and claim limits" href="/scientific-foundations" linkText="Scientific Grounding" />
+            <NavRow label="Project, creator, and site limits" href="/about" linkText="About" />
             <NavRow label="Framework overview" href="/foundations" linkText="TEG-Blue Overview" />
           </tbody>
         </table>

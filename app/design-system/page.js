@@ -95,9 +95,8 @@ const TERM_EXAMPLES = [
 
 const TABLE_ROWS = [
   { label: "Framework overview", href: "/foundations", text: "TEG-Blue Overview" },
-  { label: "Pattern-reading method", href: "/methodology", text: "Pattern reading" },
   { label: "Research boundaries", href: "/scientific-foundations", text: "Scientific Grounding" },
-  { label: "Citation guidance", href: "/publications", text: "Publications" },
+  { label: "Core terms", href: "/glossary", text: "Glossary" },
 ];
 
 export default function DesignSystemPage() {
@@ -125,7 +124,7 @@ export default function DesignSystemPage() {
           <CalloutPanel
             color={SPECTRUM.azure}
             title="Use this page to evaluate tone and components, not as public authority."
-            body="The public route map remains home, about, overview, pattern reading, scientific grounding, ethics, publications, glossary, and collaborate."
+            body="The public route map remains home, about, overview, scientific grounding, ethics, and glossary."
           />
         </EditorialSection>
 
@@ -197,7 +196,7 @@ export default function DesignSystemPage() {
         <EditorialSection
           id="guardrails"
           kicker="Guardrail blocks"
-          title="Ethics and methodology need firmness without visual alarm."
+          title="Ethics and source limits need firmness without visual alarm."
           lead="Use quiet panels for ordinary limits and signal callouts for claims that must stay visible across pages."
           color={SPECTRUM.cobalt}
         >
@@ -222,7 +221,7 @@ export default function DesignSystemPage() {
           id="records"
           kicker="Research tables"
           title="Tables and records should feel citable."
-          lead="Research, publication, and collaboration pages use compact tables when a reader needs to compare routes or verify the next source."
+          lead="Research and support pages use compact tables when a reader needs to compare routes or verify the next source."
           color={SPECTRUM.blue}
         >
           <ReferenceTable rows={TABLE_ROWS} />

@@ -10,7 +10,7 @@ export default function Image() {
     badge: 'TEG-Blue Overview',
     badgeColor: 'azure',
     title: 'TEG-Blue Overview',
-    subtitle: 'The Blueprint · The Gradient · Pattern reading · Repair',
+    subtitle: 'The Blueprint · The Gradient · Research grounding · Repair',
     url: 'teg-blue.org/foundations',
     needle: 0.125,
   })

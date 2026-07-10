@@ -21,19 +21,19 @@ const TERMS = [
   {
     term: "TEG-Blue",
     definition: "The short name of the project.",
-    note: "When we talk about TEG-Blue, we mean the framework, the map, and the tools that help emotional patterns become easier to see.",
+    note: "When we talk about TEG-Blue, we mean the framework, the map, and the tools that help people see emotional patterns more clearly.",
     color: SPECTRUM.azure,
   },
   {
     term: "The Emotional Gradient Blueprint",
     definition: "The full name of the framework.",
-    note: "It is a visual educational way to explore how emotional, bodily, and relational patterns can form, change, and repair.",
+    note: "It is a visual way to explore how emotion, body state, relationship, and repair can change.",
     color: SPECTRUM.azure,
   },
   {
     term: "The Nervous System Gradient",
     definition: "The central map inside TEG-Blue.",
-    note: "It helps show how a person or relationship may move between more safety, more protection, more control, shutdown, regulation, and repair.",
+    note: "It helps show how a person or relationship may move between safety, protection, control, shutdown, regulation, and repair.",
     color: SPECTRUM.blue,
   },
   {
@@ -57,7 +57,7 @@ const TERMS = [
   {
     term: "Pattern reading",
     definition: "A way to notice what repeats, what impact it has, and what response may care for the situation better.",
-    note: "Pattern reading does not try to guess motives or diagnose inner states.",
+    note: "Pattern reading does not guess motive or diagnose a person's inner state.",
     color: SPECTRUM.indigo,
   },
   {
@@ -178,11 +178,10 @@ function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
       <div style={labelStyle(SPECTRUM.azure)}>Terminology</div>
-      <h2 style={sectionHeadingStyle}>A simple vocabulary for entering TEG-Blue with care.</h2>
+      <h2 style={sectionHeadingStyle}>Start with these words.</h2>
       <p style={leadStyle}>
-        This glossary gathers the words that help most at the beginning. The aim is orientation, not diagnosis;
-        naming patterns without reducing anyone to a label; and leaving room for context, impact, boundaries, and
-        repair.
+        This glossary gathers the words that help most at the beginning. Use them to understand the map, not to
+        label people. Context, impact, boundaries, and repair still matter.
       </p>
     </section>
   );
@@ -210,10 +209,9 @@ function WhereNextSection() {
       <div style={tableWrapStyle}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <tbody>
-            <NavRow label="How TEG-Blue reads patterns" href="/methodology" linkText="Pattern reading" />
-            <NavRow label="Ethical commitments and use boundaries" href="/ethics" linkText="Ethics" />
+            <NavRow label="Ethical commitments and use limits" href="/ethics" linkText="Ethics" />
             <NavRow label="Framework overview" href="/foundations" linkText="TEG-Blue Overview" />
-            <NavRow label="Citation guidance and public records" href="/publications" linkText="Publications" />
+            <NavRow label="Research areas and source limits" href="/scientific-foundations" linkText="Scientific Grounding" />
           </tbody>
         </table>
       </div>

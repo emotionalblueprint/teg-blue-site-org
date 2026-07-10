@@ -55,25 +55,29 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /system-vision-invitation/* → /collaborate (8 old URLs)
+      // /system-vision-invitation/* → /about (8 old URLs)
       {
         source: '/system-vision-invitation/:path*',
-        destination: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
 
-      // /essays/* → /publications (8 old URLs)
+      // /essays/* → /foundations (8 old URLs)
       {
         source: '/essays/:path*',
-        destination: '/publications',
+        destination: '/foundations',
         permanent: true,
       },
 
-      // /methodology/* subpaths → /methodology (8 old URLs)
-      // Note: /methodology itself already exists, these catch deep subpaths
+      // /methodology/* subpaths → /foundations (Pattern Reading route is removed)
       {
         source: '/methodology/:slug/:path*',
-        destination: '/methodology',
+        destination: '/foundations',
+        permanent: true,
+      },
+      {
+        source: '/methodology',
+        destination: '/foundations',
         permanent: true,
       },
 
@@ -120,15 +124,15 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /360-synthesis/* → /methodology (2 old URLs)
+      // /360-synthesis/* → /foundations (Pattern Reading route is removed)
       {
         source: '/360-synthesis/:path*',
-        destination: '/methodology',
+        destination: '/foundations',
         permanent: true,
       },
       {
         source: '/360-synthesis',
-        destination: '/methodology',
+        destination: '/foundations',
         permanent: true,
       },
 
@@ -139,15 +143,15 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /research-collaboration-impact/* → /collaborate (2 old URLs)
+      // /research-collaboration-impact/* → /about (2 old URLs)
       {
         source: '/research-collaboration-impact/:path*',
-        destination: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
       {
         source: '/research-collaboration-impact',
-        destination: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
 
@@ -175,15 +179,27 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /contact-collaboration/* → /collaborate (GSC 404s)
+      // /contact-collaboration/* → /about (GSC 404s)
       {
         source: '/contact-collaboration/:path*',
-        destination: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
       {
         source: '/contact-collaboration',
-        destination: '/collaborate',
+        destination: '/about',
+        permanent: true,
+      },
+
+      // Collaborate is not a public page right now.
+      {
+        source: '/collaborate/:path*',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
 
@@ -231,16 +247,25 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Consolidated citation route: source trace and citation posture live in
-      // Publications until a deeper citation system is ready.
+      // Publications and citation routes are not public pages right now.
+      {
+        source: '/publications/:slug/:path*',
+        destination: '/scientific-foundations',
+        permanent: true,
+      },
+      {
+        source: '/publications',
+        destination: '/scientific-foundations',
+        permanent: true,
+      },
       {
         source: '/citations',
-        destination: '/publications',
+        destination: '/scientific-foundations',
         permanent: true,
       },
       {
         source: '/citations/:path*',
-        destination: '/publications',
+        destination: '/scientific-foundations',
         permanent: true,
       },
 
@@ -387,20 +412,20 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Old essay/blog posts → /publications
+      // Old essay/blog posts → /foundations
       {
         source: '/he-didnt-break-me-all-at-once',
-        destination: '/publications',
+        destination: '/foundations',
         permanent: true,
       },
       {
         source: '/no-me-rompi-de-golpe',
-        destination: '/publications',
+        destination: '/foundations',
         permanent: true,
       },
       {
         source: '/gift-of-being-wrong',
-        destination: '/publications',
+        destination: '/foundations',
         permanent: true,
       },
 
@@ -416,15 +441,15 @@ const nextConfig = {
         permanent: true,
       },
 
-      // GSC 404 fixes — collaborate pages
+      // GSC 404 fixes — old collaboration pages
       {
         source: '/the-research-circle',
-        destination: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
       {
         source: '/the-team-research-circle',
-        destination: '/collaborate',
+        destination: '/about',
         permanent: true,
       },
 
@@ -445,7 +470,7 @@ const nextConfig = {
         permanent: true,
       },
 
-      // GSC 404 fixes — Spanish old pages → about/publications
+      // GSC 404 fixes — Spanish old pages → about/foundations
       {
         source: '/mi-vision-personal-sobre-el-narcisismo',
         destination: '/about',
@@ -453,14 +478,14 @@ const nextConfig = {
       },
       {
         source: '/no-me-derrumbo-de-golpe',
-        destination: '/publications',
+        destination: '/foundations',
         permanent: true,
       },
 
       // GSC 404 fixes — other old pages
       {
         source: '/my-personal-take-on-narcissism',
-        destination: '/publications',
+        destination: '/foundations',
         permanent: true,
       },
       {
