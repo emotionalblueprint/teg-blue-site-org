@@ -1,8 +1,7 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, TONE, contrastColor } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, TONE } from "@/src/styles/tokens";
 import SiteFooter from "@/src/components/SiteFooter";
 import SiteHeader from "@/src/components/SiteHeader";
 import EmotionalGradient from "@/src/components/EmotionalGradient";
-import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
@@ -13,7 +12,7 @@ const MAP_SUBTITLE =
 const DESCRIPTION =
   "TEG-Blue is The Emotional Gradient Blueprint: a map that gathers established research into one visual framework for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.";
 const BASE_URL = "https://teg-blue.org";
-const DATE_MODIFIED = "2026-07-10";
+const DATE_MODIFIED = "2026-07-12";
 const RECOMMENDED_CITATION = "Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org/";
 const LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 const ORCID_URL = "https://orcid.org/0009-0005-2394-7162";
@@ -262,6 +261,44 @@ const HOME_CSS = `
     gap: 8px;
   }
 
+  .home-position-list {
+    display: grid;
+    gap: 0;
+    max-width: 900px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-position-item {
+    display: grid;
+    grid-template-columns: 8px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .home-position-bullet {
+    width: 8px;
+    height: 8px;
+    margin-top: 7px;
+    border-radius: 50%;
+    background: var(--position-bullet-color);
+  }
+
+  .home-chronic-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(24px, 5vw, 56px);
+    align-items: start;
+  }
+
+  .home-chronic-points {
+    display: grid;
+    gap: 14px;
+  }
+
   @media (min-width: 1180px) {
     .home-hero-actions {
       gap: 10px;
@@ -301,6 +338,10 @@ const HOME_CSS = `
     .home-gradient-heading {
       font-size: 30px;
     }
+
+    .home-chronic-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 620px) {
@@ -325,6 +366,10 @@ const HOME_CSS = `
     .home-gradient-heading {
       font-size: 27px;
     }
+
+    .home-position-item {
+      gap: 10px;
+    }
   }
 `;
 
@@ -332,32 +377,22 @@ function Ld({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
-const patternWalkthrough = [
-  {
-    label: "A · Connection",
-    title: "Contact feels safe enough",
-    body: "Tone, context, and the other person's perspective remain available. A mismatch can be discussed without immediately threatening the relationship.",
-    color: SPECTRUM.azure,
-  },
-  {
-    label: "A↔B · Safety checking",
-    title: "Uncertainty becomes louder",
-    body: "A delayed reply or change in tone draws attention. The system checks distance, timing, and signs of rupture while clarification is still possible.",
-    color: SPECTRUM.blue,
-  },
-  {
-    label: "B · Protection",
-    title: "Threat organizes the response",
-    body: "Attention narrows. Defending, withdrawing, appeasing, pursuing, or setting distance may become more available than perspective or repair.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    label: "Return · Regulation and repair",
-    title: "More capacity becomes available",
-    body: "With enough safety, time, support, or boundary, the field can widen again. Impact can be named, perspective can return, and repair may begin.",
-    color: SPECTRUM.indigo,
-  },
-];
+const acutePositionSummaries = {
+  baseline: "Restorative ground. Rest, digestion, recovery, and replenishment are available.",
+  connection: "Non-defensive engagement. Presence, empathy, mutuality, and social connection are available.",
+  calibration: "Safety or belonging is uncertain. Defensive organisation begins by checking what changed.",
+  protection: "Immediate threat. Fight, flight, guarding, defence, or appeasement move forward.",
+  strategic: "Persistent threat. Cognition organises around prediction, management, and control of variables.",
+  domination: "Maximum protection. Force, power, and outcome become primary while empathy and impact may narrow.",
+  shutdown: "Capacity exceeded. Mobilisation drops and conservation, withdrawal, or collapse become primary.",
+};
+
+const acutePositionIndex = positions.map((position) => ({
+  ...position,
+  summary: acutePositionSummaries[position.id],
+}));
+
+const chronicAccent = positions.find((position) => position.id === "protection")?.chronicColor;
 
 const modeGroundingPrinciples = [
   {
@@ -451,48 +486,117 @@ function StateSpineStrip() {
   );
 }
 
-function PatternWalkthrough() {
+function AcuteGradientOrientation() {
+  return (
+    <div style={cardStyle}>
+      <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>How to read the acute Gradient</p>
+      <h2 id="acute-gradient-heading" className="home-section-heading" style={{ margin: "0 0 10px", color: TEXT.primary }}>
+        The seven core positions in the map
+      </h2>
+      <p style={{ margin: 0, maxWidth: 820, color: TEXT.secondary, fontSize: 16, lineHeight: 1.72 }}>
+        The positions describe how emotional and nervous-system organisation may change as conditions are read as
+        safe, uncertain, threatening, persistent, overwhelming, or beyond available capacity.
+      </p>
+      <p style={{ margin: "10px 0 0", maxWidth: 860, color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
+        Baseline and Connection are non-defensive. Safety Checking begins defensive organisation, which becomes more
+        explicit through Protection, Strategic Management, and Power Mobilisation. Shutdown is a capacity-exceeded
+        fallback.
+      </p>
+
+      <ul className="home-position-list" aria-label="Seven acute Gradient positions">
+        {acutePositionIndex.map((position) => {
+          const bulletColor = position.id === "baseline" ? BLUE[200] : position.acuteColor;
+          return (
+            <li
+              className="home-position-item"
+              key={position.id}
+              style={{ "--position-bullet-color": bulletColor }}
+            >
+              <span className="home-position-bullet" aria-hidden="true" />
+              <p style={{ margin: 0, color: TEXT.secondary, fontSize: 14, lineHeight: 1.62 }}>
+                <strong style={{ color: TEXT.primary, fontWeight: 650 }}>{position.mode}</strong> — {position.summary}
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+
+      <p style={{ margin: "16px 0 0", maxWidth: 870, color: TEXT.muted, fontSize: 13.5, lineHeight: 1.7 }}>
+        Movement can happen quickly and may update as conditions change. Acute Shutdown may become accessible from the
+        threat positions. These positions describe patterns—not fixed identities, diagnoses, or proof of another
+        person&apos;s hidden internal state.
+      </p>
+    </div>
+  );
+}
+
+function ChronicGradientOrientation() {
   return (
     <div
       style={{
         ...cardStyle,
-        padding: "clamp(20px, 3vw, 30px)",
+        borderTop: `3px solid ${chronicAccent}`,
         background: homeSurface.primary,
-        border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.16)}`,
       }}
     >
-      <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>One possible shift</p>
-      <h2 id="walkthrough-heading" className="home-section-heading" style={{ margin: "0 0 8px", color: homeSurface.text }}>
-        From connection to protection—and back toward repair
-      </h2>
-      <p style={{ margin: 0, maxWidth: 780, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
-        Imagine a change in tone during an important conversation. The event stays the same, but what the body
-        expects—and therefore what the person can notice and do—may shift.
-      </p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))", gap: 10, marginTop: 22 }}>
-        {patternWalkthrough.map((item) => (
-          <article
-            key={item.label}
+      <div className="home-chronic-grid">
+        <div>
+          <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px", color: chronicAccent }}>Chronic organisation</p>
+          <h2 id="chronic-gradient-heading" className="home-section-heading" style={{ margin: "0 0 10px", color: TEXT.primary }}>
+            How chronic modes form
+          </h2>
+          <p style={{ margin: 0, color: TEXT.secondary, fontSize: 15, lineHeight: 1.72 }}>
+            Chronic modes can develop when the body has to deal with danger, uncertainty, or overwhelm repeatedly or
+            for a long time.
+          </p>
+          <p style={{ margin: "14px 0 0", color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
+            This can begin in childhood when care or safety is frightening, absent, inconsistent, or unpredictable. It
+            can also develop later through repeated threat or prolonged stress without enough rest, support, or
+            recovery.
+          </p>
+        </div>
+
+        <div>
+          <p style={{ ...sectionEyebrowStyle, margin: "0 0 10px", color: chronicAccent }}>Conditions that can contribute</p>
+          <ul className="home-chronic-points" style={{ margin: 0, paddingLeft: 18, color: TEXT.secondary }}>
+            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}>Unsafe or unpredictable conditions during development.</li>
+            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}>Repeated threat, neglect, coercion, instability, loss, or overwhelm.</li>
+            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}>Prolonged stress with too little rest, safety, support, or recovery.</li>
+          </ul>
+          <p style={{ margin: "16px 0 0", color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.68 }}>
+            When protection is needed again and again, watchfulness, appeasement, control, force, or shutdown can
+            become easier to reach than rest, open connection, or a flexible response.
+          </p>
+          <p
             style={{
-              minHeight: 210,
-              padding: 16,
-              background: `color-mix(in srgb, ${item.color} 7%, ${homeSurface.primary})`,
-              border: `1px solid ${hexToRgba(item.color, 0.18)}`,
-              borderTop: `4px solid ${item.color}`,
-              borderRadius: RADIUS.md,
+              margin: "18px 0 0",
+              padding: "12px 14px",
+              borderLeft: `3px solid ${chronicAccent}`,
+              background: hexToRgba(chronicAccent, 0.08),
+              color: TEXT.primary,
+              fontSize: 13.5,
+              lineHeight: 1.65,
             }}
           >
-            <p style={{ margin: 0, color: contrastColor(item.color), fontFamily: FONT.diagram, fontSize: 10, fontWeight: 700, textTransform: "uppercase" }}>
-              {item.label}
-            </p>
-            <h3 style={{ margin: "12px 0 8px", color: homeSurface.text, fontSize: 17, lineHeight: 1.3 }}>{item.title}</h3>
-            <p style={{ margin: 0, color: homeSurface.secondary, fontSize: 13.5, lineHeight: 1.65 }}>{item.body}</p>
-          </article>
-        ))}
+            In chronic mode, every position is defensive. A person may look calm or connected while their body is
+            still bracing, monitoring, pleasing, managing, or conserving energy. Shutdown can be reached from any
+            chronic position.
+          </p>
+        </div>
       </div>
-      <p style={{ margin: "16px 0 0", maxWidth: 820, color: homeSurface.muted, fontSize: 13, lineHeight: 1.65 }}>
-        This is one possible pattern, not a universal sequence. Context, impact, repetition, power, and available
-        capacity still determine what the pattern means and what response fits.
+
+      <p
+        style={{
+          margin: "24px 0 0",
+          paddingTop: 18,
+          borderTop: `1px solid ${BORDER.default}`,
+          color: TEXT.muted,
+          fontSize: 13.5,
+          lineHeight: 1.7,
+        }}
+      >
+        Knowing how a chronic mode formed does not erase its effects. The practical questions remain: can impact be
+        named, can another person&apos;s reality stay present, can responsibility be taken, and can the pattern change?
       </p>
     </div>
   );
@@ -561,6 +665,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Acute orientation — the conceptual key before interaction */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="acute-gradient-heading">
+          <AcuteGradientOrientation />
+        </section>
+
         {/* Interactive instrument */}
         <section id="gradient-map" style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="gradient-map-heading">
           <div style={{ margin: "0 0 clamp(16px, 3vw, 24px)", maxWidth: 840 }}>
@@ -585,9 +694,9 @@ export default function Home() {
           <EmotionalGradient />
         </section>
 
-        {/* A concrete walkthrough — the Gradient applied to one possible shift */}
-        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="walkthrough-heading">
-          <PatternWalkthrough />
+        {/* Chronic organisation — introduced after the acute instrument */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="chronic-gradient-heading">
+          <ChronicGradientOrientation />
         </section>
 
         {/* What the gradient explains — the payoff, directly under the instrument */}
@@ -642,13 +751,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* The seven states — colour-keyed map (client: theme-aware state colours) */}
-        <GradientMap
-          sectionStyle={{ ...sectionStyle, paddingTop: 8, paddingBottom: 56 }}
-          cardStyle={cardStyle}
-          eyebrowStyle={sectionEyebrowStyle}
-        />
 
         {/* Grounded in established science — static, crawlable */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="science-heading">
