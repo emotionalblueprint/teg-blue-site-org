@@ -49,6 +49,10 @@ const swatch = (hex) => {
   const c = hexToHsl(hex)
   return hslToHex(c.h, c.s, Math.min(c.l, 0.52))
 }
+const ink = (hex) => {
+  const c = hexToHsl(hex)
+  return hslToHex(c.h, c.s, 0.3)
+}
 
 const WARM = ACCENT.orange
 const positionById = Object.fromEntries(positions.map((position) => [position.id, position]))
@@ -59,8 +63,8 @@ const activePositions = ['connection', 'calibration', 'protection', 'strategic',
 )
 
 const regionFor = {
-  connection: 'Available safety',
-  calibration: 'Safety–defence threshold',
+  connection: 'Non-defensive',
+  calibration: 'Defensive organisation',
   protection: 'Defensive organisation',
   strategic: 'Defensive organisation',
   domination: 'Defensive organisation',
@@ -100,6 +104,8 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
   useEffect(() => setMounted(true), [])
   const isLight = mounted && resolvedTheme === 'light'
   const shutdownColor = isLight ? swatch(shutdown.acuteColor) : shutdown.acuteColor
+  const defensiveGuideLine = isLight ? swatch(ACCENT.amber) : ACCENT.amber
+  const defensiveGuideText = isLight ? ink(ACCENT.amber) : ACCENT.amber
 
   return (
     <section style={sectionStyle} aria-labelledby="positions-heading">
@@ -133,12 +139,19 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
           <section className="topology-region topology-active-region" aria-labelledby="active-region-heading">
             <div className="topology-region-heading">
               <p id="active-region-heading">Active Gradient</p>
-              <span>Orientation moves from connection toward increasing defensive organisation.</span>
+              <span>Orientation moves from non-defensive connection into defensive organisation.</span>
             </div>
             <div className="topology-band-labels" aria-hidden="true">
-              <span>Available safety</span>
-              <span>Threshold</span>
-              <span>Increasing defensive organisation</span>
+              <span>Non-defensive</span>
+              <span
+                className="topology-band-defensive"
+                style={{
+                  '--topology-defensive-line': defensiveGuideLine,
+                  '--topology-defensive-text': defensiveGuideText,
+                }}
+              >
+                Defensive organisation
+              </span>
             </div>
             <div className="topology-active-track">
               {activePositions.map((position, index) => (
@@ -258,7 +271,7 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
 
         .topology-band-labels {
           display: grid;
-          grid-template-columns: 1fr 1fr 3fr;
+          grid-template-columns: 1fr 4fr;
           gap: 10px;
           margin-bottom: 8px;
           color: ${TEXT.hint};
@@ -272,6 +285,11 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
         .topology-band-labels span {
           padding: 7px 8px;
           border-top: 1px solid ${BORDER.default};
+        }
+
+        .topology-band-labels .topology-band-defensive {
+          border-top-color: var(--topology-defensive-line);
+          color: var(--topology-defensive-text);
         }
 
         .topology-active-track {

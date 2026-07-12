@@ -84,7 +84,8 @@ const SHUTDOWN_ITEM = {
   readout: 'auto',
 }
 const THREAT_START_INDEX = EXTENDED_TRACK.findIndex((item) => item.id === 'protection')
-const SHUTDOWN_ENTRY_ITEMS = EXTENDED_TRACK.slice(THREAT_START_INDEX)
+const ACUTE_SHUTDOWN_ENTRY_ITEMS = EXTENDED_TRACK.slice(THREAT_START_INDEX)
+const NON_DEFENSIVE_POSITION_COUNT = 2
 
 export default function EmotionalGradient() {
   const { resolvedTheme } = useTheme()
@@ -99,6 +100,8 @@ export default function EmotionalGradient() {
 
   const trackItems = EXTENDED_TRACK
   const trackCount = trackItems.length
+  const shutdownStartIndex = chronic ? 0 : THREAT_START_INDEX
+  const shutdownEntryItems = chronic ? EXTENDED_TRACK : ACUTE_SHUTDOWN_ENTRY_ITEMS
   const activeTrackIndex = Math.min(posIndex, trackCount - 1)
   const selectedItem = posIndex === SHUT ? SHUTDOWN_ITEM : EXTENDED_TRACK[posIndex]
   const position = positions[selectedItem.positionIndex]
@@ -151,6 +154,15 @@ export default function EmotionalGradient() {
     return panelLight ? swatch(color) : color
   }
   const shutColor = panelLight ? swatch(colorOf(SHUT)) : colorOf(SHUT)
+  const nonDefensiveGuideBase = positions[1].acuteColor
+  const nonDefensiveGuideLine = panelLight ? swatch(nonDefensiveGuideBase) : nonDefensiveGuideBase
+  const nonDefensiveGuideText = panelLight ? ink(nonDefensiveGuideBase) : nonDefensiveGuideBase
+  const defensiveGuideBase = chronic ? CHRONIC_TOGGLE_TONE : ACCENT.amber
+  const defensiveGuideLine = panelLight ? swatch(defensiveGuideBase) : defensiveGuideBase
+  const defensiveGuideText = panelLight ? ink(defensiveGuideBase) : defensiveGuideBase
+  const shutdownRouteText = chronic
+    ? 'Capacity-exceeded fallback from all chronic positions'
+    : `Capacity-exceeded fallback from ${shutdownEntryItems.map((item) => item.code).join(' · ')}`
   const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${trackItems.map(
     (_, i) => `${barStop(i)} ${(((i + 0.5) / trackCount) * 100).toFixed(2)}%`,
   ).join(', ')}, ${barStop(trackCount - 1)} 100%)`
@@ -267,6 +279,34 @@ export default function EmotionalGradient() {
 
         {/* active Gradient + capacity-exceeded fallback rail */}
         <div className="gradient-track-shell">
+        <div
+          className="gradient-organisation-guides"
+          aria-label={chronic ? 'All chronic positions: defensive organisation' : 'Acute positions: non-defensive and defensive organisation'}
+        >
+          {!chronic && (
+            <div
+              className="gradient-organisation-guide gradient-organisation-guide-non-defensive"
+              style={{
+                gridColumn: `1 / span ${NON_DEFENSIVE_POSITION_COUNT}`,
+                '--organisation-guide-line': nonDefensiveGuideLine,
+                '--organisation-guide-text': nonDefensiveGuideText,
+              }}
+            >
+              <span>Non-defensive</span>
+            </div>
+          )}
+          <div
+            className="gradient-organisation-guide gradient-organisation-guide-defensive"
+            style={{
+              gridColumn: chronic ? '1 / -1' : `${NON_DEFENSIVE_POSITION_COUNT + 1} / -1`,
+              '--organisation-guide-line': defensiveGuideLine,
+              '--organisation-guide-text': defensiveGuideText,
+            }}
+          >
+            <span>{chronic ? 'All chronic positions · defensive organisation' : 'Defensive organisation'}</span>
+          </div>
+        </div>
+
         <div className="gradient-track-row">
           <div
             className="gradient-bar-hitbox"
@@ -331,8 +371,8 @@ export default function EmotionalGradient() {
         <div
           className="gradient-shutdown-network"
           style={{
-            '--shutdown-start': `${(THREAT_START_INDEX / trackCount) * 100}%`,
-            '--shutdown-width': `${(SHUTDOWN_ENTRY_ITEMS.length / trackCount) * 100}%`,
+            '--shutdown-start': `${(shutdownStartIndex / trackCount) * 100}%`,
+            '--shutdown-width': `${(shutdownEntryItems.length / trackCount) * 100}%`,
             '--shutdown-color': shutColor,
             '--shutdown-line': hexToRgba(shutColor, panelLight ? 0.42 : 0.5),
             '--shutdown-fill': hexToRgba(shutColor, isShutdown ? (panelLight ? 0.32 : 0.4) : (panelLight ? 0.12 : 0.16)),
@@ -343,22 +383,22 @@ export default function EmotionalGradient() {
             type="button"
             className={isShutdown ? 'gradient-shutdown-button is-active' : 'gradient-shutdown-button'}
             onClick={() => setPosIndex(SHUT)}
-            aria-label="Shutdown — capacity-exceeded fallback from Protection, Strategic Management, or Power Mobilisation"
+            aria-label={`Shutdown — ${shutdownRouteText}`}
             aria-pressed={isShutdown}
           >
             <span className="gradient-shutdown-stems" aria-hidden="true">
-              {SHUTDOWN_ENTRY_ITEMS.map((item, index) => (
+              {shutdownEntryItems.map((item, index) => (
                 <span
                   key={item.id}
                   className="gradient-shutdown-stem"
-                  style={{ left: `${((index + 0.5) / SHUTDOWN_ENTRY_ITEMS.length) * 100}%` }}
+                  style={{ left: `${((index + 0.5) / shutdownEntryItems.length) * 100}%` }}
                 />
               ))}
             </span>
             <span className="gradient-shutdown-rail" aria-hidden="true" />
             <span className="gradient-shutdown-copy">
               <strong>{positions[SHUT].code} · Shutdown</strong>
-              <span>Capacity-exceeded fallback from {SHUTDOWN_ENTRY_ITEMS.map((item) => item.code).join(' · ')}</span>
+              <span>{shutdownRouteText}</span>
             </span>
           </button>
         </div>
@@ -543,6 +583,34 @@ export default function EmotionalGradient() {
 
         .gradient-track-row {
           display: block;
+        }
+
+        .gradient-organisation-guides {
+          display: grid;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          gap: 6px;
+          margin-bottom: 2px;
+        }
+
+        .gradient-organisation-guide {
+          min-width: 0;
+          padding-top: 5px;
+          border-top: 2px solid var(--organisation-guide-line);
+          color: var(--organisation-guide-text);
+          font-family: var(--font-diagram), monospace;
+          font-size: 9px;
+          font-weight: 700;
+          line-height: 1.25;
+          letter-spacing: 0.04em;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .gradient-organisation-guide span {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         .gradient-shutdown-network {
@@ -903,6 +971,16 @@ export default function EmotionalGradient() {
           .gradient-track-shell {
             margin: 10px 18px 0;
             padding: 10px 0 12px;
+          }
+
+          .gradient-organisation-guides {
+            gap: 4px;
+          }
+
+          .gradient-organisation-guide {
+            padding-top: 4px;
+            font-size: 8px;
+            letter-spacing: 0.02em;
           }
 
           .gradient-shutdown-copy {
