@@ -299,6 +299,11 @@ const HOME_CSS = `
     gap: 14px;
   }
 
+  .home-scan-anchor {
+    color: var(--text-primary);
+    font-weight: 650;
+  }
+
   @media (min-width: 1180px) {
     .home-hero-actions {
       gap: 10px;
@@ -494,13 +499,14 @@ function AcuteGradientOrientation() {
         The seven core positions in the map
       </h2>
       <p style={{ margin: 0, maxWidth: 820, color: TEXT.secondary, fontSize: 16, lineHeight: 1.72 }}>
-        The positions describe how emotional and nervous-system organisation may change as conditions are read as
-        safe, uncertain, threatening, persistent, overwhelming, or beyond available capacity.
+        The positions describe how emotional and nervous-system organisation may change as{" "}
+        <strong className="home-scan-anchor">conditions are read</strong> as safe, uncertain, threatening, persistent,
+        overwhelming, or beyond available capacity.
       </p>
       <p style={{ margin: "10px 0 0", maxWidth: 860, color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
-        Baseline and Connection are non-defensive. Safety Checking begins defensive organisation, which becomes more
-        explicit through Protection, Strategic Management, and Power Mobilisation. Shutdown is a capacity-exceeded
-        fallback.
+        <strong className="home-scan-anchor">Baseline and Connection are non-defensive.</strong> Safety Checking begins
+        defensive organisation, which becomes more explicit through Protection, Strategic Management, and Power
+        Mobilisation. <strong className="home-scan-anchor">Shutdown is a capacity-exceeded fallback.</strong>
       </p>
 
       <ul className="home-position-list" aria-label="Seven acute Gradient positions">
@@ -522,9 +528,9 @@ function AcuteGradientOrientation() {
       </ul>
 
       <p style={{ margin: "16px 0 0", maxWidth: 870, color: TEXT.muted, fontSize: 13.5, lineHeight: 1.7 }}>
-        Movement can happen quickly and may update as conditions change. Acute Shutdown may become accessible from the
-        threat positions. These positions describe patterns—not fixed identities, diagnoses, or proof of another
-        person&apos;s hidden internal state.
+        <strong className="home-scan-anchor">Movement can happen quickly</strong> and may update as conditions change.
+        These positions describe patterns—<strong className="home-scan-anchor">not fixed identities or diagnoses</strong>,
+        or proof of another person&apos;s hidden internal state.
       </p>
     </div>
   );
@@ -546,26 +552,27 @@ function ChronicGradientOrientation() {
             How chronic modes form
           </h2>
           <p style={{ margin: 0, color: TEXT.secondary, fontSize: 15, lineHeight: 1.72 }}>
-            Chronic modes can develop when the body has to deal with danger, uncertainty, or overwhelm repeatedly or
-            for a long time.
+            Chronic modes can develop when the body has to deal with danger, uncertainty, or overwhelm{" "}
+            <strong className="home-scan-anchor">repeatedly or for a long time.</strong>
           </p>
           <p style={{ margin: "14px 0 0", color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
-            This can begin in childhood when care or safety is frightening, absent, inconsistent, or unpredictable. It
-            can also develop later through repeated threat or prolonged stress without enough rest, support, or
-            recovery.
+            This can begin <strong className="home-scan-anchor">in childhood</strong> when care or safety is frightening,
+            absent, inconsistent, or unpredictable. It can also develop <strong className="home-scan-anchor">later in life</strong>{" "}
+            through repeated threat or prolonged stress without enough rest, support, or recovery.
           </p>
         </div>
 
         <div>
           <p style={{ ...sectionEyebrowStyle, margin: "0 0 10px", color: chronicAccent }}>Conditions that can contribute</p>
           <ul className="home-chronic-points" style={{ margin: 0, paddingLeft: 18, color: TEXT.secondary }}>
-            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}>Unsafe or unpredictable conditions during development.</li>
-            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}>Repeated threat, neglect, coercion, instability, loss, or overwhelm.</li>
-            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}>Prolonged stress with too little rest, safety, support, or recovery.</li>
+            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}><strong className="home-scan-anchor">Unsafe or unpredictable conditions</strong> during development.</li>
+            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}><strong className="home-scan-anchor">Repeated threat, neglect, coercion, instability, loss, or overwhelm.</strong></li>
+            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}><strong className="home-scan-anchor">Prolonged stress</strong> with too little rest, safety, support, or recovery.</li>
           </ul>
           <p style={{ margin: "16px 0 0", color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.68 }}>
-            When protection is needed again and again, watchfulness, appeasement, control, force, or shutdown can
-            become easier to reach than rest, open connection, or a flexible response.
+            When <strong className="home-scan-anchor">protection is needed again and again</strong>, watchfulness,
+            appeasement, control, force, or shutdown can become easier to reach than rest, open connection, or a
+            flexible response.
           </p>
           <p
             style={{
@@ -578,9 +585,9 @@ function ChronicGradientOrientation() {
               lineHeight: 1.65,
             }}
           >
-            In chronic mode, every position is defensive. A person may look calm or connected while their body is
-            still bracing, monitoring, pleasing, managing, or conserving energy. Shutdown can be reached from any
-            chronic position.
+            In chronic mode, <strong className="home-scan-anchor">every position is defensive.</strong> A person may look
+            calm or connected while their body is still bracing, monitoring, pleasing, managing, or conserving energy.{" "}
+            <strong className="home-scan-anchor">Shutdown can be reached from any chronic position.</strong>
           </p>
         </div>
       </div>
@@ -595,8 +602,9 @@ function ChronicGradientOrientation() {
           lineHeight: 1.7,
         }}
       >
-        Knowing how a chronic mode formed does not erase its effects. The practical questions remain: can impact be
-        named, can another person&apos;s reality stay present, can responsibility be taken, and can the pattern change?
+        <strong className="home-scan-anchor">Knowing how a chronic mode formed does not erase its effects.</strong> The
+        practical questions remain: can impact be named, can another person&apos;s reality stay present, can responsibility
+        be taken, and can the pattern change?
       </p>
     </div>
   );
@@ -634,17 +642,18 @@ export default function Home() {
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              TEG-Blue is a visual map of how nervous-system state can shape emotion, perception, relationship,
-              action, and repair.
+              TEG-Blue is a <strong className="home-scan-anchor">visual map</strong> of how nervous-system state can shape
+              emotion, perception, relationship, action, and repair.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              The Nervous System Gradient brings established research together to show how these patterns may shift
-              across safety, threat, control, shutdown, regulation, and repair.
+              The Nervous System Gradient <strong className="home-scan-anchor">brings established research together</strong>{" "}
+              to show how these patterns may shift across safety, threat, control, shutdown, regulation, and repair.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              It makes linked changes visible: what the body prepares for, what draws attention, what feels possible,
-              how another person is perceived, and whether repair can begin. It is a map for studying patterns, not a
-              diagnosis or a claim of certainty about motive.
+              It makes <strong className="home-scan-anchor">linked changes visible</strong>: what the body prepares for,
+              what draws attention, what feels possible, how another person is perceived, and whether repair can begin.
+              It is a map for studying patterns, <strong className="home-scan-anchor">not a diagnosis</strong> or a claim
+              of certainty about motive.
             </p>
             <div className="home-hero-actions" aria-label="Explore TEG-Blue">
               <a
@@ -687,7 +696,8 @@ export default function Home() {
               Move through the nervous-system Gradient.
             </h2>
             <p style={{ margin: "10px 0 0", maxWidth: 760, color: TEXT.secondary, fontSize: 15.5, lineHeight: 1.7 }}>
-              Use the map to see how a shift in state changes what becomes available: body information, perception,
+              Use the map to see how a <strong className="home-scan-anchor">shift in state</strong> changes{" "}
+              <strong className="home-scan-anchor">what becomes available</strong>: body information, perception,
               emotion, empathy, repair, and the capacity to stay connected.
             </p>
           </div>
@@ -707,9 +717,10 @@ export default function Home() {
               From state shifts to relationship patterns
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The Gradient connects changes that are often considered separately. It helps a reader examine what the
-              body is preparing for, how attention and emotion change, what happens between people, and what conditions
-              may allow repair—while keeping impact, accountability, and boundaries in view.
+              The Gradient <strong className="home-scan-anchor">connects changes that are often considered separately.</strong>{" "}
+              It helps a reader examine what the body is preparing for, how attention and emotion change, what happens
+              between people, and what conditions may allow repair—while keeping{" "}
+              <strong className="home-scan-anchor">impact, accountability, and boundaries</strong> in view.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
@@ -760,12 +771,13 @@ export default function Home() {
               What research supports—and where its limits are
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              TEG-Blue organizes existing research into a visual framework. Established science grounds specific parts
-              of the map; no single source is treated as proof of the whole architecture.
+              TEG-Blue organizes existing research into a visual framework. Established science grounds{" "}
+              <strong className="home-scan-anchor">specific parts of the map</strong>;{" "}
+              <strong className="home-scan-anchor">no single source</strong> is treated as proof of the whole architecture.
             </p>
             <p style={{ margin: "0 0 20px", maxWidth: 760, fontSize: 14.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              Each part of the map is checked separately: body state, perception, thinking, activation, emotion,
-              access to other people, action, repeated patterns, and repair.
+              <strong className="home-scan-anchor">Each part of the map is checked separately</strong>: body state,
+              perception, thinking, activation, emotion, access to other people, action, repeated patterns, and repair.
             </p>
             <div
               style={{
