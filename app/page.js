@@ -496,20 +496,42 @@ function AcuteGradientOrientation() {
     <div style={cardStyle}>
       <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>How to read the acute Gradient</p>
       <h2 id="acute-gradient-heading" className="home-section-heading" style={{ margin: "0 0 10px", color: TEXT.primary }}>
-        The seven core positions in the map
+        Seven recurring patterns emerge
       </h2>
+      <div
+        style={{
+          maxWidth: 880,
+          marginBottom: 14,
+        }}
+      >
+        <p style={{ margin: 0, color: TEXT.secondary, fontSize: 16, lineHeight: 1.72 }}>
+          <strong className="home-scan-anchor">We don’t stay the same person in every situation.</strong> Sometimes
+          we’re open and kind. Other times we’re guarded, distant, or even controlling.
+        </p>
+        <p style={{ margin: "14px 0 0", color: TEXT.secondary, fontSize: 15, lineHeight: 1.72 }}>
+          These shifts aren’t random—they follow a <strong className="home-scan-anchor">pattern in our nervous system.</strong>{" "}
+          That’s why the <em>same emotion</em>—like anger, sadness, or joy—can feel completely different depending on
+          the context.
+        </p>
+        <p style={{ margin: "22px 0 0", color: TEXT.primary, fontSize: 17, lineHeight: 1.55 }}>
+          <strong>When you zoom out on human behaviour, patterns start to emerge.</strong>
+        </p>
+        <p style={{ margin: "10px 0 0", color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
+          At first it looks chaotic—everyone reacting differently, every emotion shifting moment to moment. But with
+          enough distance, <strong className="home-scan-anchor">seven recurring positions begin to appear.</strong>
+        </p>
+      </div>
       <p style={{ margin: 0, maxWidth: 820, color: TEXT.secondary, fontSize: 16, lineHeight: 1.72 }}>
-        The positions describe how emotional and nervous-system organisation may change as{" "}
+        Together, they show how emotional and nervous-system organisation may change as{" "}
         <strong className="home-scan-anchor">conditions are read</strong> as safe, uncertain, threatening, persistent,
         overwhelming, or beyond available capacity.
       </p>
-      <p style={{ margin: "10px 0 0", maxWidth: 860, color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
-        <strong className="home-scan-anchor">Baseline and Connection are non-defensive.</strong> Safety Checking begins
-        defensive organisation, which becomes more explicit through Protection, Strategic Management, and Power
-        Mobilisation. <strong className="home-scan-anchor">Shutdown is a capacity-exceeded fallback.</strong>
-      </p>
 
-      <ul className="home-position-list" aria-label="Seven acute Gradient positions">
+      <ul
+        className="home-position-list"
+        aria-label="Seven acute Gradient positions"
+        style={{ paddingTop: 20, borderTop: `1px solid ${BORDER.default}` }}
+      >
         {acutePositionIndex.map((position) => {
           const bulletColor = position.id === "baseline" ? BLUE[200] : position.acuteColor;
           return (
