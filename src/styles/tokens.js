@@ -179,7 +179,9 @@ export const CHRONIC_FORMATION = {
   B: "#ff7e1d",
   C: "#ff5a05",
   D: "#ff404a",
-  Z: BLUE[800],
+  // Shutdown remains a neutral fallback in both time scales; chronicity is
+  // carried by the configuration and copy rather than a different hue.
+  Z: FORMATION.Z,
 };
 
 export const CHRONIC_FORMATION_META = {

@@ -83,6 +83,8 @@ const SHUTDOWN_ITEM = {
   atlasLabel: positions[SHUT].atlasLabel,
   readout: 'auto',
 }
+const THREAT_START_INDEX = EXTENDED_TRACK.findIndex((item) => item.id === 'protection')
+const SHUTDOWN_ENTRY_ITEMS = EXTENDED_TRACK.slice(THREAT_START_INDEX)
 
 export default function EmotionalGradient() {
   const { resolvedTheme } = useTheme()
@@ -162,7 +164,10 @@ export default function EmotionalGradient() {
   }
 
   function moveTrackIndex(delta) {
-    setPosIndex((i) => Math.max(0, Math.min(i + delta, N - 1)))
+    setPosIndex((i) => {
+      if (i === SHUT) return trackCount - 1
+      return Math.max(0, Math.min(i + delta, trackCount - 1))
+    })
   }
 
   function setFromClientX(clientX) {
@@ -260,12 +265,12 @@ export default function EmotionalGradient() {
           </div>
         </div>
 
-        {/* gradient bar + detached Shutdown */}
+        {/* active Gradient + capacity-exceeded fallback rail */}
         <div className="gradient-track-shell">
-        <div className="gradient-track-row" style={{ display: 'flex', alignItems: 'stretch', gap: 12 }}>
+        <div className="gradient-track-row">
           <div
             className="gradient-bar-hitbox"
-            style={{ position: 'relative', flex: 1, cursor: 'pointer', userSelect: 'none', padding: '12px 0', touchAction: 'none' }}
+            style={{ position: 'relative', cursor: 'pointer', userSelect: 'none', padding: '12px 0', touchAction: 'none' }}
             onPointerDown={(e) => {
               dragging.current = true
               e.currentTarget.setPointerCapture(e.pointerId)
@@ -321,23 +326,41 @@ export default function EmotionalGradient() {
               )}
             </div>
           </div>
+        </div>
 
-          <div className="gradient-shutdown-track" style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
-            <div className="gradient-shutdown-divider" style={{ height: 20, borderLeft: `1px dashed ${panel.line}` }} />
-            <button type="button" className="gradient-shutdown-button" onClick={() => setPosIndex(SHUT)} aria-label="Shutdown — off-gradient" style={{ padding: '12px 0', background: 'transparent', border: 'none', cursor: 'pointer' }}>
-              <div
-                className="gradient-shutdown-pill"
-                style={{
-                  height: 14,
-                  width: 48,
-                  borderRadius: 999,
-                  background: isShutdown ? shutColor : hexToRgba(shutColor, 0.3),
-                  border: isShutdown ? `2px solid ${shutColor}` : `1px solid ${hexToRgba(shutColor, 0.5)}`,
-                  transition: 'all 200ms',
-                }}
-              />
-            </button>
-          </div>
+        <div
+          className="gradient-shutdown-network"
+          style={{
+            '--shutdown-start': `${(THREAT_START_INDEX / trackCount) * 100}%`,
+            '--shutdown-width': `${(SHUTDOWN_ENTRY_ITEMS.length / trackCount) * 100}%`,
+            '--shutdown-color': shutColor,
+            '--shutdown-line': hexToRgba(shutColor, panelLight ? 0.42 : 0.5),
+            '--shutdown-fill': hexToRgba(shutColor, isShutdown ? (panelLight ? 0.32 : 0.4) : (panelLight ? 0.12 : 0.16)),
+            '--shutdown-label': isShutdown ? (panelLight ? ink(colorOf(SHUT)) : colorOf(SHUT)) : panel.faint,
+          }}
+        >
+          <button
+            type="button"
+            className={isShutdown ? 'gradient-shutdown-button is-active' : 'gradient-shutdown-button'}
+            onClick={() => setPosIndex(SHUT)}
+            aria-label="Shutdown — capacity-exceeded fallback from Protection, Strategic Management, or Power Mobilisation"
+            aria-pressed={isShutdown}
+          >
+            <span className="gradient-shutdown-stems" aria-hidden="true">
+              {SHUTDOWN_ENTRY_ITEMS.map((item, index) => (
+                <span
+                  key={item.id}
+                  className="gradient-shutdown-stem"
+                  style={{ left: `${((index + 0.5) / SHUTDOWN_ENTRY_ITEMS.length) * 100}%` }}
+                />
+              ))}
+            </span>
+            <span className="gradient-shutdown-rail" aria-hidden="true" />
+            <span className="gradient-shutdown-copy">
+              <strong>{positions[SHUT].code} · Shutdown</strong>
+              <span>Capacity-exceeded fallback from {SHUTDOWN_ENTRY_ITEMS.map((item) => item.code).join(' · ')}</span>
+            </span>
+          </button>
         </div>
 
         <div
@@ -353,7 +376,7 @@ export default function EmotionalGradient() {
         </div>
 
         {/* labels */}
-        <div className="gradient-track-labels" style={{ display: 'flex', gap: 12, marginTop: 10 }}>
+        <div className="gradient-track-labels" style={{ display: 'flex', marginTop: 10 }}>
           <div style={{ display: 'flex', flex: 1 }}>
             {trackItems.map((item, i) => {
               const itemColor = colorForItem(item)
@@ -383,30 +406,6 @@ export default function EmotionalGradient() {
               </button>
               )
             })}
-          </div>
-          <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12 }}>
-            <div style={{ height: 20, borderLeft: '1px solid transparent' }} />
-            <button
-              type="button"
-              onClick={() => setPosIndex(SHUT)}
-              aria-label={`Pattern ${positions[SHUT].code}: Shutdown`}
-              title={`Pattern ${positions[SHUT].code}: Shutdown`}
-              className={isShutdown ? 'gradient-label-button is-active' : 'gradient-label-button'}
-              style={{
-                width: 58,
-                minHeight: 38,
-                padding: '5px 4px',
-                textAlign: 'center',
-                background: isShutdown ? hexToRgba(colorOf(SHUT), panelLight ? 0.08 : 0.12) : 'transparent',
-                border: `1px solid ${isShutdown ? hexToRgba(colorOf(SHUT), panelLight ? 0.24 : 0.28) : 'transparent'}`,
-                borderRadius: 8,
-                cursor: 'pointer',
-                color: isShutdown ? (panelLight ? ink(colorOf(SHUT)) : colorOf(SHUT)) : panel.faint,
-              }}
-            >
-              <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, letterSpacing: 0 }}>{positions[SHUT].code}</span>
-              <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, fontFamily: FONT.display }}>Shutdown</span>
-            </button>
           </div>
         </div>
       </div>
@@ -540,6 +539,90 @@ export default function EmotionalGradient() {
           margin: 12px 20px 0;
           padding: 12px 0 12px;
           border-top: 1px solid color-mix(in srgb, var(--gradient-accent) 18%, transparent);
+        }
+
+        .gradient-track-row {
+          display: block;
+        }
+
+        .gradient-shutdown-network {
+          width: 100%;
+        }
+
+        .gradient-shutdown-button {
+          display: block;
+          width: var(--shutdown-width);
+          margin: 0 0 0 var(--shutdown-start);
+          padding: 0 0 4px;
+          border: 0;
+          background: transparent;
+          color: var(--shutdown-label);
+          cursor: pointer;
+          font-family: inherit;
+          text-align: left;
+        }
+
+        .gradient-shutdown-stems {
+          position: relative;
+          display: block;
+          height: 12px;
+        }
+
+        .gradient-shutdown-stem {
+          position: absolute;
+          top: 0;
+          height: 12px;
+          border-left: 1px dashed var(--shutdown-line);
+          transform: translateX(-50%);
+        }
+
+        .gradient-shutdown-rail {
+          display: block;
+          box-sizing: border-box;
+          width: 100%;
+          height: 9px;
+          border: 1px solid var(--shutdown-line);
+          border-radius: 999px;
+          background: var(--shutdown-fill);
+          transition:
+            background-color 180ms ease,
+            border-color 180ms ease,
+            box-shadow 180ms ease;
+        }
+
+        .gradient-shutdown-button:hover .gradient-shutdown-rail,
+        .gradient-shutdown-button:focus-visible .gradient-shutdown-rail,
+        .gradient-shutdown-button.is-active .gradient-shutdown-rail {
+          box-shadow: 0 0 0 2px color-mix(in srgb, var(--shutdown-color) 18%, transparent);
+        }
+
+        .gradient-shutdown-button:focus-visible {
+          outline: none;
+        }
+
+        .gradient-shutdown-copy {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 12px;
+          margin-top: 6px;
+          line-height: 1.35;
+        }
+
+        .gradient-shutdown-copy strong {
+          flex: 0 0 auto;
+          color: var(--shutdown-label);
+          font-family: var(--font-diagram), monospace;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0;
+          text-transform: uppercase;
+        }
+
+        .gradient-shutdown-copy span {
+          color: var(--readout-soft);
+          font-size: 10.5px;
+          text-align: right;
         }
 
         .gradient-bar-name {
@@ -820,6 +903,17 @@ export default function EmotionalGradient() {
           .gradient-track-shell {
             margin: 10px 18px 0;
             padding: 10px 0 12px;
+          }
+
+          .gradient-shutdown-copy {
+            display: block;
+            margin-top: 6px;
+          }
+
+          .gradient-shutdown-copy span {
+            display: block;
+            margin-top: 3px;
+            text-align: left;
           }
 
           .gradient-track-labels {
