@@ -261,42 +261,37 @@ const HOME_CSS = `
     gap: 8px;
   }
 
-  .home-position-list {
+  .home-comparison-grid {
     display: grid;
-    gap: 0;
-    max-width: 900px;
-    margin: 20px 0 0;
-    padding: 0;
-    list-style: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
   }
 
-  .home-position-item {
+  .home-vocabulary-grid,
+  .home-distinction-grid,
+  .home-repair-grid {
     display: grid;
-    grid-template-columns: 8px minmax(0, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    align-items: start;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-default);
   }
 
-  .home-position-bullet {
-    width: 8px;
-    height: 8px;
-    margin-top: 7px;
-    border-radius: 50%;
-    background: var(--position-bullet-color);
-  }
-
-  .home-chronic-grid {
+  .home-return-sequence {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: clamp(24px, 5vw, 56px);
-    align-items: start;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    margin-top: 22px;
+    overflow-x: auto;
   }
 
-  .home-chronic-points {
-    display: grid;
-    gap: 14px;
+  .home-return-step {
+    min-width: 150px;
+    padding: 14px;
+    border: 1px solid var(--border-default);
+    border-right: 0;
+  }
+
+  .home-return-step:last-child {
+    border-right: 1px solid var(--border-default);
   }
 
   .home-scan-anchor {
@@ -344,7 +339,10 @@ const HOME_CSS = `
       font-size: 30px;
     }
 
-    .home-chronic-grid {
+    .home-comparison-grid,
+    .home-vocabulary-grid,
+    .home-distinction-grid,
+    .home-repair-grid {
       grid-template-columns: 1fr;
     }
   }
@@ -372,9 +370,6 @@ const HOME_CSS = `
       font-size: 27px;
     }
 
-    .home-position-item {
-      gap: 10px;
-    }
   }
 `;
 
@@ -382,37 +377,48 @@ function Ld({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
-const acutePositionSummaries = {
-  baseline: "Restorative ground. Rest, digestion, recovery, and replenishment are available.",
-  connection: "Non-defensive engagement. Presence, empathy, mutuality, and social connection are available.",
-  calibration: "Safety or belonging is uncertain. Defensive organisation begins by checking what changed.",
-  protection: "Immediate threat. Fight, flight, guarding, defence, or appeasement move forward.",
-  strategic: "Persistent threat. Cognition organises around prediction, management, and control of variables.",
-  domination: "Maximum protection. Force, power, and outcome become primary while empathy and impact may narrow.",
-  shutdown: "Capacity exceeded. Mobilisation drops and conservation, withdrawal, or collapse become primary.",
-};
-
-const acutePositionIndex = positions.map((position) => ({
-  ...position,
-  summary: acutePositionSummaries[position.id],
-}));
-
-const chronicAccent = positions.find((position) => position.id === "protection")?.chronicColor;
-
 const modeGroundingPrinciples = [
   {
-    label: "Mode",
-    body: "how the pattern feels and presents in lived experience.",
+    label: "Organisation",
+    body: "how energy, attention, perception, feeling, connection, and action are coordinated.",
   },
   {
-    label: "State",
-    body: "how the nervous system is organizing attention, energy, and response.",
+    label: "Position",
+    body: "a coordinate in the Gradient, not a person, personality, diagnosis, or permanent identity.",
   },
   {
-    label: "Configuration",
-    body: "how mode and state appear together, either as a short-term shift or a pattern that keeps returning.",
+    label: "Claim boundary",
+    body: "each part of the map is grounded and tested separately; no single source proves the whole architecture.",
   },
 ];
+
+const vocabulary = [
+  {
+    label: "Nervous-system organisation",
+    body: "How the nervous system coordinates energy, attention, perception, feeling, connection, and action under particular conditions.",
+  },
+  {
+    label: "Inner Compass",
+    body: "The body's changing access to internal signals, differentiated feeling, the situation around it, and what matters enough to guide action. It can provide important information, but it is not infallible intuition.",
+  },
+  {
+    label: "Position",
+    body: "One location in the Gradient, showing how the nervous system is organised there. It describes the organisation, not the person.",
+  },
+];
+
+const returnSteps = [
+  ["01", "Conditions change", "Danger, rupture, demand, loss, or uncertainty actually changes."],
+  ["02", "Protection completes", "The required protective action succeeds, stops, or becomes unnecessary."],
+  ["03", "The read updates", "The organism detects that present conditions are now different."],
+  ["04", "Return opens", "Defensive organisation can begin to relinquish control of action."],
+  ["05", "Capacities re-enter", "Reflection, awareness, empathy, and choice become usable again."],
+  ["06", "Recovery continues", "Activation, depletion, pain, metabolic, or sleep costs may remain."],
+  ["07", "Learning integrates", "Later organisation may change through repeated evidence and experience."],
+];
+
+const fluidAccent = positions.find((position) => position.id === "connection")?.acuteColor;
+const chronicAccent = positions.find((position) => position.id === "protection")?.chronicColor;
 
 const attributionNotice = {
   title: "Authorship and use",
@@ -491,143 +497,55 @@ function StateSpineStrip() {
   );
 }
 
-function AcuteGradientOrientation() {
+function GradientOrientation() {
   return (
     <div style={cardStyle}>
-      <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>How to read the acute Gradient</p>
-      <h2 id="acute-gradient-heading" className="home-section-heading" style={{ margin: "0 0 10px", color: TEXT.primary }}>
-        Seven recurring patterns emerge
+      <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px" }}>How to read the Gradient</p>
+      <h2 id="gradient-orientation-heading" className="home-section-heading" style={{ margin: "0 0 10px", color: TEXT.primary }}>
+        The same behaviour can arise through different forms of organisation
       </h2>
-      <div
-        style={{
-          maxWidth: 880,
-          marginBottom: 14,
-        }}
-      >
-        <p style={{ margin: 0, color: TEXT.secondary, fontSize: 16, lineHeight: 1.72 }}>
-          <strong className="home-scan-anchor">We don’t stay the same person in every situation.</strong> Sometimes
-          we’re open and kind. Other times we’re guarded, distant, or even controlling.
-        </p>
-        <p style={{ margin: "14px 0 0", color: TEXT.secondary, fontSize: 15, lineHeight: 1.72 }}>
-          These shifts aren’t random—they follow a <strong className="home-scan-anchor">pattern in our nervous system.</strong>{" "}
-          That’s why the <em>same emotion</em>—like anger, sadness, or joy—can feel completely different depending on
-          the context.
-        </p>
-        <p style={{ margin: "22px 0 0", color: TEXT.primary, fontSize: 17, lineHeight: 1.55 }}>
-          <strong>When you zoom out on human behaviour, patterns start to emerge.</strong>
-        </p>
-        <p style={{ margin: "10px 0 0", color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
-          At first it looks chaotic—everyone reacting differently, every emotion shifting moment to moment. But with
-          enough distance, <strong className="home-scan-anchor">seven recurring positions begin to appear.</strong>
-        </p>
-      </div>
-      <p style={{ margin: 0, maxWidth: 820, color: TEXT.secondary, fontSize: 16, lineHeight: 1.72 }}>
-        Together, they show how emotional and nervous-system organisation may change as{" "}
-        <strong className="home-scan-anchor">conditions are read</strong> as safe, uncertain, threatening, persistent,
-        overwhelming, or beyond available capacity.
+      <p style={{ margin: 0, maxWidth: 850, color: TEXT.secondary, fontSize: 15.5, lineHeight: 1.72 }}>
+        Strong behaviour does not explain itself. Someone may become angry, withdraw, refuse, plan carefully, use force,
+        or appear completely calm. One interaction cannot tell us whether the response is moving with present conditions,
+        repeating a learned survival pattern, or being used deliberately to control another person. The Gradient looks
+        at what happens after the pressure changes.
       </p>
-
-      <ul
-        className="home-position-list"
-        aria-label="Seven acute Gradient positions"
-        style={{ paddingTop: 20, borderTop: `1px solid ${BORDER.default}` }}
-      >
-        {acutePositionIndex.map((position) => {
-          const bulletColor = position.id === "baseline" ? BLUE[200] : position.acuteColor;
-          return (
-            <li
-              className="home-position-item"
-              key={position.id}
-              style={{ "--position-bullet-color": bulletColor }}
-            >
-              <span className="home-position-bullet" aria-hidden="true" />
-              <p style={{ margin: 0, color: TEXT.secondary, fontSize: 14, lineHeight: 1.62 }}>
-                <strong style={{ color: TEXT.primary, fontWeight: 650 }}>{position.mode}</strong> — {position.summary}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-
-      <p style={{ margin: "16px 0 0", maxWidth: 870, color: TEXT.muted, fontSize: 13.5, lineHeight: 1.7 }}>
-        <strong className="home-scan-anchor">Movement can happen quickly</strong> and may update as conditions change.
-        These positions describe patterns—<strong className="home-scan-anchor">not fixed identities or diagnoses</strong>,
-        or proof of another person&apos;s hidden internal state.
+      <div className="home-comparison-grid">
+        {[
+          {
+            label: "Fluid Gradient",
+            color: fluidAccent,
+            body: "Organisation changes responsively with present conditions. Protection may temporarily narrow reflection, empathy, or relational access. As conditions change, the response can update, relinquish force, regain a wider view, and make repair possible.",
+          },
+          {
+            label: "Chronic Survival",
+            color: chronicAccent,
+            body: "Defensive organisation remains active or is repeatedly reconstructed. Monitoring, pleasing, guarding, managing, pressuring, or withdrawing may continue when the present environment no longer corresponds to the pattern.",
+          },
+        ].map((item) => (
+          <div key={item.label} style={{ padding: "18px 18px 20px", border: `1px solid ${BORDER.default}`, borderTop: `3px solid ${item.color}`, borderRadius: RADIUS.md, background: homeSurface.primary }}>
+            <h3 style={{ margin: 0, color: TEXT.primary, fontSize: 18 }}>{item.label}</h3>
+            <p style={{ margin: "8px 0 0", color: TEXT.secondary, fontSize: 14, lineHeight: 1.7 }}>{item.body}</p>
+          </div>
+        ))}
+      </div>
+      <p style={{ margin: "20px 0 0", padding: "14px 16px", borderLeft: `3px solid ${MAIN_ORG.accent}`, background: hexToRgba(MAIN_ORG.accent, 0.07), color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.7 }}>
+        <strong className="home-scan-anchor">A Position names the organisation, not the person.</strong> The map does not
+        establish personality, diagnosis, permanent identity, or another person&apos;s hidden internal state.
       </p>
     </div>
   );
 }
 
-function ChronicGradientOrientation() {
+function VocabularyKey() {
   return (
-    <div
-      style={{
-        ...cardStyle,
-        borderTop: `3px solid ${chronicAccent}`,
-        background: homeSurface.primary,
-      }}
-    >
-      <div className="home-chronic-grid">
-        <div>
-          <p style={{ ...sectionEyebrowStyle, margin: "0 0 8px", color: chronicAccent }}>Chronic organisation</p>
-          <h2 id="chronic-gradient-heading" className="home-section-heading" style={{ margin: "0 0 10px", color: TEXT.primary }}>
-            How chronic modes form
-          </h2>
-          <p style={{ margin: 0, color: TEXT.secondary, fontSize: 15, lineHeight: 1.72 }}>
-            Chronic modes can develop when the body has to deal with danger, uncertainty, or overwhelm{" "}
-            <strong className="home-scan-anchor">repeatedly or for a long time.</strong>
-          </p>
-          <p style={{ margin: "14px 0 0", color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.7 }}>
-            This can begin <strong className="home-scan-anchor">in childhood</strong> when care or safety is frightening,
-            absent, inconsistent, or unpredictable. It can also develop <strong className="home-scan-anchor">later in life</strong>{" "}
-            through repeated threat or prolonged stress without enough rest, support, or recovery.
-          </p>
+    <div className="home-vocabulary-grid">
+      {vocabulary.map((item) => (
+        <div key={item.label} style={{ padding: "18px", border: `1px solid ${BORDER.default}`, borderRadius: RADIUS.md, background: homeSurface.primary }}>
+          <h3 style={{ margin: 0, color: TEXT.primary, fontSize: 16 }}>{item.label}</h3>
+          <p style={{ margin: "7px 0 0", color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.65 }}>{item.body}</p>
         </div>
-
-        <div>
-          <p style={{ ...sectionEyebrowStyle, margin: "0 0 10px", color: chronicAccent }}>Conditions that can contribute</p>
-          <ul className="home-chronic-points" style={{ margin: 0, paddingLeft: 18, color: TEXT.secondary }}>
-            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}><strong className="home-scan-anchor">Unsafe or unpredictable conditions</strong> during development.</li>
-            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}><strong className="home-scan-anchor">Repeated threat, neglect, coercion, instability, loss, or overwhelm.</strong></li>
-            <li style={{ fontSize: 13.5, lineHeight: 1.65 }}><strong className="home-scan-anchor">Prolonged stress</strong> with too little rest, safety, support, or recovery.</li>
-          </ul>
-          <p style={{ margin: "16px 0 0", color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.68 }}>
-            When <strong className="home-scan-anchor">protection is needed again and again</strong>, watchfulness,
-            appeasement, control, force, or shutdown can become easier to reach than rest, open connection, or a
-            flexible response.
-          </p>
-          <p
-            style={{
-              margin: "18px 0 0",
-              padding: "12px 14px",
-              borderLeft: `3px solid ${chronicAccent}`,
-              background: hexToRgba(chronicAccent, 0.08),
-              color: TEXT.primary,
-              fontSize: 13.5,
-              lineHeight: 1.65,
-            }}
-          >
-            In chronic mode, <strong className="home-scan-anchor">every position is defensive.</strong> A person may look
-            calm or connected while their body is still bracing, monitoring, pleasing, managing, or conserving energy.{" "}
-            <strong className="home-scan-anchor">Shutdown can be reached from any chronic position.</strong>
-          </p>
-        </div>
-      </div>
-
-      <p
-        style={{
-          margin: "24px 0 0",
-          paddingTop: 18,
-          borderTop: `1px solid ${BORDER.default}`,
-          color: TEXT.muted,
-          fontSize: 13.5,
-          lineHeight: 1.7,
-        }}
-      >
-        <strong className="home-scan-anchor">Knowing how a chronic mode formed does not erase its effects.</strong> The
-        practical questions remain: can impact be named, can another person&apos;s reality stay present, can responsibility
-        be taken, and can the pattern change?
-      </p>
+      ))}
     </div>
   );
 }
@@ -664,18 +582,16 @@ export default function Home() {
 
           <div className="home-hero-intro">
             <p className="home-hero-lead" style={{ margin: "22px 0 0", maxWidth: 690, lineHeight: 1.65, color: TEXT.secondary }}>
-              TEG-Blue is a <strong className="home-scan-anchor">visual map</strong> of how nervous-system state can shape
-              emotion, perception, relationship, action, and repair.
+              People do not respond in the same way under safety, uncertainty, pressure, and threat.
             </p>
             <p id="entity-definition" style={{ margin: "16px 0 0", maxWidth: 720, fontSize: 15.5, lineHeight: 1.7, color: TEXT.secondary }}>
-              The Nervous System Gradient <strong className="home-scan-anchor">brings established research together</strong>{" "}
-              to show how these patterns may shift across safety, threat, control, shutdown, regulation, and repair.
+              TEG-Blue maps how these changing conditions can reorganise attention, emotion, perception, relationship,
+              action, and repair. The Nervous System Gradient brings these linked changes into one visual framework.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              It makes <strong className="home-scan-anchor">linked changes visible</strong>: what the body prepares for,
-              what draws attention, what feels possible, how another person is perceived, and whether repair can begin.
-              It is a map for studying patterns, <strong className="home-scan-anchor">not a diagnosis</strong> or a claim
-              of certainty about motive.
+              Sometimes the response moves with what is happening now. Sometimes an organisation learned under earlier
+              conditions continues into the present. Each Position describes that organisation—<strong className="home-scan-anchor">not
+              a person, personality, diagnosis, or permanent identity.</strong>
             </p>
             <div className="home-hero-actions" aria-label="Explore TEG-Blue">
               <a
@@ -692,13 +608,16 @@ export default function Home() {
               <a className="home-action" href="#science-heading">Research basis</a>
               <a className="home-action" href="https://teg-blue.com/">Practical tools ↗</a>
             </div>
-            <StateSpineStrip />
           </div>
         </section>
 
-        {/* Acute orientation — the conceptual key before interaction */}
-        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="acute-gradient-heading">
-          <AcuteGradientOrientation />
+        {/* The two organisational readings come before the seven positions. */}
+        <section style={{ ...sectionStyle, paddingBottom: 32 }} aria-labelledby="gradient-orientation-heading">
+          <GradientOrientation />
+        </section>
+
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-label="Key Gradient vocabulary">
+          <VocabularyKey />
         </section>
 
         {/* Interactive instrument */}
@@ -715,73 +634,106 @@ export default function Home() {
                 letterSpacing: 0,
               }}
             >
-              Move through the nervous-system Gradient.
+              Compare Fluid and Chronic organisation.
             </h2>
             <p style={{ margin: "10px 0 0", maxWidth: 760, color: TEXT.secondary, fontSize: 15.5, lineHeight: 1.7 }}>
-              Use the map to see how a <strong className="home-scan-anchor">shift in state</strong> changes{" "}
-              <strong className="home-scan-anchor">what becomes available</strong>: body information, perception,
-              emotion, empathy, repair, and the capacity to stay connected.
+              Move through the seven Positions, then switch the Gradient reading to see how present conditions and
+              learned survival organisation may shape perception, emotion, empathy, action, and repair differently.
             </p>
+            <StateSpineStrip />
           </div>
           <EmotionalGradient />
         </section>
 
-        {/* Chronic organisation — introduced after the acute instrument */}
-        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="chronic-gradient-heading">
-          <ChronicGradientOrientation />
-        </section>
-
-        {/* What the gradient explains — the payoff, directly under the instrument */}
+        {/* Ethical information model and interpretive boundaries. */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="explains-heading">
           <div style={cardStyle}>
-            <p style={sectionEyebrowStyle}>What the gradient explains</p>
+            <p style={sectionEyebrowStyle}>Ethical reading</p>
             <h2 id="explains-heading" className="home-section-heading" style={{ margin: "0 0 8px", letterSpacing: 0, color: TEXT.primary }}>
-              From state shifts to relationship patterns
+              What the Gradient helps distinguish
             </h2>
-            <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The Gradient <strong className="home-scan-anchor">connects changes that are often considered separately.</strong>{" "}
-              It helps a reader examine what the body is preparing for, how attention and emotion change, what happens
-              between people, and what conditions may allow repair—while keeping{" "}
-              <strong className="home-scan-anchor">impact, accountability, and boundaries</strong> in view.
+            <p style={{ margin: "0 0 8px", maxWidth: 760, fontSize: 17, lineHeight: 1.65, color: TEXT.primary }}>
+              <strong>Emotion is real information, but not automatic fact.</strong>
             </p>
-            <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
+            <p style={{ margin: "0 0 22px", maxWidth: 790, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
+              A feeling may tell us that something changed in the body, a boundary was crossed, connection feels
+              uncertain, harm occurred, or protection is needed. It does not tell us by itself exactly what happened,
+              what another person intended, or who that person is. Disconnection from emotion is not objectivity, and a
+              calm or coherent presentation is not complete evidence of safety or empathy.
+            </p>
+            <div className="home-distinction-grid">
               {[
-                ["Emotion as information", "feelings can signal body state, need, boundary, impact, or repair without becoming automatic fact."],
-                ["Why care is not always enough", "under threat, empathy and repair can narrow even when care is present."],
-                ["How rupture repeats", "a short-term shift can become a familiar pattern of distance, defence, withdrawal, or pressure for certainty."],
-                ["How protection can become control", "repeated protection may organize around managing, testing, pursuing, avoiding, or overriding another person's options."],
-                ["What repair requires", "repair depends on enough capacity for impact, empathy, accountability, boundary, and changed pattern to become available."],
+                ["Feeling and fact", "Both matter, but they answer different questions."],
+                ["Distress and danger", "Visible activation does not establish who or what is unsafe."],
+                ["Calm and safety", "Control can look composed while its impact appears first in another person."],
+                ["Protection and control", "A protective origin and a harmful or controlling effect can coexist."],
+                ["Explanation and responsibility", "Understanding a mechanism does not complete accountability or repair."],
               ].map(([head, body]) => (
-                <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                  <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: "var(--spectrum-indigo)" }} aria-hidden="true" />
-                  <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: TEXT.secondary }}>
-                    <strong style={{ fontWeight: 600, color: TEXT.primary }}>{head}</strong> — {body}
-                  </p>
-                </li>
+                <div key={head} style={{ paddingTop: 12, borderTop: `2px solid ${SPECTRUM.indigo}` }}>
+                  <h3 style={{ margin: 0, color: TEXT.primary, fontSize: 15 }}>{head}</h3>
+                  <p style={{ margin: "5px 0 0", color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.6 }}>{body}</p>
+                </div>
               ))}
-            </ul>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
-              <a
-                href="/foundations"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  padding: "10px 16px",
-                  borderRadius: RADIUS.md,
-                  border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.3)}`,
-                  background: hexToRgba(SPECTRUM.indigo, 0.1),
-                  color: "var(--spectrum-indigo)",
-                  fontFamily: FONT.mono,
-                  fontSize: 12,
-                  fontWeight: 600,
-                  textDecoration: "none",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Learn how to read the Gradient
-              </a>
-              <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: 0, color: TEXT.muted }}>TEG-Blue Overview</span>
             </div>
+            <p style={{ margin: "24px 0 0", padding: "15px 16px", borderLeft: `3px solid ${chronicAccent}`, background: hexToRgba(chronicAccent, 0.08), color: TEXT.secondary, fontSize: 14, lineHeight: 1.7 }}>
+              <strong className="home-scan-anchor">The Gradient cannot prove intent from one interaction.</strong> What
+              happens over time tells us more. Does the pattern repeat after its impact is known, intensify when a
+              boundary is set, change across audiences, remove another person&apos;s choices, or resist repair? These
+              observations can clarify harm and responsibility without claiming access to another person&apos;s mind. A
+              protective origin does not make harmful behaviour harmless.
+            </p>
+          </div>
+        </section>
+
+        {/* Return and repair are related but not interchangeable. */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="return-heading">
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>Return</p>
+            <h2 id="return-heading" className="home-section-heading" style={{ margin: "0 0 8px", color: TEXT.primary }}>
+              How protection begins to release
+            </h2>
+            <p style={{ margin: 0, maxWidth: 800, color: TEXT.secondary, fontSize: 15, lineHeight: 1.7 }}>
+              TEG-Blue calls this movement <strong className="home-scan-anchor">Return</strong>. It begins when the nervous
+              system can register that the present protective response is no longer needed, or can be safely interrupted.
+              Return is not simply calming down, complying, withdrawing, becoming exhausted, apologising, or reconnecting.
+            </p>
+            <div className="home-return-sequence" aria-label="A possible sequence of Return">
+              {returnSteps.map(([number, label, body]) => (
+                <div className="home-return-step" key={number}>
+                  <span style={{ fontFamily: FONT.mono, color: MAIN_ORG.accent, fontSize: 10, fontWeight: 700 }}>{number}</span>
+                  <h3 style={{ margin: "7px 0 0", color: TEXT.primary, fontSize: 14, lineHeight: 1.35 }}>{label}</h3>
+                  <p style={{ margin: "6px 0 0", color: TEXT.secondary, fontSize: 12.5, lineHeight: 1.55 }}>{body}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ margin: "18px 0 0", color: TEXT.muted, fontSize: 13.5, lineHeight: 1.65 }}>
+              These are gates, not fixed stages or a universal clock. Return can make accountability and repair more
+              available; it does not establish that repair has happened.
+            </p>
+          </div>
+        </section>
+
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="repair-heading">
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>After rupture</p>
+            <h2 id="repair-heading" className="home-section-heading" style={{ margin: "0 0 20px", color: TEXT.primary }}>
+              Repair has three distinct territories
+            </h2>
+            <div className="home-repair-grid">
+              {[
+                ["Responsibility and reparation", "What can the person who caused harm stop, acknowledge, take responsibility for, restore, or change?"],
+                ["Recovery after harm", "What safety, distance, support, justice, grief, or meaning belongs to the person affected?"],
+                ["Relational rebuilding", "Do the people involved freely choose renewed contact, trust, or reconciliation?"],
+              ].map(([head, body]) => (
+                <div key={head} style={{ padding: "18px", border: `1px solid ${BORDER.default}`, borderRadius: RADIUS.md }}>
+                  <h3 style={{ margin: 0, color: TEXT.primary, fontSize: 16 }}>{head}</h3>
+                  <p style={{ margin: "7px 0 0", color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.65 }}>{body}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ margin: "20px 0 0", color: TEXT.secondary, fontSize: 14, lineHeight: 1.65 }}>
+              Reparation can continue without forgiveness or renewed access. Recovery does not require reconciliation.
+            </p>
           </div>
         </section>
 

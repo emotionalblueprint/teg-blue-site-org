@@ -1,6 +1,17 @@
 # Pending Tasks
 
-Last updated: 2026-07-10.
+Last updated: 2026-08-14.
+
+## Homepage Editorial Bridge
+
+- The active public-writing bridge is saved in
+  `_plans/homepage-editorial-bridge.md`.
+- Keep the homepage sequence observation-led: visible pattern, plain meaning,
+  TEG-Blue term, then qualification.
+- Preserve the Fluid/Chronic, Position/person, mechanism/responsibility, and
+  Return/repair distinctions during later reduction or translation passes.
+- Next homepage review should assess the full page as one reading experience
+  after the current structure and editorial pass settle.
 
 ## Homepage Gradient Science Grounding
 
