@@ -88,11 +88,14 @@ export default function SpanishEnginePage() {
     url: "https://teg-blue.org/es/engine",
     inLanguage: "es",
     description: "Cómo el TEG-Blue Engine convierte el Blueprint del Gradiente Emocional en herramientas públicas y aplicaciones digitales con una lógica estructurada y trazable.",
+    isPartOf: { "@type": "ResearchProject", name: "TEG-Blue: The Emotional Gradient Blueprint", url: "https://teg-blue.org" },
     creator: {
       "@type": "Person",
       name: "Anna Paretas-Artacho",
       url: "https://annaparetas.com",
+      sameAs: "https://orcid.org/0009-0005-2394-7162",
     },
+    mainEntity: { "@type": "Thing", name: "TEG-Blue Engine", description: "El sistema de trazabilidad y construcción que sostiene las herramientas públicas y aplicaciones de TEG-Blue." },
   };
 
   return (

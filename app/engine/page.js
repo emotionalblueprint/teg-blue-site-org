@@ -73,6 +73,18 @@ const headingStyle = { margin: 0, color: TEXT.primary, fontSize: "clamp(25px, 3v
 const bodyStyle = { margin: 0, color: TEXT.secondary, fontSize: 16, lineHeight: 1.75 };
 
 export default function EnginePage() {
+  const pageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "The TEG-Blue Engine",
+    url: "https://teg-blue.org/engine",
+    inLanguage: "en",
+    description: "How the TEG-Blue Engine turns The Emotional Gradient Blueprint into structured, traceable public tools and applied digital builds.",
+    isPartOf: { "@type": "ResearchProject", name: "TEG-Blue: The Emotional Gradient Blueprint", url: "https://teg-blue.org" },
+    creator: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://annaparetas.com", sameAs: "https://orcid.org/0009-0005-2394-7162" },
+    mainEntity: { "@type": "Thing", name: "TEG-Blue Engine", description: "The source-tracing and tool-building system behind TEG-Blue public tools and applied builds." },
+  };
+
   return (
     <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/engine" />
@@ -147,6 +159,7 @@ export default function EnginePage() {
         </section>
       </PageLayout>
       <SiteFooter />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
     </div>
   );
 }

@@ -8,6 +8,7 @@
 //   }
 
 import { ImageResponse } from 'next/og'
+import { loadOgFonts } from './og-fonts'
 
 // ─── Design tokens (hardcoded for edge runtime — no token imports) ───────────
 
@@ -30,19 +31,6 @@ const PATTERN_GRADIENT =
   'linear-gradient(90deg, #6eeafb 0%, #76faa1 25%, #b6fc50 50%, #e3fd54 75%, #f7d448 100%)'
 
 // ─── Font loading ────────────────────────────────────────────────────────────
-
-async function loadFonts() {
-  const [interLight, interBold, mono] = await Promise.all([
-    fetch('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZ9hiA.woff2').then(r => r.arrayBuffer()),
-    fetch('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2').then(r => r.arrayBuffer()),
-    fetch('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2').then(r => r.arrayBuffer()),
-  ])
-  return [
-    { name: 'Inter',         data: interLight, weight: 300, style: 'normal' },
-    { name: 'Inter',         data: interBold,  weight: 700, style: 'normal' },
-    { name: 'JetBrainsMono', data: mono,       weight: 600, style: 'normal' },
-  ]
-}
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -72,7 +60,7 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
   const color = resolveColor(badgeColor)
   const needleLeft = `${needle * 100}%`
   const nc = needleColorForPos(needle)
-  const fonts = await loadFonts()
+  const fonts = await loadOgFonts()
 
   return new ImageResponse(
     (
@@ -136,8 +124,8 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
                 display: 'flex',
               }} />
               <span style={{
-                fontFamily: 'JetBrainsMono',
-                fontSize: 12, fontWeight: 600,
+                fontFamily: 'JetBrains Mono',
+                fontSize: 12, fontWeight: 500,
                 letterSpacing: '0.12em', textTransform: 'uppercase',
                 color: color,
               }}>
@@ -147,7 +135,7 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
 
             {/* Title */}
             <div style={{
-              fontSize: 52, fontWeight: 300,
+              fontSize: 52, fontWeight: 400,
               letterSpacing: 0, lineHeight: 1.12,
               color: SPECTRUM.sky, marginBottom: 16, maxWidth: 700,
               display: 'flex',
@@ -175,7 +163,7 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
             }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{
-                fontFamily: 'JetBrainsMono',
+                fontFamily: 'JetBrains Mono',
                 fontSize: 13, letterSpacing: '0.06em',
                 color: 'rgba(168,180,200,0.35)',
               }}>
@@ -188,8 +176,8 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
                   display: 'flex',
                 }} />
                 <span style={{
-                  fontFamily: 'JetBrainsMono',
-                  fontSize: 14, fontWeight: 600, letterSpacing: '0.06em',
+                  fontFamily: 'JetBrains Mono',
+                  fontSize: 14, fontWeight: 500, letterSpacing: '0.06em',
                   color: SPECTRUM.azure,
                 }}>
                   TEG-Blue Research
@@ -246,23 +234,23 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
           {/* Mode labels */}
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
             <span style={{
-              fontFamily: 'JetBrainsMono',
-              fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
+              fontFamily: 'JetBrains Mono',
+              fontSize: 8, fontWeight: 500, letterSpacing: '0.1em',
               color: MODES.connection, flex: 1, textAlign: 'center',
             }}>CNX</span>
             <span style={{
-              fontFamily: 'JetBrainsMono',
-              fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
+              fontFamily: 'JetBrains Mono',
+              fontSize: 8, fontWeight: 500, letterSpacing: '0.1em',
               color: MODES.protection, flex: 1, textAlign: 'center',
             }}>PRO</span>
             <span style={{
-              fontFamily: 'JetBrainsMono',
-              fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
+              fontFamily: 'JetBrains Mono',
+              fontSize: 8, fontWeight: 500, letterSpacing: '0.1em',
               color: MODES.control, flex: 1, textAlign: 'center',
             }}>CTR</span>
             <span style={{
-              fontFamily: 'JetBrainsMono',
-              fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
+              fontFamily: 'JetBrains Mono',
+              fontSize: 8, fontWeight: 500, letterSpacing: '0.1em',
               color: MODES.domination, flex: 1, textAlign: 'center',
             }}>DOM</span>
           </div>

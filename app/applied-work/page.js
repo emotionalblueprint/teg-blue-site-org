@@ -36,11 +36,32 @@ const boundaries = [
   "Where risk is material, relevant safeguarding, legal, clinical, subject-matter or lived-experience expertise may need to sit beside the build.",
 ];
 
+const faqItems = [
+  ["Can the TEG-Blue Engine be licensed?", "The public framework and private Engine logic have different rights. Use of Engine logic, custom tools, product integrations and institutional implementations requires written permission or a separate agreement."],
+  ["Can TEG-Blue build a custom application?", "Potentially. The first step is to define the reader, purpose, evidence, review needs and rights. A conversation does not by itself create a partnership, licence or commitment to build."],
+  ["Can an organisation reuse the public framework?", "Original public written framework content may be reused under CC BY 4.0 with attribution, unless a page says otherwise. Marks, tools, code, Engine logic, product surfaces and third-party material are excluded."],
+  ["Does the Engine diagnose or classify people?", "No. It structures source material and tool logic. It does not diagnose, prove motive, determine a person’s inner state or turn one answer into a verdict."],
+  ["How are ownership and confidential material handled?", "Ownership, attribution, permitted use, access to material and confidentiality need to be defined for each project before substantive work begins."],
+];
+
 const card = { padding: 22, border: `1px solid ${BORDER.default}`, borderRadius: RADIUS.lg, background: BG.card };
 const body = { margin: 0, color: TEXT.secondary, fontSize: 15, lineHeight: 1.72 };
 const heading = { margin: "0 0 14px", color: TEXT.primary, fontSize: "clamp(25px, 3vw, 35px)", lineHeight: 1.18 };
 
 export default function AppliedWorkPage() {
+  const pageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Applied Work with TEG-Blue",
+    url: "https://teg-blue.org/applied-work",
+    inLanguage: "en",
+    description: metadata.description,
+    isPartOf: { "@type": "ResearchProject", name: "TEG-Blue: The Emotional Gradient Blueprint", url: "https://teg-blue.org" },
+    creator: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://annaparetas.com", sameAs: "https://orcid.org/0009-0005-2394-7162" },
+    about: { "@type": "Thing", name: "Applied TEG-Blue tools", description: "Carefully scoped educational and digital applications for a defined audience and human question." },
+  };
+  const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqItems.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) };
+
   return (
     <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/applied-work" />
@@ -72,6 +93,14 @@ export default function AppliedWorkPage() {
           <div style={card}>{boundaries.map((item) => <p key={item} style={{ ...body, padding: "11px 0", borderBottom: `1px solid ${BORDER.default}` }}>{item}</p>)}</div>
         </section>
 
+        <section style={{ marginBottom: 58 }}>
+          <p style={{ color: SPECTRUM.indigo, fontFamily: FONT.mono, fontSize: 12, fontWeight: 700 }}>PRACTICAL QUESTIONS</p>
+          <h2 style={heading}>What an organisation may need to know first.</h2>
+          <div style={{ display: "grid", gap: 10 }}>
+            {faqItems.map(([question, answer]) => <details key={question} style={card}><summary style={{ cursor: "pointer", color: TEXT.primary, fontSize: 17, fontWeight: 650 }}>{question}</summary><p style={{ ...body, marginTop: 12 }}>{answer}</p></details>)}
+          </div>
+        </section>
+
         <section style={{ ...card, marginBottom: 36, background: BG.diagram }}>
           <p style={{ color: SPECTRUM.indigo, fontFamily: FONT.mono, fontSize: 12, fontWeight: 700 }}>A USEFUL FIRST MESSAGE</p>
           <h2 style={heading}>Describe the reader, the problem and the intended use.</h2>
@@ -84,6 +113,8 @@ export default function AppliedWorkPage() {
         <section><p style={{ ...body, fontSize: 13.5 }}>Applied TEG-Blue work is developed by <a href="https://annaparetas.com" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.azure }}>Anna Paretas-Artacho</a>. A public explanation of the process does not place private Engine logic, software, tools or third-party material under an open licence.</p></section>
       </PageLayout>
       <SiteFooter />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </div>
   );
 }
