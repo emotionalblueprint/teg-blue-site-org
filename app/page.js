@@ -794,6 +794,30 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Translation layer and applied work */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="engine-heading">
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>From map to public tool</p>
+            <h2 id="engine-heading" className="home-section-heading" style={{ margin: "0 0 8px", color: TEXT.primary }}>
+              The Engine keeps the translation traceable
+            </h2>
+            <p style={{ margin: 0, maxWidth: 820, color: TEXT.secondary, fontSize: 15, lineHeight: 1.7 }}>
+              A public tool rarely needs every layer of the framework. The TEG-Blue Engine keeps the source, interpretation,
+              public language, ethical limits and intended reader connected while selecting only the detail a particular use requires.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 14, marginTop: 22 }}>
+              <a href="/engine" style={{ padding: 20, border: `1px solid ${BORDER.default}`, borderTop: `3px solid ${SPECTRUM.azure}`, borderRadius: RADIUS.md, color: TEXT.primary, textDecoration: "none" }}>
+                <strong style={{ display: "block", fontSize: 18 }}>How the Engine works</strong>
+                <span style={{ display: "block", marginTop: 8, color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.6 }}>See what sits behind a clear behaviour page and what the Engine does not claim.</span>
+              </a>
+              <a href="/applied-work" style={{ padding: 20, border: `1px solid ${BORDER.default}`, borderTop: `3px solid ${SPECTRUM.indigo}`, borderRadius: RADIUS.md, color: TEXT.primary, textDecoration: "none" }}>
+                <strong style={{ display: "block", fontSize: 18 }}>Applied work with organisations</strong>
+                <span style={{ display: "block", marginTop: 8, color: TEXT.secondary, fontSize: 13.5, lineHeight: 1.6 }}>Understand the questions, process, safeguards and rights involved in a new build.</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Authorship and use — visible licensing boundary */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="rights-heading">
           <div style={cardStyle}>

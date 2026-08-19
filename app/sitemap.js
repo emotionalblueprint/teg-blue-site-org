@@ -23,6 +23,18 @@ const STATIC_PAGES = [
     priority: 0.85,
   },
   {
+    path: "/applied-work",
+    lastModified: "2026-08-19",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    path: "/es/applied-work",
+    lastModified: "2026-08-19",
+    changeFrequency: "monthly",
+    priority: 0.75,
+  },
+  {
     path: "/es/engine",
     lastModified: "2026-08-19",
     changeFrequency: "monthly",

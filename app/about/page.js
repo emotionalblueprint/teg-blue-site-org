@@ -54,7 +54,7 @@ const ECOSYSTEM_LAYERS = [
   },
   {
     title: "Research and development",
-    body: "Behind the public work is an ongoing process of tracing sources, testing language, and developing tools for different audiences.",
+    body: "The TEG-Blue Engine preserves source boundaries and translates the framework into structured logic for public tools and applied builds.",
     color: SPECTRUM.blue,
   },
   {
@@ -294,6 +294,8 @@ function EcosystemSection() {
         ))}
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
+        <NavLink href="/engine" label="How the Engine works" />
+        <NavLink href="/applied-work" label="Applied work" />
         <NavLink href="/glossary" label="Glossary terms" />
         <NavLink href="/scientific-foundations" label="Source limits" />
       </div>

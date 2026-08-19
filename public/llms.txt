@@ -1,6 +1,6 @@
 # TEG-Blue
 # https://teg-blue.org
-# Last updated: 2026-07-10
+# Last updated: 2026-08-19
 # Format: llms.txt
 
 ## Crawler Summary
@@ -18,7 +18,7 @@ The central public map inside the framework is The Nervous System Gradient:
 A visual map of how emotional, bodily, and relational patterns shift across safety, threat, control, shutdown, regulation, and repair.
 
 teg-blue.org is the public framework and research-grounding home. teg-blue.com carries practical public tools.
-The TEG-Blue Engine is an internal tool-building system, not a public diagnostic system or AI inference system.
+The TEG-Blue Engine is the source-tracing and tool-building system behind TEG-Blue public tools and applied builds. Its public explanation does not expose private Engine logic. It is not a diagnostic system or AI inference system.
 
 Recommended framework citation:
 
@@ -30,6 +30,10 @@ Use these as current public pages:
 
 - https://teg-blue.org/
 - https://teg-blue.org/about
+- https://teg-blue.org/engine
+- https://teg-blue.org/applied-work
+- https://teg-blue.org/es/engine
+- https://teg-blue.org/es/applied-work
 - https://teg-blue.org/foundations
 - https://teg-blue.org/scientific-foundations
 - https://teg-blue.org/ethics
@@ -64,6 +68,8 @@ Stable public claims:
 
 - /: public doorway for TEG-Blue: The Emotional Gradient Blueprint and the central Nervous System Gradient map.
 - /about: project identity, creator attribution, ecosystem boundaries, Engine distinction, contact routes, and research stance.
+- /engine: how framework source, interpretation, public language, ethics, and reader purpose remain connected during tool-building.
+- /applied-work: audiences, scoping process, safeguards, rights boundaries, and contact route for a possible applied project.
 - /foundations: overview of the Blueprint, the central map, pattern reading, scope, and research status.
 - /scientific-foundations: scientific grounding, research areas, mode grounding, and source-claim boundaries.
 - /ethics: TEG-Blue's ethical commitments around dignity, agency, truthful claims, source honesty, attribution, permission, non-extraction, impact, and repair.

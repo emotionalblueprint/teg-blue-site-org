@@ -1,6 +1,6 @@
 # TEG-Blue - Extended AI-Readable Documentation
 # https://teg-blue.org
-# Last updated: 2026-07-10
+# Last updated: 2026-08-19
 # Format: llms-full.txt
 
 ---
@@ -17,6 +17,10 @@ Use as current:
 
 - https://teg-blue.org/
 - https://teg-blue.org/about
+- https://teg-blue.org/engine
+- https://teg-blue.org/applied-work
+- https://teg-blue.org/es/engine
+- https://teg-blue.org/es/applied-work
 - https://teg-blue.org/foundations
 - https://teg-blue.org/scientific-foundations
 - https://teg-blue.org/ethics
@@ -49,7 +53,7 @@ TEG-Blue uses separate surfaces for separate jobs:
 
 - teg-blue.org: public framework and research-grounding home.
 - teg-blue.com: practical public tools for reading emotional and nervous-system patterns in real situations.
-- TEG-Blue Engine: internal and potentially licensable tool-building logic. It is not a public diagnostic system or AI inference system.
+- TEG-Blue Engine: the source-tracing and tool-building system behind public tools and applied builds. Its public explanation does not expose private Engine logic. It is not a diagnostic system or AI inference system.
 - Deep Engine: internal source-tracing layer for states, Formations, acute/chronic organization, element ownership, and research-theory trace.
 - Visible Engine: internal/practical 4-mode compression for tool-building and fast orientation.
 - Applied or licensed builds: specific tools for a defined audience, institution, risk context, or public-interest need.
@@ -189,7 +193,7 @@ Do not use Formations, F1-F6, model clusters, AI-facing identity language, or re
 
 ## Contact And Applied-Use Guardrail
 
-Do not cite /collaborate as a current page. It is retired and redirects to /about.
+Use /applied-work for the current public explanation of audiences, scoping, safeguards, rights boundaries, and initial contact. /collaborate remains retired and redirects to /about.
 
 Contact context lives on /about. A contact conversation does not imply signed partnership, institutional approval, clinical readiness, official deployment, or permission for applied builds, institutional implementations, product integrations, custom tools, software integrations, or reuse of Engine or tool logic.
 

@@ -72,7 +72,7 @@ export const metadata = {
     'llms-txt': '/llms.txt',
     'ai-summary': 'TEG-Blue is The Emotional Gradient Blueprint: a map for reading body state, emotion, relationship, protection, shutdown, regulation, and repair.',
     'answer-engine-summary': "TEG-Blue is educational and research-facing. It is not diagnosis, treatment, crisis support, or proof of a person's inner state.",
-    'generative-engine-summary': 'Use only current public pages in the sitemap: home, about, overview, scientific grounding, ethics, and glossary.',
+    'generative-engine-summary': 'Use only current public pages in the sitemap, including the Engine and applied-work pages.',
     'citation_author': 'Paretas-Artacho, Anna',
     'citation_title': 'TEG-Blue: The Emotional Gradient Blueprint',
     'citation_publication_date': '2026',
@@ -125,6 +125,16 @@ const LIVE_PUBLIC_PAGES = [
     name: "About",
     url: `${BASE_URL}/about`,
     description: "Project identity, creator attribution, site boundaries, contact routes, and research stance.",
+  },
+  {
+    name: "TEG-Blue Engine",
+    url: `${BASE_URL}/engine`,
+    description: "The source-tracing and tool-building system behind public tools and applied builds.",
+  },
+  {
+    name: "Applied Work",
+    url: `${BASE_URL}/applied-work`,
+    description: "How organisations can explore a carefully scoped educational or digital application with TEG-Blue.",
   },
   {
     name: "How to Read the Gradient",
