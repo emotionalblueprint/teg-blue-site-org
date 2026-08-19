@@ -93,7 +93,7 @@ const CONTACT_LINKS = [
   { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162", text: "0009-0005-2394-7162" },
   { label: "Zenodo", href: "https://zenodo.org/communities/teg-blue", text: "TEG-Blue community" },
   { label: "GitHub", href: "https://github.com/emotionalblueprint", text: "github.com/emotionalblueprint" },
-  { label: "Personal site", href: "https://www.annaparetas.cat", text: "annaparetas.cat" },
+  { label: "Personal site", href: "https://annaparetas.com", text: "annaparetas.com" },
 ];
 
 export const metadata = {
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 "https://orcid.org/0009-0005-2394-7162",
                 "https://github.com/emotionalblueprint",
                 "https://zenodo.org/communities/teg-blue",
-                "https://www.annaparetas.cat",
+                "https://annaparetas.com",
               ],
               knowsAbout: [
                 "The Emotional Gradient Blueprint",

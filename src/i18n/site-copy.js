@@ -15,6 +15,11 @@ export const HEADER_COPY = {
         description: "Modes, states, positions, acute shifts, chronic configurations, impact, and response.",
       },
       {
+        label: "TEG-Blue Engine",
+        href: "/engine",
+        description: "How the framework becomes traceable public tools and applied digital builds.",
+      },
+      {
         label: "Scientific grounding",
         href: "/scientific-foundations",
         description: "The research supporting each part of the map and the limits of those claims.",
@@ -47,6 +52,11 @@ export const HEADER_COPY = {
         description: "The Emotional Gradient Blueprint y el Gradiente del Sistema Nervioso como mapa central.",
       },
       {
+        label: "TEG-Blue Engine",
+        href: "/es/engine",
+        description: "Cómo el marco se convierte en herramientas públicas y aplicaciones digitales con una lógica trazable.",
+      },
+      {
         label: "Fundamentación científica",
         href: "/scientific-foundations",
         description: "Áreas de investigación, límites de cada campo y disciplina de afirmaciones detrás del mapa.",
@@ -70,6 +80,8 @@ export const FOOTER_COPY = {
     ariaLabel: "Footer",
     links: [
       { label: "Practical tools ↗", href: "https://teg-blue.com/" },
+      { label: "TEG-Blue Engine", href: "/engine" },
+      { label: "Anna Paretas-Artacho", href: "https://annaparetas.com" },
       { label: "Substack", href: "https://annaparetas.substack.com" },
       { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
       { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },
@@ -83,6 +95,8 @@ export const FOOTER_COPY = {
     ariaLabel: "Pie de página",
     links: [
       { label: "Herramientas prácticas ↗", href: "https://teg-blue.com/" },
+      { label: "TEG-Blue Engine", href: "/engine" },
+      { label: "Anna Paretas-Artacho", href: "https://annaparetas.com" },
       { label: "Substack", href: "https://annaparetas.substack.com" },
       { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
       { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },

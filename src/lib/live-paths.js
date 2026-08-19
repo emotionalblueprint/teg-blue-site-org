@@ -11,6 +11,8 @@
 const LIVE_PATHS = new Set([
   "/",
   "/about",
+  "/engine",
+  "/es/engine",
   "/foundations",
   "/scientific-foundations",
   "/ethics",

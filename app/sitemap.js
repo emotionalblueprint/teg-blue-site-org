@@ -17,6 +17,18 @@ const STATIC_PAGES = [
     priority: 0.7,
   },
   {
+    path: "/engine",
+    lastModified: "2026-08-19",
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+  {
+    path: "/es/engine",
+    lastModified: "2026-08-19",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     path: "/foundations",
     lastModified: LAST_MODIFIED,
     changeFrequency: "monthly",

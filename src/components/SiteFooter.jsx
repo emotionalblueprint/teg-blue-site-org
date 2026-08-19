@@ -32,8 +32,8 @@ export default function SiteFooter({ locale = "en" }) {
           <a
             key={l.label}
             href={l.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={l.href.startsWith("http") ? "_blank" : undefined}
+            rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="footer-link"
             style={{
               fontFamily: FONT.display,
@@ -49,7 +49,10 @@ export default function SiteFooter({ locale = "en" }) {
       </nav>
 
       <p style={{ marginTop: 22, fontSize: 12, color: TEXT.muted, lineHeight: 1.7 }}>
-        © {new Date().getFullYear()} TEG-Blue · Anna Paretas-Artacho
+        © {new Date().getFullYear()} TEG-Blue ·{" "}
+        <a href="https://annaparetas.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+          Anna Paretas-Artacho
+        </a>
       </p>
 
       <p style={{ marginTop: 8, fontFamily: FONT.mono, fontSize: 10, color: TEXT.micro, lineHeight: 1.6 }}>
